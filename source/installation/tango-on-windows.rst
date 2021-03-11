@@ -171,7 +171,7 @@ Assuming you have downloaded it and copied to the Tango bin folder please follow
 .. _windows_starter_nssm:
 
 - Install Starter service:
-    - Invoke :command:`nssm.exe install Tango-DataBaseds`.
+    - Invoke :command:`nssm.exe install Tango-Starter`.
     - In the Application tab provide information as follows:
 
         .. image:: tango-on-windows/starter-as-service-01.png
