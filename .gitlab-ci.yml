@@ -1,6 +1,13 @@
 # See https://docs.gitlab.com/ce/ci/yaml/README.html for the documentation
 
-package:
+.only-default: &only-default
+  only:
+    - master
+    - merge_requests
+
+
+test:
+  <<: *only-default
   image: debian:10
   stage: build
   before_script:
@@ -14,3 +21,12 @@ package:
     paths:
       - sphinx-output.log
       - build
+
+pages:
+  <<: *only-default
+  stage: deploy
+  script:
+    - mv build public/
+  artifacts:
+    paths:
+    - public
