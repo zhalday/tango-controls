@@ -1,5 +1,9 @@
 # See https://docs.gitlab.com/ce/ci/yaml/README.html for the documentation
 
+stages:
+  - test
+  - build
+
 .only-default: &only-default
   only:
     - master
@@ -9,7 +13,7 @@
 test:
   <<: *only-default
   image: debian:10
-  stage: build
+  stage: test
   before_script:
     - apt-get update
     - apt-get install --yes python3-pip
@@ -22,9 +26,9 @@ test:
       - sphinx-output.log
       - build
 
-pages:
+build:
   <<: *only-default
-  stage: deploy
+  stage: build
   script:
     - mv build public/
   artifacts:
