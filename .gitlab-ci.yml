@@ -1,8 +1,19 @@
 # See https://docs.gitlab.com/ce/ci/yaml/README.html for the documentation
 
-package:
+stages:
+  - test
+  - build
+
+.only-default: &only-default
+  only:
+    - master
+    - merge_requests
+
+
+test:
+  <<: *only-default
   image: debian:10
-  stage: build
+  stage: test
   before_script:
     - apt-get update
     - apt-get install --yes python3-pip
@@ -14,3 +25,12 @@ package:
     paths:
       - sphinx-output.log
       - build
+
+build:
+  <<: *only-default
+  stage: build
+  script:
+    - mv build public/
+  artifacts:
+    paths:
+    - public
