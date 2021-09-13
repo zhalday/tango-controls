@@ -1,4 +1,3 @@
-
 PANIC Alarm System
 ===================
 
@@ -16,4 +15,4 @@ All the information connected to the project can be found visiting the following
 
 * `PANIC on github <https://github.com/tango-controls/PANIC>`_
 * `PANIC presentation at PCAPAC&#39;14 <https://github.com/tango-controls/PANIC/blob/documentation/doc/PANIC_at_PCAPAC_2014_FCO206_TALK.pdf>`_
-* `PANIC documentatnion <https://tango-controls.readthedocs.io/projects/panic/en/latest/>`_
+* `PANIC documentation <https://tango-controls.readthedocs.io/projects/panic/en/latest/>`_
