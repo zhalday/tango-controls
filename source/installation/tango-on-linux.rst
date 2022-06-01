@@ -7,132 +7,113 @@ Linux
 
 Debian + Ubuntu
 ---------------
-Binary packages are available for Debian based systems in the official repositories.
-Use apt-get to install them e.g. to install the Tango database and test device server:
-
-.. code-block:: console
-
-   $> sudo apt install mariadb-server\
-      sudo apt install tango-db tango-test
-
-
-The above packages install the Tango core C++ libraries, database and TangoTest server. 
 
 Non-interactive installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you want to install in non-interactive way, here are the steps you need to follow:
-
-- installation of non-interactive installation tools (with administration rights):
+1. Install packages required to compile tango-controls:
 
 .. code-block:: console
 
-    $> sudo apt install --assume-yes debconf 
+   sudo apt-get install g++ openjdk-8-jdk mariadb-server libmariadb-dev zlib1g-dev libomniorb4-dev libcos4-dev omniidl libzmq3-dev make
 
 
-- setting root password for MariaDB package installation
-
-.. code-block:: console
-
-    $> echo "mariadb-server mysql-server/root_password password ${DB_ROOT_PASSWORD}" | sudo debconf-set-selections\
-       echo "mariadb-server mysql-server/root_password_again password ${DB_ROOT_PASSWORD}" | sudo debconf-set-selections
-
-where :envvar:`${DB_ROOT_PASSWORD}` is your MariaDB database root password you want to set.
-
-
-- mariadb package installation:
+2. Start mariadb :
 
 .. code-block:: console
 
-    $> sudo apt install --assume-yes mariadb-client mariadb-server
+   sudo service mariadb start
 
 
-- answering to the mysql_secure_installation questions:
-
-.. code-block:: console
-
-    $> sudo apt install --assume-yes expect\
-       SECURE_MYSQL=$(sudo expect -c "
-          set timeout 10
-          spawn mysql_secure_installation
-          expect \"Enter current password for root (enter for none):\"
-          send \"${DB_ROOT_PASSWORD}\r\"
-          expect \"Change the root password?\"
-          send \"n\r\"
-          expect \"Remove anonymous users?\"
-          send \"y\r\"
-          expect \"Disallow root login remotely?\"
-          send \"y\r\"
-          expect \"Remove test database and access to it?\"
-          send \"y\r\"
-          expect \"Reload privilege tables now?\"
-          send \"y\r\"
-          expect eof
-          ")\
-      echo "${SECURE_MYSQL}"
-
-
-- setting parameters for tango-db package installation:
+3. Set password for mariabdb root user to 'mypassword' (change as appropriate):
 
 .. code-block:: console
 
-    $> echo "tango-common tango-common/tango-host string ${TANGOSERVER}:${TANGOPORT}" | sudo debconf-set-selections\
-       echo 'tango-db tango-db/dbconfig-install boolean true' | sudo debconf-set-selections\
-       echo "tango-db tango-db/mysql/admin-pass string ${DB_ROOT_PASSWORD}"  | sudo debconf-set-selections\
-       echo "tango-db tango-db/mysql/app-pass password ${DB_TANGO_PASSWORD}" | sudo debconf-set-selections
+   sudo mariadb -u root
+   ALTER USER 'root'@'localhost' IDENTIFIED BY 'mypassword';
+   UPDATE mysql.user SET authentication_string = '' WHERE user = 'root';
+   UPDATE mysql.user SET plugin = '' WHERE user = 'root';
 
-where :envvar:`${TANGOSERVER}` is the Tango Host name, 
-:envvar:`${TANGOPORT}` is the Tango Host port on which will be waited the Tango connections,
-:envvar:`${DB_ROOT_PASSWORD}` is your MariaDB database root password you set during 
-MariaDB installation 
-and :envvar:`${DB_TANGO_PASSWORD}` is your MariaDB tango database you want to set 
-and which will be used by Tango tools.
 
-- tango-db package installation:
+4. Download source tarball from github:
 
 .. code-block:: console
 
-    $> sudo apt install --assume-yes tango-db
+   wget https://gitlab.com/api/v4/projects/24125890/packages/generic/TangoSourceDistribution/9.3.5/tango-9.3.5.tar.gz
 
 
-- tango-test package installation 
-
-.. code-block:: console
-
-   $> sudo apt install --assume-yes tango-test
-
-
-
-Other packages
-~~~~~~~~~~~~~~
-
-You will also need the Java based tools like jive, astor etc.
-These are available with the :ref:`source code installation<source_code_install>`. 
-
-Another option is to install the latest binary Java debian package for Tango 9.2.5 
-(assuming you have installed Tango 9.2.5) from ``https://people.debian.org/~picca/libtango-java_9.2.5a-1_all.deb``
-
-To install this binary package do the following:
+5. Unpack in a sub-directory called tango:
 
 .. code-block:: console
 
-    $> sudo apt install --assume-yes wget\
-       wget -c https://people.debian.org/~picca/libtango-java_9.2.5a-1_all.deb\
-       sudo dpkg -i ./libtango-java_9.2.5a-1_all.deb
+   mkdir tango
+   cd tango
+   tar xzvf tango-9.3.5.tar.gz
 
-You will then have the Tango Java tools installed in /usr/bin e.g. /usr/bin/jive
 
-You might also want PyTango. Python binaries can be installed from the official repositories, either
-
-.. code-block:: console
-
-       $> apt install python3-pytango
-
-or if you need specifically Python2
+6. Configure tango-controls to build and install in /usr/local/tango (set the DB password as appropriate):
 
 .. code-block:: console
 
-       $> apt-get python-pytango
+   ./configure --enable-java=yes --enable-mariadb=yes --enable-dbserver=yes --enable-dbcreate=yes --with-mysql-admin=root --with-mysql-admin-passwd='mypassword' --prefix=/usr/local/tango
+
+
+7. Compile tango-controls:
+
+.. code-block:: console
+   
+   make
+
+
+8. Install tango-controls:
+
+.. code-block:: console
+    
+    sudo make install
+
+
+9. Add following lines to start script /usr/local/tango/bin/tango:
+
+.. code-block:: console
+
+   sudo gedit /usr/local/tango/bin/tango
+   
+   # add lines near the top: 
+
+   export MYSQL_USER=root
+   export MYSQL_PASSWORD=mypassword
+
+
+10. Start tango-controls database server:
+
+.. code-block:: console
+
+    sudo /usr/local/tango/bin/tango start
+
+
+11. Set the TANGO_HOST variable (note: you can do this in e.g. ``~/.bashrc`` or wherever it is appropriate for your system): 
+
+.. code-block:: console
+
+    export TANGO_HOST=localhost:10000
+
+
+12. Start test device server:
+
+.. code-block:: console
+
+    /usr/local/tango/bin/TangoTest test &
+
+
+13. Test Jive:
+
+.. code-block:: console
+
+    /usr/local/tango/bin/jive &
+
+
+You can now define your device servers and devices, start and test them!
+
 
 
 CentOS
