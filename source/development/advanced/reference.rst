@@ -1628,15 +1628,19 @@ Summary of CtrlSystem free object properties
 The following table summarizes properties defined at control system
 level and belonging to the free object CtrlSystem
 
-\|c\|c\|c\| Property name & property rule & default value
- Services & List of defined services & No default
- DsEventBufferHwm & DS event buffer high water mark & 1000
- EventBufferHwm & Client event buffer high water mark & 1000
- WAttrNaNAllowed & Allow NaN when writing attr. & false
- MulticastEvent & List of multicasting events & No default
- MulticastRate & Rate for multicast event transport & 80
- MulticastIvl & Time to keep data for re-transmission & 20
- MulticastHops & Max number of eleemnts to cross & 5
+
+.. csv-table::
+   :header-rows: 1
+
+   "Property name", "property rule", "default value"
+   "Services", "List of defined services", "No default"
+   "DsEventBufferHwm", "DS event buffer high water mark", "1000"
+   "EventBufferHwm", "Client event buffer high water mark", "1000"
+   "WAttrNaNAllowed", "Allow NaN when writing attr.", "false"
+   "MulticastEvent", "List of multicasting events", "No default"
+   "MulticastRate", "Rate for multicast event transport", "80"
+   "MulticastIvl", "Time to keep data for re-transmission", "20"
+   "MulticastHops", "Max number of elements to cross", "5"
 
 C++ specific
 ------------
