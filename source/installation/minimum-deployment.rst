@@ -14,7 +14,7 @@ It is a framework for building custom SCADA systems.
 Tango defines communication protocol and API. 
 It provides libraries, set of GUI tools and drivers (so called
 :term:`Device Servers <device server>`) for variety of standard and specific control equipment. For more information see:
-http://www.tango-controls.org/what-is-tango-controls/
+http://www.tango-controls.org/what-tango-controls/
 
 .. image:: ../img/logo_tangocontrols.png
     :align: center
