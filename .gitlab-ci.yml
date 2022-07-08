@@ -1,16 +1,11 @@
 # See https://docs.gitlab.com/ce/ci/yaml/README.html for the documentation
 
-stages:
-  - test
-  - build
-
 .only-default: &only-default
   only:
-    - master
+    - main
     - merge_requests
 
-
-test:
+build:
   <<: *only-default
   image: debian:10
   stage: test
@@ -26,9 +21,10 @@ test:
       - sphinx-output.log
       - build
 
-build:
+deploy:
   <<: *only-default
-  stage: build
+  needs:
+    - build
   script:
     - mv build public/
   artifacts:
