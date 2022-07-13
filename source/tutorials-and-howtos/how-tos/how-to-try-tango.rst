@@ -34,8 +34,8 @@ Tango requires:
 * zeroMQ - event system
 
 You can install this library from source:
-`omniORB <https://sourceforge.net/projects/omniorb/files/omniORB/omniORB-4.2.3/omniORB-4.2.3.tar.bz2/download>`_,
-`zeroMQ <http://zeromq.org/intro:get-the-software>`_ or by you package-management tools like yum or apt-get.
+`omniORB <https://sourceforge.net/projects/omniorb/files/omniORB/omniORB-4.2.5/omniORB-4.2.5.tar.bz2/download>`_,
+`zeroMQ <http://zeromq.org/intro:get-the-software>`_ or by your package-management tools like yum or apt-get.
 
 .. note::
 
@@ -59,15 +59,15 @@ Download the source of the Tango Control System
 
 .. code-block:: console
 
-   wget -L https://github.com/tango-controls/TangoSourceDistribution/releases/download/9.3.4/tango-9.3.4.tar.gz
-   tar xzf tango-9.3.4.tar.gz
+   wget -L https://gitlab.com/api/v4/projects/24125890/packages/generic/TangoSourceDistribution/9.3.5/tango-9.3.5.tar.gz
+   tar xzf tango-9.3.5.tar.gz
 
 In this directory, a good practice is to create the build folder, to don't mix
 a configuration/compile file with the source.
 
 .. code-block:: console
 
-    cd tango-9.3.4
+    cd tango-9.3.5
     mkdir build
 
 Compile and installation notes
