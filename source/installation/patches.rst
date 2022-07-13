@@ -6,7 +6,7 @@ Patches
 :audience:`developers, administrators`
 
 To apply any patches downloaded from this page, first go to the directory where Tango source distribution has been extracted
-e.g. *cd ~/tango-9.3.4*, then type the command :
+e.g. *cd ~/tango-9.3.5*, then type the command :
 
 .. code-block:: console
 
@@ -24,6 +24,11 @@ To apply this patch, copy the patch file to the directory where you extracted om
 .. code-block:: console
 
        patch -p0 < dii_race.patch
+
+Version 9.3.5 source patches
+----------------------------
+
+None yet.
 
 
 Version 9.3.4 source patches
