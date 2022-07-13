@@ -12,6 +12,7 @@ Here you will find recipes on how to install the Tango Controls on various platf
 
     minimum-deployment
     source
+    lts
     tango-on-linux
     tango-on-windows
     tango-on-raspberry-pi
