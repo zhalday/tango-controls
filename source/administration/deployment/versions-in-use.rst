@@ -39,8 +39,8 @@ Tango Controls versions in use
 
 **MAX IV Laboratory**:
 
-* Tango Controls versions: 9.3.3
-* PyTango versions: 9.3.1
+* Tango Controls versions: 9.3.5
+* PyTango versions: 9.3.3
 * JTango versions: 9.3.x
 * OS: \*nix
 
