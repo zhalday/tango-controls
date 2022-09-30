@@ -132,13 +132,13 @@ described in the following table
    :header-rows: 1
 
    "Property name", "property rule", "default value"
-   "logging\_level", "Initial device logging level", "WARN"
+   "logging\_level", "Initial device logging level", "WARNING"
    "logging\_target", "Initial device logging target", "No default"
    "logging\_rft", "Logging rolling file threshold", "20 Mega bytes"
    "logging\_path", "Logging file path", "/tmp/tango-<logging name> or C:/tango-<logging name> (Windows)"
 
 -  The logging\_level property controls the initial logging level of a
-   device. Its set of possible values is: OFF, FATAL, ERROR, WARN, INFO
+   device. Its set of possible values is: OFF, FATAL, ERROR, WARNING, INFO
    or DEBUG. This property is overwritten by the verbose command line
    option (-v).
 
