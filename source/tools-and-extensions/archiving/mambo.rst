@@ -1047,10 +1047,10 @@ Lexicon
 .. |image13| image:: mambo/image13.png
    :width: 1.51433in
    :height: 0.25072in
-.. |image14| image:: mambo/image14.PNG
+.. |image14| image:: mambo/image14.png
    :width: 4.30268in
    :height: 2.00028in
-.. |image15| image:: mambo/image14.PNG
+.. |image15| image:: mambo/image14.png
    :width: 1.00000in
    :height: 0.24800in
 .. |image16| image:: mambo/image15.png
@@ -1116,10 +1116,10 @@ Lexicon
 .. |image36| image:: mambo/image35.png
    :width: 6.49242in
    :height: 3.79226in
-.. |image37| image:: mambo/image36.PNG
+.. |image37| image:: mambo/image36.png
    :width: 0.65973in
    :height: 0.24963in
-.. |image38| image:: mambo/image37.PNG
+.. |image38| image:: mambo/image37.png
    :width: 0.59118in
    :height: 0.21420in
 .. |image39| image:: mambo/image38.png
