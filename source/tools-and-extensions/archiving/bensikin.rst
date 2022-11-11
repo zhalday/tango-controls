@@ -337,7 +337,7 @@ A dialog will then appear to allow you to filter the list of
 contexts in database following different criteria:
 
 .. _bensikin_fig_11:
-.. figure:: bensikin/image32.PNG
+.. figure:: bensikin/image32.png
 
    Figure 11: Data base Context filter dialog
 
@@ -683,7 +683,7 @@ The Print option allows you to print text or table in the Snapshots
 or in the Contexts.
 
 .. _bensikin_fig_18:
-.. figure:: bensikin/image71.PNG
+.. figure:: bensikin/image71.png
 
    Figure 18: Print option
 
@@ -732,13 +732,13 @@ of shortcuts to often used functionalities.
 .. |image2| image:: bensikin/image6.png
    :width: 6.30208in
    :height: 3.89583in
-.. |image3| image:: bensikin/image7.PNG
+.. |image3| image:: bensikin/image7.png
    :width: 1.71899in
    :height: 0.23962in
 .. |image4| image:: bensikin/image8.png
    :width: 0.17708in
    :height: 0.15625in
-.. |image5| image:: bensikin/image9.PNG
+.. |image5| image:: bensikin/image9.png
    :width: 1.45854in
    :height: 0.29171in
 .. |image6| image:: bensikin/image10.png
@@ -750,10 +750,10 @@ of shortcuts to often used functionalities.
 .. |image8| image:: bensikin/image12.png
    :width: 0.82292in
    :height: 0.23958in
-.. |image9| image:: bensikin/image13.PNG
+.. |image9| image:: bensikin/image13.png
    :width: 0.43756in
    :height: 0.23962in
-.. |image10| image:: bensikin/image14.PNG
+.. |image10| image:: bensikin/image14.png
    :width: 0.66676in
    :height: 0.21878in
 .. |image11| image:: bensikin/image8.png
@@ -804,13 +804,13 @@ of shortcuts to often used functionalities.
 .. |image26| image:: bensikin/image23.png
    :width: 0.17708in
    :height: 0.17708in
-.. |image27| image:: bensikin/image24.PNG
+.. |image27| image:: bensikin/image24.png
    :width: 1.71899in
    :height: 0.35422in
-.. |image28| image:: bensikin/image24.PNG
+.. |image28| image:: bensikin/image24.png
    :width: 1.71899in
    :height: 0.35422in
-.. |image29| image:: bensikin/image25.PNG
+.. |image29| image:: bensikin/image25.png
    :width: 1.21892in
    :height: 0.31254in
 .. |image30| image:: bensikin/image26.png
@@ -825,7 +825,7 @@ of shortcuts to often used functionalities.
 .. |image33| image:: bensikin/image29.png
    :width: 4.23881in
    :height: 4.33692in
-.. |image34| image:: bensikin/image24.PNG
+.. |image34| image:: bensikin/image24.png
    :width: 1.71899in
    :height: 0.35422in
 .. |image35| image:: bensikin/image30.png
@@ -834,10 +834,10 @@ of shortcuts to often used functionalities.
 .. |image36| image:: bensikin/image85.png
    :width: 2.12500in
    :height: 1.50000in
-.. |image37| image:: bensikin/image32.PNG
+.. |image37| image:: bensikin/image32.png
    :width: 6.30000in
    :height: 1.91319in
-.. |image38| image:: bensikin/image33.PNG
+.. |image38| image:: bensikin/image33.png
    :width: 0.80219in
    :height: 0.28129in
 .. |image39| image:: bensikin/image34.png
@@ -856,7 +856,7 @@ of shortcuts to often used functionalities.
    :width: 2.25000in
    :height: 1.40625in
 
-.. |image44| image:: bensikin/image39.PNG
+.. |image44| image:: bensikin/image39.png
    :width: 0.28129in
    :height: 0.23962in
 .. |image45| image:: bensikin/image26.png
@@ -919,10 +919,10 @@ of shortcuts to often used functionalities.
 .. |image66| image:: bensikin/image100.png
    :width: 0.70833in
    :height: 0.20833in
-.. |image67| image:: bensikin/image55.PNG
+.. |image67| image:: bensikin/image55.png
    :width: 0.51049in
    :height: 0.23962in
-.. |image68| image:: bensikin/image56.PNG
+.. |image68| image:: bensikin/image56.png
    :width: 0.78136in
    :height: 0.21878in
 .. |image69| image:: bensikin/image57.png
@@ -933,7 +933,7 @@ of shortcuts to often used functionalities.
    :height: 0.25000in
 .. |image71| image:: bensikin/image102.png
    :height: 0.3in
-.. |image72| image:: bensikin/image58.PNG
+.. |image72| image:: bensikin/image58.png
    :height: 0.3in
 .. |image73| image:: bensikin/image104.png
    :height: 0.3in
@@ -982,22 +982,22 @@ of shortcuts to often used functionalities.
 .. |image89| image:: bensikin/image83.png
    :width: 1.14583in
    :height: 0.23958in
-.. |image90| image:: bensikin/image71.PNG
+.. |image90| image:: bensikin/image71.png
    :width: 4.81944in
    :height: 6.75885in
-.. |image91| image:: bensikin/image72.PNG
+.. |image91| image:: bensikin/image72.png
    :width: 0.68760in
    :height: 0.45840in
-.. |image92| image:: bensikin/image73.PNG
+.. |image92| image:: bensikin/image73.png
    :width: 1.22934in
    :height: 0.59383in
-.. |image93| image:: bensikin/image74.PNG
+.. |image93| image:: bensikin/image74.png
    :width: 0.60425in
    :height: 0.48965in
-.. |image94| image:: bensikin/image74.PNG
+.. |image94| image:: bensikin/image74.png
    :width: 0.32738in
    :height: 0.36309in
-.. |image95| image:: bensikin/image73.PNG
+.. |image95| image:: bensikin/image73.png
    :width: 0.84226in
    :height: 0.37798in
 .. |image96| image:: bensikin/image75.png
@@ -1006,7 +1006,7 @@ of shortcuts to often used functionalities.
 .. |image97| image:: bensikin/image76.png
    :width: 2.34328in
    :height: 2.80564in
-.. |image98| image:: bensikin/image72.PNG
+.. |image98| image:: bensikin/image72.png
    :width: 0.47321in
    :height: 0.37202in
 .. |image99| image:: bensikin/image77.png
