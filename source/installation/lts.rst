@@ -10,8 +10,12 @@ In 2016, the `Tango-Controls Steering Committee <https://www.tango-controls.org/
 Long Term Support (LTS) versions are special versions of Tango components which will be supported for at least 5 years (starting from the day when the next direct major version is released).
 LTS versions will benefit from critical bug fixes and potentially some patches for simple new features and less critical bugs.
 
-For cppTango, the latest 9.3 version (currently 9.3.5) will become a LTS version as soon as cppTango 9.4.0 will be released (foreseen on October 2nd 2022).
-This means that cppTango 9.3 will be supported until October 2nd 2027.
+For cppTango, the latest 9.3 version became an LTS version when cppTango 9.4.0
+was released on September 30th 2022, three days ahead of schedule. This means that
+cppTango 9.3.x will be supported until October 2nd 2027.
+
+For the LTS versions only cppTango 9.3.x and starter will stay at C++98, all
+other projects can require newer C++ standards.
 
 For PyTango there is no LTS policy. PyTango releases target the most recent minor release of cppTango.
 This means that PyTango currently (July 2022) supports cppTango 9.3.x.
