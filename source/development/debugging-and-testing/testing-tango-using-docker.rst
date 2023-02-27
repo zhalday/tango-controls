@@ -90,7 +90,7 @@ Here is very small example of docker-compose.yml which runs up the DB and the Da
 
 To start the whole stack execute ``docker compose up`` in the same directory as the above docker-compose yaml file.
 
-Once docker containers are up and running one can access mysql on localhost:9999 and the tango host on localhost:10000
+Once docker containers are up and running one can access the database on ``localhost:9999`` and the tango host on ``localhost:10000``
 
 For instance, one can start `jive`_ (assuming it is installed on the system).
 
