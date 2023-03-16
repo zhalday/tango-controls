@@ -8,7 +8,6 @@
 build:
   <<: *only-default
   image: debian:10
-  stage: test
   before_script:
     - apt-get update
     - apt-get install --yes python3-pip
