@@ -1,6 +1,8 @@
 # See https://docs.gitlab.com/ce/ci/yaml/README.html for the documentation
 
 .only-default: &only-default
+  tags:
+    - docker, linux, amd64
   only:
     - main
     - merge_requests
@@ -8,7 +10,6 @@
 build:
   <<: *only-default
   image: debian:10
-  stage: test
   before_script:
     - apt-get update
     - apt-get install --yes python3-pip
