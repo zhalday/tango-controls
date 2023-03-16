@@ -1,6 +1,8 @@
 # See https://docs.gitlab.com/ce/ci/yaml/README.html for the documentation
 
 .only-default: &only-default
+  tags:
+    - docker, linux, amd64
   only:
     - main
     - merge_requests
