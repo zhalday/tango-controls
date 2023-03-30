@@ -46,6 +46,7 @@ extensions = [
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
     'sphinx.ext.intersphinx',
+    'sphinx_copybutton',
     'tangocontrib.metalabels',
 #    'sphinx.ext.autosectionlabel',
 ]
