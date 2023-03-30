@@ -31,6 +31,8 @@ Non-interactive installation
 
    sudo mariadb -u root
    ALTER USER 'root'@'localhost' IDENTIFIED BY 'mypassword';
+   # The following 2 lines do not apply on recent mariadb versions (MariaDB-10.4+)
+   # Please refer to MariaDB documentation to configure correctly your users (https://mariadb.com/kb/en/alter-user/ and https://mariadb.com/kb/en/set-password/)
    UPDATE mysql.user SET authentication_string = '' WHERE user = 'root';
    UPDATE mysql.user SET plugin = '' WHERE user = 'root';
 
