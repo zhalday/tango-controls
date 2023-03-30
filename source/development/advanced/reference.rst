@@ -1318,9 +1318,10 @@ EventSubscriptionChange command. They are:
 
    "Command in parameter", "Parameter meaning"
    "argin[0]", "Device name"
-   "argin[1]", "Attribute name"
+   "argin[1]", "Attribute/pipe name"
    "argin[2]", "action (subscribe or unsubsribe)"
-   "argin[3]", "event name (change, periodic, archive,attr\_conf)"
+   "argin[3]", "event name (change, quality, periodic, archive, user\_event, attr\_conf, data\_ready, intr\_change, pipe)"
+   "argin[4]", "<Tango client IDL version>"
 
 The command output parameters aer all the necessary data to build one
 event connection between a client and the device server process
@@ -1332,11 +1333,19 @@ generating the events. This means:
    "Command out parameter", "Parameter meaning"
    "svalue[0]", "Heartbeat ZMQ socket connect end point"
    "svalue[1]", "Event ZMQ socket connect end point"
+   "svalue[2]", "<Alternate Heartbeat pub endpoint>"
+   "svalue[3]", "<Alternate Event pub endpoint>"
+   ...
+   "svalue[n-3]", "<Alternate Heartbeat pub endpoint>"
+   "svalue[n-2]", "<Alternate Event pub endpoint>"
+   "svalue[n-1]", "event name used by this server as zmq topic to send events"
+   "svalue[n]", "channel name used by this server to send heartbeat events"
    "lvalue[0]", "Tango lib release used by device server"
    "lvalue[1]", "Device IDL release"
    "lvalue[2]", "Subscriber HWM"
    "lvalue[3]", "Rate (Multicasting related)"
    "lvalue[4]", "IVL (Multicasting related)"
+   "lvalue[5]", "ZMQ release"
 
 The EventConfirmSubscription command
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
