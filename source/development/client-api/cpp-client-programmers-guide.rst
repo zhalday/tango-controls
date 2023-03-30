@@ -855,6 +855,13 @@ events. First, you have to define a callback method as follows:
         }
     }
 
+.. note::
+    If the event is an error event (myevent->err == true), the attr_value field in myevent EventData object will be empty (null pointer).  
+    The same applies for some other kinds of events. For example, attr_conf field in AttrConfEventData object will be 
+    a null pointer in case of error event (if the err field is true). 
+    As a consequence, the device server programmer should always check the err field before trying to extract the 
+    EventData::attr_value or AttrConfEventData::attr_conf fields associated to the event.
+
 Then the main code must subscribe to the event and choose the push or
 the pull model for event reception.
 
