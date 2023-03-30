@@ -201,26 +201,27 @@ Two libraries have been developed to the *historical data extraction*:
 Source code
 -----------
 
-The source code is available on GitHub in the following repositories:
+The source code is available on Gitlab in the following repositories:
 
-.. _hdbpp-timescale-project: https://github.com/tango-controls-hdbpp/hdbpp-timescale-project
-.. _hdbpp-mysql-project: https://github.com/tango-controls-hdbpp/hdbpp-mysql-project
-.. _hdbpp-cm: https://github.com/tango-controls-hdbpp/hdbpp-cm
-.. _hdbpp-es: https://github.com/tango-controls-hdbpp/hdbpp-es
-.. _hdbpp-cm-es: https://github.com/tango-controls-hdbpp/hdbpp-cm-es
-.. _libhdbpp: https://github.com/tango-controls-hdbpp/libhdbpp
-.. _libhdbpp-mysql: https://github.com/tango-controls-hdbpp/libhdbpp-mysql
-.. _libhdbpp-mysql-legacy: https://github.com/tango-controls-hdbpp/libhdbpp-mysql-legacy
-.. _libhdbpp-cassandra: https://github.com/tango-controls-hdbpp/libhdbpp-cassandra
-.. _libhdbpp-timescale: https://github.com/tango-controls-hdbpp/libhdbpp-timescale
-.. _libhdbpp-postgresql: https://github.com/tango-controls-hdbpp/libhdbpp-postgresql
-.. _libhdbpp-elk: https://github.com/tango-controls-hdbpp/libhdbpp-elk
-.. _hdbpp-benchmark: https://github.com/tango-controls-hdbpp/hdbpp-benchmark
-.. _CassandraMonitor: https://github.com/tango-controls-hdbpp/CassandraMonitor
-.. _hdbpp-configurator: https://github.com/tango-controls-hdbpp/hdbpp-configurator
-.. _hdbpp-viewer: https://github.com/tango-controls-hdbpp/hdbpp-viewer
-.. _libhdbpp-extraction-java: https://github.com/tango-controls-hdbpp/libhdbpp-extraction-java
-.. _libhdbpp-extraction-cpp: https://github.com/tango-controls-hdbpp/libhdbpp-extraction-cpp
+.. _hdbpp-timescale-project: https://gitlab.com/tango-controls/hdbpp/hdbpp-timescale-project
+.. _hdbpp-mysql-project: https://gitlab.com/tango-controls/hdbpp/hdbpp-mysql-project
+.. _hdbpp-cm: https://gitlab.com/tango-controls/hdbpp/hdbpp-cm
+.. _hdbpp-es: https://gitlab.com/tango-controls/hdbpp/hdbpp-es
+.. _hdbpp-cm-es: https://gitlab.com/tango-controls/hdbpp/hdbpp-cm-es
+.. _libhdbpp: https://gitlab.com/tango-controls/hdbpp/libhdbpp
+.. _libhdbpp-mysql: https://gitlab.com/tango-controls/hdbpp/libhdbpp-mysql
+.. _libhdbpp-mysql-legacy: https://gitlab.com/tango-controls/hdbpp/libhdbpp-mysql-legacy
+.. _libhdbpp-cassandra: https://gitlab.com/tango-controls/hdbpp/libhdbpp-cassandra
+.. _libhdbpp-timescale: https://gitlab.com/tango-controls/hdbpp/libhdbpp-timescale
+.. _libhdbpp-postgresql: https://gitlab.com/tango-controls/hdbpp/libhdbpp-postgresql
+.. _libhdbpp-elk: https://gitlab.com/tango-controls/hdbpp/libhdbpp-elk
+.. _hdbpp-benchmark: https://gitlab.com/tango-controls/hdbpp/hdbpp-benchmark
+.. _CassandraMonitor: https://gitlab.com/tango-controls/hdbpp/CassandraMonitor
+.. _hdbpp-configurator: https://gitlab.com/tango-controls/hdbpp/hdbpp-configurator
+.. _hdbpp-viewer: https://gitlab.com/tango-controls/hdbpp/hdbpp-viewer
+.. _libhdbpp-extraction-java: https://gitlab.com/tango-controls/hdbpp/libhdbpp-extraction-java
+.. _libhdbpp-extraction-cpp: https://gitlab.com/tango-controls/hdbpp/libhdbpp-extraction-cpp
+.. _libhdbpp-python: https://gitlab.com/tango-controls/hdbpp/libhdbpp-python
 .. _eGiga2m: https://github.com/luciozambon/eGiga2m
 
 * hdbpp-timescale-project_: A project to centralize and build all the needed components of a full HDB++ setup with the Timescaledb backend.
@@ -241,6 +242,7 @@ The source code is available on GitHub in the following repositories:
 * hdbpp-viewer_: the HDB++ Viewer GUI (in Java)
 * libhdbpp-extraction-java_: HDB++ Java extraction library
 * libhdbpp-extraction-cpp_: HDB++ C++ extraction library
+* libhdbpp-python_: HDB++ python extraction library
 * eGiga2m_: Web graphic data viewer able to show HDB++ data
 
 .. note::
@@ -252,11 +254,11 @@ Documentation for building and installing
 -----------------------------------------
 
 The documentation for building and installing many of the components is available on the
-different git repositories from https://github.com/tango-controls-hdbpp Github organization.
+different git repositories from https://gitlab.com/tango-controls/hdbpp Gitlab organization.
 
 
 Please, have a look at the README files from the different git repositories
-(For instance: https://github.com/tango-controls-hdbpp/hdbpp-timescale-project).
+(For instance: https://gitlab.com/tango-controls/hdbpp/hdbpp-timescale-project).
 They explain how to install the HDB++ libraries as well as the device servers.
 
 .. note::
