@@ -46,6 +46,7 @@ extensions = [
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
     'sphinx.ext.intersphinx',
+    'sphinx_copybutton',
     'tangocontrib.metalabels',
 #    'sphinx.ext.autosectionlabel',
 ]
@@ -68,7 +69,7 @@ master_doc = 'contents'
 
 # General information about the project.
 project = u'Tango Controls'
-copyright = u'2017-2020, Tango Community, Creative Commons Attribution 4.0 International (CC BY 4.0)'
+copyright = u'2017-2023, Tango Community, Creative Commons Attribution 4.0 International (CC BY 4.0)'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
