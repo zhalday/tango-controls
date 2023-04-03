@@ -7,7 +7,7 @@ Using Tango docker containers
 
 In this section we describe how one can test newly developed tango device server using `docker <https://www.docker.com/>`_ containers.
 
-Tango docker containers provide a lightweight solution for deploying tango.
+Tango docker containers provide a lightweight solution for deploying tango, especially useful for local workstation development.
 
 To get info on how to install docker on your machine please refer to the docker `documentation <https://docs.docker.com/engine/installation/>`_.
 
@@ -32,10 +32,6 @@ The sources for these docker images are hosted and maintained on the SKAO gitlab
 
 Tango docker stack
 ~~~~~~~~~~~~~~~~~~
-
-Typical tango stack looks like this:
-
-.. image:: testing-tango-using-docker/tango-stack.png
 
 The easiest way to setup the whole stack on a local development/test computer is to use `docker compose <https://docs.docker.com/compose/>`_
 
@@ -112,30 +108,30 @@ The default username/password is ``tango-cs/tango`` and an example query from th
 
 .. code-block:: shell
 
-    curl -s -u "tango-cs:tango" http://localhost:8080/tango/rest/rc4/hosts/tango-cs/10000/devices/dserver/TangoTest/test/ | python3.11 -m json.tool
+    curl -s -u "tango-cs:tango" http://localhost:8080/tango/rest/rc4/hosts/tango-dbds/10000/devices/dserver/TangoTest/test/ | python3.11 -m json.tool
     {
         "name": "dserver/TangoTest/test",
         "info": {
-            "last_exported": "24th February 2023 at 14:23:11",
-            "last_unexported": "?",
+            "last_exported": "3rd April 2023 at 14:59:32",
+            "last_unexported": "3rd April 2023 at 14:59:23",
             "name": "dserver/tangotest/test",
-            "ior": "IOR:010000001700000049444c3a54616e676f2f4465766963655f353a312e3000000100000000000000ad000000010102000b0000003137322e32362e302e350000bbdd00000e000000fe4fc8f86300000001000000000100000300000000000000080000000100000000545441010000001c000000010000000100010001000000010001050901010001000000090101000254544141000000010000000d00000031393031363536316539356300000000250000002f746d702f6f6d6e692d74616e676f2f3030303030303030312d3136373732343835393100",
+            "ior": "IOR:010000001700000049444c3a54616e676f2f4465766963655f353a312e3000000100000000000000ad000000010102000b0000003137322e31382e302e340000e7ce00000e000000fed4e92a6400000001000000000100000300000000000000080000000100000000545441010000001c000000010000000100010001000000010001050901010001000000090101000254544141000000010000000d00000036343139356661396237343500000000250000002f746d702f6f6d6e692d74616e676f2f3030303030303030312d3136383035333339373200",
             "version": "5",
             "exported": true,
             "pid": 1,
             "server": "TangoTest/test",
-            "hostname": "19016561e95c",
+            "hostname": "64195fa9b745",
             "classname": "unknown",
             "is_taco": false
         },
-        "attributes": "http://localhost:8080/tango/rest/rc4/hosts/tango-cs/10000/devices/dserver/TangoTest/test//attributes",
-        "commands": "http://localhost:8080/tango/rest/rc4/hosts/tango-cs/10000/devices/dserver/TangoTest/test//commands",
-        "pipes": "http://localhost:8080/tango/rest/rc4/hosts/tango-cs/10000/devices/dserver/TangoTest/test//pipes",
-        "properties": "http://localhost:8080/tango/rest/rc4/hosts/tango-cs/10000/devices/dserver/TangoTest/test//properties",
-        "state": "http://localhost:8080/tango/rest/rc4/hosts/tango-cs/10000/devices/dserver/TangoTest/test//state",
+        "attributes": "http://localhost:8080/tango/rest/rc4/hosts/tango-dbds/10000/devices/dserver/TangoTest/test//attributes",
+        "commands": "http://localhost:8080/tango/rest/rc4/hosts/tango-dbds/10000/devices/dserver/TangoTest/test//commands",
+        "pipes": "http://localhost:8080/tango/rest/rc4/hosts/tango-dbds/10000/devices/dserver/TangoTest/test//pipes",
+        "properties": "http://localhost:8080/tango/rest/rc4/hosts/tango-dbds/10000/devices/dserver/TangoTest/test//properties",
+        "state": "http://localhost:8080/tango/rest/rc4/hosts/tango-dbds/10000/devices/dserver/TangoTest/test//state",
         "_links": {
-            "_self": "http://localhost:8080/tango/rest/rc4/hosts/tango-cs/10000/devices/dserver/TangoTest/test/",
-            "_parent": "http://localhost:8080/tango/rest/rc4/hosts/tango-cs/10000/devices/dserver/"
+            "_self": "http://localhost:8080/tango/rest/rc4/hosts/tango-dbds/10000/devices/dserver/TangoTest/test/",
+            "_parent": "http://localhost:8080/tango/rest/rc4/hosts/tango-dbds/10000/devices/dserver/"
         }
     }
  
