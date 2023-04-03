@@ -18,8 +18,8 @@ services:
       - MARIADB_USER=tango
       - MARIADB_PASSWORD=tango
 
-  tango-cs:
-    image: artefact.skao.int/ska-tango-images-tango-cpp:9.3.13
+  tango-dbds:
+    image: artefact.skao.int/ska-tango-images-tango-cpp:9.4.1
     platform: linux/x86_64
     networks:
       - tango-net
@@ -35,13 +35,14 @@ services:
       - "tango-db:localhost"
     depends_on:
       - tango-db
-    # Alternative to use health-check as a depends_on/condition
+    # The proper way to wait for a service to be ready is to use a container health-check. 
+    # However, this is not yet available in the container image. So an alternative approach
     # is to wait for port to be open:
     entrypoint:
       - /usr/local/bin/wait-for-it.sh
       - tango-db:3306 --timeout=30 --strict
       - --
-      - /usr/local/bin/DataBaseds 2 -ORBendPoint giop:tcp::10000
+      - /usr/local/bin/DataBaseds 2 -ORBendPoint giop:tcp:0.0.0.0:10000
 
   tango-rest:
     image: artefact.skao.int/ska-tango-images-tango-rest:1.14.8
@@ -51,14 +52,14 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - TANGO_HOST=tango-cs:10000
+      - TANGO_HOST=tango-dbds:10000
     links:
-      - "tango-cs:localhost"
+      - "tango-dbds:localhost"
     depends_on:
-      - tango-cs
+      - tango-dbds
     entrypoint:
       - /usr/local/bin/wait-for-it.sh
-      - tango-cs:10000 --timeout=30 --strict
+      - tango-dbds:10000 --timeout=30 --strict
       - --
       - /usr/bin/supervisord --configuration /etc/supervisor/supervisord.conf
 
@@ -68,13 +69,13 @@ services:
     networks:
       - tango-net
     environment:
-      - TANGO_HOST=tango-cs:10000
+      - TANGO_HOST=tango-dbds:10000
     links:
-      - "tango-cs:localhost"
+      - "tango-dbds:localhost"
     depends_on:
-      - tango-cs
+      - tango-dbds
     entrypoint:
       - /usr/local/bin/wait-for-it.sh
-      - tango-cs:10000 --timeout=30 --strict
+      - tango-dbds:10000 --timeout=30 --strict
       - --
       - /usr/local/bin/TangoTest test
