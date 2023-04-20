@@ -60,7 +60,7 @@ Here is very small example of docker-compose.yml which runs up the DB and the Da
           - MARIADB_PASSWORD=tango
 
       tango-cs:
-        image: artefact.skao.int/ska-tango-images-tango-cpp:9.3.13
+        image: artefact.skao.int/ska-tango-images-tango-cpp:9.4.1
         platform: linux/x86_64
         networks:
           - tango-net
