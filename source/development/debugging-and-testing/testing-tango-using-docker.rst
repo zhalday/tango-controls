@@ -86,11 +86,16 @@ Here is very small example of docker-compose.yml which runs up the DB and the Da
 
 To start the whole stack execute ``docker compose up`` in the same directory as the above docker-compose yaml file.
 
+.. note::
+  `docker compose` (V2) is installed by default with `Docker Desktop`_. However, if you have another type of docker/container
+  installation then you may be able to use `docker-compose` instead - or install the newer docker compose V2 manually from here: https://docs.docker.com/compose/
+
 Once docker containers are up and running one can access the database on ``localhost:9999`` and the tango host on ``localhost:10000``
 
 For instance, one can start `jive`_ (assuming it is installed on the system).
 
 .. _jive: https://gitlab.com/tango-controls/jive
+.. _Docker Desktop: https://www.docker.com/products/docker-desktop/
 
 Tango docker stack for Tango REST API
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
