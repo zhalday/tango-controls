@@ -113,7 +113,7 @@ The default username/password is ``tango-cs/tango`` and an example query from th
 
 .. code-block:: shell
 
-    curl -s -u "tango-cs:tango" http://localhost:8080/tango/rest/rc4/hosts/tango-dbds/10000/devices/dserver/TangoTest/test/ | python3.11 -m json.tool
+    curl -s -u "tango-cs:tango" http://localhost:8080/tango/rest/rc4/hosts/tango-dbds/10000/devices/dserver/TangoTest/test/ | python3 -m json.tool
     {
         "name": "dserver/TangoTest/test",
         "info": {
