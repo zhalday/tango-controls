@@ -19,7 +19,7 @@ Tango docker containers
 `SKAO`_ provides several docker containers for Tango development and deployment, including but not limited to: 
 
  * tango-db: a (mysql-compatible) mariadb container with the Tango schema 
- * tango-cpp: a container with core Tango libraries and dependencies
+ * tango-cpp: a container with core Tango libraries and dependencies that can run the `DatabaseDS` Device Server
  * tango-rest: a `Tango REST server <https://github.com/tango-controls/rest-server>`_
  * tango-test: the well-established `TangoTest device server <https://gitlab.com/tango-controls/TangoTest>`_
 
@@ -35,7 +35,7 @@ Tango docker stack
 
 The easiest way to setup the whole stack on a local development/test computer is to use `docker compose <https://docs.docker.com/compose/>`_
 
-Here is very small example of docker-compose.yml which runs up the DB and the Database Device Server:
+Here is a very small example of docker-compose.yml which runs up the DB and the Database Device Server:
 
 .. code-block:: yaml
 
@@ -88,7 +88,7 @@ To start the whole stack execute ``docker compose up`` in the same directory as 
 
 .. note::
   `docker compose` (V2) is installed by default with `Docker Desktop`_. However, if you have another type of docker/container
-  installation then you may be able to use `docker-compose` instead - or install the newer docker compose V2 manually from here: https://docs.docker.com/compose/
+  installation then you may be able to use `docker-compose up` instead - or install the newer docker compose V2 manually from here: https://docs.docker.com/compose/
 
 Once docker containers are up and running one can access the database on ``localhost:9999`` and the tango host on ``localhost:10000``
 
