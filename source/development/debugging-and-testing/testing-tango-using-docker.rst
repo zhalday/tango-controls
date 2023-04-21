@@ -107,7 +107,7 @@ The following :download:`compose.yaml <testing-tango-using-docker/compose.yaml>`
 .. literalinclude:: testing-tango-using-docker/compose.yaml
   :language: yaml
 
-Note this is almost the same as the previous, except we have added tango-rest and tango-test containers. A few seconds after the stack has been started with ``docker compose up``, the Tango REST API can be accessed at http://localhost:8080/tango/rest/rc4/
+Note this is almost the same as the previous, except we have added tango-rest and tango-test containers. A few seconds after the stack has been started with ``docker compose up``, the :ref:`tango_rest_api` can be accessed at http://localhost:8080/tango/rest/rc4/
 
 The default username/password is ``tango-cs/tango`` and an example query from the host might look like this:
 
