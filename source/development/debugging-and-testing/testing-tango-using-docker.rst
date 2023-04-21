@@ -92,7 +92,7 @@ To start the whole stack execute ``docker compose up`` in the same directory as 
 
 Once docker containers are up and running one can access the database on ``localhost:9999`` and the tango host on ``localhost:10000``
 
-For instance, one can start `jive`_ (assuming it is installed on the system).
+For instance, one can start `jive`_ (assuming it is installed on the system) and use the Jive GUI to interact with the Device Servers, running in the containers.
 
 .. _jive: https://gitlab.com/tango-controls/jive
 .. _Docker Desktop: https://www.docker.com/products/docker-desktop/
