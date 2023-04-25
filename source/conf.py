@@ -379,7 +379,7 @@ texinfo_documents = [
 epub_title = u'Tango Controls Documentation'
 epub_author = u'Tango Community'
 epub_publisher = u'Tango Community'
-epub_copyright = u'2017-2020, Tango Community, CC BY 4.0'
+epub_copyright = u'2017-2023, Tango Community, CC BY 4.0'
 
 # The basename for the epub file. It defaults to the project name.
 #epub_basename = u'Tango Controls Documentation'
