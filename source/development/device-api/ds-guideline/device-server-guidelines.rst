@@ -642,8 +642,8 @@ documented. In the previous example, rereading the STANDBY state after
 performing any movement must ensure that the required movement is
 completed (and not that it has not yet been started!!).
 
-.. figure:: media/image4.png
-   
+.. figure:: media/image4.jpeg
+
    Example of State transitions
 
 
