@@ -20,7 +20,7 @@ This way, out of this virtual box, another great, sophisticated control system f
 TangoBox 10.3
 -------------
 * You may download TangoBox 10.3 from
-  `the temporary location <https://s2innovation.sharepoint.com/:u:/s/Developers/EXcBfXqgugRIkqP2GRgOycYB6_2xjxak7ukUrxwofcgo9A?e=wLChvo>`_.
+  `this temporary location <https://s2innovation.sharepoint.com/:u:/s/Developers/EXcBfXqgugRIkqP2GRgOycYB6_2xjxak7ukUrxwofcgo9A?e=wLChvo>`_.
 
 Previous versions
 -----------------
