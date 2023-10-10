@@ -19,13 +19,18 @@ This way, out of this virtual box, another great, sophisticated control system f
 
 TangoBox 10.3
 -------------
-A `new version <https://s2innovation.sharepoint.com/:u:/s/Developers/EXcBfXqgugRIkqP2GRgOycYB6_2xjxak7ukUrxwofcgo9A?e=wLChvo>`_ of TangoBox is now available.
+* You may download TangoBox 9.3 from
+  `here <https://s2innovation.sharepoint.com/:u:/s/Developers/EXcBfXqgugRIkqP2GRgOycYB6_2xjxak7ukUrxwofcgo9A?e=wLChvo>`_.
 
+Previous versions
+-----------------
+
+Previous versions are available below.
 
 TangoBox 9.3
 ------------
 
-* You may download it from
+* You may download TangoBox 9.3 from
   `here <https://s2innovation.sharepoint.com/:f:/s/Developers/EovD2IBwhppAp-ZLXtawQ6gB9F6aXPPs2msr2hgPGTO-FQ?e=Ii3tnr>`_.
 * Please read :doc:`Tango Controls demo VM’s documentation <vm/tangobox>`.
 * See also `a release note <https://github.com/tango-controls/tangobox/releases/tag/v9.3.3>`_
@@ -47,11 +52,6 @@ The TangoBox 9.3 release is also available as an AMI image on the AWS (Ireland r
    ami-0a2e0cddaa68be39f
 
 Please refer to :doc:`Amazon Cloud <amazon-cloud>`.
-
-Previous versions
------------------
-
-Previous versions are available below.
 
 TangoBox 9.2
 ~~~~~~~~~~~~
