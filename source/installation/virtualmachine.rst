@@ -17,10 +17,13 @@ proof-of-concepts and even production ready systems.
 
 This way, out of this virtual box, another great, sophisticated control system for the real world can be born!
 
+TangoBox 10.3
+-------------
+A `new version<https://s2innovation.sharepoint.com/:u:/s/Developers/EXcBfXqgugRIkqP2GRgOycYB6_2xjxak7ukUrxwofcgo9A?e=wLChvo>`_ of TangoBox is now available.
+
+
 TangoBox 9.3
 ------------
-
-The latest release of TangoBox is based on Tango Controls v9.3.3 installed on 64 bit Ubuntu 18.04.
 
 * You may download it from
   `here <https://s2innovation.sharepoint.com/:f:/s/Developers/EovD2IBwhppAp-ZLXtawQ6gB9F6aXPPs2msr2hgPGTO-FQ?e=Ii3tnr>`_.
