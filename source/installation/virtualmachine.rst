@@ -19,7 +19,7 @@ This way, out of this virtual box, another great, sophisticated control system f
 
 TangoBox 10.3
 -------------
-A `new version<https://s2innovation.sharepoint.com/:u:/s/Developers/EXcBfXqgugRIkqP2GRgOycYB6_2xjxak7ukUrxwofcgo9A?e=wLChvo>`_ of TangoBox is now available.
+A `new version <https://s2innovation.sharepoint.com/:u:/s/Developers/EXcBfXqgugRIkqP2GRgOycYB6_2xjxak7ukUrxwofcgo9A?e=wLChvo>`_ of TangoBox is now available.
 
 
 TangoBox 9.3
