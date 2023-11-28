@@ -1857,7 +1857,6 @@ in the following table
    "Tango::DevULong64", "Tango::DEV\_ULONG64", "24"
    "Tango::DevVarLong64Array", "Tango::DEVVAR\_LONG64ARRAY", "25"
    "Tango::DevVarULong64Array", "Tango::DEVVAR\_ULONG64ARRAY", "26"
-   "Tango::DevInt", "Tango::DEV\_INT", "27"
    "Tango::DevEncoded", "Tango::DEV\_ENCODED", "28"
    "Tango::DevEnum", "Tango::DEV\_ENUM", "29"
    "Tango::DevPipeBlob", "Tango::DEV\_PIPE\_BLOB", "30"
