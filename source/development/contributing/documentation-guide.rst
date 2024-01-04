@@ -16,7 +16,7 @@ About this documentation
 The documentation is written with the `Sphinx`_ markup language. It is a documentation framework based on
 `Docutils`_ and uses `reStructuredText`_ for providing content. For details please refer to `Sphinx webpage`_.
 
-The documentation sources are stored on GitHub: https://github.com/tango-controls/tango-doc .
+The documentation sources are stored on GitLab: https://gitlab.com/tango-controls/tango-doc .
 
 It is publicised in HTML, PDF and EPUB formats on the readthedoc.io: http://tango-controls.readthedocs.io/
 
@@ -30,7 +30,7 @@ Updating the documentation
 If you find that some useful information is missing, misleading or you can think about any potential improvements
 please do either:
 
-* send a request through the github project: https://github.com/tango-controls/tango-doc/issues
+* send a request through the gitlab project: https://gitlab.com/tango-controls/tango-doc/issues
 * or do correction by yourself.
 
 If you decide to contribute by writing, the preferred way is to:
@@ -41,9 +41,9 @@ If you decide to contribute by writing, the preferred way is to:
 
 .. note::
 
-   .. rubric:: GitHub online edit
+   .. rubric:: GitLab online edit
 
-   For small fixes, you may use GitHub online editing feature.
+   For small fixes, you may use GitLab online editing feature.
    It is a good practice to avoid direct commits to 'dev' nor to 'master' branch.
    Please select :guilabel:`Create a new branch and start pull request` before sending
    the change.
