@@ -26,6 +26,6 @@ Introduction
 
 * Source:
 
-        project: https://github.com/tango-controls/pogo
+        project: https://gitlab.com/tango-controls/pogo
 
         download: https://bintray.com/tango-controls/maven/Pogo/_latestVersion
