@@ -123,7 +123,7 @@ shows how the source code should be written.
     ...
     }
 
-A polling period of 400 mS is set for the command called “IOStartPoll”
+A polling period of 400 ms is set for the command called “IOStartPoll”
 at line 9 with the *set\_polling\_period* method of the Command class.
 Therefore, for a device of this class, the polling thread will start
 polling its IOStartPoll command at process start-up except if a
@@ -134,16 +134,16 @@ attribute called “String\_attr” is defined at line 20.
 
 Configuring the polling means defining device attribute/command polling
 period. The polling period has to be chosen with care. If reading an
-attribute needs 200 mS, there is no point to poll this attribute with a
-polling period equal or even below 200 mS. You should also take into
+attribute needs 200 ms, there is no point to poll this attribute with a
+polling period equal or even below 200 ms. You should also take into
 account that some free time has to be foreseen for external request(s)
-on the device. On average, for one attribute needing X mS as reading
-time, define a polling period which is equal to 1.4 X (280 mS for our
-example of one attribute needing 200 mS as reading time). In case the
+on the device. On average, for one attribute needing X ms as reading
+time, define a polling period which is equal to 1.4 X (280 ms for our
+example of one attribute needing 200 ms as reading time). In case the
 polling tuning is given to external user, Tango provides a way to define
 polling period minimun threshold. This is done using device properties.
 These properties are named *min\_poll\_period*, *cmd\_min\_poll\_period*
-and *attr\_min\_poll\_period*. The property min\_poll\_period (mS)
+and *attr\_min\_poll\_period*. The property min\_poll\_period (ms)
 defines a minimun polling period for the device. The property
 cmd\_min\_poll\_period allows the definition of a minimun polling period
 for a specific device command. The property attr\_min\_poll\_period
