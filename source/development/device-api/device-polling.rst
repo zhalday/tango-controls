@@ -87,8 +87,8 @@ process crashes!!).
 
 It is also possible to automatically poll a command (or an attribute)
 without sending command to the device server administration device. This
-request some coding (a method call) in the device server software during
-the command or attribute creation. In this case, for every devices
+demands to add a method call in the device server source code while
+creating the command or attribute. In this case, for every devices
 supporting this command or this attribute, polling configuration will be
 automatically updated in the database and the polling will start
 automatically at each device server process startup. It is possible to
@@ -134,9 +134,9 @@ attribute called “String\_attr” is defined at line 20.
 
 Configuring the polling means defining device attribute/command polling
 period. The polling period has to be chosen with care. If reading an
-attribute needs 200 ms, there is no point to poll this attribute with a
-polling period equal or even below 200 ms. You should also take into
-account that some free time has to be foreseen for external request(s)
+attribute needs 200 ms, there is no point polling this attribute with a
+period equal to or below 200 ms. You should also take into
+account that some free time has to be foreseen for external requests
 on the device. On average, for one attribute needing X ms as reading
 time, define a polling period which is equal to 1.4 X (280 ms for our
 example of one attribute needing 200 ms as reading time). In case the
