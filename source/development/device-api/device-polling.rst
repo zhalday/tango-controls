@@ -161,9 +161,9 @@ Configuring the polling threads pool
 
 Starting with Tango release 7, a Tango device server process may have
 several polling threads managed as a pool. For instance, this could be
-usefull in case of devices within the same device server process but
-accessed by different hardware channel when one of the channels is not
-responding (Thus generating long timeout and de-synchronising the
+useful in case of devices within the same device server process but
+accessing to different hardware channels when one of the channels is
+not responding (Thus generating long timeout and de-synchronising the
 polling thread). By default, the polling threads pool size is set to 1
 and all the polled object(s) are managed by the same thread (idem
 polling system in Tango releases older than release 7) . The
