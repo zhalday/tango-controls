@@ -21,7 +21,7 @@ from the code. Three methods are available for this purpose:
 
 where *implemented*\ =true indicates that events are pushed manually
 from the code and *detect*\ =true (when used) triggers the verification
-of the same event properties as for events send by the polling thread.
+of the same event properties as for events sent by the polling thread.
 When setting *detect*\ =false, no value checking is done on the pushed
 value! The class DeviceImpl also supports the first two methods with an
 addictional parameter attr\_name defining the attribute name.
@@ -46,11 +46,11 @@ push the event.
 See the class documentation for all available interfaces.
 
 For non-standard events a single call exists for pushing the data to the
-CORBA Notification Service (omniNotify). Clients who are subscribed to
+CORBA Notification Service (omniNotify). Clients who subscribed to
 this event have to know what data type is in the DeviceAttribute and
 unpack it accordingly.
 
-To push non-standard events, use the following api call is available to
+To push non-standard events, use the following API call is available to
 all device servers :
 
 .. code:: cpp
@@ -61,7 +61,7 @@ all device servers :
                  vector<double> &filterable_vals,
                  Attribute &att)
 
-where *attr\_name* is the name of the attribute\ *. Filterable\_names*
+where *attr\_name* is the name of the attribute. *filterable\_names*
 and *filterable\_vals* represent any filterable data which can be used
 by clients to filter on. Here is a typical example of what a server will
 need to do to send its own events. We are in the read method of the
