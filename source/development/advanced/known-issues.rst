@@ -35,7 +35,7 @@ Pushing attributes outside of main device server thread may fail
   `always_executed_hook`, `read_attr_hardware` or any device command executed from the main 
   server thread.
 
-Pushing attributes events on `read_$attribute` method after setting `attr_value` may crash the device
+Pushing attributes events on `read_attribute` method after setting `attr_value` may crash the device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - **known workaround:** `attr.set_value()` must be called after `push_change_event`, otherwise device will crash.
