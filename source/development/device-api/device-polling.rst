@@ -144,7 +144,7 @@ polling tuning is given to external user, Tango provides a way to define
 polling period minimun threshold. This is done using device properties.
 These properties are named *min\_poll\_period*, *cmd\_min\_poll\_period*
 and *attr\_min\_poll\_period*. The property min\_poll\_period (ms)
-defines a minimun polling period for the device. The property
+defines a minimum polling period for the device. The property
 cmd\_min\_poll\_period allows the definition of a minimun polling period
 for a specific device command. The property attr\_min\_poll\_period
 allows the definition of a minimun polling period for one device
