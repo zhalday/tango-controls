@@ -88,7 +88,7 @@ process crashes!!).
 It is also possible to automatically poll a command (or an attribute)
 without sending command to the device server administration device. This
 demands to add a method call in the device server source code while
-creating the command or attribute. In this case, for every devices
+creating the command or attribute. In this case, for every device
 supporting this command or this attribute, polling configuration will be
 automatically updated in the database and the polling will start
 automatically at each device server process startup. It is possible to
