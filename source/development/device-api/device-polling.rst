@@ -10,7 +10,7 @@ Device polling
 Introduction
 ------------
 
-Each tango device server automatically have a separate polling thread
+Each tango device server automatically has a separate polling thread
 pool. Polling a device means periodically executing command on a device
 (or reading device attribute) and storing the results (or the thrown
 exception) in a polling buffer. The aim of this polling is threefold :
@@ -57,7 +57,7 @@ process. Seven commands are dedicated to this feature. These commands
 are
 
 **AddObjPolling**
-    It add a new object (command or attribute) to the list of object(s)
+    It adds a new object (command or attribute) to the list of object(s)
     to be polled. It is also with this command that the polling period
     is specified.
 
@@ -66,7 +66,7 @@ are
     object(s) list
 
 **UpdObjPollingPeriod**
-    Change one object polling period
+    Changes one object polling period
 
 **StartPolling**
     Starts polling for the whole process
@@ -75,20 +75,20 @@ are
     Stops polling for the whole process
 
 **PolledDevice**
-    Allow a client to know which device are polled
+    Allows a client to know which device are polled
 
 **DevPollStatus**
-    Allow a client to precisely knows the polling status for a device
+    Allows a client to precisely knows the polling status for a device
 
 All the necessary parameters for the polling configuration are stored in
 the Tango database. Therefore, the polling configuration is not lost
 after a device server process stop and restart (or after a device server
-process crash!!).
+process crashes!!).
 
 It is also possible to automatically poll a command (or an attribute)
 without sending command to the device server administration device. This
-request some coding (a method call) in the device server software during
-the command or attribute creation. In this case, for every devices
+demands to add a method call in the device server source code while
+creating the command or attribute. In this case, for every device
 supporting this command or this attribute, polling configuration will be
 automatically updated in the database and the polling will start
 automatically at each device server process startup. It is possible to
@@ -123,8 +123,8 @@ shows how the source code should be written.
     ...
     }
 
-A polling period of 400 mS is set for the command called “IOStartPoll”
-at line 10 with the *set\_polling\_period* method of the Command class.
+A polling period of 400 ms is set for the command called “IOStartPoll”
+at line 9 with the *set\_polling\_period* method of the Command class.
 Therefore, for a device of this class, the polling thread will start
 polling its IOStartPoll command at process start-up except if a
 RemObjPolling indicating this device and the IOStartPoll command has
@@ -134,17 +134,17 @@ attribute called “String\_attr” is defined at line 20.
 
 Configuring the polling means defining device attribute/command polling
 period. The polling period has to be chosen with care. If reading an
-attribute needs 200 mS, there is no point to poll this attribute with a
-polling period equal or even below 200 mS. You should also take into
-account that some free time has to be foreseen for external request(s)
-on the device. On average, for one attribute needing X mS as reading
-time, define a polling period which is equal to 1.4 X (280 mS for our
-example of one attribute needing 200 mS as reading time). In case the
+attribute needs 200 ms, there is no point polling this attribute with a
+period equal to or below 200 ms. You should also take into
+account that some free time has to be foreseen for external requests
+on the device. On average, for one attribute needing X ms as reading
+time, define a polling period which is equal to 1.4 X (280 ms for our
+example of one attribute needing 200 ms as reading time). In case the
 polling tuning is given to external user, Tango provides a way to define
 polling period minimun threshold. This is done using device properties.
 These properties are named *min\_poll\_period*, *cmd\_min\_poll\_period*
-and *attr\_min\_poll\_period*. The property min\_poll\_period (mS)
-defined a minimun polling period for the device. The property
+and *attr\_min\_poll\_period*. The property min\_poll\_period (ms)
+defines a minimum polling period for the device. The property
 cmd\_min\_poll\_period allows the definition of a minimun polling period
 for a specific device command. The property attr\_min\_poll\_period
 allows the definition of a minimun polling period for one device
@@ -161,9 +161,9 @@ Configuring the polling threads pool
 
 Starting with Tango release 7, a Tango device server process may have
 several polling threads managed as a pool. For instance, this could be
-usefull in case of devices within the same device server process but
-accessed by different hardware channel when one of the channel is not
-responding (Thus generating long timeout and de-synchronising the
+useful in case of devices within the same device server process but
+accessing to different hardware channels when one of the channels is
+not responding (Thus generating long timeout and de-synchronising the
 polling thread). By default, the polling threads pool size is set to 1
 and all the polled object(s) are managed by the same thread (idem
 polling system in Tango releases older than release 7) . The
@@ -245,10 +245,10 @@ algorithm:
       read\_attributes)
 
    -  Do not allow the polling thread to be late: If it is the case
-      (because at the end of polling object 1, the time is greater than
-      the polling date of object 2), discard polling object and inform
-      event user by sending one event with error (Polling thread is late
-      and discard....)
+      (because at the end of polling object 1, the current time is
+      greater than the polling date planned for object 2), discard
+      polling object and inform event user by sending one event with
+      error (Polling thread is late and discard....)
 
 -  New polling algorithm introduced in Tango 9 as the default one. This
    means:
