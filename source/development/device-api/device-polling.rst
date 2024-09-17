@@ -245,10 +245,10 @@ algorithm:
       read\_attributes)
 
    -  Do not allow the polling thread to be late: If it is the case
-      (because at the end of polling object 1, the time is greater than
-      the polling date of object 2), discard polling object and inform
-      event user by sending one event with error (Polling thread is late
-      and discard....)
+      (because at the end of polling object 1, the current time is
+      greater than the polling date planned for object 2), discard
+      polling object and inform event user by sending one event with
+      error (Polling thread is late and discard....)
 
 -  New polling algorithm introduced in Tango 9 as the default one. This
    means:
