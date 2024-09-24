@@ -17,6 +17,7 @@ from the code. Three methods are available for this purpose:
 
     Attr::set_change_event(bool implemented, bool detect = true);
     Attr::set_archive_event(bool implemented, bool detect = true);
+    Attr::set_alarm_event(bool implemented, bool detect = true);
     Attr::set_data_ready_event( bool implemented);
 
 where *implemented*\ =true indicates that events are pushed manually
@@ -34,6 +35,7 @@ methods can be used:
 
     DeviceImpl::push_change_event (string attr_name, ....);
     DeviceImpl::push_archive_event(string attr_name, ....);
+    DeviceImpl::push_alarm_event(string attr_name, ....);
 
 For the data ready event, a DeviceImpl class method has to be used to
 push the event.
