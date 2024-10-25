@@ -47,7 +47,8 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.intersphinx',
     'sphinx_copybutton',
-    'tangocontrib.metalabels',
+    'myst_parser',
+#    'tangocontrib.metalabels',
 #    'sphinx.ext.autosectionlabel',
 ]
 
