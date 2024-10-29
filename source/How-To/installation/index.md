@@ -17,7 +17,6 @@ tango-on-windows
 tango-on-raspberry-pi
 amazon-cloud
 virtualmachine
-pytango-and-taurus-on-windows
 binary_package
 patches
 ```
