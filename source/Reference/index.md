@@ -1,6 +1,8 @@
 
+# Reference
+
 ```{toctree}
-:name: maintoc
+:name: Reference
 :maxdepth: 2
 
 atk_java_doc
