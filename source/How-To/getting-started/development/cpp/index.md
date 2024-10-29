@@ -11,4 +11,5 @@ first-device-class
 generating-events
 transferring-images
 user-loop
+how-to-create-inheritance-link
 ```
