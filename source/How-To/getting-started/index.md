@@ -27,6 +27,7 @@ Table of contents of this section:
 
 first-steps
 end-user/index
+end-user/how-to-start-device-server
 development/index
 administration/index
 ```

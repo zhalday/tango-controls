@@ -9,6 +9,7 @@
 
 jtango-client
 jtango-server
+how-to-integrate-java-server-with-astor.md
 ```
 
 For a more complete guide on JTango please refer to the

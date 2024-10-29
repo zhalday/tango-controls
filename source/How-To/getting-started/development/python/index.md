@@ -6,4 +6,6 @@
 :maxdepth: 2
 
 pytango-server
+how-to-pytango
+how-to-pytangoarchiving
 ```

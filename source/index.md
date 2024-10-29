@@ -25,6 +25,7 @@ How-To/index
 tools/tools
 Reference/index
 authors
+Old-but-precious/index
 ```
 
 ## How this documentation is organized

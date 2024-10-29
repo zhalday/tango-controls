@@ -3,7 +3,8 @@
 {audience}`beginner developers`, {lang}`any`
 
 ```{toctree}
-:name: generaldevelopement
+:maxdepth: 2
 
-
+how-to-first-device-class
+how-tune-polling-code-tango-class
 ```

@@ -8,5 +8,5 @@ In the following articles you will find useful information on testing and debugg
 :maxdepth: 2
 :name: debuggingandtestingtoc
 
-testing-tango-using-docker.rst
+testing-tango-using-docker
 ```

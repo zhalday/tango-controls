@@ -12,4 +12,5 @@ generating-events
 transferring-images
 user-loop
 how-to-create-inheritance-link
+use-vectors-set-attributes
 ```

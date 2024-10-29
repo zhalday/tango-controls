@@ -58,3 +58,16 @@ If you define an environment variable **TEMPLATES_PATH** to a directory containi
   {{ image2 }}
 
 [jive]: ../jive/index.html
+
+```{toctree}
+:maxdepth: 2
+:name: How-To/Tools
+
+compatibility
+dynamic_attr
+generated_code
+inheritance
+multi_classes
+packaging
+preferences
+```
