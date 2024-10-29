@@ -48,14 +48,22 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.intersphinx',
     'sphinx_copybutton',
-#    'tangocontrib.metalabels',
-#    'sphinx.ext.autosectionlabel',
+    'sphinx_togglebutton',
+    'sphinx_design',
+    'sphinxcontrib.mermaid',
 ]
 
 myst_enable_extensions = [
+    "attrs_inline",
     "colon_fence",
     "deflist",
 ]
+
+# Allow implicit target anchors for headings down to this level
+myst_heading_anchors = 5
+
+# when copying code blocks, exclude line numbers, prompts (like >>>), and the output
+copybutton_exclude = '.linenos, .gp, .go'
 
 # breathe_projects = { "cppTango": "cpp-api/xml" }
 
@@ -78,16 +86,16 @@ master_doc = 'contents'
 
 # General information about the project.
 project = u'Tango Controls'
-copyright = u'2017-2023, Tango Community, Creative Commons Attribution 4.0 International (CC BY 4.0)'
+copyright = u'2017-2024, Tango Community, Creative Commons Attribution 4.0 International (CC BY 4.0)'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 #
 # The short X.Y version.
-version = '9.3'
+version = '10.0'
 # The full version, including alpha/beta/rc tags.
-release = '9.3.4'
+release = '10.0.0'
 
 # rst_epilog is added at the end of each rst file. Here it will contain typical substitutions
 rst_epilog = """
@@ -200,35 +208,26 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'sphinx_book_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
-    "sticky_navigation": True,
-    "collapse_navigation": False,
-    'includehidden': False,
+   "logo": {
+      "alt_text": "Tango Controls documentation - Home",
+      "image_light": "img/logo_tangocontrols_background.png",
+      "image_dark": "img/logo_tangocontrols_white.png",
+   },
+   "repository_url": "https://gitlab.com/tango-controls/tango-doc",
+   "path_to_docs": "source",
+   "repository_branch": "doc-restructure-template",  # TODO:  remove once changes merged to main
+   "use_source_button": True,
+   "use_edit_page_button": True,
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
 # html_theme_path = ['_theme']
-
-# on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
-on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
-
-if True:  #
-    # Override default css to get a larger width for ReadTheDoc build
-    html_context = {
-        'extra_css_files': [
-           # 'https://media.readthedocs.org/css/sphinx_rtd_theme.css',
-           # 'https://media.readthedocs.org/css/readthedocs-doc-embed.css',
-            '_static/css/tango_cs_theme.css',
-            '_static/css/meta_label_tango.css',
-            '_static/css/theme_overrides.css'
-        ],
-    }
-
 
 
 # The name for this set of Sphinx documents.  If None, it defaults to
