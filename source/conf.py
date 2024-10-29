@@ -46,7 +46,6 @@ extensions = [
     "sphinx.ext.imgmath",
     "sphinx.ext.ifconfig",
     "sphinx.ext.viewcode",
-    "sphinx.ext.intersphinx",
     "sphinx_copybutton",
     "sphinx_togglebutton",
     "sphinx_design",
@@ -467,6 +466,8 @@ epub_exclude_files = ["search.html"]
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {
+    "itango": ("https://itango.readthedocs.io/en/latest/", None),
+    "pytango": ("https://pytango.readthedocs.io/en/stable/", None),
     "python": ("https://docs.python.org/3", None),
     "jive": ("https://jive.readthedocs.io/en/latest/", None),
 }
