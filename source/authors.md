@@ -10,6 +10,22 @@ by readers. This section lists the numerous contributors to the Tango
 documentation. If you are reading this section don't hesitate to send
 them some positive thoughts and thanks for their "labour of love" right now!
 
+The Tango Controls documentation you are reading has been assembled into its current form at three documentation sprints:
+
+1. **Third Write-the-Doc Team** - the following people participated in the third Write-the-Doc camp held at **l'Escandille** in Autrans (Vercors) in October 2024: 
+ Benjamin Bertrand, Reynald Bourtembourg, Thomas Braun, Andy Gotz, Vincent Hardion, Anton Joubert, Thomas Juerges, 
+ Damien Lacoste, Vicente Rey-Bakaikoa, Nicolas Tappret
+
+- **Second Write-the-Doc Team** - the following people participated in the second Write-the-Doc camp held at **Solaris** in Krakow (Poland):
+  Reynald Bourtembourg, Thomas Braun, Sébastien Gara, Philippe Gauron,
+  Andrew Götz, Piotr Goryl, Anton Joubert, Krystian Kędroń, Igor Khokhrakiov,
+  Grzegorz Kowalski, Olga Merkulova, Guillaume Mugerin, Lorenzo Pivetta and Sergi Rubio
+  
+- **First Write-the-Doc Team** - the following people assisted to the first Write-the-Doc camp in **St Nizier du Moucherotte** (Vercors):
+  Piotr Goryl, Olga Merkulova, Lukasz Zytniak, Lukasz Dudek, Matteo di Carlo,
+  Matteo Canzari, Igor Khokhrakiov, Reynald Bourtembourg, Jean-Michel Chaize,
+  Stuart James and Andy Götz
+
 The following people have contributed to the Tango documentation over the years:
 
 - **Gwenaelle Abeille** - for writing the original JTango documentation
@@ -36,14 +52,6 @@ The following people have contributed to the Tango documentation over the years:
   [device server guidelines ](#ds-guidelines):
   Alain Buteau, Jens Meyer, Jean Michel Chaize, Emmanuel Taurel, Pascal Verdier, Nicolas Leclerq,
   M.Lindberg, Sebastien Gara, S. Minolli, and Andy Götz.
-- **First Write-the-Doc Team** - the following people assisted to the first Write-the-Doc camp:
-  Piotr Goryl, Olga Merkulova, Lukasz Zytniak, Lukasz Dudek, Matteo di Carlo,
-  Matteo Canzari, Igor Khokhrakiov, Reynald Bourtembourg, Jean-Michel Chaize,
-  Stuart James and Andy Götz
-- **Second Write-the-Doc Team** - the following people participated in the second Write-the-Doc camp:
-  Reynald Bourtembourg, Thomas Braun, Sébastien Gara, Philippe Gauron,
-  Andrew Götz, Piotr Goryl, Anton Joubert, Krystian Kędroń, Igor Khokhrakiov,
-  Grzegorz Kowalski, Olga Merkulova, Guillaume Mugerin, Lorenzo Pivetta and Sergi Rubio
 - **Emmanuel Taurel** - for writing the first Tango documentation (*The Book*) single handedly!
 - **Pascal Verdier** - for writing the Pogo and Astor documentation
 - **Lukasz Zytniak** - for converting many documents to Sphinx
