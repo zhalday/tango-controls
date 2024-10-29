@@ -50,6 +50,7 @@ extensions = [
     "sphinx_togglebutton",
     "sphinx_design",
     "sphinxcontrib.mermaid",
+    "tangocontrib.metalabels",
 ]
 
 myst_enable_extensions = [
