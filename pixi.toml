@@ -1,0 +1,23 @@
+[project]
+channels = ["conda-forge"]
+name = "tango-doc"
+platforms = ["linux-64", "osx-64", "osx-arm64", "win-64"]
+
+[tasks]
+doc = "python -m sphinx -b html -n -W source build/html"
+doc_no_cache = "python -m sphinx -b html -n -W -a -E source build/html"
+update-requirements = "python -m pip freeze > requirements.txt"
+
+[dependencies]
+python = "3.12.*"
+pip = "*"
+
+[pypi-dependencies]
+sphinx = ">=8"
+sphinx-book-theme = "*"
+sphinx-copybutton = "*"
+sphinx-design = "*"
+sphinx-togglebutton = "*"
+sphinxcontrib-mermaid = "*"
+myst-parser = ">=4"
+pillow = "*"

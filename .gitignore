@@ -6,3 +6,6 @@ build/
 sphinx-output.log
 .venv/
 
+# pixi environments
+.pixi
+*.egg-info
