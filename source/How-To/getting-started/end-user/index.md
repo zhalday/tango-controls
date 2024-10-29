@@ -1,0 +1,26 @@
+(getting-started-as-user)=
+
+# End-user applications guide
+
+{audience}`user`
+
+If you are end-user you are probably interested in documentation for
+[tools delivered with Tango Controls ](#tools-index). Below, you will find a list of tools a beginner user
+usually needs to know.
+
+## Jive
+
+It is a tool used to configure components of the Tango Controls and browse a static {term}`Tango Database`. See
+[Jive Manual ](#jive-manual).
+
+## ATKPanel
+
+ATKPanel is a simple application which shows (and allows to modify or invoke) device {term}`state`,
+{term}`attributes<attribute>` and {term}`commands<command>`. Thus it allows to test and control all devices in the system.
+The tool is delivered together with Tango Controls. It may be opened as a stand-alone application or invoked from Jive.
+See [ATKPanel Manual ](#atkpanel-manual).
+
+## LogViewer
+
+Tango provides a logging facility. You may use it with the [LogViewer application ](#logviewer-manual) delivered
+with Tango Controls.
