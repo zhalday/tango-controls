@@ -13,17 +13,17 @@
 
 {audience}`all`
 
-```{toctree}
-   :glob:
-   :name: maintoc
-   :maxdepth: 2
+<!-- Explanation/overview -->
 
-    Explanation/overview
-    Tutorials/index.md
-    How-To/index.md
-    tools/tools.md
-    Reference/index.md
-    authors.md
+```{toctree}
+:name: maintoc
+:maxdepth: 2
+
+Tutorials/index
+How-To/index
+tools/tools
+Reference/index
+authors
 ```
 
 ## How this documentation is organized

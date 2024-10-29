@@ -7,9 +7,3 @@ pytango.md
 jtango.md
 docs.md
 ```
-
-
-
-
-
-

@@ -257,11 +257,3 @@ taurusdevicepanel sys/tg_test/1/double_scalar_rww
 
 To storage the longtime history of changes of the attributes,
 you can use the [Tango Archiving System ](#hdbpp-manual).
-
-```{toctree}
-:glob: true
-:hidden: true
-:maxdepth: 1
-
-how-to-try-tango/*
-```
