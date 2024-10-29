@@ -12,13 +12,10 @@ The section is organized as follows:
 :maxdepth: 2
 :name: developersguidetoc
 
-overview
+overview.md
 general-guidelines/index
-corba
 client-api/index
 device-api/index
-debugging-and-testing/index
+client-api/index
 advanced/index
-cpp-api/index
-contributing/index
 ```

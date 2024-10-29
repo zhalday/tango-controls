@@ -1,0 +1,5 @@
+# Command
+
+```{toctree}
+command.md
+```

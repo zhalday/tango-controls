@@ -20,6 +20,7 @@
 :maxdepth: 2
 :hidden: True
 
+Explanation/index
 Tutorials/index
 How-To/index
 tools/tools
