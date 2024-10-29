@@ -37,6 +37,7 @@ sys.path.append(os.path.abspath('.'))
 # ones.
 extensions = [
 #    'breathe',
+    'myst_parser',
     'sphinx.ext.autodoc',
     'sphinx.ext.doctest',
     'sphinx.ext.intersphinx',
@@ -47,9 +48,13 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.intersphinx',
     'sphinx_copybutton',
-    'myst_parser',
 #    'tangocontrib.metalabels',
 #    'sphinx.ext.autosectionlabel',
+]
+
+myst_enable_extensions = [
+    "colon_fence",
+    "deflist",
 ]
 
 # breathe_projects = { "cppTango": "cpp-api/xml" }
@@ -60,7 +65,10 @@ extensions = [
 templates_path = ['_templates']
 
 # The suffix of source filenames.
-source_suffix = '.rst'
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.md': 'markdown',
+}
 
 # The encoding of source files.
 # source_encoding = 'utf-8-sig'
@@ -445,7 +453,7 @@ epub_exclude_files = ['search.html']
 
 
 # Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'http://docs.python.org/': None}
+intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
 
 
 # link checking options
