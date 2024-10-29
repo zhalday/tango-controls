@@ -8,4 +8,7 @@
 first-client
 cpp-quick-start
 first-device-class
+generating-events
+transferring-images
+user-loop
 ```
