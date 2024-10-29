@@ -6,6 +6,7 @@
 :maxdepth: 2
 :name: Tutorials
 
+getting-started/tutorial.md
 atk/atk
 atkpanel/atkpanel
 ```
