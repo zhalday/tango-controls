@@ -18,6 +18,7 @@
 ```{toctree}
 :name: maintoc
 :maxdepth: 2
+:hidden: True
 
 Tutorials/index
 How-To/index
