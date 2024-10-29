@@ -3,11 +3,12 @@
 {doc}`Jive <jive:index>`
 
 ```{toctree}
-alarm/panic
 astor/index
-jdraw/jdraw
+atk
+starter
+logviewer
+jdraw
 taurus/index
-atk.md
-pogo.md
-starter.md
+alarm/panic
+pogo
 ```
