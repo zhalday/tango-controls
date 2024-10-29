@@ -452,7 +452,10 @@ epub_exclude_files = ['search.html']
 
 
 # Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
+intersphinx_mapping = {
+  'python': ('https://docs.python.org/3', None),
+  "jive": ("https://jive.readthedocs.io/en/latest/", None),
+}
 
 
 # link checking options
