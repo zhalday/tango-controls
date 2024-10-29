@@ -13,6 +13,19 @@
 
 {audience}`all`
 
+```{toctree}
+   :glob:
+   :name: maintoc
+   :maxdepth: 2
+
+    Explanation/overview
+    Tutorials/index.md
+    How-To/index.md
+    tools/tools.md
+    Reference/index.md
+    authors.md
+```
+
 ## How this documentation is organized
 
 The organisation of the Tango Controls documentation follows largely the [Grand Unified Theory of Documentaiton](https://docs.divio.com/documentation-system/) and is organized in the following categories (with some overlap):
@@ -42,6 +55,7 @@ TJ added: We should discuss if we keep this.
  -->
 
 Next steps and documents you might want to read now:
+
 - The {doc}`Overview <Explanation/overview>` will give you a quick overview of what Tango Controls is, its origins and who uses it. If you are new to Tango Controls, then this is where we recommend to start reading.
 - {doc}`First steps <How-To/getting-started/first-steps>` will guide you through the process to get started with Tango Controls. This category includes an overview of Tango Controls concepts, procedures for installation and starting the system as well as *Getting started* tutorials.
 - {doc}`Explanation/development/index` provides information for **Developers** that comes handy when developing {term}`Device Servers <Explanation/deviceserver>`, {term}`Devices <Explanation/device>` and client applications.
