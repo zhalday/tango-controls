@@ -53,7 +53,11 @@ To launch **jdraw** you should start the following class :
 
 Once the jdraw is started you will see the following window :
 
-{{ image28 }}
+```{image} jdraw/image32.jpeg
+    :alt: JDraw Editor main window
+    :height: 5.23819in
+    :width: 6.29792in
+```
 
 You can now start to draw the synoptic. As in any drawing editor you can
 group basic objects (like rectangle, circle, lines, …) to obtain more
@@ -70,7 +74,11 @@ As soon as the synoptic is saved in a file, it’s run time behavior can
 be tested. Inside Jdraw, select “Tango Synoptic view” from the “Views”
 pulldown menu to test the run time behavior of the synoptic.
 
-{{ image29 }}
+```{image} jdraw/image33.jpeg
+    :alt: JDraw Editor Views menu
+    :height: 4.22639in
+    :width: 5.52986in
+```
 
 You can also start the same simple synoptic application outside jdraw
 editor. This application is called SimpleSynopticAppli and is included
@@ -87,7 +95,11 @@ the name of the synoptic file to load.
 The following screenshot shows the SimpleSynopticAppli with the synoptic
 file loaded.
 
-{{ image30 }}
+```{image} jdraw/image34.jpeg
+    :alt: Synoptic with device state and numeric attribute
+    :height: 1.60694in
+    :width: 3.59514in
+```
 
 As you can see the rectangle shows the value of fp/test/1/state
 attribute. The state attribute value is represented by it’s
@@ -141,7 +153,11 @@ separate window. You can simply click one component in the library
 window and click the jdraw window to add it into your drawing. See the
 screenshot below :
 
-{{ image31 }}
+```{image} jdraw/image35.jpeg
+    :alt: JDraw Editor with beamline synoptic
+    :height: 2.47014in
+    :width: 6.29167in
+```
 
 ### ATK Viewers in Jdraw
 
@@ -155,7 +171,11 @@ click the atk viewer, then select the “Extension” tab in the property
 window. For example in the screen shot below you can see all the bean
 properties available in Jdraw for the SimpleScalarViewer.
 
-{{ image32 }}
+```{image} jdraw/image36.jpeg
+    :alt: JDSwingObject properties: extensions
+    :height: 3.18472in
+    :width: 3.29167in
+```
 
 ### Dynamic Objects (Dynos)
 
@@ -189,7 +209,11 @@ component to a panel follow the steps below :
 6. Type in the string which is passed to the constructor of the panel
    class
 
-{{ image33 }}
+```{image} jdraw/image37.jpeg
+    :alt: JDPolyline properties extensions
+    :height: 3.16042in
+    :width: 3.29167in
+```
 
 The “panel class” defined with “className” extension :
 
@@ -224,7 +248,11 @@ generic application **SimpleSynopticAppli**. To launch the
 In most cases, the synoptic should be integrated inside a specific ATK
 application in the middle of other ATK viewers.
 
-{{ image34 }}
+```{image} jdraw/image31.jpeg
+    :alt: JLinac window
+    :height: 3.66042in
+    :width: 6.29792in
+```
 
 As you can see in the screen shot the synoptic is only part of the
 application’s main window. There are other ATK attribute and command
