@@ -14,9 +14,7 @@ by polling the device attributes. ATK takes also in charge the error handling an
 
 The ATK swing components are the Java Beans, so they can easily be added to a Java IDE (like NetBeans) to speed up the development of graphical control applications.
 
-ATK is composed of two jarfiles [ATKCore.jar](https://bintray.com/tango-controls/maven/ATKCore/9.2.4) and [ATKWidget.jar](https://bintray.com/tango-controls/maven/ATKWidget/9.2.4).
-
-You can get them from the  ATK download page.
+ATK is composed of two jarfiles ATKCore.jar and ATKWidget.jar. You can download them from the [ATK release page](https://gitlab.com/tango-controls/atk/-/releases).
 
 Contents:
 
@@ -24,5 +22,4 @@ Contents:
 :maxdepth: 2
 
 atk
-atk_java_doc
 ```
