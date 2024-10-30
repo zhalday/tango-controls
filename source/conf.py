@@ -471,6 +471,7 @@ intersphinx_mapping = {
     "pytango": ("https://pytango.readthedocs.io/en/stable/", None),
     "python": ("https://docs.python.org/3", None),
     "jive": ("https://jive.readthedocs.io/en/latest/", None),
+    "astor": ("https://tango-astor.readthedocs.io/en/latest/", None),
 }
 
 # link checking options

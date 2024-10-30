@@ -3,6 +3,8 @@
 
 {doc}`Jive <jive:index>`
 
+{doc}`Astor <astor:index>`
+
 ```{toctree}
 atk
 starter
