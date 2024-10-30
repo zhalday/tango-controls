@@ -1,4 +1,4 @@
-# Introduction - Coffee Crisis!
+# Coffee Crisis!
 
 To make sure this tutorial isn't *super* boring, imagine you are new employee at **Tango MegaCorp Inc.** working
 in the DevOps team.
