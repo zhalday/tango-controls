@@ -1,19 +1,11 @@
 (archiving-overview)=
 # Archiving
 
-Tango has two main archiving solutions - the original one (HDB) and a new one (HDB++).
-The difference between the two is in the features.
-HDB supports Oracle and MySQL databases.
-HDB++ supports higher time resolution, multiple database backends (MySQL and Cassandra),
-and is based on events.
-HDB++ is designed to have a higher throughput and a number of improvements like
-better error management, lower footprint etc.
+Archiving in Tango started with HDB, which is deprecated, and is now calle HDB++.
 
-This map shows you how the archiving systems and the related tools are layered.
+HDB++ supports higher time resolution, multiple database backends (MySQL, timescaledb, sqlite…), and is based on events.
 
-```{raw} html
-<embed width="100%" height="600px" type="text/html" src="../../_static/layer-map-source/tango_archiving_map.html">
-```
+HDB++ is designed to have a higher throughput and a number of improvements like better error management, lower footprint etc.
 
 ```{toctree}
 hdbpp.md

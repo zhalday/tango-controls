@@ -12,7 +12,7 @@ installation-minimum-deployment.md
 history.md
 SimplifiedTangoDatamodel.md
 alarm/index.md
-archiving/index.md
+archiving/archiving.md
 attribute/index.md
 command/index.md
 development/index.md

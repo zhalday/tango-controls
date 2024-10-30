@@ -1,64 +1,42 @@
----
-substitutions:
-  image0: |-
-    ```{image} hdbpp/image2.png
-    :height: 3.37500in
-    :width: 6.26772in
-    ```
-  image1: |-
-    ```{image} hdbpp/image4.png
-    :height: 3.62500in
-    :width: 6.26772in
-    ```
-  image2: |-
-    ```{image} hdbpp/HdbConfiguratorServer.png
-    :height: 3.62500in
-    :width: 6.26772in
-    ```
-  libs: |-
-    ```{image} hdbpp/libs.png
-    :height: 3.62500in
-    :width: 6.26772in
-    ```
----
-
 (hdbpp-manual)=
 
 # HDB++
 
 {audience}`developers, administrators`
 
-```{contents}
-:depth: 3
-```
-
-## Target
-
-This document is directed to beginner developer.
-
 ## Primary Presentation
 
-{{ image0 }}
+:::{figure} hdbpp/image2.png
+HDB++ Runtime View (part one)
+:::
 
-Figure 1: HDB++ Runtime View (part one)
-
-{{ image1 }}
-
-Figure 2: HDB++ Runtime View (part two)
+:::{figure} hdbpp/image4.png
+HDB++ Runtime View (part two)
+:::
 
 ## Elements
+```{list-table}
+:header-rows: 1
 
-| **Block**              | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| HDB++ Viewer           | Standalone JAVA application designed to monitor signals coming from HDB++. It has been written using Swing and needs a JVM higher than 1.7.0. [\*More information\*](http://www.esrf.eu/computing/cs/tango/tango_doc/hdb_viewer/index.html).                                                                                                                                                                                                                                                                                                                          |
-| HDB++ Configuration    | Standalone JAVA application that allows interaction with the configuration manager in order to add, modify, move or delete an attribute from the archiving system                                                                                                                                                                                                                                                                                                                                                                                                     |
-| HDB++ Diagnostic       | Standalone JAVA application that visualizes both the status of all the archiver device servers and the overall archiving system                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| Archiving DB           | Specific Database devoted to storing attribute values. The currently supported backend are Mysql, Cassandra (support has been dropped), PostgreSQL, ElasticSearch or Timescaledb.                                                                                                                                                                                                                                                                                                                                                                                     |
-| Tango Configuration DB | Tango database where every property and configuration of the Tango control framework is stored                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| Archiver               | The EventSubscriber TANGO device server, or Archiver, is the archiving system engine. On typical usage, it will subscribe to archive events on request by the ConfigurationManager device. The EventSubscriber is designed to start archiving all the already configured Attributes, even if the ConfigurationManager is not running. Moreover, being a TANGO device, the EventSubscriber configuration can be managed with Jive.The list of Attributes to be gathered by each EventSubscriber is stored in the AttributeList Property of the EventSubscriber device. |
-| Device Server i        | Generic Device server that contains one or more devices that needs to archive one or more attributes                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| Configurator Server    | Device server that assists in adding, modifying, moving, deleting multiple attributes in the archiving system using the Configuration Manager.                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| Configuration Manager  | Device server that assists in adding, modifying, moving, deleting an Attribute to/from the archiving system                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+* - **Block**
+  - **Description**
+* - HDB++ Viewer
+  - Standalone JAVA application designed to monitor signals coming from HDB++. It has been written using Swing and needs a JVM higher than 1.7.0. [\*More information\*](http://www.esrf.eu/computing/cs/tango/tango_doc/hdb_viewer/index.html).
+* - HDB++ Configuration
+  - Standalone JAVA application that allows interaction with the configuration manager in order to add, modify, move or delete an attribute from the archiving system
+* - Archiving DB
+  - Specific Database devoted to storing attribute values. The currently supported backend are Mysql, Cassandra (support has been dropped), PostgreSQL, ElasticSearch or Timescaledb.
+* - Tango Configuration DB
+  - Tango database where every property and configuration of the Tango control framework is stored
+* - Archiver
+  - The EventSubscriber TANGO device server, or Archiver, is the archiving system engine. On typical usage, it will subscribe to archive events on request by the ConfigurationManager device. The EventSubscriber is designed to start archiving all the already configured Attributes, even if the ConfigurationManager is not running. Moreover, being a TANGO device, the EventSubscriber configuration can be managed with Jive.The list of Attributes to be gathered by each EventSubscriber is stored in the AttributeList Property of the EventSubscriber device.
+* - Device server
+  - Generic Device server that contains one or more devices that needs to archive one or more attributes
+* - Configurator Server
+  - Device server that assists in adding, modifying, moving, deleting multiple attributes in the archiving system using the Configuration Manager.
+* - Configuration Manager
+  - Device server that assists in adding, modifying, moving, deleting an Attribute to/from the archiving system
+```
 
 HDB++ inherits the database structure from the existing Tango Historical Data Base and introduces new storage architecture possibilities, better internal diagnostic capabilities and an optimized API. Different backends to store the data can be implemented through an unified interface, currently Timescaledb, MySQL, Postgresql, ElasticSearch and Apache Cassandra (support for Cassandra has been dropped) are supported.
 
@@ -73,9 +51,10 @@ These libraries, written in C++, are addressed to the EventSubscriber Tango devi
 their main purpose is to provide *an abstraction layer*. Actually, some shared objects are available
 implementing the abstraction layer and the specific interface:
 
-{{ libs }}
+:::{figure} hdbpp/libs.png
+HDB++ Device Servers design
+:::
 
-Figure 4: HDB++ Device Servers design
 
 - **libhdb++**: database abstraction layer, decouples the interface to the database back-end from the implementation.
 - **libhdbmysql**: legacy HDB schema support for MySQL back-end
@@ -153,9 +132,9 @@ At the ESRF, it is used to configure/add automatically some dynamic attributes i
 startup depending on its configuration (device properties), if the configuration changes, different attributes might be created.
 In this specific case, we have the requirement to ensure these dynamic attributes are archived. So the device server will configure them via the HdbConfigurator device server.
 
-{{ image2 }}
-
-Figure 3: HDB++ and HdbConfiguratorServer
+:::{figure} hdbpp/HdbConfiguratorServer.png
+HDB++ and HdbConfiguratorServer
+:::
 
 To be more concrete, for the people working in a synchrotron, we have a device, controlling the insertion devices used by a given beamline.
 Dynamic attributes are created for each undulator which can be controlled by this beamline.
@@ -166,10 +145,6 @@ The HdbConfigurator server will handle a queue and coordinate the requests sent 
 It will help to configure several attributes in parallel. If one would like to do it with only the HdbConfiguration Manager device,
 one would need to lock the device, set many attributes, send the addAttribute command and finally release the lock of the device.
 The HdbConfigurator Server is doing that for you in the same way as the HDB++ Configuration Manager GUI is doing it.
-
-The HdbConfigurator Server is indeed using the same classes as the HDB++ Configuration GUI but its source code is actually currently available on tango-ds Sourceforge.
-It is listed in the Tango classes catalog:
-<http://www.tango-controls.org/developers/dsc/ds/274/>
 
 ### HdbViewer
 
@@ -204,6 +179,7 @@ The source code is available on Gitlab in the following repositories:
 - [hdbpp-benchmark]: A project to compare performances of different HDB++ backends using docker images
 - [CassandraMonitor]: A Java client/server to monitor cassandra nodes using jmx calls.
 - [hdbpp-configurator]: the HDB++ Configuration GUI (in Java).
+- [hdbpp-configurator-server]: HDB++ Configuration device server helper (in Java).
 - [hdbpp-viewer]: the HDB++ Viewer GUI (in Java)
 - [libhdbpp-extraction-java]: HDB++ Java extraction library
 - [libhdbpp-extraction-cpp]: HDB++ C++ extraction library
@@ -292,6 +268,7 @@ host, port and device name.
 [hdbpp-cm]: https://gitlab.com/tango-controls/hdbpp/hdbpp-cm
 [hdbpp-cm-es]: https://gitlab.com/tango-controls/hdbpp/hdbpp-cm-es
 [hdbpp-configurator]: https://gitlab.com/tango-controls/hdbpp/hdbpp-configurator
+[hdbpp-configurator-server]: https://gitlab.com/tango-controls/hdbpp/HdbConfiguratorServer
 [hdbpp-es]: https://gitlab.com/tango-controls/hdbpp/hdbpp-es
 [hdbpp-mysql-project]: https://gitlab.com/tango-controls/hdbpp/hdbpp-mysql-project
 [hdbpp-timescale-project]: https://gitlab.com/tango-controls/hdbpp/hdbpp-timescale-project
