@@ -36,7 +36,6 @@ sys.path.append(os.path.abspath("."))
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    #    'breathe',
     "myst_parser",
     "sphinx.ext.autodoc",
     "sphinx.ext.doctest",
@@ -54,6 +53,7 @@ extensions = [
 ]
 
 myst_enable_extensions = [
+    "attrs_block",
     "attrs_inline",
     "colon_fence",
     "deflist",
