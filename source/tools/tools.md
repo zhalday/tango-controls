@@ -1,14 +1,13 @@
 # Tools
 
 {doc}`Jive <jive:index>`
-
 ```{toctree}
 astor/index
 atk
 starter
 logviewer
 jdraw
-taurus/index
+taurus
 alarm/panic
 pogo
 ```
