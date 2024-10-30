@@ -126,7 +126,9 @@ described in the following table
 
    "Property name", "property rule", "default value"
    "logging\_level", "Initial device logging level", "WARNING"
+   "current\_logging\_level", "Logging level applied to the current session", "No default"
    "logging\_target", "Initial device logging target", "No default"
+   "current\_logging\_larget", "Logging target applied to the current session", "No default"
    "logging\_rft", "Logging rolling file threshold", "20 Mega bytes"
    "logging\_path", "Logging file path", "/tmp/tango-<logging name> or C:/tango-<logging name> (Windows)"
 ```
@@ -159,6 +161,22 @@ described in the following table
     domain_family_member.log), to a file named mydevice.log and
     located in /home/me. Finally, the device logs are also sent to a
     log consumer device named tmp/log/1.
+    Currently, the target do not take into account uppercase 
+    characters, so the logging\_target property
+    "file::/Home/He/MyDevice.log" will write into 
+    "file::/home/me/mydevice.log"
+
+
+- The current_logging_target and current_logging_level properties 
+  behave as read-write properties which are set when device is started, 
+  respectively from logging_target and logging_level property values.
+  Thoses properties are not stored into Tango database like other 
+  properties so they will only be available through the device, and 
+  only until it is stopped.
+  If one of those properties is modified during the device running, 
+  the (last) value modification will be taken into account, and only 
+  until the next device stop.
+
 
 - The logging_rft property specifies the rolling file threshold (rft),
   of the device’s file targets. This threshold is expressed in Kb. When
@@ -172,6 +190,12 @@ described in the following table
 - The logging_path property overwrites the TANGO_LOG_PATH
   environment variable. This property can only be applied to a DServer
   class device and has no effect on other devices.
+
+*Note:* setting logging properties into the device will give access to 
+logging of the device itself, while setting logging_level properties 
+to DEBUG in dserver admin associated device will give access to 
+cppTango library logging. This will not work with other logging level. 
+
 
 ## Device attribute
 
