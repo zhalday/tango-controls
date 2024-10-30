@@ -50,6 +50,8 @@ device state and/or status or device creation time. If these fields are
 not defined, a default value is applied. The default state is
 Tango::UNKOWN, the default status is *Not Initialised.*
 
+(device-polling-properties)=
+
 ### The device polling
 
 Seven device properties allow the polling tunning. These properties are
@@ -154,7 +156,7 @@ described in the following table
   while trying to setup the initial targets.
 
   - Logging_target property example :
-    logging_target = \[ console, file, 
+    logging_target = \[ console, file,
     <file::/home/me/mydevice.log>
     ,
     device::tmp/log/1
@@ -163,20 +165,20 @@ described in the following table
     domain_family_member.log), to a file named mydevice.log and
     located in /home/me. Finally, the device logs are also sent to a
     log consumer device named tmp/log/1.
-    Currently, the target do not take into account uppercase 
+    Currently, the target do not take into account uppercase
     characters, so the logging\_target property
-    "file::/Home/He/MyDevice.log" will write into 
+    "file::/Home/He/MyDevice.log" will write into
     "file::/home/me/mydevice.log"
 
 
-- The current_logging_target and current_logging_level properties 
-  behave as read-write properties which are set when device is started, 
+- The current_logging_target and current_logging_level properties
+  behave as read-write properties which are set when device is started,
   respectively from logging_target and logging_level property values.
-  Thoses properties are not stored into Tango database like other 
-  properties so they will only be available through the device, and 
+  Thoses properties are not stored into Tango database like other
+  properties so they will only be available through the device, and
   only until it is stopped.
-  If one of those properties is modified during the device running, 
-  the (last) value modification will be taken into account, and only 
+  If one of those properties is modified during the device running,
+  the (last) value modification will be taken into account, and only
   until the next device stop.
 
 
@@ -193,10 +195,10 @@ described in the following table
   environment variable. This property can only be applied to a DServer
   class device and has no effect on other devices.
 
-*Note:* setting logging properties into the device will give access to 
-logging of the device itself, while setting logging_level properties 
-to DEBUG in dserver admin associated device will give access to 
-cppTango library logging. This will not work with other logging level. 
+*Note:* setting logging properties into the device will give access to
+logging of the device itself, while setting logging_level properties
+to DEBUG in dserver admin associated device will give access to
+cppTango library logging. This will not work with other logging level.
 
 
 ## Device attribute
@@ -1082,6 +1084,8 @@ This command starts the polling thread
 
 This command stops the polling thread
 
+(addobjpolling-admin-comand)=
+
 ### The AddObjPolling command
 
 This command adds a new object in the list of object(s) to be polled.
@@ -1125,6 +1129,8 @@ The object type string is case independent. The object name string
 (command name or attribute name) is case dependant. This command is not
 allowed in case the device is locked and the command requester is not
 the lock owner.
+
+(updobjpollingperiod-admin-comand)=
 
 ### The UpdObjPollingPeriod command
 

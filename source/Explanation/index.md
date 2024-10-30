@@ -21,7 +21,7 @@ deviceserver/index.md
 event/index.md
 extensions/index.md
 pipe/index.md
-polling/index.md
+polling/polling
 property/index.md
 tangodb/index.md
 long-term-support.md

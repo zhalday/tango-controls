@@ -341,8 +341,7 @@ Two other CORBA operations called *command_inout_history_X* and
 polled command or attribute stored in the polling buffers. Obviously,
 this history is limited to the depth of the polling buffer.
 
-The whole polling system is available only since Tango release 2.x and
-above in CPP and since TangORB release 3.7.x and above in Java.
+See [](#device-polling) for details.
 
 ## The server
 
