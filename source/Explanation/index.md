@@ -8,7 +8,6 @@
 :hidden: true
 
 overview.md
-introduction.md
 installation-minimum-deployment.md
 ecosystem.md
 history.md
