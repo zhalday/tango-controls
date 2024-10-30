@@ -58,4 +58,4 @@ iSince the creation of Tango, over 40 small and large facilities (see <http://ww
 have adopted Tango for their control system.
 Tango is now used to control not only accelerators but also experimental lasers ([ELI](https://eli-laser.eu/)),
 wind tunnels ([Onera](http://www.onera.fr/en)), and most recently has been adopted by the world's largest
-radio telescope as its core control system ([SKA](http://skatelescope.org/)).
+radio telescope observatory as its core control system ([Square Kilometre Array Observatory (SKAO)](http://skao.int/)).
