@@ -1,5 +1,7 @@
 # Matlab & Octave
 
+(matlab-octave-binding)=
+
 {audience}`developers, users`
 
 - Client API for [Matlab](https://www.mathworks.com/) and [Octave](https://www.gnu.org/software/octave/)
@@ -13,5 +15,4 @@
   : - tested with Matlab R2016b
     - this release contains a major change - see the [README](https://github.com/tango-controls/matlab-binding/blob/master/README.md) file for details
 - Source code available on [GitHub](https://github.com/tango-controls/matlab-binding)
-  : - please visit the [MathWorks web site](https://fr.mathworks.com/support/sysreq/previous_releases.html) in order to identify the official gcc version associated with your Matlab
-      version
+  : - please visit the [MathWorks web site](https://fr.mathworks.com/support/sysreq/previous_releases.html) in order to identify the official gcc version associated with your Matlab version

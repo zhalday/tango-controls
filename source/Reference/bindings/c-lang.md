@@ -1,11 +1,10 @@
-% C Langague bindings documentation
-
 # C Language
+
+(c-language-binding)=
 
 {audience}`developers`
 
-C is supported for clients written in old style C (like [SPEC](https://certif.com/)). The C binding does  not support all features of TANGO.
-Clients are encouraged to use the C++ api if they need access to all features of TANGO.
+C is supported for clients written in old style C (like [SPEC](https://certif.com/)). The C binding does not support all or the latest features of Tango. We strongly encourage everybody to use the C++ API instead because it will provide access to all features of Tango.
 
 - C language
   : - A minimal client binding for the good old C language

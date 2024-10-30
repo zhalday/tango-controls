@@ -1,12 +1,12 @@
-(igor-pro)=
-
 # Igor Pro
+
+(igor-pro)=
 
 {audience}`developers, users`
 
 - Client API for [Igor Pro](http://wavemetrics.com/)
 - Release 3.0.0 for Igor Pro 7.x
-  : - Runs on Windows x64 \[no more official support for x86\]
+  : - Runs on Windows x64 \[no official support for x86 any more\]
     - [Binary distribution for 7.x](https://sourceforge.net/projects/tango-cs/files/bindings/tango-binding-3.0.0-for-igor-pro-7-windows-x64.zip/download) for Windows x64
 - Release 2.5.0 for Igor Pro 6.x
   : - Runs on Windows x86 & x64
