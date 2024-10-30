@@ -112,7 +112,7 @@ gives Write Access to specific user on specific host (or family) and on
 specific device (or family).
 
 The rights managements are done using the Tango
-Astor [^cite_astor] tool which has some graphical windows
+[Astor](#astor-manual) tool which has some graphical windows
 allowing to grant/revoke user rights and to define device class allowed
 commands set. The following window dump shows this Astor window.
 

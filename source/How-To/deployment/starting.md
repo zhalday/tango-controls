@@ -25,9 +25,8 @@ can change this behaviour with the MYSQL-USER and MYSQL-PASSWORD
 environment variables. Define them before starting the database server.
 
 If you are using the Tango administration graphical tool called
-**Astor**, you also need to start a specific Tango device server called
-[Starter](#Starter) on each host where Tango device server(s) are running. See
-[^cite-astor] for Astor documentation. This starter
+[Astor](#astor-manual), you also need to start a specific Tango device server called
+[Starter](#Starter) on each host where Tango device server(s) are running. This starter
 device server is able to start even before the Tango database device
 server is started. In this case, it will enter a loop in which it
 periodically tries to access the Tango database device. The loop exits

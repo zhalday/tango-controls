@@ -72,8 +72,7 @@ same address space as the caller, the invocation is accomplished as an
 ordinary function call to avoid the overhead of using a networking
 protocol.
 
-For an excellent reference on CORBA with C++ refer to
-[^cite_henning]. The complete TANGO IDL file can be found in
+The complete TANGO IDL file can be found in
 the [TANGO home page] or at the end of this
 document in the appendix 2 chapter.
 
@@ -411,8 +410,7 @@ relational database which implements the SQL language. However, this is
 largely enough to implement all the functionalities needed by the TDSOM.
 The database is accessed via a classical TANGO device hosted in a device
 server. Therefore, client access the database via TANGO commands
-requested on the database device. For a good reference on MySQL refer to
-[^cite_mysqlbook].
+requested on the database device.
 
 ## The controlled access
 
