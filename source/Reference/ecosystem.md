@@ -2,7 +2,7 @@
 
 {audience}`all`
 
-Tango Controls offers a rich ecosystem for developers and clients alike.
+Tango Controls offers a rich ecosystem for developers and users alike.
 
 Since Tango is a also a developer's framwork there are many libraries and tools for existing devices and clients. Refer to the [overview for developers](#developers-overview) for more information.
 
