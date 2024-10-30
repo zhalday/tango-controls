@@ -56,9 +56,9 @@ which are:
 Device server are written using the Device pattern. The aim of this
 pattern is to provide the control programmer with a framework in which
 s/he can develop new control objects. The device pattern uses other
-design patterns like the Singleton and Command patterns. These patterns
-are fully described in [^cite_patterns]. The device pattern
-class diagram for stepper motor device is drawn in figure [6.1]
+design patterns like the [Singleton](https://en.wikipedia.org/wiki/Singleton_pattern)
+and [Command](https://en.wikipedia.org/wiki/Command_pattern) patterns.
+The device pattern class diagram for stepper motor device is drawn in figure [6.1]
 
 (target-1)=
 
@@ -471,8 +471,9 @@ Line 31-45 : Device data
 
 This class inherits from the DeviceClass class. Like the DeviceClass
 class, there should be only one instance of the StepperMotorClass. This
-is ensured because this class is written following the Singleton pattern
-as defined in [^cite_patterns]. All controlled object class
+is ensured because this class is written following the 
+[Singleton](https://en.wikipedia.org/wiki/Singleton_pattern) pattern.
+All controlled object class
 data which should be defined only once per class must be stored in this
 object.
 
@@ -1014,8 +1015,7 @@ depending on the IDL data type used. These groups are :
 5. Data type using IDL enumeration (Tango::DevState type)
 
 In the following sub chapters, only summaries of the IDL to C++ mapping
-are given. For a full description of the C++ mapping, please refer to
-[^cite_henning].
+are given.
 
 ##### Basic types
 
@@ -2321,8 +2321,8 @@ Line 11: The destructor
 
 Line 14 : The class constructor. It is protected and can’t be called
 from outside the class. Only the *init* method allows a user to create
-an instance of this class. See [^cite_patterns] to get
-details about the singleton design pattern.
+an instance of this class. It uses the
+[singleton design pattern](https://en.wikipedia.org/wiki/Singleton_pattern).
 
 Line 15 : The instance pointer. It is static in order to set it to NULL
 during process initialization phase
@@ -3941,9 +3941,9 @@ threads.
 
 ##### Compiling
 
-TANGO for C++ uses omniORB (release 4) [^cite_omniorb] as underlying CORBA Object
-Request Broker [^cite_omg] and starting with Tango 8,
-the ZMQ library [^cite_zmq]. To compile a TANGO device server, your include search
+TANGO for C++ uses [omniORB](https://omniorb.sourceforge.net) (release 4) as underlying CORBA Object
+Request Broker (see [OMG home page](https://www.omg.org)) and starting with Tango 8,
+the [ZMQ library](https://zeromq.org/). To compile a TANGO device server, your include search
 path must be set to :
 
 - The omniORB include directory
