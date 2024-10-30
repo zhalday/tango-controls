@@ -10,7 +10,7 @@ contributing/contributing
 debugging/debugging
 deployment/index
 getting-started/index
-how-to-dynamic-attributes-device-class/index
+how-to-dynamic-attributes-device-class
 how-to-try-tango/index
 installation/index
 testing/testing

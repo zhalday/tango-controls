@@ -83,7 +83,7 @@ show where is the mysqlclient-lib.
 
 If the configuration of the system ends successfully, you should see this output:
 
-:::{figure} how-to-try-tango/tango-configuration-successful
+:::{figure} tango-configuration-successful.png
 :align: center
 :scale: 75 %
 :::
@@ -204,7 +204,7 @@ which can be used for the testing process. In help with Astor the process of sta
 After opening the control panel for specific hosts (in Astor application), we can start a new device server
 which will be automatically run. Like in this screenshot:
 
-:::{figure} how-to-try-tango/astor-tangotest.png
+:::{figure} astor-tangotest.png
 :align: center
 :scale: 75 %
 :::
@@ -216,7 +216,7 @@ and see the attribute, properties, all configuration of the selected device. For
 we can run the jive application (by typing the command {command}`jive`) and chose in the GUI
 options {guilabel}`Monitor Device` on the {term}`Tango Device <device>`, like in this screenshot:
 
-:::{figure} how-to-try-tango/jive-tangotest.png
+:::{figure} jive-tangotest.png
 :align: center
 :scale: 75 %
 :::
@@ -238,7 +238,7 @@ So to better visualization of changes the selected values, the user can use [Tau
 TangoTest attribute is generate using trigonometric functions, so it is easy to check if the device works correctly.
 The TaurusTrend for TangoTest attribute should look like in the screen below:
 
-:::{figure} how-to-try-tango/taurus-trend-example.png
+:::{figure} taurus-trend-example.png
 :align: center
 :scale: 75 %
 :::

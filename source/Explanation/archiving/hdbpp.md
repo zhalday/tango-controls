@@ -60,7 +60,7 @@ Figure 2: HDB++ Runtime View (part two)
 | Configurator Server    | Device server that assists in adding, modifying, moving, deleting multiple attributes in the archiving system using the Configuration Manager.                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | Configuration Manager  | Device server that assists in adding, modifying, moving, deleting an Attribute to/from the archiving system                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 
-HDB++ inherits the database structure from the existing Tango Historical Data Base ({ref}`hdb-archiving`) and introduces new storage architecture possibilities, better internal diagnostic capabilities and an optimized API. Different backends to store the data can be implemented through an unified interface, currently Timescaledb, MySQL, Postgresql, ElasticSearch and Apache Cassandra (support for Cassandra has been dropped) are supported.
+HDB++ inherits the database structure from the existing Tango Historical Data Base and introduces new storage architecture possibilities, better internal diagnostic capabilities and an optimized API. Different backends to store the data can be implemented through an unified interface, currently Timescaledb, MySQL, Postgresql, ElasticSearch and Apache Cassandra (support for Cassandra has been dropped) are supported.
 
 The HDB++ archiving system must fully comply to the Tango device server model, with two immediate benefits. First, all the required configuration parameters are stored to and retrieved from the Tango database; some of these parameters are, for user convenience, duplicated into a dedicated table of the HDB++ schema by a mechanism that guarantees the consistency of the copy. Second, the HDB++ archiving system inherits the Tango scaling capability: any number of EventSubscriber instances  can be deployed according to the desired architecture and overall performance.
 
@@ -285,8 +285,6 @@ host, port and device name.
 - {download}`How Cassandra improves performances and availability of HDB++ Tango Archiving System (Proceedings of ICALEPCS2015) <hdbpp/proceedings_ICALEPCS2015_cassandra.pdf>`
 - {download}`HDB++: High availability with Cassandra - presentation from the 29th TANGO collaboration meeting <hdbpp/hdb_-_high_availability_with_cassandra.pptx>`
 - {download}`HDB++ Cassandra presentation at the ICALEPCS 2015 Tango workshop <hdbpp/hdbcassandra-tango-workshop.pptx>`
-
-More information is available in Administration -> Services section of this documentation under {ref}`hdbpp-service`.
 
 [cassandramonitor]: https://gitlab.com/tango-controls/hdbpp/CassandraMonitor
 [egiga2m]: https://github.com/luciozambon/eGiga2m

@@ -1,3 +1,4 @@
+(tools-index)=
 # Tools
 
 {doc}`Jive <jive:index>`
@@ -7,7 +8,7 @@ atk
 starter
 logviewer
 jdraw
-taurus/index
+taurus
 alarm/panic
 pogo
 ```

@@ -1,3 +1,4 @@
+(archiving-overview)=
 # Archiving
 
 Tango has two main archiving solutions - the original one (HDB) and a new one (HDB++).

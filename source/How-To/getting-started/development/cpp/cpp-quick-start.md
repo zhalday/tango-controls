@@ -75,7 +75,7 @@ In order to compile properly the class, you need to add the packaging. Into POGO
 Once you created a skeleton and added the header, you can add your code into the class and compile it.
 In [this section](#first-cpp-device-class-implementation) you can find a guide how to implement a c++ device class. You may find more on device API [here](#device-api).
 
-In [this link ](#pogo-manual) you can find the POGO guide.
+In [this link](#pogo-documentation) you can find the POGO guide.
 
 ## Step 3: compile the device class
 

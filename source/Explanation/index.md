@@ -8,6 +8,10 @@
  :caption: explainationtoc
 
 overview.md
+introduction.md
+installation-minimum-deployment.md
+ecosystem.md
+history.md
 SimplifiedTangoDatamodel.md
 alarm/index.md
 archiving/index.md
@@ -22,4 +26,5 @@ pipe/index.md
 polling/index.md
 property/index.md
 tangodb/index.md
+long-term-support.md
 ```

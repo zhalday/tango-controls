@@ -83,7 +83,7 @@ device state
 
 state machine
 : A state machine for a {term}`device class` defines operations (commands', attributes' and pipes' access) available
-  in different {term}`states <state>` of a {term}`device`.
+  in different {term}`states <device state>` of a {term}`device`.
 
 Tango Host
 : Each Tango Controls system/deployment has to have at least one running DataBaseds {term}`device server`.

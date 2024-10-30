@@ -1925,7 +1925,7 @@ sub-chapters, the command and attributes classes (*DevReadPositionCmd*,
 *DevReadDirectionCmd*, *PositionAttr*, *SetPositionAttr* and
 *DirectionAttr*) are very simple classes. A tool called **Pogo** has
 been developped to automatically generate/maintain these classes and to
-write part of the code needed in the remaining one. See [Pogo manual](#pogo-manual) to know more
+write part of the code needed in the remaining one. See [Pogo manual](#pogo-documentation) to know more
 on this Pogo tool.
 
 In order to also gives an example of how the database objects part of

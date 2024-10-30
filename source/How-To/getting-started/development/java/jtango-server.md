@@ -85,7 +85,7 @@ Now using your favorite IDE open the newly generated project and develop your JT
 
 ## Using POGO
 
-See [POGO documentation ](#pogo-manual).
+See [POGO documentation](#pogo-documentation).
 
 ## Starting from scratch
 
