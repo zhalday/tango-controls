@@ -1,13 +1,7 @@
----
-substitutions:
-  image0: |-
-    ```{image} img/taurus_showcase01.png
-    ```
----
-
 (taurus)=
 
-{{ image0 }}
+```{image} taurus/taurus_showcase01.png
+```
 
 # Taurus (Python GUI library)
 
