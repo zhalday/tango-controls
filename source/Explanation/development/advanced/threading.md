@@ -130,7 +130,7 @@ behavior.
 
 The serialization model is set at line 11 before the server is
 initialized and the infinite loop is started. See
-[^cite_tangorefman]  for all details on the methods to
+<project:#cppTango-api-docs> for all details on the methods to
 set/get serialization model.
 
 ### Attribute Serialization model
@@ -193,7 +193,7 @@ kernel.
 The serialization model is set at line 6 in the init_device() method.
 The user omni_mutex is passed to the Tango kernel at line 22. This
 omni_mutex object is a device data member. See
-[^cite_tangorefman]  for all details on the methods to set
+<project:#cppTango-api-docs>  for all details on the methods to set
 attribute serialization model.
 
 ## Client process

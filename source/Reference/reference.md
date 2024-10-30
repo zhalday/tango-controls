@@ -7,8 +7,10 @@
 {audience}`developers`, {lang}`all`
 
 This chapter is only part of the TANGO device server reference guide.
-To get reference documentation about the C++ library classes, see [^cite_tangorefman] To get reference documentation about
-the Java classes, also see [^cite_tangorefman]
+To get reference documentation about the:
+- C++ library classes, see <project:#cppTango-api-docs>.
+- Java classes, see <project:#jtango-api-docs>.
+- Python classes, see <project:#pytango-api-docs>.
 
 ## Device parameter
 
@@ -28,7 +30,7 @@ during the device creation phase.
 
 ### The device description field
 
-There are two ways to intialise the device description field.
+There are two ways to initialise the device description field.
 
 - At device creation time. Some constructors of the DeviceImpl class
   supports this field as parameter. If these constructor are not used,
@@ -1553,7 +1555,7 @@ This is tunable at several level.
    Each property is the max number of events storable in these buffer.
 3. At client or device server level using the library calls
    *Util::set_ds_event_buffer_hwm()* documented in
-   [^cite_tangorefman] or
+   <project:#cppTango-api-docs> or
    *ApiUtil::set_event_buffer_hwm()* documented in
    {cpp:class}`Tango::ApiUtil`
 4. Using environment variables TANGO_DS_EVENT_BUFFER_HWM or

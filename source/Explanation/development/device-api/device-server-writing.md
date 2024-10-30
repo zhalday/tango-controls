@@ -25,20 +25,21 @@ introduce what is the device server pattern and then it will describe a
 complete device server framework. A definition of classes used by the
 device server framework is given in this chapter. This manual is not
 intended to give the complete and detailed description of classes data
-member or methods, refer to [^cite_tangorefman] to get
+member or methods, refer to <project:#cppTango-api-docs> to get
 this full description. But first, the naming convention used in this
 project is detailed.
 
 The aim of the class definition given in this chapter is only to help
 the reader to understand how a TANGO device server works. For a detailed
 description of these classes (and their methods), refer to chapter
-\[Writing_chapter\] or to [^cite_tangorefman].
+\[Writing_chapter\] or to <project:#cppTango-api-docs>.
 
 ### Naming convention and programming language
 
 TANGO fully supports three different programming languages which are
 **C++, Java** and **Python**. This documentation focuses on C++ Tango
-class. For Java and Python Tango class, have a look at the [^cite_tangorefman]
+class. For Java and Python Tango class, have a look at the <project:#jtango-api-docs>
+and <project:#pytango-api-docs>
 pages where similar chapter for Java and Python are available.
 
 Every software project needs a naming convention. The naming convention
@@ -859,7 +860,7 @@ This class merges a complete set of utilities in the same class. It is
 implemented as a singleton and there is only one instance of this class
 per device server process. It is mandatory to create this instance in
 order to run a device server. The description of all the methods
-implemented in this class can be found in [^cite_tangorefman].
+implemented in this class can be found in <project:#cppTango-api-docs>.
 
 ##### Contents
 
@@ -869,7 +870,7 @@ Within this class, you can find :
 - Miscellaneous utility methods like getting the server output trace
   level, getting the CORBA ORB pointer, retrieving device server
   instance name, getting the server PID and more. Please, refer to
-  [^cite_tangorefman] to get a complete list of all these
+  <project:#cppTango-api-docs> to get a complete list of all these
   utility methods.
 - Method to create the device pattern implementing the DServer class
   (*server_init()*)
@@ -1699,7 +1700,7 @@ exception). Some static methods of the Tango::Except class called
 Some other static methods called *re_throw_exception()* may also be
 used when the user want to add a new element in the exception sequence
 and re-throw the exception. Details on these methods can be found in
-[^cite_tangorefman].
+<project:#cppTango-api-docs>.
 
 #### Example of throwing exception
 
@@ -2216,7 +2217,7 @@ presence of two main functions.
 
 Line 1 : Include the **tango.h** file. This file is a master include
 file. It includes several other files. The list of files included by
-tango.h can be found in [^cite_tangorefman]
+tango.h can be found in <project:#cppTango-api-docs>
 
 Line 11 : Create the instance of the Tango::Util class (a singleton).
 Passing argc,argv to this method is mandatory because the device server
@@ -2549,7 +2550,7 @@ this list during the device server life cycle. This
 *attribute_factory()* method is called once during device server
 start-up. A method *add_attribute()* of the DeviceImpl class allows the
 user to add a new attribute to the attribute list outside of this
-*attribute_factory()* method. See [^cite_tangorefman] for
+*attribute_factory()* method. See <project:#cppTango-api-docs> for
 more information on this method.
 
 ### The DevReadPositionCmd class
@@ -2619,7 +2620,7 @@ type) and set the input or output parameter description fields with the
 To set the command display level, it is possible to use a 6 parameters
 constructor or it is also possible to set it in the constructor code
 with the *set_disp_level* method. Many Command class constructors are
-defined. See [^cite_tangorefman] for a complete list.
+defined. See <project:#cppTango-api-docs> for a complete list.
 
 #### The is_allowed method
 
@@ -2753,17 +2754,17 @@ With this 4 parameters Attr class constructor, the attribute display
 level is not specified. Therefore it is set to its default value
 (OPERATOR). To set the attribute display level, it is possible to use in
 the constructor code the *set_disp_level* method. Many Attr class
-constructors are defined. See [^cite_tangorefman] for a
+constructors are defined. See <project:#cppTango-api-docs> for a
 complete list.
 
 This Position attribute is a scalar attribute. For spectrum attribute,
 instead of inheriting from the Attr class, the class must inherits from
 the SpectrumAttr class. Many SpectrumAttr class constructors are
-defined. See [^cite_tangorefman] for a complete list.
+defined. See <project:#cppTango-api-docs> for a complete list.
 
 For Image attribute, instead of inheriting from the Attr class, the
 class must inherits from the ImageAttr class. Many ImageAttr class
-constructors are defined. See [^cite_tangorefman] for a
+constructors are defined. See <project:#cppTango-api-docs> for a
 complete list.
 
 #### The is_allowed method
@@ -3388,7 +3389,7 @@ at the bottom of the window has a default value (the one displayed in
 this window dump) but may be changed by the device server programmer
 using the *set_main_window_text()* method of the Tango::Util class.
 If used, this method must be called prior to the call of the
-*server_init()* method. Refer to   [^cite_tangorefman]  for
+*server_init()* method. Refer to   <project:#cppTango-api-docs>  for
 a complete description of this method.
 
 #### The console window
@@ -3416,7 +3417,7 @@ This window displays
   Tango::Util class. If used, this must be done prior to the call of
   the *server_init()* method. If the *set_server_version()* method
   is not used, x.y is displays as version number. Refer to
-  [^cite_tangorefman]  for a complete description of this
+  <project:#cppTango-api-docs>  for a complete description of this
   method.
 
 ### MFC device server

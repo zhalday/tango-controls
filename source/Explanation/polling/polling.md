@@ -376,7 +376,7 @@ stack depth cannot be larger than the polling buffer depth. See
 \[sub:The-device-polling-prop\] to learn how the polling buffer depth is
 defined. The same way is used for attribute with the *TimedAttrData* and
 *AttrHistoryStack* template classes. These classes are documented in
-[^cite_tangorefman] . The following piece of code fills the
+<project:#cppTango-api-docs> . The following piece of code fills the
 polling buffer for a command called MyCmd which is already in externally
 triggered mode. It returns a DevVarLongArray data type with three
 elements. This example is not really something you will find in a real
@@ -520,7 +520,7 @@ deal with polling. These methods are:
   a command or an attribute
 
 The following code snippet is just an exmaple of how these methods could
-be used. They are documented in [^cite_tangorefman].
+be used. They are documented in <project:#cppTango-api-docs>.
 
 ```{code} cpp
 :number-lines: 1
