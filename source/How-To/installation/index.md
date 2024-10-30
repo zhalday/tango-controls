@@ -13,11 +13,9 @@ available on all platforms to get you started quickly.
 ##DONE
 linux-debian
 linux-centos
+tango-on-windows
 
 ##TODO
-tango-on-windows
 virtualmachine
-binary_package
 archiving/snap
-installation
 ```
