@@ -1,19 +1,18 @@
 (macos-installation)=
-
-## macOS
+# macOS
 
 {audience}`administrators, developers`
 {language}`all`
 
 There are no macOS app installer packages available for Tango Controls. Any installation of Tango Controls libraries or tools is done on the command line.
 
-### Conda: Everything you'll usually need
+## Conda: Everything you'll usually need
 The easiest way to get all the necessary Tango Controls libraries and tools for development or administration installed on macOS is to use Conda. In our {doc}`Conda <conda>` document we explain step by step how to to get the packages installed on macOS.
 
-### But I need only PyTango
+## But I need only PyTango
 There are developers though that might only need PyTango and nothing else. In that case there the simpler way to install just PyTango is to use [pip](https://pip.pypa.io/en/stable/).
 
-#### Installation
+### Installation
 
 1. Begin by creating a virtual environment:
 
@@ -46,7 +45,7 @@ For example:
 export TANGO_HOST=mymaclaptop:10000
 ```
 
-#### Test your PyTango installation
+### Test your PyTango installation
 
 To see if the PyTango installation was successful, you can run a simple command:
 
@@ -78,6 +77,6 @@ uname_result(system='Darwin', node='XX:XX:XX:XX:XX:XX', release='24.0.0', versio
 
 If Python cannot find the `tango` import, then you likely forgot to activate your environment.
 
-### For the really adventurous among you
+## For the really adventurous among you
 
 If you fell lucky and would really like to build everything from the source codes, then you might be interested in [Thomas Juerges' Tango Controls build scripts](https://gitlab.com/tjuerges/build_tango). They are relatively easy to use, can be configured quite a lot and usually get you to a working Tango Controls system with cppTango, PyTango and a handful of tools within two or three minutes depending on the speed of your mac. Please head over to the Gitlab repository where the project's README will guide you through the installation steps. Please note that you will need [Homebrew](https://brew.sh) installed.

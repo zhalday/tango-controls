@@ -1,6 +1,5 @@
 (linux-centos-installation)=
-
-## CentOS
+# CentOS
 
 {audience}`administrators, developers`
 
@@ -19,7 +18,7 @@ sudo yum install -y libtango9 tango-db tango-test
 
 The above packages install the Tango core C++ libraries, database and TangoTest server.
 
-### Installation
+## Installation
 
 If you want to install TANGO on CentOS, here are the steps you should follow:
 
