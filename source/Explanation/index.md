@@ -9,7 +9,6 @@
 
 overview.md
 installation-minimum-deployment.md
-ecosystem.md
 history.md
 SimplifiedTangoDatamodel.md
 alarm/index.md

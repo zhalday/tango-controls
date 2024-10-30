@@ -5,6 +5,7 @@
 :name: Reference
 :maxdepth: 2
 
+ecosystem
 cppTango
 pytango
 jtango
