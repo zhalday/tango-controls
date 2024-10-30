@@ -21,6 +21,5 @@ particular purposes (like selected mode of accelerator operation).
 :maxdepth: 2
 :name: snaptoc
 
-snap-installation
 bensikin
 ```
