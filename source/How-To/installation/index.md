@@ -14,6 +14,7 @@ available on all platforms to get you started quickly.
 linux-debian
 linux-centos
 tango-on-windows
+tango-on-macos
 
 ##TODO
 virtualmachine
