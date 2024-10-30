@@ -359,6 +359,7 @@ process administration.
 TANGO supports device server process on two families of operating system
 \: Linux and Windows.
 
+(tango-logging-service-overview)=
 ## The Tango Logging Service
 
 During software life, it is always convenient to print miscellaneous

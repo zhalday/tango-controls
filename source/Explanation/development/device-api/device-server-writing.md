@@ -32,7 +32,7 @@ project is detailed.
 The aim of the class definition given in this chapter is only to help
 the reader to understand how a TANGO device server works. For a detailed
 description of these classes (and their methods), refer to chapter
-\[Writing_chapter\] or to <project:#cppTango-api-docs>.
+[](#writing-a-device-server-process) or to <project:#cppTango-api-docs>.
 
 ### Naming convention and programming language
 
@@ -158,7 +158,7 @@ The contents of this class can be summarized as :
   commands. These methods are declared virtual and therefore can be
   redefined in sub-classes. These two commands are automatically added
   to the list of commands defined for a class of devices. They are
-  discussed in chapter \[Auto_cmd\]
+  discussed in [](#the-automatically-added-commands).
 - A method called *always_executed_hook()* always executed for each
   command before the device state is tested for command execution. This
   method gives the programmer a hook where he(she) can program some
@@ -793,7 +793,9 @@ for each instance. The device server name is the couple device server
 executable name/device server instance name. For instance, a device
 server started with the following command
 
-Perkin id11
+```console
+$ Perkin id11
+```
 
 starts a device server process with an instance name id11, an executable
 name Perkin and a device server name Perkin/id11.
@@ -811,7 +813,7 @@ other devices. The device name is
 
 dserver/device server executable name/device server instance name
 
-For instance, for the device server process described in chapter \[Voc\],
+For instance, for the device server process described in [](#vocabulary),
 the dserver device name is dserver/perkin/id11. This name is returned by
 the adm_name CORBA attribute available for every device. On top of the
 three automatically added commands, this device supports the following
@@ -848,7 +850,7 @@ These commands will be fully described later in this document.
 Several controlled object classes can be embedded within the same device
 server process and it is the rule of this device to create all these
 device server patterns and to call their command and device factories as
-described in [Startup of a device pattern]. The name and number of all the classes
+described in [](#startup-of-a-device-pattern). The name and number of all the classes
 to be created is known to this device after the execution of a method
 called *class_factory*. It is the user responsibility to write this
 method.
@@ -1756,8 +1758,8 @@ one more element in the exception sequence.
 
 ## The Tango Logging Service
 
-A first introduction about this logging service has been done in chapter
-\[sec:The-Tango-Logging\]
+A first introduction about this logging service has been done in section
+[](tango-logging-service-overview).
 
 The TANGO Logging Service (TLS) gives the user the control over how much
 information is actually generated and to where it goes. In practice, the
@@ -1777,8 +1779,8 @@ FILE: logs are stored in a XML file. A rolling mechanism is used to
 backup the log file when it reaches a certain size (see below),
 
 DEVICE: logs are sent to a device implementing a well known TANGO
-interface (see section \[sec:Tango-log-consumer\] for a definition of the
-log consumer interface). One implementation of a log consumer associated
+interface (see section [](log-consumer-interface) for a definition).
+One implementation of a log consumer associated
 to a graphical user interface is available within the Tango package. It
 is called the LogViewer.
 
@@ -1842,7 +1844,7 @@ These macros are supposed to be used within the device’s main
 implementation class (i.e. the class that inherits (directly or
 indirectly) from the Tango::DeviceImpl class). In this context, they
 produce logging messages containing the device name. In other words,
-they automatically identify the log source. Section \[sub:C++-logging-in\]
+they automatically identify the log source. Section [](#c-logging-in-the-name-of-a-device)
 gives a trick to log in the name of device outside its main
 implementation class. Printf like example:
 
@@ -2051,7 +2053,7 @@ are
 - Init which re-initialize a device without changing its network
   connection
 
-These commands have already been discussed in \[Auto_cmd\]
+These commands have already been discussed in [](#the-automatically-added-commands).
 
 (choosingdevicestate-deviceserverwriting)=
 
@@ -2101,7 +2103,7 @@ levels are defined from 1 to 4. Level 4 is the most talkative one. If
 you use the -v option without specifying level, level 4 will be assumed.
 
 Since Tango release 3, a Tango Logging Service has been introduced
-(detailed in chapter \[The-Tango-Logging chapter\]). This -v option set-up
+(detailed in [](#the-tango-logging-service)). This -v option set-up
 the logging service. If it used, it will automatically add a *console*
 target to all devices embedded within the device server process. Level 1
 and 2 will set the logging level to all devices embedded within the
@@ -2171,8 +2173,8 @@ namespace name is *StepperMotor.*
 ### The device server main function
 
 A device server main function (or method) always follows the same
-framework. It exactly implements all the action described in chapter
-\[Server_startup\]. Even if it could be always the same, it has not been
+framework. It exactly implements all the action described in 
+[](#device-server-startup-sequence). Even if it could be always the same, it has not been
 included in the library because some linkers are perturbed by the
 presence of two main functions.
 
@@ -2245,7 +2247,7 @@ Line 31 : Cleanup the server before exiting by calling the
 
 ### The DServer::class_factory method
 
-As described in chapter \[DServer_class\], C++ device server needs a
+As described in [](#the-dserver-class), a C++ device server needs a
 *class_factory*() method. This method creates all the device pattern
 implemented in the device server by calling their *init*() method. The
 following is an example of a *class_factory* method for a device server
@@ -2862,7 +2864,7 @@ Line 14 : The destructor which calls the *delete_device()* method
 Line 16 : The method to be called for the execution of the
 DevReadPosition command. This method must be declared as virtual if it
 is needed to redefine it in a class inheriting from StepperMotor. See
-chapter \[Inheriting\] for more details about inheriting.
+[](#inheriting) for more details.
 
 Line 17 : The method to be called for the execution of the
 DevReadDirection command

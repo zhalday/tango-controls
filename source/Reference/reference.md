@@ -1490,6 +1490,7 @@ are:
   dynamic. The user with the help of the graphical interface chooses
   device(s) for which he want to see log messages.
 
+(log-consumer-interface)=
 ### The Log Consumer interface
 
 A Tango Log Consumer device is nothing but a tango device supporting the
