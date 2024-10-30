@@ -7,8 +7,6 @@
 
 {audience}`all`
 
-<!-- Explanation/overview -->
-
 ```{toctree}
 :name: maintoc
 :maxdepth: 2
