@@ -414,55 +414,6 @@ clients to display the data in the best manner
     1E01, 0.12.)
   - Note: these properties are valid only for writable attributes
 
-#### Attributes properties for ALARM configuration
-
-Tango provides an automatic way of defining alarms. An alarm
-condition will switch the attribute quality factor to alarm and the
-device state will automatically switched to ALARM in certain
-conditions.  Four properties are available for alarm purpose.
-
-- {samp}`{min_alarm}` and {samp}`{max_alarm}`: Define the range outside which
-  the attribute is considered in alarm. If the value of the attribute
-  is > max_alarm or \< min_alarm, then the attribute quality factor
-  will be switched to ALARM.
-
-- {samp}`{Delta_val}` and {samp}`{delta_t}`: (*could also be called maximum
-  noise and time constant*) Valid for a writeable attribute. Define a
-  maximum difference between the set_value and the read_value of an
-  attribute after a standard time.
-
-  > e.g. the voltage of a powersupply is set via a DAC and read via an
-  > ADC convertor. Both values are different due to various factors such
-  > as internal resistor or noise on the ADC. Furthermore when setting a
-  > voltage, the powersupply may need a certain time to establish its
-  > output voltage. The *delta_val* property allows to define the limit
-  > of the acceptable difference between set and read values (noise
-  > threshold) and *delta_t* defines the time the device needs to
-  > establish the voltage after the writing of the setpoint (time
-  > constant). When writing a new value of the attribute, if the read
-  > value is still not close enough from the set value after the time
-  > constant, the attribute quality factor will be set to ALARM.
-  >
-  > If these properties are not set, nothing is done. As soon as one of
-  > these properties is set, then the attribute quality factor is
-  > automatically calculated at each read and is taken into account by
-  > the default State attribute method. Device_Impl.dev_state(); The
-  > programmer should be aware of possible effect of these mechanisms in
-  > the response time of the State method. (Refer to chapter 1.14 of the
-  > present guide).
-
-:::{warning}
-The behaviour described above is only
-correct in the case the device’s method
-*Tango::Device\_\[X\]Impl::dev_state()* is executed*.* In case of
-overwrite of the dev_state() in the device code, it is recommended to
-finish the method by calling DeviceImpl::dev_state();
-:::
-
-:::{warning}
-**min_warning** *and* **max_warning** : lower and upper bound
-for WARNING (deprecated since version 8)
-:::
 
 #### Attributes properties related to Events configuration
 
