@@ -2,17 +2,20 @@
 
 # Installation
 
-{audience}`administrators, developers, users`
+{audience}`administrators, developers`
 
-Here you will find recipes on how to install the Tango Controls on various platforms.
+Here you will find recipes on how to install the Tango Controls on various platforms. There are binary packages
+available on all platforms to get you started quickly.
 
 ```{toctree}
 :maxdepth: 2
 
-tango-on-linux
+##DONE
+linux-debian
+linux-centos
+
+##TODO
 tango-on-windows
-tango-on-raspberry-pi
-amazon-cloud
 virtualmachine
 binary_package
 archiving/snap
