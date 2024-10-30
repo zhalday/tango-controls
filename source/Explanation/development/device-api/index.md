@@ -15,7 +15,6 @@ device-server-writing
 enumerated-attribute
 memorized-attribute
 forwarded-attribute
-device-polling
 generating-events
 java/index
 python/index
