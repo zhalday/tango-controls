@@ -10,13 +10,12 @@ available on all platforms to get you started quickly.
 ```{toctree}
 :maxdepth: 2
 
-##DONE
+conda.md
 linux-debian
 linux-centos
 tango-on-windows
 tango-on-macos
 virtualmachine
-
-##TODO
+vm/tangobox.md
 archiving/snap
 ```
