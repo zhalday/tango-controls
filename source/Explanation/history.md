@@ -5,8 +5,7 @@
 The concept of using device servers to access devices was first proposed at the [ESRF](https://www.esrf.eu)
 in 1989.
 It has been successfully used as the heart of the ESRF Control System of the institute accelerator complex.
-This control system was called TACO.
-TACO was based on the SUN RPC (as is the NFS protocol) and C as its core programming language.
+This control system was called TACO which was based on the SUN RPC (as is the NFS protocol) and C as its core programming language.
 
 In 1999, a renewal of the ESRF distributed control system was started with the aim of replacing SUN/RPC with CORBA, using C++ as the
 core programming languages. The new software was called TANGO and was developed as a collaboration.
