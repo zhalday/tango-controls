@@ -662,7 +662,7 @@ Configuration properties can have the following data types:
 
 On top of those basic concepts, device and class level properties can be
 initialised with default values which are entered, for example, with
-[Pogo ](#Pogo-manual) at the interface creation time.
+[Pogo](#pogo-documentation) at the interface creation time.
 Default values are stored in the
 device server code and are overwritten when another value is found in
 the configuration database.

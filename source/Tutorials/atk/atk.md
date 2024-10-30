@@ -584,6 +584,7 @@ collection of scalar attributes.
 
 #### One single scalar attribute
 
+(use-a-generic-scalar-attribute-viewer-used-to-view-and-or-to-set)=
 ##### Use a generic scalar attribute viewer (used to view and / or to set)
 
 This solution consists of using the same viewer for any type of scalar
@@ -634,6 +635,7 @@ been hidden.
 
 {{ image2 }}
 
+(using-a-specific-viewer-setter-adapted-to-the-attribute-type)=
 ##### Using a specific viewer / setter adapted to the attribute type
 
 The use of specific viewers is dependent on the type of the scalar
@@ -924,6 +926,7 @@ ScalarListViewer, ScalarListSetter. Please have a look into the section
 \: [View a list of scalar
 attributes](#display-a-list-of-scalar-attributes).
 
+(a-set-of-scalar-attributes)=
 ##### A set of scalar attributes in a table (MultiScalarTableViewer)
 
 The MultiScalarTableViewer is used to view a collection of scalar
@@ -1653,7 +1656,8 @@ in a further section.
 | ScalarAny typeCollection of attributes       | View and Set   | AttributeList               | [\*ScalarListViewer ScalarListSetter NumberScalarListViewer\*](http://www.esrf.fr/computing/cs/tango/tango_doc/atk_tutorial/screenshots/AttlViewer1.jpg)                                                                                                                                                                                                                                               | [\*AttributeList viewers\*](#attributelist-viewers)[\*AttListViewer Flash Demo\*](http://www.esrf.fr/computing/cs/tango/tango_doc/atk_tutorial/flash-demos/AttListViewersAndSetters.htm) |
 | ScalarNumeric typeCollection of attributes   | View           | AttributePolledList         | [\*Trend\*](http://www.esrf.fr/computing/cs/tango/tango_doc/atk_tutorial/screenshots/Trend.jpg)                                                                                                                                                                                                                                                                                                        | [\*The trend of numberScalar\*](#the-trend-of-number-scalar-attributes)[\*Trend Flash demo\*](http://www.esrf.fr/computing/cs/tango/tango_doc/atk_tutorial/flash-demos/TrendDemo.htm)    |
 | ScalarDevBooleanCollection of attributes     | View           | AttributePolledList         | [\*BooleanTrend\*](http://www.esrf.fr/computing/cs/tango/tango_doc/atk_tutorial/screenshots/booleanTrend.jpg)                                                                                                                                                                                                                                                                                          | [\*The trend of boolean scalar attributes\*](#the-trend-of-boolean-scalar-attributes)                                                                                                    |
-| ScalarAny typeCollection of attributes       | View and Set   | IAttribute                  | [\*MultiScalarTableViewer\*](http://www.esrf.fr/computing/cs/tango/tango_doc/atk_tutorial/screenshots/MultiScalarTable.jpg)                                                                                                                                                                                                                                                                            | [\*A set of scalar att...\*](#_A_set_of)[\*Scalar Table Flash demo\*](http://www.esrf.fr/computing/cs/tango/tango_doc/atk_tutorial/flash-demos/MultiScalarTableViewer.htm)               |
+| ScalarAny typeCollection of attributes       | View and Set   | IAttribute                  | [\*MultiScalarTableViewer\*](http://www.esrf.fr/computing/cs/tango/tango_doc/atk_tutorial/screenshots/MultiScalarTable.jpg)                                                                                                                                                                                                                                                                            | [\*A set of scalar att...\*](#a-set-of-scalar-attributes)
+[\*Scalar Table Flash demo\*](http://www.esrf.fr/computing/cs/tango/tango_doc/atk_tutorial/flash-demos/MultiScalarTableViewer.htm)               |
 | ScalarDevStateCollection of attributes       | View           | IDevStateScalar             | [\*TabbedPaneDevStateScalarViewer\*](http://www.esrf.fr/computing/cs/tango/tango_doc/atk_tutorial/screenshots/tabbedPaneDevStateScalarViewer.jpg)                                                                                                                                                                                                                                                      | [\*A set of DevStateScalar attrributes\*](#a-set-of-devstatescalar-attributes-tabbedpanedevstatescalarviewer)                                                                            |
 | SpectrumNumeric typeSingle attribute         | View           | INumberSpectrum             | [\*NumberSpectrumViewer\*](http://www.esrf.fr/computing/cs/tango/tango_doc/atk_tutorial/screenshots/NumberSpectrumViewer.jpg)                                                                                                                                                                                                                                                                          | [\*NumberSpectrum attributes\*](#numberspectrum-attributes)                                                                                                                              |
 | SpectrumDevStringSingle attribute            | View           | IStringSpectrum             | [\*SimpleStringSpectrumViewer\*](http://www.esrf.fr/computing/cs/tango/tango_doc/atk_tutorial/screenshots/SimpleStringSpectrumViewer.jpg)                                                                                                                                                                                                                                                              | [\*StringSpectrum attributes\*](#stringspectrum-attributes)                                                                                                                              |

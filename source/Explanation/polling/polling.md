@@ -158,7 +158,7 @@ poll the device command/attribute with a polling period below those
 defined by these properties. See Appendix A on device parameter to get a
 precise syntax description for these properties.
 
-The Jive ({ref}`jive-manual`) tool also allows a graphical device
+The [Jive](inv:jive:std#index) tool also allows a graphical device
 polling configuration.
 
 ### Configuring the polling threads pool

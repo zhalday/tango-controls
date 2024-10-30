@@ -11,6 +11,6 @@ PANIC is a set of tools (api, Tango device server, user interface) that provides
 
 All the information connected to the project can be found visiting the following links:
 
-- [PANIC on github](https://github.com/tango-controls/PANIC)
-- [PANIC presentation at PCAPAC\&#39;14](https://github.com/tango-controls/PANIC/blob/documentation/doc/PANIC_at_PCAPAC_2014_FCO206_TALK.pdf)
+- [PANIC on Gitlab](https://gitlab.com/tango-controls/panic)
+- [PANIC presentation at PCAPAC\&#39;14](https://gitlab.com/tango-controls/panic/-/blob/documentation/doc/PANIC_at_PCAPAC_2014_FCO206_TALK.pdf)
 - [PANIC documentation](https://tango-controls.readthedocs.io/projects/panic/en/latest/)

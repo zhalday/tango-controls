@@ -65,6 +65,8 @@ Alternatively, you can add device with log level already set with
 Add and set logging level
 :::
 
+The new device logs will then be displayed in LogViewer window.
+
 ### Add colocated devices
 
 The {guilabel}`Add Colocated` option adds all devices, running on the same

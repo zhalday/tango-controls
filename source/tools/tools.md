@@ -1,9 +1,13 @@
+(tools-index)=
 # Tools
 
 {doc}`Jive <jive:index>`
+
+{doc}`Astor <astor:index>`
+
 ```{toctree}
-astor/index
 atk
+astor
 starter
 logviewer
 jdraw

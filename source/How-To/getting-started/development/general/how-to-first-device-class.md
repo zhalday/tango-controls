@@ -33,7 +33,7 @@ This HowTo explains how to create your first Device Class regardless of the lang
 
 Prerequisite : Tango Environment.
 
-## Start [Pogo ](#pogo-manual) Generator
+## Start [Pogo](#pogo-documentation) Generator
 
 Now you can create a new Class. Click on {{ image }} and New.
 

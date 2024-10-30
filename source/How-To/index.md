@@ -10,7 +10,7 @@ contributing/contributing
 debugging/debugging
 deployment/index
 getting-started/index
-how-to-dynamic-attributes-device-class/index
+how-to-dynamic-attributes-device-class
 how-to-try-tango/index
 installation/index
 testing/testing
@@ -21,4 +21,5 @@ how-to-import-classes-to-catalogue
 how-to-integrate-with-systemd
 how-to-run-device-server-firewall
 how-to-use-tango-servers-without-db
+how-to-add-subproject-to-the-doc
 ```

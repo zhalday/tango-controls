@@ -25,7 +25,7 @@ or on the internet.
 Tango can be used as a communication protocol for controlling anything remotely.
 Tango is ideal for connecting things together and its uses are only limited by your imagination!
 
-```{image} introduction/img/Ready.jpg
+```{image} introduction/Ready.jpg
 ```
 
 We are glad you are with us.

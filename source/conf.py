@@ -36,7 +36,6 @@ sys.path.append(os.path.abspath("."))
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    #    'breathe',
     "myst_parser",
     "sphinx.ext.autodoc",
     "sphinx.ext.doctest",
@@ -54,6 +53,7 @@ extensions = [
 ]
 
 myst_enable_extensions = [
+    "attrs_block",
     "attrs_inline",
     "colon_fence",
     "deflist",
@@ -236,10 +236,6 @@ html_theme_options = {
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 # html_short_title = None
-
-# The name of an image file (relative to this directory) to place at the top
-# of the sidebar.
-html_logo = "img/logo_tangocontrols_white.png"
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
@@ -471,6 +467,7 @@ intersphinx_mapping = {
     "pytango": ("https://pytango.readthedocs.io/en/stable/", None),
     "python": ("https://docs.python.org/3", None),
     "jive": ("https://jive.readthedocs.io/en/latest/", None),
+    "astor": ("https://tango-astor.readthedocs.io/en/latest/", None),
 }
 
 # link checking options
