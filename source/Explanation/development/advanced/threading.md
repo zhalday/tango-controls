@@ -92,7 +92,7 @@ mode. A method of the Tango::Util class allows to change this default
 behavior.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   #include <tango.h>
 
@@ -163,7 +163,7 @@ serialization behavior and to give the user omni_mutex object to the
 kernel.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
  void MyClass::init_device()
  {

@@ -156,7 +156,7 @@ list mentioned above. It should be rather self-explanatory with the
 comments.
 
 ```{code} java
-:number-lines: true
+:number-lines: 1
 
  package examples;
 
@@ -387,7 +387,7 @@ the attributes by wildcard, you need to add them explicitly, like
 this:
 
 ```{code} java
-:number-lines: true
+:number-lines: 1
 
   try
   {
@@ -436,7 +436,7 @@ and not an attribute list viewer, it shows an implementation of the list
 mentioned above.
 
 ```{code} java
-:number-lines: true
+:number-lines: 1
 
   package examples;
 
@@ -657,7 +657,7 @@ assume that the synoptic has already been drawn using Jdraw graphical
 editor.
 
 ```{code} java
-:number-lines: true
+:number-lines: 1
 
   package examples;
   import java.io.*;
@@ -810,7 +810,7 @@ has the capability of receiving and treating *events* from a model which
 emits events.
 
 ```{code} java
-:number-lines: true
+:number-lines: 1
 
   // this is the setModel of a SimpleScalarViewer
     public void setModelsetModel(INumberScalar scalar) {
@@ -877,7 +877,7 @@ amount of time and then call a method refresh on whatever kind of
 `IRefreshee` it has been given as parameter, as shown below
 
 ```{code} java
-:number-lines: true
+:number-lines: 1
 
   // This is an example from DeviceFactory.
   // We create a new Refresher with the name "device"

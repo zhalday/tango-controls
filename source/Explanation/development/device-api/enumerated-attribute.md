@@ -44,7 +44,7 @@ attribute creation time in the *attribute_factory* method of the
 XXXClass class. Let us take one example
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   enum class Card: short
   {
@@ -99,7 +99,7 @@ way specific to the device and passed to Tango using the Attribute class
 *set_properties()* method. Let us take one example
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   void MyDev::init_device()
   {
@@ -133,7 +133,7 @@ enumeration definition. We assume that the enumeration is the same than
 the one defined above (Card enumeration)
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   enum Card points;
 
@@ -156,7 +156,7 @@ To get the same result using a classical DevShort variable, the code
 looks like
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   DevShort sh;
 
@@ -183,7 +183,7 @@ The later case is for generic client which do not have compile time
 knowledge of the enumeration. The code looks like
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   DeviceAttribute da = the_dev.read_attribute("TheEnumAtt");
   Card ca;

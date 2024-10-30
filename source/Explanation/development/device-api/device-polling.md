@@ -102,7 +102,7 @@ to the device server administration device. The following piece of code
 shows how the source code should be written.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   void DevTestClass::command_factory()
   {
@@ -337,7 +337,7 @@ of the Util class. The following piece of code shows how this method
 could be used for one externally triggered command.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   .....
 
@@ -385,7 +385,7 @@ fill_cmd_polling_buffer() method usage. Error management has also
 been removed.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   ....
 
@@ -455,7 +455,7 @@ fill_attr_polling_buffer() method usage with memory management issue.
 Error management has also been removed.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   ....
 
@@ -523,7 +523,7 @@ The following code snippet is just an exmaple of how these methods could
 be used. They are documented in [^cite_tangorefman].
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
       void MyClass::read_attr(Tango::Attribute &attr)
       {

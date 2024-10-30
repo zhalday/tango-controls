@@ -13,7 +13,7 @@ code shows how the source code should be written to set an attribute as
 memorized and to initialise only the attribute set point.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
  void DevTestClass::attribute_factory(vector<Tango::Attr *> &att_list)
   {

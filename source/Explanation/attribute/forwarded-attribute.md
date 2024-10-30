@@ -81,7 +81,7 @@ the attribute label can be defined. One example of how to program a
 forwarded attribute is given below
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   class MyFwdAttr: public Tango::FwdAttr
   {

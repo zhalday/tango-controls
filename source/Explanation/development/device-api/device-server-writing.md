@@ -390,7 +390,7 @@ device specific data.
 ##### Definition
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
  class StepperMotor: public TANGO_BASE_CLASS
  {
@@ -478,7 +478,7 @@ object.
 ##### Definition
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
  class StepperMotorClass : public DeviceClass
  {
@@ -522,7 +522,7 @@ inheritance model.
 ##### Definition
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   class DevReadPositionCmd : public Command
   {
@@ -554,7 +554,7 @@ class.
 ##### Definition
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   class PositionAttr: public Tango::Attr
   {
@@ -1054,7 +1054,7 @@ helper functions defined by CORBA (in the CORBA namespace) and Tango. These
 functions are :
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
       char *CORBA::string_alloc(unsigned long len);
       char *Tango::string_dup(const char *);
@@ -1072,7 +1072,7 @@ memory allocated with *string_alloc* and *string_dup*. Calling
 The following code fragment is an example of the Tango::DevString type usage :
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
      Tango::DevString str = CORBA::string_alloc(5);
      strcpy(str,"TANGO");
@@ -1129,7 +1129,7 @@ The following code fragment is an example of how to use a
 Tango::DevVarLongArray type
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
      Tango::DevVarLongArray *mylongseq_ptr;
      mylongseq_ptr = new Tango::DevVarLongArray();
@@ -1173,7 +1173,7 @@ Line 17-18 : Print sequence element
 Another example for the Tango::DevVarStringArray type is given
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
      Tango::DevVarStringArray mystrseq(4);
      mystrseq.length(4);
@@ -1216,7 +1216,7 @@ encoded_data field type is a Tango::DevVarCharArray. An example of the
 usage of the Tango::DevVarLongStringArray type is detailed below.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
      Tango::DevVarLongStringArray my_vl;
 
@@ -1244,7 +1244,7 @@ enumeration to be a 32 bit type. The first enumerator will have the
 value 0, the next one will have the value 1 and so on.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
      Tango::DevState state;
 
@@ -1336,7 +1336,7 @@ This is identical to inserting/extracting sequences.
 This is identical to inserting/extracting basic types
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
     CORBA::Any a;
     Tango::DevLong l1,l2;
@@ -1399,7 +1399,7 @@ small helper methods have been written in the Command class. The
 signatures of these methods are :
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
           void extractextract(const CORBA::Any &,<Tango type> &);
           CORBA::Any *insertinsert(<Tango type>);
@@ -1424,7 +1424,7 @@ methods (We suppose that we can use the Command class insert/extract
 methods)
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
     Tango::DevLong l1,l2;
     l1 = 2;
@@ -1482,7 +1482,7 @@ Example of a method receiving a Tango::DevString and returning a
 Tango::DevString is detailed just below
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   Tango::DevString MyDev::dev_string(Tango::DevString argin)
   {
@@ -1507,7 +1507,7 @@ command is executed. For constant string length, a statically allocated
 buffer can be used.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   Tango::ConstDevString MyDev::dev_string(Tango::DevString argin)
   {
@@ -1534,7 +1534,7 @@ Example of a method returning a Tango::DevVarLongArray is detailed just
 below
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   Tango::DevVarLongArray *MyDev::dev_array()
   {
@@ -1561,7 +1561,7 @@ following example assuming a buffer of long data is declared as device
 data member and named buffer.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   Tango::DevVarLongArray *MyDev::dev_array()
   {
@@ -1604,7 +1604,7 @@ Example of a method returning a Tango::DevVarStringArray is detailed
 just below
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   Tango::DevVarStringArray *MyDev::dev_str_array()
   {
@@ -1636,7 +1636,7 @@ buffer of pointer to char is declared as device data member and named
 int_buffer.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   Tango::DevVarStringArray *DocDs::dev_str_array()
   {
@@ -1708,7 +1708,7 @@ of the DeviceImpl class. An exception is thrown to the client to
 indicate that the requested command is not defined in the command list.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
     TangoSys_OMemStream o;
 
@@ -1868,7 +1868,7 @@ send log messages associated to a device must be a member of a class
 inheriting from the Tango::LogAdapter class. Here is an example:
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
  class MyDeviceActualImpl: public Tango::LogAdapter
  {
@@ -2123,7 +2123,7 @@ They mainly used the “\<\<” operator overloading features. The following
 code lines are an example of usage of these utilities.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
     vector<string> v1;
     v1.push_back("one");
@@ -2176,7 +2176,7 @@ included in the library because some linkers are perturbed by the
 presence of two main functions.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   #include <tango.h>
 
@@ -2252,7 +2252,7 @@ with one implementation of the device server pattern for stepper motor
 device.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   #include <tango.h>
   #include <steppermotorclass.h>
@@ -2279,7 +2279,7 @@ motor class is defined within a namespace called *StepperMotor*.
 #### The class declaration file
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   #include <tango.h>
 
@@ -2335,7 +2335,7 @@ Line 20 : Definition of the *device_factory* method
 #### The singleton related methods
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   #include <tango.h>
 
@@ -2422,7 +2422,7 @@ command is created using the inheritance model and the second command is
 created using the template command model.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   void StepperMotorClass::command_factory()
   {
@@ -2476,7 +2476,7 @@ class and the instance of the device server process. This list is fetch
 from the Tango database.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   void StepperMotorClass::device_factory(const Tango::_DevVarStringArray *devlist_ptr)
   {
@@ -2510,7 +2510,7 @@ The rule of this method is to fulfill a vector of pointer to attributes.
 A reference to this vector is passed as argument to this method.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   void StepperMotorClass::attribute_factory(vector<Tango::Attr *> &att_list)
   {
@@ -2557,7 +2557,7 @@ more information on this method.
 #### The class declaration file
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   #include <tango.h>
 
@@ -2632,7 +2632,7 @@ set to false, the DeviceClass *command_handle*r method will
 automatically send an exception to the caller.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   bool DevReadPositionCmd::is_allowed(Tango::DeviceImpl *device,
                                       const CORBA::Any &in_any)
@@ -2659,7 +2659,7 @@ command input Any object. This method returns a pointer to an any object
 which must be initialized with the data to be returned to the caller.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   CORBA::Any *DevReadPositionCmd::execute(
                           Tango::DeviceImpl *device,
@@ -2689,7 +2689,7 @@ which return a pointer to this Any.
 #### The class declaration file
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   #include <tango.h>
   #include <steppermotor.h>
@@ -2790,7 +2790,7 @@ the attribute object.
 #### The class declaration file
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
  #include <tango.h>
 
@@ -2909,7 +2909,7 @@ only for the third form of constructor is the device description string
 passed as a classical pointer to a char array.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   #include <tango.h>
   #include <steppermotor.h>
@@ -3006,7 +3006,7 @@ of the TemplCommandInOut class. The *direct_cmd_allowed* method will
 be executed by the *is_allowed* method of the TemplCommandInOut class.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   DevLong StepperMotor::dev_read_direction(DevLong axis)
   {
@@ -3104,7 +3104,7 @@ write). In our example, the reading of the Position attribute is
 allowed only if the device state is ON.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   void StepperMotor::read_attr_hardware(vector<long> &attr_list)
   {
@@ -3185,7 +3185,7 @@ attribute. Therefore, the StepperMotor class only defines a
 *write_SetPosition()* method.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
  void StepperMotor::write_SetPosition(Tango::WAttribute &att)
  {
@@ -3230,7 +3230,7 @@ figure \[Device pattern figure\]). This has been grouped in a method called
 objects are described in the Tango API documentation.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   void DocDs::get_device_property()
   {
@@ -3273,7 +3273,7 @@ data type. The *read_Direction()* method is the method for reading the
 Direction attribute.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   DevLong StepperMotor::dev_read_position(DevLong axis)
   {
@@ -3442,7 +3442,7 @@ classical *main()* function. Don’t forget to add the *tango.h* file in
 the list of included files.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
  BOOL FluidsApp::InitInstance()
  {
@@ -3522,7 +3522,7 @@ server, its rule is to destroy the Tango::Util singleton if this one has
 been correctly constructed.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   int FluidsApp::ExitInstance()
   {
@@ -3618,7 +3618,7 @@ linker SUBSYSTEM option to Windows (Under Linker/System in the project
 properties window).
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   int APIENTRY WinMain(HINSTANCE hInstance,
                        HINSTANCE hPrevInstance,
@@ -3721,7 +3721,7 @@ method and the last one is used to log error or info messages. The class
 definition file looks like
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   #include <tango.h>
   #include <ntservice.h>
@@ -3750,7 +3750,7 @@ Line 9 : The
 The class source code looks like
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   #include <myservice.h>
   #include <tango.h>
@@ -3809,7 +3809,7 @@ the service, to check the service option and to run the service. The
 code looks like :
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   #include <tango.h>
   #include <MYService.h>
@@ -3898,7 +3898,7 @@ service, follow these rules :
   function
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   int main(int argc,char *argv[])
   {
@@ -3985,7 +3985,7 @@ The following is an example of a Makefile for Linux. Obviously, all the
 paths are set to the ESRF file system structure.
 
 ```{code} makefile
-:number-lines: true
+:number-lines: 1
 
  #
  # Makefile to generate a Tango server
@@ -4233,7 +4233,7 @@ signal SIGALRM (alarm signal) must be propagated only to the motor
 number 2 (id04/motor/02)
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   void StepperMotor::init_device()
   {
@@ -4331,7 +4331,7 @@ As you can guess, BClass has to inherit from AClass. The
 *command_factory* method must also be adapted.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   namespace B
   {
@@ -4368,7 +4368,7 @@ Line 13 : Create BClass commands
 As you can guess, B has to inherits from A.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   namespace B
   {
@@ -4474,7 +4474,7 @@ developper has to concentrate on. The following code is one example of
 these two methods.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   bool StepperMotor::is_DynData_allowed(Tango::PipeReqType req)
   {
@@ -4575,7 +4575,7 @@ developper has to concentrate on. The following code is one example of
 the *write_DynData()* method.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   void StepperMotor::write_DynData(Tango::WPipe &w_pipe)
   {
