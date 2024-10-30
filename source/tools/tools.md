@@ -3,7 +3,6 @@
 {doc}`Jive <jive:index>`
 
 ```{toctree}
-astor/index
 atk
 starter
 logviewer
