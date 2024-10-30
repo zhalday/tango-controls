@@ -2058,7 +2058,7 @@ DevicePipeBlob in DevicePipeBlob. There is no limit on the depth of this
 recursivity even if it is not recommended to have a too large depth. The
 following figure summarizes DevicePipe data structure
 
-(target-1)=
+(fig-4.1)=
 
 :::{figure} gen_api/pipe.png
 :alt: DevicePipe data structure

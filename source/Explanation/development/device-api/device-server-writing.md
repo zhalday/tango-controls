@@ -58,9 +58,9 @@ pattern is to provide the control programmer with a framework in which
 s/he can develop new control objects. The device pattern uses other
 design patterns like the [Singleton](https://en.wikipedia.org/wiki/Singleton_pattern)
 and [Command](https://en.wikipedia.org/wiki/Command_pattern) patterns.
-The device pattern class diagram for stepper motor device is drawn in figure [6.1]
+The device pattern class diagram for stepper motor device is drawn in figure [6.1](fig-6.1).
 
-(target-1)=
+(fig-6.1)=
 
 :::{figure} device-server-writing/device_et.png
 :align: center
@@ -70,7 +70,7 @@ The device pattern class diagram for stepper motor device is drawn in figure [6.
 Figure 6.1: Device pattern class diagram
 :::
 
-. In this figure, only classes surrounded with a dash line square are
+In this figure, only classes surrounded with a dash line square are
 device specific. All the other classes are part of the TDSOM core and
 are developed by the Tango system team. Different kind of classes are
 used by the device pattern.
@@ -91,7 +91,7 @@ used by the device pattern.
      class for each of these classes. It is an abstract class. A
      *execute* method must be defined in each sub-class. A
      *is_allowed* method may also be re-defined in each class if the
-     default one does not fulfill all the needs [^footnote-1]. In our stepper
+     default one does not fulfil all the needs [^footnote-1]. In our stepper
      motor device server example, the DevReadPosition command follows
      this model.
 
@@ -597,9 +597,9 @@ methods are :
    attributes.
 4. The *device_factory*() method of the StepperMotorClass class
 
-This startup procedure is described in figure [6.2]
+This startup procedure is described in figure [6.2](fig-6.2).
 
-(target-2)=
+(fig-6.2)=
 
 :::{figure} device-server-writing/startup.jpg
 :align: center
@@ -608,7 +608,7 @@ This startup procedure is described in figure [6.2]
 Figure 6.2: Device pattern startup sequence
 :::
 
-. The creation of the StepperMotorClass will automatically create an
+The creation of the StepperMotorClass will automatically create an
 instance of the DeviceClass class. The constructor of the DeviceClass
 class will create the Status, State and Init command objects and store
 them in its command list.
@@ -630,9 +630,9 @@ by the *attribute_factory()* method.
 
 ### Command execution sequence
 
-The figure [6.3]
+The figure [6.3](fig-6.3)
 
-(target-3)=
+(fig-6.3)=
 
 :::{figure} device-server-writing/command.png
 :align: center
@@ -726,11 +726,11 @@ several methods of the device class (StepperMotor in our example) :
       store the attribute value into the attribute object. It has one
       parameter which is a reference to the Attribute object to be read.
 
-The figure [6.4] is a drawing of these method
+The figure [6.4](fig-6.4) is a drawing of these method
 calls sequencing. For attribute always readable, a default *is_allowed*
 method is provided. This method always returns true.
 
-(target-4)=
+(fig-6.4)=
 
 :::{figure} device-server-writing/r_attribute.png
 :align: center
@@ -768,17 +768,17 @@ several methods of the device class (StepperMotor in our example)
    and code the real hardware access in each *write\_\<att name>()*
    method.
 
-The figure [6.5] is a drawing of these method
+The figure [6.5](fig-6.5) is a drawing of these method
 calls sequencing. For attribute always writeable, a default is_allowed
 method is provided. This method always allways returns true.
 
-(target-5)=
+(fig-6.5)=
 
 :::{figure} device-server-writing/w_attribute.png
 :align: center
 :alt: Write attribute sequencing
 
-Write attribute sequencing
+Figure 6.5: Write attribute sequencing
 :::
 
 ### The device server framework
@@ -885,7 +885,7 @@ device server pattern are created (one for the dserver object and the
 other for the class of devices to control). On top of that, one instance
 of the Tango::Util class must also be created.
 
-(target-6)=
+(fig-6.6)=
 
 :::{figure} device-server-writing/complete_server.png
 :align: center
@@ -894,7 +894,7 @@ of the Tango::Util class must also be created.
 Figure 6.6: A complete device server
 :::
 
-A drawing of a complete device server is in figure [6.6]
+A drawing of a complete device server is in figure [6.6](fig-6.6).
 
 #### Device server startup sequence
 
@@ -3226,7 +3226,7 @@ declare and defin it in your own Tango class
 
 Retrieving properties is fairly simple with the use of the database
 object. Each Tango device is an aggregate with a DbDevice object (see
-figure \[Device pattern figure\]). This has been grouped in a method called
+figure [6.1](fig-6.1)). This has been grouped in a method called
 *get_device_properties*(). The classes and methods of the Dbxxx
 objects are described in the Tango API documentation.
 
@@ -3370,7 +3370,7 @@ based on three windows which are :
 
 This window looks like :
 
-(target-7)=
+(fig-6.7)=
 
 :::{figure} device-server-writing/nt_server/main.bmp
 :align: center
@@ -4453,10 +4453,10 @@ Tango class:
    store the pipe data in the pipe object. It has one parameter which is
    a reference to the Pipe object to be read.
 
-The figure [6.8] is a drawing of these method calls
+The figure [6.8](fig-6.8) is a drawing of these method calls
 sequencing for our class StepperMotor with one pipe named DynData.
 
-(target-8)=
+(fig-6.8)=
 
 :::{figure} device-server-writing/r_pipe.png
 :align: center
@@ -4554,10 +4554,10 @@ Tango class:
    method is to get the data to be written from the WPipe oject and to
    write them into the corresponding Tango class objects.
 
-The figure [6.9] is a drawing of these method calls
+The figure [6.9](fig-6.9) is a drawing of these method calls
 sequencing for our class StepperMotor with one pipe named DynData.
 
-(target-9)=
+(fig-6.9)=
 
 :::{figure} device-server-writing/w_pipe.png
 :align: center

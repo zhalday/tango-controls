@@ -47,7 +47,7 @@ these four parameters are not defined and no check will be done.
 The following figure is a drawing of attribute quality factor and device
 state values function of the the attribute value.
 
-(target-1)=
+(fig-7.1)=
 
 :::{figure} attribute-alarms/alarm.png
 :alt: Level alarm
