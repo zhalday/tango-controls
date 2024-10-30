@@ -112,7 +112,7 @@ When the *device_name_factory()* method is re-defined within the
 StepperMotorClass class.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   void StepperMotorClass::device_name_factory(vector<string> &list)
   {

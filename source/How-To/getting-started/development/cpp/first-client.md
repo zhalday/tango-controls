@@ -9,7 +9,7 @@
 The quickest way of getting started is by studying this example :
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   /*
    * example of a client using the TANGO C++ api.

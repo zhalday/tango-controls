@@ -42,7 +42,7 @@ database, click on File then Load Property File.
 ## Property file syntax
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
  #---------------------------------------------------------
  # SERVER TimeoutTest/manu, TimeoutTest device declaration

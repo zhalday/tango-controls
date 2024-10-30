@@ -25,7 +25,7 @@ main thread. The following piece of code is an example of how you can
 use this feature.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   bool my_event_loop()
   {

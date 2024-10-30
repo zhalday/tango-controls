@@ -49,7 +49,7 @@ using multicasting with the address *226.20.21.22* and the port number
 for one event propagated using multicast is
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
  CtrlSystem->MulticastEvent:   Multicast address,
                                port number,

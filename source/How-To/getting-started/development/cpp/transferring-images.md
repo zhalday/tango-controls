@@ -23,7 +23,7 @@ used in a server and in a client. On the server side, creates an
 instance of the EncodedAttribute class within your object
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
  class MyDevice::Tango::Device_4Impl
   {
@@ -37,7 +37,7 @@ In the code of your device, use an encoding method of the
 EncodedAttribute class
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
  void MyDevice::read_Encoded_attr_image(Tango::Attribute &att)
  {
@@ -59,7 +59,7 @@ On the client side, the code is the following (without exception
 management)
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
     ....
     DeviceAttribute da;

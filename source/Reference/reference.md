@@ -1453,7 +1453,7 @@ splitted by a comma. Example of polling_threads_pool_conf property
 for 3 threads used:
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   dserver/<ds exec name>/<inst. name>/polling_threads_pool_conf-> the/dev/01
                     the/dev/02,the/dev/06

@@ -52,7 +52,7 @@ the Tango::DevFloat type which is simply the double of the input value.
 The code for the method executed by this command is the following:
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   Tango::DevFloat DocDs::dev_simple(Tango::DevFloat argin)
   {
@@ -79,7 +79,7 @@ array is doubled. The code for the method executed by the command is the
 following :
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   Tango::DevVarLongArray *DocDs::dev_array(const Tango::DevVarLongArray *argin)
   {
@@ -119,7 +119,7 @@ the content of the input string and returns a hard-coded string. The
 code for the method executed by the command is the following :
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   Tango::DevString DocDs::dev_string(Tango::DevString argin)
   {
@@ -158,7 +158,7 @@ This method does not receive input data but returns an array of strings
 this command is the following:
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   Tango::DevVarStringArray *DocDs::dev_str_array()
   {
@@ -196,7 +196,7 @@ an array of double and an array of strings. The code for the method
 executed by this command is the following:
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   Tango::DevVarDoubleStringArray *DocDs::dev_struct()
   {
@@ -243,7 +243,7 @@ to store attributes value. These data are (part of the class definition)
 \:
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
  protected :
          //      Add your own data members here
@@ -263,7 +263,7 @@ read method for each readable attribute and one write method for each
 writable attribute. The code for these methods is the following :
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
  void DocDs::read_attr_hardware(vector<long> &attr_list)
  {

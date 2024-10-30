@@ -12,7 +12,7 @@ non polled attributes the server has to declare that events are pushed
 from the code. Three methods are available for this purpose:
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   Attr::set_change_event(bool implemented, bool detect = true);
   Attr::set_archive_event(bool implemented, bool detect = true);
@@ -31,7 +31,7 @@ To push events manually from the code a set of data type dependent
 methods can be used:
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   DeviceImpl::push_change_event (string attr_name, ....);
   DeviceImpl::push_archive_event(string attr_name, ....);
@@ -42,7 +42,7 @@ For the data ready event, a DeviceImpl class method has to be used to
 push the event.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   DeviceImpl::push_data_ready_event(string attr_name,Tango::DevLong ctr);
 ```
@@ -58,7 +58,7 @@ To push non-standard events, use the following api call is available to
 all device servers :
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   DeviceImpl::push_event( string attr_name,
                vector<string> &filterable_names,
@@ -76,7 +76,7 @@ that, this event is sent with one filterable field called value which is
 set to the attribute value.
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   void MyClass::read_Sinusoide(Tango::Attribute &attr)
   {

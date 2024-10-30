@@ -55,7 +55,7 @@ Example of starting and registering a Notification Service daemon on a
 UNIX like operating system
 
 ```{code} bash
-:number-lines: true
+:number-lines: 1
 
 ulimit -s 2048
 notifd -n -DDeadFilterInterval=300 &
@@ -72,7 +72,7 @@ daemon in the Tango database is done at line 2.
 It differs on a Windows computer
 
 ```{code} bash
-:number-lines: true
+:number-lines: 1
 
 notifd -n -DDeadFilterInterval=300 -DFactoryIORFileName=C:\Temp\evfact.ior &
 notifd2db C:\Temp\evfact.ior
@@ -107,7 +107,7 @@ done with the **notifd2db** command. Example of starting and registering
 a Notification Service daemon on a UNIX like operating system
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   notifd -n -DDeadFilterInterval=300 &
   notifd2db -o /var/myfile.res
@@ -125,7 +125,7 @@ specified using its -D command line option. This file name has also to
 be passed to the notifd2db command.
 
 ```{code} bash
-:number-lines: true
+:number-lines: 1
 
 notifd -n -DDeadFilterInterval=300 -DFactoryIORFileName=C:\Temp\evfact.ior &
 notifd2db C:\Temp\evfact.ior -o C:\Temp\myfile.res
@@ -147,7 +147,7 @@ started with the instance name set to 1 and its device name is
 sys/access_control/1. The command line to start this device server is:
 
 ```{code} cpp
-:number-lines: true
+:number-lines: 1
 
   TangoAccessControl 1
 ```
