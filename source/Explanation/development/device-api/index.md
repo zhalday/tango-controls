@@ -12,7 +12,6 @@ introduction
 ds-guideline/index
 device-server-model
 device-server-writing
-attribute-alarms
 enumerated-attribute
 memorized-attribute
 forwarded-attribute

@@ -14,7 +14,6 @@ overview.md
 general-guidelines/index
 client-api/index
 device-api/index
-client-api/index
 advanced/TangoDeviceServerModel
 advanced/threading
 ```
