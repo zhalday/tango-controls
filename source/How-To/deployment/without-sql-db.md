@@ -23,8 +23,8 @@ command line option. In this case,
 are handled using the specified file instead of the Tango database. The
 file is an ASCII file and follows a well-defined syntax with predefined
 keywords. The simplest way to generate the file for a specific device
-server is to use the Jive application. See [^cite_jive]
-to get Jive documentation. The Tango database is not only used to store
+server is to use the [Jive tool](inv:jive:std#index).
+The Tango database is not only used to store
 device configuration parameters, it is also used to store device network
 access parameter (the CORBA IOR). To allow an application to connect to
 a device hosted by a device server using file instead of database, you

@@ -441,8 +441,8 @@ These fields depend on the event type.
 ```
 
 Filter are defined as a string following a grammar defined by CORBA. It
-is defined in [^cite_notificationservice]. The following example shows
-you the most common use of these filters in the Tango world :
+is defined in the Notification Service specification available from the [OMG home page](https://www.omg.org).
+The following example shows you the most common use of these filters in the Tango world :
 
 - To receive periodic event one out of every three, the filter must be
 

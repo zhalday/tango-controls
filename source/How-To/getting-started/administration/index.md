@@ -8,7 +8,7 @@ Starting as Administrator for Tango Controls you should look on the following to
 
 ## Astor
 
-[Astor ](#astor-manual) is a tool for management of Tango Controls system.
+[Astor](#astor-manual) is a tool for management of Tango Controls system.
 
 ## Jive
 

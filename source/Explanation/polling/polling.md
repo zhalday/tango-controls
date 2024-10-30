@@ -209,7 +209,7 @@ written in the database using the polling_threads_pool_conf property.
 If the behaviour previously described does not fulfill your needs, it is
 possible to update the polling_threads_pool_conf property in a
 graphical way using the Tango Astor ([ASTOR home page]) tool
-or manually using the Jive tool [^cite_jive]. These
+or manually using the [Jive tool](inv:jive:std#index). These
 changes will be taken into account at the next device server process
 start-up. At start-up, the polling threads pool will allways be
 configured as required by the polling_threads_pool_conf property. The
