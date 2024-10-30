@@ -7,10 +7,12 @@
 There are no macOS app installer packages available for Tango Controls. Any installation of Tango Controls libraries or tools is done on the command line.
 
 ## Conda: Everything you'll usually need
+
 The easiest way to get all the necessary Tango Controls libraries and tools for development or administration installed on macOS is to use Conda. In our {doc}`Conda <conda>` document we explain step by step how to to get the packages installed on macOS.
 
 ## But I need only PyTango
-There are developers though that might only need PyTango and nothing else. In that case there the simpler way to install just PyTango is to use [pip](https://pip.pypa.io/en/stable/).
+
+There are developers though that might only need PyTango and nothing else. In that case the simpler way to install just PyTango is to use [pip](https://pip.pypa.io/en/stable/).
 
 ### Installation
 
@@ -36,7 +38,7 @@ python3 -m pip --require-virtualenv pytango
 - Finally set up TANGO environment:
 
 :::{note}
-You should not use `localhost` as your TANGO_HOST. You should use then either `127.0.0.1` or your computers host name.
+You should not use `localhost` as your TANGO_HOST. You should use either `127.0.0.1` or your computers host name.
 :::
 
 For example:
@@ -53,7 +55,7 @@ To see if the PyTango installation was successful, you can run a simple command:
 # Do not forget to activate your virtual environment
 source .venv/bin/activate
 
-python3 -c 'import tango; print(f"{tango.utils.info()}")'
+python3 -c 'import tango; print(tango.utils.info())'
 ```
 
 The output should look similar to this:
