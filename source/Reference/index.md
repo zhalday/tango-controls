@@ -5,13 +5,14 @@
 :name: Reference
 :maxdepth: 2
 
+cppTango
+pytango
+jtango
 bindings/index
 atk_java_doc
-corba
-cppTango
 glossary
-jtango
 reference
+corba
 hdbpp/hdb++-design-guidelines
 hdbpp/hdb-legacy
 hdbpp/hdbpp-cassandra
