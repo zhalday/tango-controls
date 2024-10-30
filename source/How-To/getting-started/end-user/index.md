@@ -11,7 +11,7 @@ usually needs to know.
 ## Jive
 
 It is a tool used to configure components of the Tango Controls and browse a static {term}`Tango Database`. See
-[Jive Manual ](#jive-manual).
+[Jive Manual](inv:jive:std#index).
 
 ## ATKPanel
 

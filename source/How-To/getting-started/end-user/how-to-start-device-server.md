@@ -10,7 +10,7 @@
 self
 ```
 
-While reading this how-to please refer to manuals of [Jive ](#jive-manual) and [Astor ](#astor-manual) tools.
+While reading this how-to please refer to manuals of [Jive](inv:jive:std#index) and [Astor ](#astor-manual) tools.
 
 ## Starting device servers with Jive
 

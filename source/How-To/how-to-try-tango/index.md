@@ -230,7 +230,7 @@ List of useful command for this device:
 > - {command}`CrashFromX` - simulate the crash of the device
 
 Jive is an application design to browse and edit the static TANGO database, configure event and test devices.
-Full documentation for this application you can see here: {ref}`jive-manual`
+Full documentation for this application you can see [here](inv:jive:std#index).
 
 In the atkpanel the attribute shows mainly the real-time values.
 So to better visualization of changes the selected values, the user can use [Taurus framework ](#taurus) widgets.

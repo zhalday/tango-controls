@@ -24,7 +24,7 @@
 - To write your first C++ client see {doc}`development/cpp/first-client`.
 
 - At the beginning you may also be interested in how to use provided tools:
-  [Jive](#jive-manual), [ATKPanel](#atkpanel-manual),
+  [Jive](inv:jive:std#index), [ATKPanel](#atkpanel-manual),
   [Astor](#astor-manual), [JDraw](#jdraw-manual) or [Pogo](#pogo-documentation).
 
 - You may be also interested in the content of [Tango Controls web page]

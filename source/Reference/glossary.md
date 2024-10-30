@@ -16,7 +16,7 @@ Tango Controls
 Tango Core
 : Tango Core is a set of main tools, libraries and specifications of the Tango Controls framework. It consists of libraries
   and API definitions for C++, Java and Python as well as tools to manage the system: [Astor](#astor-manual),
-  [Jive](#jive-manual), etc.
+  [Jive](inv:jive:std#index), etc.
 
 SCADA
 : It is an abbreviation standing for Supervisory Control and Data Acquisition.

@@ -5,6 +5,7 @@
 
 ```{toctree}
 atk
+astor
 starter
 logviewer
 jdraw
