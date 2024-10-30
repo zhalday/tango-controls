@@ -11,6 +11,7 @@ The section is organized as follows:
 :name: developersguidetoc
 
 overview.md
+naming
 general-guidelines/index
 client-api/index
 device-api/index
