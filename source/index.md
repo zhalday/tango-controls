@@ -28,7 +28,7 @@ This is a collection of documents for our Tango Controls community, users of Tan
 Nothing is perfect and neither is this documentation. In the likely case that you find that information is missing, please get in touch with us. Ideally you would simply [open an issue on GitLab](https://gitlab.com/tango-controls/tango-doc/-/issues/new) so that we can address what you have found.
 
 
-## How this documentation is organized
+## How this documentation is organised
 
 The Tango Controls documentation largely follows the [Grand Unified Theory of Documentation](https://docs.divio.com/documentation-system/) and is organised in the following categories (with some overlap):
 
@@ -48,16 +48,16 @@ To support our readers in their quest to quickly find the information that they 
 
 ## Where to go from here?
 
-We understand that it is easy to get lost due to the sheer amount of information. Therefore we provide some suggestions below to get you started:
+We understand that it is easy to get lost due to the sheer amount of information, therefore we provide some suggestions below to get you started:
 
 - The {doc}`Overview <Explanation/overview>` will give you a quick overview of what Tango Controls is, its origins and who uses it. If you are new to Tango Controls, then this is where we recommend you start reading.
 - {doc}`First steps <How-To/getting-started/first-steps>` will guide you through the process of getting started with Tango Controls. This category includes an overview of Tango Controls concepts, procedures for installation and starting the system as well as *Getting started* tutorials.
 - {doc}`Explanation/development/index` provides information for **Developers** that comes in handy when developing {term}`Device Servers <device server>`, {term}`Devices <device>` and client applications.
 - The {doc}`Services <How-To/deployment/index>` section is important mainly for **System Administrators**. However, it may provide some information for both **End Users** and **Developers** too. It contains useful information on Tango Controls system deployment, startup and maintenance.
 - You will find that Tango comes with a rich set of {doc}`tools <tools/tools>`. They are command line tools, graphical toolkits and programming tools for management, developing graphical applications, connecting with other systems and applications. All, **End Users**, **Developers** and **System Adminstrators**, should take a look at the toolkits' manuals.
-- {doc}`Tutorials <Tutorials/index>` and {doc}`HOWTOs <How-To/index>` give step by step guidance and teach you how to work with Tango Controls or get your job done efficiently.
+- {doc}`Tutorials <Tutorials/index>` and {doc}`How-Tos <How-To/index>` give step by step guidance and teach you how to work with Tango Controls or get your job done efficiently.
 - If you would like to contribute to the documentation then please read the  
-  {doc}`documentation workflow tutorial <How-To/contributing/docs>` .
+  {doc}`documentation workflow tutorial <How-To/contributing/docs>`.
 
 ## Indices and tables
 
