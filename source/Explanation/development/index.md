@@ -12,7 +12,6 @@ The section is organized as follows:
 
 overview.md
 naming
-general-guidelines/index
 client-api/index
 device-api/index
 advanced/TangoDeviceServerModel
