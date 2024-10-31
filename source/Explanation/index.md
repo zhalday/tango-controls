@@ -13,7 +13,7 @@ data-model.md
 history.md
 deviceserver.md
 alarm/index.md
-archiving/archiving.md
+archiving/index.md
 attribute/index.md
 command/index.md
 development/index.md
