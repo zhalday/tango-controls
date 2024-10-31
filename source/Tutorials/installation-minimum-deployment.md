@@ -17,7 +17,7 @@ It is possible that all of the tasks above are done on the same computer at the 
 Each Tango Controls system/deployment has to have at least one running DataBaseds {term}`device server`. The machine on which the {term}`device server` is running has a role of so called {term}`Tango Host`. Databaseds is a device server providing configuration information to all other components of the system as well as a runtime catalog of the components/devices.
 It allows (among others) client applications to find devices in distributed environment.
 
-The {envvar}`TANGO_HOST` environment variable is providing information about the address or IP number and the port on which the DataBaseds is listening for Tango connections. The {envvar}`TANGO_HOST` environment variable is built as follows:
+The `TANGO_HOST` environment variable is providing information about the address or IP number and the port on which the DataBaseds is listening for Tango connections. The `TANGO_HOST` environment variable is built as follows:
 
 *host_name_or_IP:port*, example: `localhost:10000`
 :::
@@ -80,7 +80,7 @@ Whatever the role, every computer needs:
 
 - the liblog4j package for logging
 
-- to set an environment variable {envvar}`TANGO_HOST` to the Tango Host and the port, for example
+- to set an environment variable `TANGO_HOST` to the Tango Host and the port, for example
 
   ```console
   TANGO_HOST=mycomputer:10000
@@ -100,8 +100,8 @@ Installing Tango on a single machine means all roles described above (Tango Host
 
 The software needed are described in each role.
 
-In this installation type, a {envvar}`TANGO_HOST` environment variable has to be set to {envvar}`TANGO_HOST=HOSTNAME:PORT` where HOSTNAME is the name of the computer and PORT is the port on which the server will wait for requests. This will be used to send Tango request.
-This {envvar}`TANGO_HOST` environment variable should be loaded at each startup.
+In this installation type, a `TANGO_HOST` environment variable has to be set to `TANGO_HOST=HOSTNAME:PORT` where HOSTNAME is the name of the computer and PORT is the port on which the server will wait for requests. This will be used to send Tango request.
+This `TANGO_HOST` environment variable should be loaded at each startup.
 
 ## Multiple computers
 
@@ -117,18 +117,18 @@ This configuration is described in section [Multiple database servers within a T
 Several Tango control systems can be used.
 It means every Tango control systems will have its own Tango Host which will store its own device servers configuration.
 
-In this environment, Tango Host and Tango clients installation is the same as described upside, but {envvar}`TANGO_HOST` environment variable has to be set on each client according to which server will be used for device servers configuration.
+In this environment, Tango Host and Tango clients installation is the same as described upside, but `TANGO_HOST` environment variable has to be set on each client according to which server will be used for device servers configuration.
 The hostnames of the Tango Hosts have then to be known from all the computers which will access to them.
 
 For example, if `testserver` and `productionserver` have been installed as Tango Hosts, each one will propose Tango database as a service, and client can be configured as followed:
 
-- testclient1 with {envvar}`TANGO_HOST=testserver:10000`
-- testclient2 with {envvar}`TANGO_HOST=testserver:10000`
-- operatorclient with {envvar}`TANGO_HOST=productionserver:10000`
-- developerclient with {envvar}`TANGO_HOST=productionserver:10000`
-- dsclient with {envvar}`TANGO_HOST=productionserver:10000`
+- testclient1 with `TANGO_HOST=testserver:10000`
+- testclient2 with `TANGO_HOST=testserver:10000`
+- operatorclient with `TANGO_HOST=productionserver:10000`
+- developerclient with `TANGO_HOST=productionserver:10000`
+- dsclient with `TANGO_HOST=productionserver:10000`
 
-In this configuration, one can decide to change {envvar}`TANGO_HOST` value on a client to use another server. However, this will need to restart every device running on this client.
+In this configuration, one can decide to change `TANGO_HOST` value on a client to use another server. However, this will need to restart every device running on this client.
 
 ## No database
 

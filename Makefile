@@ -2,7 +2,7 @@
 #
 
 # You can set these variables from the command line.
-SPHINXOPTS    = -W -w sphinx-output.log
+SPHINXOPTS    = -n -W -w sphinx-output.log
 SPHINXBUILD   = sphinx-build
 PAPER         =
 BUILDDIR      = build

@@ -1473,7 +1473,7 @@ It is not mandatory, but highly recommended to add an attribute named
 “log” in the device interface, strings spectrum type, which tracks all
 the internal activity of the device (as defined in Tango Logging).
 
-- In C++, the class {cpp:class}`Yat4Tango::InnerAppender` implements this
+- In C++, the class `Yat4Tango::InnerAppender` implements this
   functionality based on a dynamic attribute (no need to use Pogo).
 - This system facilitates the recovery of errors and therefore the
   problems diagnosis. Problem solving will be faster and optimized.

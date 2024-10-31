@@ -1560,7 +1560,7 @@ This is tunable at several level.
    *Util::set_ds_event_buffer_hwm()* documented in
    <project:#cppTango-api-docs> or
    *ApiUtil::set_event_buffer_hwm()* documented in
-   {cpp:class}`Tango::ApiUtil`
+   `Tango::ApiUtil`
 4. Using environment variables TANGO_DS_EVENT_BUFFER_HWM or
    TANGO_EVENT_BUFFER_HWM
 
