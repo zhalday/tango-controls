@@ -156,9 +156,9 @@ Two libraries have been developed to the *historical data extraction*:
 - A C++ implementation, dedicated *Qt/Qtango* based GUIs or to C++ Tango device servers.
   The *HdbExtractor++ multithread library* allows fetching the data from the legacy HDB and the new HDB++ MySQL schema in a simple Object Oriented way. An additional module provides a Qt interface to the HdbExtractor++ and a dedicated GUI, exploiting the MathGL framework, aimed at displaying mono and bidimensional data over time.
 
-> :::{note}
-> The C++ extraction library currently supports only the MySQL back-end.
-> :::
+:::{note}
+The C++ extraction library currently supports only the MySQL back-end.
+:::
 
 ## Source code
 
