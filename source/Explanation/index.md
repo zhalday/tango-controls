@@ -8,24 +8,22 @@
 :hidden: true
 
 overview.md
-simplified-data-model.md
-data-model.md
-history.md
-deviceserver.md
-attribute-alarms.md
-archiving/index.md
-attribute.md
-command.md
 device.md
-event.md
-pipe.md
-polling.md
+command.md
+attribute.md
 property.md
-tangodb.md
-long-term-support.md
-threading
+event.md
+polling.md
 naming
+data-model.md
 tangodb.md
+deviceserver.md
+alarms.md
+archiving/index.md
+pipe.md
+threading
+long-term-support.md
+history.md
 ```
 
 Tango Controls is a toolkit for building distributed object based control systems.
