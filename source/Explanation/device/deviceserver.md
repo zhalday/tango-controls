@@ -1,3 +1,4 @@
+(device-device-server)=
 # Device Server
 
 {audience}`all`
