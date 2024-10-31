@@ -13,8 +13,8 @@ Tango Pipe data types may be a mixture of the basic Tango data types (or array o
 ## Use Case
 Pipe can be used to:
 
-1- To define complex data structures to act as a single Attribute.
-2- To pass data structures of arbitrary type and size.
+1. To define complex data structures to act as a single Attribute.
+2. To pass data structures of arbitrary type and size.
 
 
 
