@@ -1,6 +1,6 @@
 # Igor Pro
 
-(igor-pro)=
+(igor-pro-binding)=
 
 {audience}`developers, users`
 
