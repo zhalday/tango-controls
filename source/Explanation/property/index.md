@@ -1,5 +1,3 @@
-# Property
-
 ```{toctree}
 property.md
 ```
