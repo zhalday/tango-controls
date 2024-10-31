@@ -6,8 +6,8 @@
 
 There are several ways to try the Tango Controls System.
 
-For the first quick look, you can download and run the [TangoBox Virtual Machine](#vm).
-Also, it is a possibility to build the system from [source code](#source-code-install).
+For the first quick look, you can download and run the [TangoBox Virtual Machine](#tangobox-vm-installation).
+Also, it is a possibility to build the system from [source code](#debian-compile-tango-source-distribution).
 
 If you have installed and configured Tango, you can skip to: {ref}`using-tango`.
 
@@ -22,7 +22,7 @@ If you have installed and configured Tango, you can skip to: {ref}`using-tango`.
 If you want to use Debian/Ubuntu or Docker solution to try Tango you can skip
 this article and go to:
 
-- [How to install Tango on Debian/Ubuntu](#tango-on-linux)
+- [How to install Tango on Debian](#linux-debian-installation)
 - [Using Tango docker containers](#tango-using-docker)
 
 Tango requires:

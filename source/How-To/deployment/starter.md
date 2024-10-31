@@ -24,7 +24,7 @@ There are several ways to install the Starter device server:
 
 - [as a part of Tango source distribution](#debian-compile-tango-source-distribution),
 - [from Starter source](https://gitlab.com/tango-controls/starter),
-- [using a package manager ](#tango-on-linux)
+- [using a package manager ](#linux-debian-installation)
   (e.g. [tango-starter for debian](https://packages.debian.org/buster/tango-starter)),
 
 ## Configuration
