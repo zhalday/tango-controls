@@ -28,11 +28,11 @@
     </node>
     <node id="n1">
       <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/getting-started/development/java/jtango-client.html]]></data>
-      <data key="d5"><![CDATA[TANGO devices and database are implemented using the TANGO device server model. 
-To access them the user has the CORBA interface e.g. command_inout(), 
-write_attributes() etc. defined by the idl file. These methods are very 
-low-level and assume a good working knowledge of CORBA. In order to simplify 
-this access, high-level api in C++, Python and Java have been implemented which 
+      <data key="d5"><![CDATA[TANGO devices and database are implemented using the TANGO device server model.
+To access them the user has the CORBA interface e.g. command_inout(),
+write_attributes() etc. defined by the idl file. These methods are very
+low-level and assume a good working knowledge of CORBA. In order to simplify
+this access, high-level api in C++, Python and Java have been implemented which
 hides all CORBA aspects of TANGO.]]></data>
       <data key="d6">
         <y:ShapeNode>
@@ -52,8 +52,8 @@ hides all CORBA aspects of TANGO.]]></data>
     </node>
     <node id="n2">
       <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/development/device-api/index.html]]></data>
-      <data key="d5"><![CDATA[A device is an abstract concept defined by the TDSOM. In reality, it can be a 
-piece of hardware (an interlock bit) a collection of hardware (a screen attached 
+      <data key="d5"><![CDATA[A device is an abstract concept defined by the TDSOM. In reality, it can be a
+piece of hardware (an interlock bit) a collection of hardware (a screen attached
 to a stepper motor) a logical device (a taper) or a combination of all these (an
 accelerator). Each device has a unique name in the control system and eventually
  one alias. Within Tango, a four field name space has been adopted consisting of
@@ -95,7 +95,7 @@ accelerator). Each device has a unique name in the control system and eventually
     </node>
     <node id="n4">
       <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/tools-and-extensions/pogo/index.html]]></data>
-      <data key="d5"><![CDATA[Pogo helps you creating/updating Tango device class in any of the three 
+      <data key="d5"><![CDATA[Pogo helps you creating/updating Tango device class in any of the three
 supported languages (C++, Python or Java)]]></data>
       <data key="d6">
         <y:ShapeNode>
@@ -115,7 +115,7 @@ supported languages (C++, Python or Java)]]></data>
     </node>
     <node id="n5">
       <data key="d4"/>
-      <data key="d5"><![CDATA[ATKPanel is a generic ATK-based application which displays panels allowing you 
+      <data key="d5"><![CDATA[ATKPanel is a generic ATK-based application which displays panels allowing you
 to execute any device commands or to read/write any device attributes.]]></data>
       <data key="d6">
         <y:ShapeNode>

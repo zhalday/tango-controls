@@ -74,7 +74,7 @@ NOTE: It access directly the MySql database.]]></data>
     </node>
     <node id="n3">
       <data key="d4"><![CDATA[http://plone.tango-controls.org/download/e-giga]]></data>
-      <data key="d5"><![CDATA[E-Giga displays the data stored by the Tango archiving system within your 
+      <data key="d5"><![CDATA[E-Giga displays the data stored by the Tango archiving system within your
 favorite WEB browser.
 (PHP, Javascript)]]></data>
       <data key="d6">
@@ -136,10 +136,10 @@ SnapExtractor: Provides database extraction methods based on various criteria]]>
     <node id="n6">
       <data key="d4"><![CDATA[https://www.google.fr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwi9tZ3CvtPTAhVI7hoKHV3CBKEQFgguMAE&url=http%3A%2F%2Fplone.tango-controls.org%2Ftools%2Farchiving-system-2%2Fdocumentation%2FArchiving%2520Devices%2520Properties_v2.doc&usg=AFQjCNGTvLIKN5n1IZ2fauXWC-5FM0IEwQ]]></data>
       <data key="d5"><![CDATA[TdbArchiver: Records the attributes values in the TDB database
-ArchivingManager: Allows to start / stop the attributes archiving without GUI 
+ArchivingManager: Allows to start / stop the attributes archiving without GUI
 (use load-balancing). The same device is used to manage the HDB and TDB archivers.
 TdbExtractor: Provides database extraction methods based on various criteria
-TdbArchivingWatcher: Controls the global archiving status and issue periodically 
+TdbArchivingWatcher: Controls the global archiving status and issue periodically
 refreshed reports]]></data>
       <data key="d6">
         <y:ShapeNode>
@@ -160,10 +160,10 @@ refreshed reports]]></data>
     <node id="n7">
       <data key="d4"><![CDATA[https://www.google.fr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwi9tZ3CvtPTAhVI7hoKHV3CBKEQFgguMAE&url=http%3A%2F%2Fplone.tango-controls.org%2Ftools%2Farchiving-system-2%2Fdocumentation%2FArchiving%2520Devices%2520Properties_v2.doc&usg=AFQjCNGTvLIKN5n1IZ2fauXWC-5FM0IEwQ]]></data>
       <data key="d5"><![CDATA[HdbArchiver: Records the attributes values in the HDB database.
-ArchivingManager: Allows to start / stop the attributes archiving without GUI 
+ArchivingManager: Allows to start / stop the attributes archiving without GUI
 (use load-balancing). The same device is used to manage the HDB and TDB archivers.
 HdbExtractor: Provides database extraction methods based on various criteria
-HdbArchivingWatcher: Controls the global archiving status and issue periodically 
+HdbArchivingWatcher: Controls the global archiving status and issue periodically
 refreshed reports]]></data>
       <data key="d6">
         <y:ShapeNode>
@@ -203,7 +203,7 @@ It’s written in C++ and is fully event-driven]]></data>
     </node>
     <node id="n9">
       <data key="d4"><![CDATA[https://www.google.fr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwi9tZ3CvtPTAhVI7hoKHV3CBKEQFgguMAE&url=http%3A%2F%2Fplone.tango-controls.org%2Ftools%2Farchiving-system-2%2Fdocumentation%2FArchiving%2520Devices%2520Properties_v2.doc&usg=AFQjCNGTvLIKN5n1IZ2fauXWC-5FM0IEwQ]]></data>
-      <data key="d5"><![CDATA[Historical DataBase - HDB : Persistent storage of attributes values which are 
+      <data key="d5"><![CDATA[Historical DataBase - HDB : Persistent storage of attributes values which are
 scanned at a minimal period of 10 seconds.]]></data>
       <data key="d6">
         <y:ShapeNode>
@@ -223,8 +223,8 @@ scanned at a minimal period of 10 seconds.]]></data>
     </node>
     <node id="n10">
       <data key="d4"><![CDATA[https://www.google.fr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwi9tZ3CvtPTAhVI7hoKHV3CBKEQFgguMAE&url=http%3A%2F%2Fplone.tango-controls.org%2Ftools%2Farchiving-system-2%2Fdocumentation%2FArchiving%2520Devices%2520Properties_v2.doc&usg=AFQjCNGTvLIKN5n1IZ2fauXWC-5FM0IEwQ]]></data>
-      <data key="d5"><![CDATA[Temporary DataBase - TDB : Volatile storage of attributes values which are 
-scanned at a minimal period of 100 milliseconds. 
+      <data key="d5"><![CDATA[Temporary DataBase - TDB : Volatile storage of attributes values which are
+scanned at a minimal period of 100 milliseconds.
 The data are kept 3 days in the database.]]></data>
       <data key="d6">
         <y:ShapeNode>
@@ -244,7 +244,7 @@ The data are kept 3 days in the database.]]></data>
     </node>
     <node id="n11">
       <data key="d4"><![CDATA[https://www.google.fr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwi9tZ3CvtPTAhVI7hoKHV3CBKEQFgguMAE&url=http%3A%2F%2Fplone.tango-controls.org%2Ftools%2Farchiving-system-2%2Fdocumentation%2FArchiving%2520Devices%2520Properties_v2.doc&usg=AFQjCNGTvLIKN5n1IZ2fauXWC-5FM0IEwQ]]></data>
-      <data key="d5"><![CDATA[Snapshots – SNAP: Persistent storage allowed taking a picture of a set of 
+      <data key="d5"><![CDATA[Snapshots – SNAP: Persistent storage allowed taking a picture of a set of
 attributes values. ]]></data>
       <data key="d6">
         <y:ShapeNode>
@@ -320,11 +320,11 @@ attributes values. ]]></data>
     </node>
     <node id="n15">
       <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/development/device-api/device-server-model.html#deviceservermodel]]></data>
-      <data key="d5"><![CDATA[In order to simplify device server process administration, a device of the 
-DServer class is automatically added to each device server process. Thus, every 
-device server process supports the same set of administration commands. The 
-implementation of this DServer class follows the device pattern and therefore, 
-its device behaves like any other devices. The device name is: 
+      <data key="d5"><![CDATA[In order to simplify device server process administration, a device of the
+DServer class is automatically added to each device server process. Thus, every
+device server process supports the same set of administration commands. The
+implementation of this DServer class follows the device pattern and therefore,
+its device behaves like any other devices. The device name is:
 dserver/device server executable name/device server instance name ]]></data>
       <data key="d6">
         <y:ShapeNode>
@@ -344,11 +344,11 @@ dserver/device server executable name/device server instance name ]]></data>
     </node>
     <node id="n16">
       <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/development/client-api/index.html]]></data>
-      <data key="d5"><![CDATA[TANGO devices and database are implemented using the TANGO device server model. 
-To access them the user has the CORBA interface e.g. command_inout(), 
-write_attributes() etc. defined by the idl file. These methods are very 
-low-level and assume a good working knowledge of CORBA. In order to simplify 
-this access, high-level api in C++, Python and Java have been implemented which 
+      <data key="d5"><![CDATA[TANGO devices and database are implemented using the TANGO device server model.
+To access them the user has the CORBA interface e.g. command_inout(),
+write_attributes() etc. defined by the idl file. These methods are very
+low-level and assume a good working knowledge of CORBA. In order to simplify
+this access, high-level api in C++, Python and Java have been implemented which
 hides all CORBA aspects of TANGO.]]></data>
       <data key="d6">
         <y:ShapeNode>

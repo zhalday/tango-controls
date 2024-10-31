@@ -80,5 +80,5 @@ uname_result(system='Darwin', node='my.machine', release='24.0.0', version='Darw
 We can exit the Pixi shell with the `exit` command:
 ```console
 (tango-tut) $ exit
-$ 
+$
 ```

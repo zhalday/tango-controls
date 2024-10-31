@@ -4,4 +4,3 @@
 
 Refresher refresher  = new Refresher("device");
 refresher.addRefreshee(this).start();
-

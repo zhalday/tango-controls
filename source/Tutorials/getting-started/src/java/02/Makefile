@@ -73,4 +73,3 @@ doc:
 #
 clean:
 	rm $(BIN_DIR)/$(SOURCE_FILES)/*.class
-

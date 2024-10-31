@@ -13,15 +13,15 @@ The Tango Controls documentation you are reading has been assembled into its cur
 
 - **Second Write-the-Doc Team** - the following people participated in the second Write-the-Doc camp held at **Solaris** in Krakow (Poland):
   Reynald Bourtembourg, Thomas Braun, Sébastien Gara, Philippe Gauron, Andrew Götz, Piotr Goryl, Anton Joubert, Krystian Kędroń, Igor Khokhrakiov, Grzegorz Kowalski, Olga Merkulova, Guillaume Mugerin, Lorenzo Pivetta and Sergi Rubio
-  
+
 - **First Write-the-Doc Team** - the following people assisted to the first Write-the-Doc camp in **St Nizier du Moucherotte** (Vercors):
   Piotr Goryl, Olga Merkulova, Lukasz Zytniak, Lukasz Dudek, Matteo di Carlo, Matteo Canzari, Igor Khokhrakiov, Reynald Bourtembourg, Jean-Michel Chaize, Stuart James and Andy Götz
 
 The following people have contributed to the Tango documentation over the years:
 
 - **Gwenaelle Abeille** - for writing the original JTango documentation
-- **Benjamin Bertrand** - for converting RST to MyST and managing the restructured documentation 
-- **Reynald Bourtembourg** - for writing the HDB++ documentation 
+- **Benjamin Bertrand** - for converting RST to MyST and managing the restructured documentation
+- **Reynald Bourtembourg** - for writing the HDB++ documentation
 - **Thomas Braun** - for doing the first conversion of the Book to Sphinx in RST and then again to MyST
 - **Alain Buteau** - for the guidelines documentation
 - **Matteo di Carlo** - for drawing the Device Server system model

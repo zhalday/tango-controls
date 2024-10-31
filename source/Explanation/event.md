@@ -60,7 +60,7 @@ The following nine event types have been implemented in TANGO :
    any non-zero change i.e. if the new attribute value is not equal to
    the previous attribute value. The delta can either be specified as a
    relative or absolute change. The delta is the same for all clients
-   unless a filter is specified (see below).  
+   unless a filter is specified (see below).
    Change events also triggered in the following cases :
 
     1. When a spectrum or image attribute size changes.
@@ -252,5 +252,5 @@ are :
    events are send.
 
 
-[^footnote-1]: note: the polling is de-correlated with the hours/minutes/seconds 
+[^footnote-1]: note: the polling is de-correlated with the hours/minutes/seconds
 to avoid polling peaks when there is an hour/minute/second change.

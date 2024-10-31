@@ -14,4 +14,3 @@ With Taranta you can use your web browser to:
 - Create dashboards for interacting with Tango devices.
 
 See [Taranta documentation](inv:taranta:std#index)
-

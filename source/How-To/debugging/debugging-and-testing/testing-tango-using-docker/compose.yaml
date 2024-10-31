@@ -35,7 +35,7 @@ services:
       - "tango-db:localhost"
     depends_on:
       - tango-db
-    # The proper way to wait for a service to be ready is to use a container health-check. 
+    # The proper way to wait for a service to be ready is to use a container health-check.
     # However, this is not yet available in the container image. So an alternative approach
     # is to wait for port to be open:
     entrypoint:

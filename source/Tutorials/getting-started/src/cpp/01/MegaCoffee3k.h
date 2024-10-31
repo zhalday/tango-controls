@@ -51,7 +51,7 @@
 
 /**
  *  MegaCoffee3k class description:
- *    
+ *
  */
 
 

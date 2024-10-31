@@ -108,7 +108,7 @@ Don't worry about the `notifd` warning, if you see it.  It isn't used in newer T
 ::::{admonition} Troubleshooting errors when launching
 :class: dropdown, tip
 
-If TCP port 8888 is already in use on your system, you'll get an error like this: 
+If TCP port 8888 is already in use on your system, you'll get an error like this:
 ```console
 omniORB: (? 6151811072) 2024-10-28 08:05:02.317646: Failed to bind to address 127.0.0.1 port 10000. Address in use?
 omniORB: (? 6151811072) 2024-10-28 08:05:02.317662: Error: Unable to create an endpoint of this description: giop:tcp:127.0.0.1:10000
@@ -121,7 +121,7 @@ Try a different port number, like 8889:
 
 ---
 
-If you get something like 
+If you get something like
 
 ```console
 zsh: command not found: python
@@ -138,7 +138,7 @@ Then your Pixi shell might not be activated.  Try this, and check the [Pixi inst
 $ pixi shell
 ```
 
-Or, if you're not using Pixi, your virtual environment isn't active, or you haven't installed PyTango. 
+Or, if you're not using Pixi, your virtual environment isn't active, or you haven't installed PyTango.
 
 ::::
 
@@ -170,7 +170,7 @@ tango._tango.DevState.UNKNOWN
 >>>
 ```
 
-It works!  That was super east, but it isn't super useful yet.  Read on!  
+It works!  That was super east, but it isn't super useful yet.  Read on!
 
 :::{hint}
 If you're wondering, the value `382` is the ping response time in microseconds.

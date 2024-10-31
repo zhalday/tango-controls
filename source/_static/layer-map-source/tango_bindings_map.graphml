@@ -28,11 +28,11 @@
     </node>
     <node id="n1">
       <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/development/client-api/index.html]]></data>
-      <data key="d5"><![CDATA[TANGO devices and database are implemented using the TANGO device server model. 
-To access them the user has the CORBA interface e.g. command_inout(), 
-write_attributes() etc. defined by the idl file. These methods are very 
-low-level and assume a good working knowledge of CORBA. In order to simplify 
-this access, high-level api in C++, Python and Java have been implemented which 
+      <data key="d5"><![CDATA[TANGO devices and database are implemented using the TANGO device server model.
+To access them the user has the CORBA interface e.g. command_inout(),
+write_attributes() etc. defined by the idl file. These methods are very
+low-level and assume a good working knowledge of CORBA. In order to simplify
+this access, high-level api in C++, Python and Java have been implemented which
 hides all CORBA aspects of TANGO.]]></data>
       <data key="d6">
         <y:ShapeNode>
@@ -52,11 +52,11 @@ hides all CORBA aspects of TANGO.]]></data>
     </node>
     <node id="n2">
       <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/development/device-api/device-server-model.html#deviceservermodel]]></data>
-      <data key="d5"><![CDATA[In order to simplify device server process administration, a device of the 
-DServer class is automatically added to each device server process. Thus, every 
-device server process supports the same set of administration commands. The 
-implementation of this DServer class follows the device pattern and therefore, 
-its device behaves like any other devices. The device name is: 
+      <data key="d5"><![CDATA[In order to simplify device server process administration, a device of the
+DServer class is automatically added to each device server process. Thus, every
+device server process supports the same set of administration commands. The
+implementation of this DServer class follows the device pattern and therefore,
+its device behaves like any other devices. The device name is:
 dserver/device server executable name/device server instance name ]]></data>
       <data key="d6">
         <y:ShapeNode>

@@ -58,7 +58,7 @@ data_format = tango._tango.AttrDataFormat.SCALAR
       [...]
     w_value = 0.0]
 ```
- 
+
  Some of the mandatory static metadata is part of the runtime metadata as can be seen above: `data_format`, `name`, `type` (data type) are equivalents of what has been described earlier.
 
 ## Enumerated Attribute
