@@ -2,7 +2,7 @@
 
 (igor-pro-binding)=
 
-{audience}`developers, users`
+{audience}`all`
 
 - Client API for [Igor Pro](http://wavemetrics.com/)
 - Release 3.0.0 for Igor Pro 7.x
