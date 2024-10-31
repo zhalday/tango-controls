@@ -26,7 +26,7 @@ Tango installation can be very simple running on a single machine for managing a
 or it can be a fully blown installation managing tens of thousands of devices and
 multiple Tango control systems.
 
-### Tango Host Role
+## Tango Host Role
 
 The central role of a Tango control system is Tango Host role, it is created by running the {program}`DataBaseds` device server.
 This device server requires MariaDB or MySQL database in its most common application.
@@ -43,7 +43,7 @@ This password should not be empty. tango database password for tango database ca
 - an official Oracle Java JRE (Java Runtime Environment) >= 1.7
 - a Tango database. It will ask for a port number, this port will be the one used by the server for Tango requests. The hostname has then to be known from all the computers which will access to Tango Host. It is mandatory to install this tango database **before** every tango client.
 
-### Tango development Role
+## Tango development Role
 
 This role is to develop applications and device servers.
 To play this role, you need:
@@ -52,7 +52,7 @@ To play this role, you need:
 - pytango to allow accessing Tango through Python
 - an official Oracle Java JRE (Java Runtime Environment) >= 1.7 for development with Java
 
-### Tango applications Role
+## Tango applications Role
 
 This role is to run CLI and GUI applications.
 To play this role, you need:
@@ -61,7 +61,7 @@ To play this role, you need:
 - the libtango java tools (astor, atkpanel, jive, pogo, etc.)
 - pytango to allow accessing Tango through Python (if using Python device servers)
 
-### Tango device servers Role
+## Tango device servers Role
 
 This role is to run device servers (drivers):
 The recommended way of running device servers is to use {program}`Starter` service.
@@ -72,7 +72,7 @@ To play this role, you need:
 - a TangoTest device server to allow testing
 - an official Oracle Java JRE (Java Runtime Environment) >= 1.7 for Java device servers
 
-### Every roles
+## Every roles
 
 Whatever the role, every computer needs:
 
