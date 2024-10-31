@@ -69,3 +69,13 @@ Tango supports enumerated Attributes. They are not implemented on top of the enu
 Tango supports that Attributes of scalar data format have their last set quantity automatically and permanently be stored in the [Tango Database](#tangodb). This is indicated when the Attribute is defined in the source code. Clients are unable to tell if an Attribute is memorised or not. In addition to the storing of the quantity, the last stored value can also be applied to the memorised Attribute when its Device starts, effectively maintaining the Attribute's quantity over Device restarts.
 
 ## Forwarded Attribute
+
+:::{warning}
+Forwarded attribute is a feature that is not entirely mature. Its use is not recommended.
+:::
+
+Tango supports the forwarding of Attributes of scalar data format. A forwarded attribute will let you access an attribute from another device, this will be called the **root attribute** as an attribute of this device.
+A forwarded attribute will retrieve all its metadata and information from the **root attribute**. All call to read, write, configuration or property settings, except for the **label** property, are forwarded to the **root attribute** and will modify its state.
+A typical use case is when a single hardware connection let you handle several devices.
+It is then common to implement a Tango class, lets call it **Interface** to handle the hardware connection. The **Interface** class will expose the attributes for each devices.
+We can then use another class, let's call it **device**, that will logically represents each devices. The device class could use forwarded attributes to match its attributes to the one defined in the **Interface** class.
