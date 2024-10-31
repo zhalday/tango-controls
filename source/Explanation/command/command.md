@@ -1,3 +1,4 @@
+(tango-command-model)=
 # Command
 
 
