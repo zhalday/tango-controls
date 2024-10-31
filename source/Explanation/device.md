@@ -46,8 +46,8 @@ The contents of this class can be summarize as:
 ## Device Server
 
 A Device Server is the process (i.e. the executable) that will create, run and serve instances of Devices.
-It must contain one or more [Device Class](./deviceclass.md), and can instantiate any number of [Devices](./device.md) from those classes.
-[Devices](./device.md) started from the same Device Server will run in the same process and hence share system resources such as memory, therefore it can be convenient to group devices into the same Device Server to optimise performance. 
+It must contain one or more [Device Class](#device-class), and can instantiate any number of [Devices](#device) from those classes.
+[Devices](#device) started from the same Device Server will run in the same process and hence share system resources such as memory, therefore it can be convenient to group devices into the same Device Server to optimise performance. 
 
 Each Device Server has a unique name made up of the name of the executable and a character string called the instance name. 
 The pair of executable / instance name has to be unique in a Tango control system. 

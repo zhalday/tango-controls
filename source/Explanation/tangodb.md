@@ -1,6 +1,6 @@
 {audience}`all`
 
-(tangodb)=
+(tangodb-explanation)=
 
 # Tango Database
 

@@ -66,7 +66,7 @@ Tango supports enumerated Attributes. They are not implemented on top of the enu
 
 ## Memorised Attribute
 
-Tango supports that Attributes of scalar data format have their last set quantity automatically and permanently be stored in the [Tango Database](#tangodb). This is indicated when the Attribute is defined in the source code. Clients are unable to tell if an Attribute is memorised or not. In addition to the storing of the quantity, the last stored value can also be applied to the memorised Attribute when its Device starts, effectively maintaining the Attribute's quantity over Device restarts.
+Tango supports that Attributes of scalar data format have their last set quantity automatically and permanently be stored in the [Tango Database](#tangodb-explanation). This is indicated when the Attribute is defined in the source code. Clients are unable to tell if an Attribute is memorised or not. In addition to the storing of the quantity, the last stored value can also be applied to the memorised Attribute when its Device starts, effectively maintaining the Attribute's quantity over Device restarts.
 
 ## Forwarded Attribute
 
