@@ -4,7 +4,7 @@
 
 There are different tasks that need to be performed in a Tango Cotnrols System. One can categorise the tasks as follows:
 
-- Tango Host: Keep the configuration of all components in the Tango Controls system permanently stored and make it available through its [API](#tangodb).
+- Tango Host: Keep the configuration of all components in the Tango Controls system permanently stored and make it available through its [API](#tangodb-explanation).
 - Run Tango Applications: Execute CLI programmes. e.g.{program}`tango_admin` and {program}`iTango`, or GUI programmes, e.g. {program}`Jive` and {program}`Synoptic`.
 - Run Tango Device Server(s): Execute the Tanmgo Device Server that host Tango Devices.
 - Tango development: Implement Device Classes for Tango Devices and Tango clients.
