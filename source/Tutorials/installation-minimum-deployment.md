@@ -9,8 +9,9 @@ There are different tasks that need to be performed in a Tango Cotnrols System. 
 - Run Tango Device Server(s): Execute the Tanmgo Device Server that host Tango Devices.
 - Tango development: Implement Device Classes for Tango Devices and Tango clients.
 
-
-Your computer may perform all above roles simultaneously.
+:::{tip}
+It is possible that all of the tasks above are done on the same computer at the same time.
+:::
 
 :::{sidebar} Tango Host, Databaseds
 Each Tango Controls system/deployment has to have at least one running DataBaseds {term}`device server`. The machine on which the {term}`device server` is running has a role of so called {term}`Tango Host`. Databaseds is a device server providing configuration information to all other components of the system as well as a runtime catalog of the components/devices.
