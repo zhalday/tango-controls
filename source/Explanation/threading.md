@@ -30,8 +30,8 @@ A new thread is started for each connected client. Device servers are
 mostly used to interface hardware which most of the time does not
 support multi-threaded access. Therefore, all remote calls executed from
 a client are serialized within the device server code by using mutual
-exclusion. See ()[#serialization-model] on which
-serialization model are available. In order to limit the thread number, the
+exclusion. See [](#serialization-model) on which
+serialization models are available. In order to limit the thread number, the
 underlying ORB (omniORB) is configured to shutdown threads dedicated to
 client if the connection is inactive for more than 3 minutes. To also
 limit thread number, the ORB is configured to create one thread per
