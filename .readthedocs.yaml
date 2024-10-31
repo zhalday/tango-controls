@@ -12,7 +12,4 @@ python:
   install:
     - requirements: requirements.txt
 
-# Build PDF & ePub
-formats:
-    - epub
-    - pdf
+formats: []
