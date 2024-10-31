@@ -86,7 +86,7 @@ the change.
 
 To work with documentation, first you need to have the following programs installed on your system:
 
-- {program}`Python 3` (as Sphinx is a Python tool),
+- {program}`Python >=3.10` (as Sphinx is a Python tool),
 - {program}`Git` (since the sources are kept in a git repository).
 
 
@@ -95,8 +95,8 @@ To work with documentation, first you need to have the following programs instal
 To build the documentation you will need a Python virtual environment with Sphinx and other pip installable packages. To create this virtual environment and install the required packages:
 
 ```
-python3 -m venv tangodoc_venv
-source tangodoc_venv/bin/activate
+python3 -m venv .venv
+source .venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
@@ -228,7 +228,7 @@ Now, someone will review your contribution, merge into selected branch and publi
 
 ## Including Read the Docs Subprojects
 
-Existing documentation from other projects can be included as a [Read the Docs subproject](<https://docs.readthedocs.io/en/stable/subprojects.html>) of the parent tango-controls project. The subproject will appear under the tango-controls domain, e.g. the Jive project documentation is available from https://tango-controls.readthedocs.io/projects/jive. Links to subproject content can easily be included in the parent tango-controls project and vice versa. This prevents content from being repeated in multiple locations.
+Existing documentation from other projects can be included as a [Read the Docs subproject](<https://docs.readthedocs.io/en/stable/subprojects.html>) of the parent tango-controls project. The subproject will appear under the tango-controls domain, e.g. the Jive project documentation is available from <https://tango-controls.readthedocs.io/projects/jive>. Links to subproject content can easily be included in the parent tango-controls project and vice versa. This prevents content from being repeated in multiple locations.
 
 ### Setting up a subproject
 
@@ -267,11 +267,21 @@ The initial setup on Read the Docs needs to performed by someone who is a Read t
 4. In the parent tango-controls you can then reference sections in the subproject using the following link format:
    
    ```
-   {ref}`subproj_name:installation`
+   [Explicit text](inv:subproj_name:std#index)
    ```
 
 5. Similarly in the subproject you can reference sections in the parent tango-controls project using the following link format:
 
    ```
-   {ref}`tango-controls:installation`
+   [Explicit text](inv:tango-controls:std#index)
    ```
+
+:::{tip}
+You can list the references available in a project by using the `myst-inv` command (it comes with `myst-parser` and is available in the virtualenv you created).
+
+```console
+myst-inv https://<subproject_name>.readthedocs.io/en/latest/
+```
+
+You can filter by name with `-n` option. Check the help.
+:::
