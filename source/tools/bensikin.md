@@ -2,7 +2,7 @@
 
 # Bensikin User Manual
 
-{audience}`users, administrators`
+{audience}`all`
 
 ```{rubric} Authors:
 ```
