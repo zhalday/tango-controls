@@ -8,6 +8,7 @@
 ```{toctree}
 atk
 astor
+jive
 starter
 logviewer
 jdraw
