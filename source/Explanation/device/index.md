@@ -1,7 +1,7 @@
 # Device
 
 ```{toctree}
-:maxdepth: 1
+:maxdepth: 2
 
 device.md
 ```

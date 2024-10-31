@@ -19,9 +19,9 @@ A device class often relates to the specific hardware that it interfaces with, f
 All classes are derived from one root class thus allowing some common behavior for all devices. New device classes can also be constructed out of existing device classes. In this way a new hierarchy of classes can be built up in a 
 short time. Device classes can use existing devices as sub-classes or as sub-objects. The practice of reusing existing classes is classical for Object Oriented Programming (OOP) and is one of its main advantages.
 
-## The `DeviceClass`
+### The `DeviceClass`
 
-### Description
+#### Description
 
 Every device of the same class supports the same list of commands and hence this list of available commands is stored in the `DeviceClass`. For example, the structure returned by the `info` operation contains a URL to the documentation. This URL is the same for every device belonging to the same class and hence the documentation URL is a data member of this class. There should only be one instance of this class per device. The `DeviceClass` also stores the device list. 
 
@@ -29,7 +29,7 @@ The `DeviceClass` is an abstract class because the two methods `device_factory()
 
 The `DeviceClass` also contains the `attribute_factory` method whose role is to store the name of all the device attributes. The default implementation of this method is an empty body representing a device without any attributes.
 
-### Contents
+#### Contents
 
 The contents of this class can be summarize as:
 
