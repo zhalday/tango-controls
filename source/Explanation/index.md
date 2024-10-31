@@ -17,7 +17,7 @@ archiving/archiving.md
 attribute/index.md
 command/index.md
 development/index.md
-device/index.md
+device.md
 deviceserver/index.md
 event/index.md
 extensions/index.md
