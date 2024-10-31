@@ -40,7 +40,7 @@ The following people have contributed to the Tango documentation over the years:
 - **Sergi Rubio** - for the Fandango and Panic documentation
 - **Olivier Tachet** - for the how to on installing Tango on a Raspberry Pi
 - **Guidelines Team** - the following people contributed to the
-  {doc}`device server guidelines <Explanations/development/device-api/ds-guideline>`:
+  {doc}`device server guidelines <Explanation/development/device-api/ds-guideline/index>`:
   Alain Buteau, Jens Meyer, Jean Michel Chaize, Emmanuel Taurel, Pascal Verdier, Nicolas Leclerq,
  M.Lindberg, Sebastien Gara, S. Minolli, and Andy Götz.
 - **Emmanuel Taurel** - for writing the first Tango documentation (*The Book*) single handedly!

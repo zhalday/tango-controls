@@ -27,5 +27,3 @@ with Tango Controls.
 ## Installation
 
 Recipes on system installation are provided in a [dedicated section](#getting-started-installation).
-
-Then, [Administration section](#administration) contains various related information.
