@@ -214,23 +214,23 @@ For an introduction to events, see [](#events-tangoclient).
 
 ### Application Programmer’s Interface
 
-How to setup and use the TANGO events ? The interfaces described here
-are intended as user friendly interfaces to the underlying CORBA calls.
+How to set up and use the TANGO events ? The interfaces described here
+are intended as user-friendly interfaces to the underlying CORBA calls.
 The interface is modeled after the asynchronous *command_inout()*
-interface so as to maintain coherency. The event system supports **push
+interface to maintain coherency. The event system supports **push
 callback model** as well as the **pull callback model.**
 
 The two event reception modes are:
 
-- **Push callback model** : On event reception a callbacks method gets
+- **Push callback model** : On event reception a callback method gets
   immediately executed.
-- **Pull callback model** : The event will be buffered the client until
+- **Pull callback model** : The event will be buffered in the client until
   the client is ready to receive the event data. The client triggers
   the execution of the callback method.
 
 The event reception buffer in the **pull callback model**, is
-implemented as a round robin buffer. The client can choose the size when
-subscribing for the event. This way the client can set-up different ways
+implemented as a round-robin buffer. The client can choose the size when
+subscribing for the event. This way the client can set up different ways
 to receive events.
 
 - Event reception buffer size = 1 : The client is interested only in
@@ -245,68 +245,8 @@ to receive events.
 
 #### Configuring events
 
-The attribute configuration set is used to configure under what
-conditions events are generated. A set of standard attribute properties
-(part of the standard attribute configuration) are read from the
-database at device startup time and used to configure the event engine.
-If there are no properties defined then default values specified in the
-code are used.
-
-##### change
-
-The attribute properties and their default values for the change event
-are :
-
-1. **rel_change** - a property of maximum 2 values. It specifies the
-   positive and negative relative change of the attribute value w.r.t.
-   the value of the previous change event which will trigger the event.
-   If the attribute is a spectrum or an image then a change event is
-   generated if any one of the attribute value’s satisfies the above
-   criterium. If only one property is specified then it is used for the
-   positive and negative change. If no property is specified, no events
-   are generated.
-2. **abs_change** - a property of maximum 2 values.It specifies the
-   positive and negative absolute change of the attribute value w.r.t
-   the value of the previous change event which will trigger the event.
-   If the attribute is a spectrum or an image then a change event is
-   generated if any one of the attribute value’s satisfies the above
-   criterium. If only one property is specified then it is used for the
-   positive and negative change. If no properties are specified then the
-   relative change is used.
-
-##### periodic
-
-The attribute properties and their default values for the periodic event
-are :
-
-1. **event_period** - the minimum time between events (in
-   milliseconds). If no property is specified then a default value of 1
-   second is used.
-
-##### archive
-
-The attribute properties and their default values for the archive event
-are :
-
-1. **archive_rel_change** - a property of maximum 2 values which
-   specifies the positive and negative relative change w.r.t. the
-   previous attribute value which will trigger the event. If the
-   attribute is a spectrum or an image then an archive event is
-   generated if any one of the attribute value’s satisfies the above
-   criterium. If only one property is specified then it is used for the
-   positive and negative change. If no properties are specified then no
-   events are generate.
-2. **archive_abs_change** - a property of maximum 2 values which
-   specifies the positive and negative absolute change w.r.t the
-   previous attribute value which will trigger the event. If the
-   attribute is a spectrum or an image then an archive event is
-   generated if any one of the attribute value’s satisfies the above
-   criterium. If only one property is specified then it is used for the
-   positive and negative change. If no properties are specified then the
-   relative change is used.
-3. **archive_period** - the minimum time between archive events (in
-   milliseconds). If no property is specified, no periodic archiving
-   events are send.
+Please refer to the [Event explanation part](configuring-events) for more 
+details on how to configure the change, periodic and archive events.
 
 #### C++ Clients
 
