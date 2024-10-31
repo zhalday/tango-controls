@@ -1,5 +1,0 @@
-# Extensions
-
-```{toctree}
-extensions.md
-```
