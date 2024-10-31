@@ -3,4 +3,4 @@
 # Astor
 
 % todo: use intersphinx
-See <https://tango-controls.readthedocs.io/projects/astor/en/latest/>
+See [Astor documentation](inv:astor:std#index) project.
