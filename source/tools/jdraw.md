@@ -2,4 +2,4 @@
 
 # JDraw
 
-See [Jdraw documentation](inv:tangoatk:std#jdraw/jdraw) project.
+See [Jdraw documentation](inv:atk:std#jdraw-manual) project.

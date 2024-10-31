@@ -468,7 +468,7 @@ intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
     "jive": ("https://jive.readthedocs.io/en/latest/", None),
     "astor": ("https://tango-astor.readthedocs.io/en/latest/", None),
-    "tangoatk": ("https://tangoatk.readthedocs.io/en/latest/", None),
+    "atk": ("https://tangoatk.readthedocs.io/en/latest/", None),
 }
 
 # link checking options
