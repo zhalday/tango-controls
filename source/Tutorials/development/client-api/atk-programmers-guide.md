@@ -1,26 +1,3 @@
----
-substitutions:
-  image09: |-
-    ```{image} atk/img/core-widget.png
-    ```
-  image10: |-
-    ```{image} atk/img/listpanel.png
-    ```
-  image11: |-
-    ```{image} atk/img/prog_guide_exple1.jpg
-    ```
-  image12: |-
-    ```{image} atk/img/prog_guide_exple2.jpg
-    ```
-  image13: |-
-    ```{image} atk/img/prog_guide_exple3.jpg
-    ```
----
-
-```{raw} latex
-\clearpage
-```
-
 (atk-programmers-guide)=
 
 # TangoATK Programmer’s Guide
@@ -71,7 +48,8 @@ Swing is developed using a variant over a design-pattern the
 Model-View-Controller (MVC) pattern called *model-delegate*, where the
 view and the controller of the MVC-pattern are merged into one object.
 
-{{ image09 }}
+```{image} atk/img/core-widget.png
+```
 
 This pattern made the choice of labor division quite easy: all
 non-graphic parts of TangoATK reside in the packages beneath
@@ -149,7 +127,8 @@ following steps are required
    connect each *individual command* in the command list with a *command
    viewer*.
 
-{{ image10 }}
+```{image} atk/img/listpanel.png
+```
 
 The following program (FirstApplication) shows an implementation of the
 list mentioned above. It should be rather self-explanatory with the
@@ -377,7 +356,8 @@ comments.
 The program should look something like this (depending on your platform
 and your device)
 
-{{ image11 }}
+```{image} atk/img/prog_guide_exple1.jpg
+```
 
 ### Multi device applications
 
@@ -595,7 +575,8 @@ mentioned above.
 This program (SeondApplication) should look something like this
 (depending on your platform and your device attributes)
 
-{{ image12 }}
+```{image} atk/img/prog_guide_exple2.jpg
+```
 
 #### Synoptic viewer
 
@@ -794,7 +775,8 @@ editor.
 The synoptic application (ThirdApplication) should look something like
 this (depending on your synoptic drawing file)
 
-{{ image13 }}
+```{image} atk/img/prog_guide_exple3.jpg
+```
 
 ### A short note on the relationship between models and viewers
 
