@@ -1,4 +1,4 @@
-(tango-starter-daemon)=
+(tango-starter-daemon-source)=
 
 # Tango starter daemon source
 

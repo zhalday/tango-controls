@@ -114,7 +114,7 @@ So the process of starting the two main server-side elements of the tango enviro
 ({term}`Tango Database` and [Tango Starter](#Starter)) can be optimized.
 
 For creating the **Tango DB services** make in your `/lib/systemd/system directory`, file named tango-db.service,
-containing [tango_db.service](#tango-db-service).
+containing [tango_db.service](#tango-db-service-source).
 
 In this service system start the mariadb database process, so for the mysql database this requirement must be changed:
 
@@ -141,7 +141,7 @@ MYSQL_PASSWORD=tango
 (howto-sysv-init)=
 
 To proper setup the **Tango Starter daemon**, create the file in the `/etc/init.d/tango-starter`,
-containing [tango_starter](#tango-starter-daemon). Starter daemon similar like the Tango DB service
+containing [tango_starter](#tango-starter-daemon-source). Starter daemon similar like the Tango DB service
 uses the TANGO_HOST variables to create a connection with a database. The second setting equals the system user,
 used to start the daemon. The variables informing about this user are configured in the `/etc/sysconfig/tango-starter` file:
 

@@ -1,4 +1,4 @@
-(tango-db-service)=
+(tango-db-service-source)=
 
 # Tango database service source
 

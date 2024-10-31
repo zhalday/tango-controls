@@ -4,7 +4,7 @@
 
 {audience}`all`, {lang}`all`
 
-- In the {doc}`Overview </overview/index>` you will find basic information on Tango Controls. It will let you understand
+- In the {doc}`Overview </Explanation/overview>` you will find basic information on Tango Controls. It will let you understand
   concepts of Tango Controls and help dancing it.
 
 - You may also start with [trying Tango Controls ](#howto-try-tango) either with a preconfigured virtual
