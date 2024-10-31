@@ -1,8 +1,10 @@
-(without-sql-db)=
+(run-without-sql-db)=
 
 # Running a device server without SQL database
 
 {audience}`administrators, developers`
+
+(device-server-with-filedatabase)=
 
 ## Device server using file as database
 
