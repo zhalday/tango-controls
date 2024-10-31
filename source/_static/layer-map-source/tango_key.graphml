@@ -106,15 +106,15 @@
           <y:Geometry height="144.6431755725191" width="485.949901012892" x="-290.50299745067775" y="-26.03597080455819"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle hasColor="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="18" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="224.517578125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="495.255859375" x="4.0" y="4.0">- This map shows an overview about the Tango components. 
-- Scrolling the mouse to a component shows the short 
-description in tooltip. 
-- Clicking on the component will load the details. 
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="18" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="224.517578125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="495.255859375" x="4.0" y="4.0">- This map shows an overview about the Tango components.
+- Scrolling the mouse to a component shows the short
+description in tooltip.
+- Clicking on the component will load the details.
 - Directly connected components are based on each other,
 e.g. HDB devices are based on the HDB database
 - Components in a bottom-up fashion but with some gaps are
 not based on each other but only on the lower layers, e.g.
-Mambo and E-Giga are both client applications of HDB. 
+Mambo and E-Giga are both client applications of HDB.
 - The colors of the component means:</y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>

@@ -9,7 +9,6 @@ please refer to the
 (jtango-api-docs)=
 ## JTango API reference
 
-- [JTango Server](https://www.javadoc.io/doc/org.tango-controls/JTangoServer/9.7.2/index.html) 
-- [JTango Client](https://www.javadoc.io/doc/org.tango-controls/JTangoClientLang/9.7.2/index.html) 
-- [JTango Common](https://www.javadoc.io/doc/org.tango-controls/JTangoCommons/9.7.2/index.html) 
-
+- [JTango Server](https://www.javadoc.io/doc/org.tango-controls/JTangoServer/9.7.2/index.html)
+- [JTango Client](https://www.javadoc.io/doc/org.tango-controls/JTangoClientLang/9.7.2/index.html)
+- [JTango Common](https://www.javadoc.io/doc/org.tango-controls/JTangoCommons/9.7.2/index.html)

@@ -3,7 +3,7 @@ import fr.esrf.tangaotk.core.AttributeList;
 import fr.esrf.tangaotk.widget.attribute.NumberScalarViewer;
 
 ...
-    
+
 // The attribute (and command) list has the feature of returning the last
 // attribute that was added to it. Just remember that it is returned as an
 // IEntity object, so you need to cast it into a more specific object, like

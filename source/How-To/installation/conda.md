@@ -111,7 +111,7 @@ To install `tango-test` and `pytango`, you can run:
 $ conda create -y -n tango tango-test python=3.12 pytango
 $ conda activate tango
 (tango) $ TangoTest --help
-(tango) $ python -c 'import tango; print(tango.utils.info())' 
+(tango) $ python -c 'import tango; print(tango.utils.info())'
 ```
 
 You can also run an executable in a conda environment without activating it:

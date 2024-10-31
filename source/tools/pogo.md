@@ -28,9 +28,3 @@
 [tango]: http://www.tango-controls.org/
 [xtend]: http://www.eclipse.org/Xtend
 [xtext]: http://www.eclipse.org/Xtext
-
-
-
-
-
-

@@ -15,4 +15,4 @@ instead of having a pot of steaming brew ready at all times.
 She says a control system has to be built to monitor these smart, but temperamental, coffee machines
 and keep the java flowing ☕☕☕.  Of course, it has to be built using **Tango Controls**, and it has to be done right away!
 
-With a mixture of nervousness and excitement you offer to tackle this urgent project and rush back to your office. 
+With a mixture of nervousness and excitement you offer to tackle this urgent project and rush back to your office.

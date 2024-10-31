@@ -103,7 +103,7 @@ database when the *device_name_factory()* method is not re-defined.
   This command line starts the device server with two devices named
 
   *id11/motor/1*
-   and 
+   and
   *id11/motor/2*
 - StepperMotor et -nodb
   This command line starts a device server with one device named
@@ -127,7 +127,7 @@ StepperMotorClass class.
   This commands starts a device server with two devices named
 
   *sr/cav-tuner/1*
-   and 
+   and
   *sr/cav-tuner/2*
   .
 - StepperMotor et -nodb -dlist id12/motor/1

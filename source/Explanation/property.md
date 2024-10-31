@@ -39,5 +39,3 @@ For example, a temperature sensor’s attribute might have properties defining t
 ## Free properties
 
 Free properties are defined and used for the entire control system. For example, the event system can be configured to send message via a [multicast](#configuring-events-to-use-multicast-transport).
-
-

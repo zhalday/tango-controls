@@ -45,4 +45,3 @@ There is no difference in behavior between the Status command and the Status att
 ### Init Command
 
 The Init command is used to reinitialize a device without losing its network connection. The behavior of this command should reload any resources owned by the device, similar to how they are loaded after the device's initial startup.
-

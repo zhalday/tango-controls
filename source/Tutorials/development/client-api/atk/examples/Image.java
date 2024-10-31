@@ -19,7 +19,7 @@ public class Image extends JFrame
     ImageControlAdapter adapter;       // The object responsible for
                                        // connecting an image-attribute
                                        // with the viewer
-  
+
     INumberImage        image;         // The image attribute
     AttributeList       list;          // The attribute list for storing the
                                        // attribute, which also will be
@@ -82,7 +82,7 @@ public class Image extends JFrame
          menu.setQuitHandler(new ActionListener()
          {
                   public void actionPerformed(ActionEvent e)
-                  { 
+                  {
                       System.exit(0);
                   }
          });
@@ -133,7 +133,7 @@ public class Image extends JFrame
     {
          try
          {
-                  new Image(args[0]);	     
+                  new Image(args[0]);
          }
          catch (Exception e)
          {

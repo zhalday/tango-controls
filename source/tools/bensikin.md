@@ -386,7 +386,7 @@ If you want to save in another file, you have to go to {guilabel}`File` menu,
 select {guilabel}`Save As` and click on {guilabel}`Context` or go to {guilabel}`Contexts` menu and
 click on {guilabel}`Save As`:
 
-![File / Save as / Contexts menu](bensikin/image110.png) 
+![File / Save as / Contexts menu](bensikin/image110.png)
 ![Contexts / Save as menu](bensikin/image93.png)
 
 ## Snapshot Management

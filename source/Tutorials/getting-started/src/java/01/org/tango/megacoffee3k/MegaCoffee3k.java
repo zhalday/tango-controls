@@ -78,7 +78,7 @@ import fr.esrf.TangoApi.PipeDataElement;
 
 /**
  *  MegaCoffee3k class description:
- *    
+ *
  */
 
 @Device
@@ -90,14 +90,14 @@ public class MegaCoffee3k {
 	//	Programmer's data members
 	//========================================================
     /*----- PROTECTED REGION ID(MegaCoffee3k.variables) ENABLED START -----*/
-    
+
     //	Put static variables here
-    
+
     /*----- PROTECTED REGION END -----*/	//	MegaCoffee3k.variables
 	/*----- PROTECTED REGION ID(MegaCoffee3k.private) ENABLED START -----*/
-	
+
 	//	Put private variables here
-	
+
 	/*----- PROTECTED REGION END -----*/	//	MegaCoffee3k.private
 
 	//========================================================
@@ -110,7 +110,7 @@ public class MegaCoffee3k {
 	//========================================================
 	/**
 	 * Initialize the device.
-	 * 
+	 *
 	 * @throws DevFailed if something fails during the device initialization.
 	 */
 	@Init(lazyLoading = false)
@@ -118,25 +118,25 @@ public class MegaCoffee3k {
 		xlogger.entry();
 		logger.debug("init device " + deviceManager.getName());
 		/*----- PROTECTED REGION ID(MegaCoffee3k.initDevice) ENABLED START -----*/
-		
+
 		//	Put your device initialization code here
-		
+
 		/*----- PROTECTED REGION END -----*/	//	MegaCoffee3k.initDevice
 		xlogger.exit();
 	}
 
 	/**
 	 * all resources may be closed here. Collections may be also cleared.
-	 * 
+	 *
 	 * @throws DevFailed if something fails during the device object deletion.
 	 */
 	@Delete
 	public void deleteDevice() throws DevFailed {
 		xlogger.entry();
 		/*----- PROTECTED REGION ID(MegaCoffee3k.deleteDevice) ENABLED START -----*/
-		
+
 		//	Put your device clearing code here
-		
+
 		/*----- PROTECTED REGION END -----*/	//	MegaCoffee3k.deleteDevice
 		xlogger.exit();
 	}
@@ -150,32 +150,32 @@ public class MegaCoffee3k {
 	public void aroundInvoke(final InvocationContext ctx) throws DevFailed {
 		xlogger.entry();
 			/*----- PROTECTED REGION ID(MegaCoffee3k.aroundInvoke) ENABLED START -----*/
-			
+
 			//	Put aroundInvoke code here
-			
+
 			/*----- PROTECTED REGION END -----*/	//	MegaCoffee3k.aroundInvoke
 		xlogger.exit();
 	}
 
-	
+
 	/**
 	 * dynamic command and attribute management. Will be injected by the framework.
 	 */
 	@DynamicManagement
 	protected DynamicManager dynamicManager;
 	/**
-	 * @param dynamicManager the DynamicManager instance 
+	 * @param dynamicManager the DynamicManager instance
 	 * @throws DevFailed if something fails during this method execution.
 	 */
 	public void setDynamicManager(final DynamicManager dynamicManager) throws DevFailed {
 		this.dynamicManager = dynamicManager;
 		/*----- PROTECTED REGION ID(MegaCoffee3k.setDynamicManager) ENABLED START -----*/
-		
+
 		//	Put your code here
-		
+
 		/*----- PROTECTED REGION END -----*/	//	MegaCoffee3k.setDynamicManager
 	}
-	
+
 	/**
 	 * Device management. Will be injected by the framework.
 	 */
@@ -194,7 +194,7 @@ public class MegaCoffee3k {
 	/**
 	 * The state of the device
 	*/
-	@State 
+	@State
 	private DevState state = DevState.UNKNOWN;
 	/**
 	 * Execute command "State".
@@ -204,9 +204,9 @@ public class MegaCoffee3k {
 	 */
 	public final DevState getState() throws DevFailed {
 		/*----- PROTECTED REGION ID(MegaCoffee3k.getState) ENABLED START -----*/
-		
+
 		//	Put state code here
-		
+
 		/*----- PROTECTED REGION END -----*/	//	MegaCoffee3k.getState
 		return state;
 	}
@@ -217,11 +217,11 @@ public class MegaCoffee3k {
 	public void setState(final DevState state) {
 		this.state = state;
 	}
-	
+
 	/**
 	 * The status of the device
 	 */
-	@Status 
+	@Status
 	private String status = "Server is starting. The device state is unknown";
 	/**
 	 * Execute command "Status".
@@ -231,9 +231,9 @@ public class MegaCoffee3k {
 	 */
 	public final String getStatus() throws DevFailed {
 		/*----- PROTECTED REGION ID(MegaCoffee3k.getStatus) ENABLED START -----*/
-		
+
 		//	Put status code here
-		
+
 		/*----- PROTECTED REGION END -----*/	//	MegaCoffee3k.getStatus
 		return status;
 	}
@@ -244,29 +244,29 @@ public class MegaCoffee3k {
 	public void setStatus(final String status) {
 		this.status = status;
 	}
-	
+
 
 	//========================================================
 	//	Programmer's methods
 	//========================================================
 	/*----- PROTECTED REGION ID(MegaCoffee3k.methods) ENABLED START -----*/
-	
+
 	//	Put your own methods here
-	
+
 	/*----- PROTECTED REGION END -----*/	//	MegaCoffee3k.methods
 
 
-	
-	
-	
-	
+
+
+
+
 	/**
 	 * Starts the server.
 	 * @param args program arguments (instance_name [-v[trace level]]  [-nodb [-dlist <device name list>] [-file=fileName]])
 	 */
 	public static void main(final String[] args) {
 		/*----- PROTECTED REGION ID(MegaCoffee3k.main) ENABLED START -----*/
-		
+
 		/*----- PROTECTED REGION END -----*/	//	MegaCoffee3k.main
 		ServerManager.getInstance().start(args, MegaCoffee3k.class);
 		System.out.println("------- Started -------------");

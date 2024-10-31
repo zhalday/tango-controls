@@ -39,8 +39,8 @@
 \paperpagestyle default
 \tracking_changes false
 \output_changes false
-\author "" 
-\author "" 
+\author ""
+\author ""
 \end_header
 
 \begin_body
@@ -53,7 +53,7 @@ TangoATK Programmer's Guide
 This chapter is only a brief Tango ATK (Application ToolKit) programmer's
  guide.
  You can find a reference guide with a full description of TangoATK classes
- and methods in the ATK JavaDoc 
+ and methods in the ATK JavaDoc
 \begin_inset CommandInset citation
 LatexCommand cite
 key "ATK-doc"
@@ -64,7 +64,7 @@ key "ATK-doc"
 \end_layout
 
 \begin_layout Standard
-A tutorial document 
+A tutorial document
 \begin_inset CommandInset citation
 LatexCommand cite
 key "ATK-Tutorial"
@@ -73,7 +73,7 @@ key "ATK-Tutorial"
 
  is also provided and includes the detailed description of the ATK architecture
  and the ATK components.
- In the ATK Tutorial 
+ In the ATK Tutorial
 \begin_inset CommandInset citation
 LatexCommand cite
 key "ATK-Tutorial"
@@ -116,22 +116,22 @@ TangoATK was developed with these goals in mind
 \end_layout
 
 \begin_layout Itemize
-TangoATK should help minimize development time 
+TangoATK should help minimize development time
 \end_layout
 
 \begin_layout Itemize
-TangoATK should help minimize bugs in applications 
+TangoATK should help minimize bugs in applications
 \end_layout
 
 \begin_layout Itemize
 TangoATK should support applications that contain attributes and commands
  from several different devices.
- 
+
 \end_layout
 
 \begin_layout Itemize
 TangoATK should help avoid code duplication.
- 
+
 \end_layout
 
 \begin_layout Standard
@@ -164,7 +164,7 @@ MVC
 
 \end_inset
 
-) pattern called 
+) pattern called
 \emph on
 model-delegate
 \emph default
@@ -189,7 +189,7 @@ model-delegate
 
 \begin_layout Standard
 This pattern made the choice of labor division quite easy: all non-graphic
- parts of TangoATK reside in the packages beneath 
+ parts of TangoATK reside in the packages beneath
 \family typewriter
 fr.esrf.tangoatk.core
 \family default
@@ -213,7 +213,7 @@ core
 
 \end_inset
 
-, and anything remotely graphic are located beneath 
+, and anything remotely graphic are located beneath
 \family typewriter
 fr.esrf.tangoatk.widge
 \family default
@@ -258,7 +258,7 @@ For TangoATK to help minimize the development time of graphic applications,
 \end_layout
 
 \begin_layout Itemize
-Things that are needed in most applications are included, eg 
+Things that are needed in most applications are included, eg
 \family typewriter
 Splash
 \family default
@@ -279,12 +279,12 @@ splash
 
 \begin_layout Itemize
 Building blocks provided by TangoATK should be easy to use and follow certain
- patterns, eg every graphic widget has a 
+ patterns, eg every graphic widget has a
 \family typewriter
 setModel
 \family default
  method which is used to connect the widget with its non-graphic model.
- 
+
 \end_layout
 
 \begin_layout Standard
@@ -339,7 +339,7 @@ device
 
 \end_inset
 
-, but rather the 
+, but rather the
 \emph on
 attributes and the commands
 \emph default
@@ -350,7 +350,7 @@ attributes and the commands
 
 \begin_layout Standard
 For this design to be feasible, a structure was needed to keep track of
- the commands and attributes, so the 
+ the commands and attributes, so the
 \emph on
 command-list
 \begin_inset Index
@@ -389,7 +389,7 @@ When writing applications for a control-system without a framework much
  has to be implemented each time.
  TangoATK supplies a number of frequently used widgets along with a framework
  for connecting these widgets with their non-graphic counterparts.
- Because of this, the developer only needs to write the 
+ Because of this, the developer only needs to write the
 \emph on
 glue
 \emph default
@@ -427,7 +427,7 @@ AttributeList
 \end_inset
 
  and fill it with the attributes you want.
- 
+
 \end_layout
 
 \begin_layout Enumerate
@@ -442,49 +442,49 @@ CommandList
 \end_inset
 
  and fill it with the commands you want.
- 
+
 \end_layout
 
 \begin_layout Enumerate
-Connect the whole 
+Connect the whole
 \emph on
 AttributeList
 \emph default
- with a 
+ with a
 \emph on
 list viewer
 \emph default
- and / or each 
+ and / or each
 \emph on
 individual attribute
 \emph default
- with an 
+ with an
 \emph on
 attribute viewer
 \emph default
 .
- 
+
 \end_layout
 
 \begin_layout Enumerate
-Connect the whole 
+Connect the whole
 \emph on
 CommandList
 \emph default
- to a 
+ to a
 \emph on
 command list viewer
 \emph default
- and / or connect each 
+ and / or connect each
 \emph on
 individual command
 \emph default
- in the command list with a 
+ in the command list with a
 \emph on
 command viewer
 \emph default
 .
- 
+
 \end_layout
 
 \begin_layout Standard
@@ -528,7 +528,7 @@ package examples;
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
@@ -552,7 +552,7 @@ import javax.swing.JMenu;
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
@@ -572,7 +572,7 @@ import java.awt.BorderLayout;
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
@@ -588,7 +588,7 @@ import fr.esrf.tangoatk.core.ConnectionException;
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
@@ -616,7 +616,7 @@ import fr.esrf.tangoatk.widget.command.CommandComboViewer;
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
@@ -696,7 +696,7 @@ String device;                    // The name of our device.
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
@@ -724,7 +724,7 @@ public FirstApplication()
 \end_layout
 
 \begin_layout Verbatim
-   fileMenu.setText("File");   
+   fileMenu.setText("File");
 \end_layout
 
 \begin_layout Verbatim
@@ -748,7 +748,7 @@ public FirstApplication()
 \end_layout
 
 \begin_layout Verbatim
-   quitItem.addActionListener(new 
+   quitItem.addActionListener(new
 \end_layout
 
 \begin_layout Verbatim
@@ -756,7 +756,7 @@ public FirstApplication()
 \end_layout
 
 \begin_layout Verbatim
-      {                 
+      {
 \end_layout
 
 \begin_layout Verbatim
@@ -792,7 +792,7 @@ public FirstApplication()
 \end_layout
 
 \begin_layout Verbatim
-   errorHistItem.addActionListener(new 
+   errorHistItem.addActionListener(new
 \end_layout
 
 \begin_layout Verbatim
@@ -800,11 +800,11 @@ public FirstApplication()
 \end_layout
 
 \begin_layout Verbatim
-           {                 
+           {
 \end_layout
 
 \begin_layout Verbatim
-            public void 
+            public void
 \end_layout
 
 \begin_layout Verbatim
@@ -848,7 +848,7 @@ public FirstApplication()
 \end_layout
 
 \begin_layout Verbatim
-   attributes = new AttributeList(); 
+   attributes = new AttributeList();
 \end_layout
 
 \begin_layout Verbatim
@@ -880,7 +880,7 @@ public FirstApplication()
 \end_layout
 
 \begin_layout Verbatim
-// 
+//
 \end_layout
 
 \begin_layout Verbatim
@@ -909,7 +909,7 @@ public FirstApplication()
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
@@ -921,7 +921,7 @@ public FirstApplication()
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
@@ -946,7 +946,7 @@ public FirstApplication()
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
@@ -958,7 +958,7 @@ public FirstApplication()
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
@@ -1002,7 +1002,7 @@ public FirstApplication()
 \end_layout
 
 \begin_layout Verbatim
-      System.out.println("Error fetching " + 
+      System.out.println("Error fetching " +
 \end_layout
 
 \begin_layout Verbatim
@@ -1018,7 +1018,7 @@ public FirstApplication()
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
@@ -1038,7 +1038,7 @@ public FirstApplication()
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
@@ -1086,7 +1086,7 @@ public FirstApplication()
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
@@ -1123,7 +1123,7 @@ public FirstApplication()
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
@@ -1148,7 +1148,7 @@ public FirstApplication()
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
@@ -1160,7 +1160,7 @@ public FirstApplication()
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
@@ -1180,7 +1180,7 @@ public FirstApplication()
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
@@ -1192,7 +1192,7 @@ public FirstApplication()
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
@@ -1212,7 +1212,7 @@ public FirstApplication()
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
@@ -1232,7 +1232,7 @@ public FirstApplication()
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
@@ -1256,7 +1256,7 @@ public FirstApplication()
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
@@ -1268,7 +1268,7 @@ public FirstApplication()
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
@@ -1288,7 +1288,7 @@ public FirstApplication()
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
@@ -1316,7 +1316,7 @@ public FirstApplication()
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
@@ -1428,7 +1428,7 @@ Multi device applications
 \begin_layout Standard
 Multi device applications are quite similar to the single device applications,
  the only difference is that it does not suffice to add the attributes by
- wildcard, you need to add them explicitly, like this: 
+ wildcard, you need to add them explicitly, like this:
 \begin_inset Newline newline
 \end_inset
 
@@ -1450,7 +1450,7 @@ try
 \end_layout
 
 \begin_layout Verbatim
-{ 
+{
 \end_layout
 
 \begin_layout Verbatim
@@ -1490,7 +1490,7 @@ catch (ConnectionException ce)
 \end_layout
 
 \begin_layout Verbatim
-   System.out.println("Error fetching " + 
+   System.out.println("Error fetching " +
 \end_layout
 
 \begin_layout Verbatim
@@ -1535,7 +1535,7 @@ scalar
 \end_inset
 
  attributes, and not only that, we've also cheated quite a bit since we
- just passed the attribute list to the 
+ just passed the attribute list to the
 \family typewriter
 fr.esrf.tangoatk.widget.attribute.ScalarListViewer
 \family default
@@ -1618,15 +1618,15 @@ Generally it is done in the following way:
 \end_layout
 
 \begin_layout Enumerate
-You retrieve the attribute from the attribute list 
+You retrieve the attribute from the attribute list
 \end_layout
 
 \begin_layout Enumerate
-You instantiate the viewer 
+You instantiate the viewer
 \end_layout
 
 \begin_layout Enumerate
-Your call the 
+Your call the
 \family typewriter
 setModel
 \begin_inset Index
@@ -1641,7 +1641,7 @@ setModel
 
 \family default
  method on the viewer with the attribute as argument.
- 
+
 \end_layout
 
 \begin_layout Enumerate
@@ -1699,7 +1699,7 @@ package examples;
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
@@ -1723,7 +1723,7 @@ import javax.swing.JMenu;
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
@@ -1747,7 +1747,7 @@ import java.awt.Color;
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
@@ -1763,7 +1763,7 @@ import fr.esrf.tangoatk.core.ConnectionException;
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
@@ -1860,7 +1860,7 @@ public class SecondApplication extends JFrame
 \end_layout
 
 \begin_layout Verbatim
-        fileMenu.setText("File");   
+        fileMenu.setText("File");
 \end_layout
 
 \begin_layout Verbatim
@@ -1884,7 +1884,7 @@ public class SecondApplication extends JFrame
 \end_layout
 
 \begin_layout Verbatim
-                                      {                 
+                                      {
 \end_layout
 
 \begin_layout Verbatim
@@ -1921,7 +1921,7 @@ public class SecondApplication extends JFrame
 \end_layout
 
 \begin_layout Verbatim
-                {                 
+                {
 \end_layout
 
 \begin_layout Verbatim
@@ -1961,7 +1961,7 @@ public class SecondApplication extends JFrame
 \end_layout
 
 \begin_layout Verbatim
-        attributes = new AttributeList(); 
+        attributes = new AttributeList();
 \end_layout
 
 \begin_layout Verbatim
@@ -2085,7 +2085,7 @@ public class SecondApplication extends JFrame
 \end_layout
 
 \begin_layout Verbatim
-        }        
+        }
 \end_layout
 
 \begin_layout Verbatim
@@ -2399,7 +2399,7 @@ SynopticFileViewer
 \end_inset
 
 .
- This class is based on a 
+ This class is based on a
 \begin_inset Quotes eld
 \end_inset
 
@@ -2432,13 +2432,13 @@ The recipe for using the TangoATK synoptic viewer is the following
 \end_layout
 
 \begin_layout Enumerate
-You use Jdraw graphical editor to draw your synoptic 
+You use Jdraw graphical editor to draw your synoptic
 \end_layout
 
 \begin_layout Enumerate
 During drawing phase don't forget to associate parts of the drawing to tango
  attributes or commands.
- Use the 
+ Use the
 \begin_inset Quotes eld
 \end_inset
 
@@ -2450,7 +2450,7 @@ name
 \end_layout
 
 \begin_layout Enumerate
-During drawing phase you can also aasociate a class (frequently a 
+During drawing phase you can also aasociate a class (frequently a
 \begin_inset Quotes eld
 \end_inset
 
@@ -2460,7 +2460,7 @@ specific panel
 
  class) which will be displayed when the user clicks on some part of the
  drawing.
- Use the 
+ Use the
 \begin_inset Quotes eld
 \end_inset
 
@@ -2473,7 +2473,7 @@ extension
 
 \begin_layout Enumerate
 Test the run-time behaviour of your synoptic.
- Use 
+ Use
 \begin_inset Quotes eld
 \end_inset
 
@@ -2481,7 +2481,7 @@ Tango Synoptic view
 \begin_inset Quotes erd
 \end_inset
 
- command in the 
+ command in the
 \begin_inset Quotes eld
 \end_inset
 
@@ -2525,7 +2525,7 @@ The SynopticFilerViewer will browse the objects in the synoptic file at
 \end_layout
 
 \begin_layout Itemize
-For 
+For
 \emph on
 tango state attributes
 \emph default
@@ -2536,7 +2536,7 @@ tango state attributes
 \end_layout
 
 \begin_layout Itemize
-For 
+For
 \emph on
 tango attributes
 \begin_inset Index
@@ -2554,7 +2554,7 @@ attributes
 \end_layout
 
 \begin_layout Itemize
-For 
+For
 \emph on
 tango commands
 \begin_inset Index
@@ -2583,7 +2583,7 @@ tooltip
 
 \end_inset
 
- property is set to 
+ property is set to
 \begin_inset Quotes eld
 \end_inset
 
@@ -2591,7 +2591,7 @@ name
 \begin_inset Quotes erd
 \end_inset
 
- when the mouse enters 
+ when the mouse enters
 \emph on
 any tango object
 \emph default
@@ -2712,11 +2712,11 @@ public class ThirdApplication extends JFrame
 \end_layout
 
 \begin_layout Verbatim
-     
+
 \end_layout
 
 \begin_layout Verbatim
-     
+
 \end_layout
 
 \begin_layout Verbatim
@@ -2740,7 +2740,7 @@ public class ThirdApplication extends JFrame
 \end_layout
 
 \begin_layout Verbatim
-        fileMenu.setText("File");   
+        fileMenu.setText("File");
 \end_layout
 
 \begin_layout Verbatim
@@ -2764,7 +2764,7 @@ public class ThirdApplication extends JFrame
 \end_layout
 
 \begin_layout Verbatim
-                                      {                 
+                                      {
 \end_layout
 
 \begin_layout Verbatim
@@ -2797,7 +2797,7 @@ public class ThirdApplication extends JFrame
 \end_layout
 
 \begin_layout Verbatim
-                {                 
+                {
 \end_layout
 
 \begin_layout Verbatim
@@ -2881,7 +2881,7 @@ public class ThirdApplication extends JFrame
 \end_layout
 
 \begin_layout Verbatim
-        //      
+        //
 \end_layout
 
 \begin_layout Verbatim
@@ -2890,7 +2890,7 @@ public class ThirdApplication extends JFrame
 \end_layout
 
 \begin_layout Verbatim
-        //        
+        //
 \end_layout
 
 \begin_layout Verbatim
@@ -2898,7 +2898,7 @@ public class ThirdApplication extends JFrame
 \end_layout
 
 \begin_layout Verbatim
-        {     
+        {
 \end_layout
 
 \begin_layout Verbatim
@@ -3244,7 +3244,7 @@ viewer
 
 \end_inset
 
- is generally done by calling 
+ is generally done by calling
 \family typewriter
 setModel
 \begin_inset Index
@@ -3296,7 +3296,7 @@ viewer
 
 \end_inset
 
- implement some sort of 
+ implement some sort of
 \emph on
 listener
 \begin_inset Index
@@ -3322,7 +3322,7 @@ INumberScalarListener
 
 .
  An object implementing such a listener interface has the capability of
- receiving and treating 
+ receiving and treating
 \emph on
 events
 \begin_inset Index
@@ -3402,16 +3402,16 @@ setModel
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
-   // this is where the viewer connects itself to the 
+   // this is where the viewer connects itself to the
 \end_layout
 
 \begin_layout Verbatim
    // model.
- After this the viewer will (hopefully) receive 
+ After this the viewer will (hopefully) receive
 \end_layout
 
 \begin_layout Verbatim
@@ -3427,11 +3427,11 @@ setModel
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
-      
+
 \end_layout
 
 \begin_layout Verbatim
@@ -3455,11 +3455,11 @@ setModel
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
@@ -3468,7 +3468,7 @@ setModel
 
 \begin_layout Verbatim
 // Each time the model of this viewer (the numberscalar attribute) decides
- it is time, it 
+ it is time, it
 \end_layout
 
 \begin_layout Verbatim
@@ -3476,7 +3476,7 @@ setModel
 \end_layout
 
 \begin_layout Verbatim
-// with a NumberScalarEvent object which contains the 
+// with a NumberScalarEvent object which contains the
 \end_layout
 
 \begin_layout Verbatim
@@ -3488,7 +3488,7 @@ setModel
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
@@ -3550,11 +3550,11 @@ filename "line.tex"
 \end_layout
 
 \begin_layout Standard
-All listeners in TangoATK implement the 
+All listeners in TangoATK implement the
 \family typewriter
 IErrorListener
 \family default
- interface which specifies the 
+ interface which specifies the
 \family typewriter
 errorChange(ErrorEvent e)
 \family default
@@ -3568,7 +3568,7 @@ The key objects of TangoATK
 \end_layout
 
 \begin_layout Standard
-As seen from the examples above, the key objects of TangoATK are the 
+As seen from the examples above, the key objects of TangoATK are the
 \family typewriter
 CommandList
 \begin_inset Index
@@ -3582,7 +3582,7 @@ CommandList
 
 
 \family default
- and the 
+ and the
 \family typewriter
 AttributeList
 \family default
@@ -3597,24 +3597,24 @@ AttributeList
 \end_inset
 
 .
- These two classes inherit from the abstract class 
+ These two classes inherit from the abstract class
 \family typewriter
 AEntityList
 \family default
  which implements all of the common functionality between the two lists.
- These lists use the functionality of the 
+ These lists use the functionality of the
 \family typewriter
 CommandFactory
 \family default
-, the 
+, the
 \family typewriter
 AttributeFactory
 \family default
-, which both derive from 
+, which both derive from
 \family typewriter
 AEntityFactory,
 \family default
- and the 
+ and the
 \family typewriter
 DeviceFactory
 \family default
@@ -3641,16 +3641,16 @@ refresher
 
 \end_inset
 
-, represented in TangoATK by the 
+, represented in TangoATK by the
 \family typewriter
 Refresher
 \family default
- object, is simply a subclass of 
+ object, is simply a subclass of
 \family typewriter
 java.lang.Thread
 \family default
  which will sleep for a given amount of time and then call a method refresh
- on whatever kind of 
+ on whatever kind of
 \family typewriter
 IRefreshee
 \family default
@@ -3680,7 +3680,7 @@ filename "line.tex"
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim
@@ -3710,7 +3710,7 @@ filename "line.tex"
 \end_layout
 
 \begin_layout Standard
-Both the 
+Both the
 \family typewriter
 AttributeList
 \begin_inset Index
@@ -3724,19 +3724,19 @@ AttributeList
 
 
 \family default
- and the 
+ and the
 \family typewriter
 DeviceFactory
 \family default
- implement the 
+ implement the
 \family typewriter
 IRefreshee
 \family default
- interface which specify only one method, 
+ interface which specify only one method,
 \family typewriter
 refresh()
 \family default
-, and can thus be refreshed by the 
+, and can thus be refreshed by the
 \family typewriter
 Refresher
 \family default
@@ -3772,7 +3772,7 @@ Tango-Event
 \end_inset
 
 , the refresher mecanisme will not be removed.
- As a matter of fact, the method refresh() implemented in 
+ As a matter of fact, the method refresh() implemented in
 \noun on
 AttributeList
 \noun default
@@ -3788,7 +3788,7 @@ subscribe
 
  to the tango event has succeeded and calls the old refresh() method for
  the others (for which subscribe to tango events has failed).
- 
+
 \end_layout
 
 \begin_layout Standard
@@ -3810,7 +3810,7 @@ Another reason for keeping the refresher is that the subscribe event can
 \end_layout
 
 \begin_layout Standard
-The 
+The
 \family typewriter
 AttributePolledList
 \family default
@@ -3826,7 +3826,7 @@ What happens on a refresh
 \end_layout
 
 \begin_layout Standard
-When 
+When
 \family typewriter
 refresh
 \begin_inset Index
@@ -3840,19 +3840,19 @@ refresh
 
 
 \family default
- is called on the 
+ is called on the
 \family typewriter
 AttributeList
 \family default
- and the 
+ and the
 \family typewriter
 DeviceFactory
 \family default
-, they loop through their objects, 
+, they loop through their objects,
 \family typewriter
 IAttributes
 \family default
- and 
+ and
 \family typewriter
 IDevices
 \family default
@@ -3861,11 +3861,11 @@ IDevices
 \end_layout
 
 \begin_layout Standard
-When 
+When
 \noun on
 AttributeFactory
 \noun default
-, creates an 
+, creates an
 \family typewriter
 IAttribute
 \family default
@@ -3874,7 +3874,7 @@ IAttribute
  If the subscription for Tango Change event fails, TangoATK tries to subscribe
  for Tango Periodic event.
  If the subscription succeeds then the attribute is marked as event driven.
- If the subscription fails then the attribute is marked as to be 
+ If the subscription fails then the attribute is marked as to be
 \begin_inset Quotes eld
 \end_inset
 
@@ -3886,25 +3886,25 @@ IAttribute
 \end_layout
 
 \begin_layout Standard
-In the 
+In the
 \noun on
 refresh()
 \noun default
- method of the 
+ method of the
 \noun on
 AttributeList
 \noun default
  during the loop through the objects if the object is marked event driven
  then the object is simply skipped.
- But if the object (attribute) is not marked as event driven, the 
+ But if the object (attribute) is not marked as event driven, the
 \noun on
 refresh()
 \noun default
- method of the 
+ method of the
 \noun on
 AttributeList
 \noun default
-, asks the object to refresh itself by calling the 
+, asks the object to refresh itself by calling the
 \begin_inset Quotes eld
 \end_inset
 
@@ -3917,11 +3917,11 @@ refresh()
 \end_inset
 
  method of that object (attribute or device).
- The 
+ The
 \noun on
 refresh()
 \noun default
- method of an attribute will in turn call the 
+ method of an attribute will in turn call the
 \begin_inset Quotes eld
 \end_inset
 
@@ -3933,7 +3933,7 @@ readAttribute
 \end_layout
 
 \begin_layout Standard
-The result of this is that the 
+The result of this is that the
 \family typewriter
 IAttributes
 \family default
@@ -3948,12 +3948,12 @@ listener
 \end_inset
 
  containing snapshots of their state.
- The events are fired either because the 
+ The events are fired either because the
 \noun on
 IAttribute
 \noun default
  has received a Tango Change event, respectively a Tango Periodic event
- (event driven objects), or because the 
+ (event driven objects), or because the
 \noun on
 refresh()
 \noun default
@@ -3969,11 +3969,11 @@ The device factory is responsible for two things
 \end_layout
 
 \begin_layout Enumerate
-Creating new devices (Tango device proxies) when needed 
+Creating new devices (Tango device proxies) when needed
 \end_layout
 
 \begin_layout Enumerate
-Refreshing the state and status of these devices 
+Refreshing the state and status of these devices
 \end_layout
 
 \begin_layout Standard
@@ -3984,16 +3984,16 @@ Regarding the first point, new devices are created when they are asked for
 \end_layout
 
 \begin_layout Standard
-The 
+The
 \family typewriter
 DeviceFactory
 \family default
  contains a Refresher as described above, which makes sure that the all
- 
+
 \family sans
 Devices
 \family default
- in the 
+ in the
 \family sans
 DeviceFactory
 \family default
@@ -4007,14 +4007,14 @@ The AttributeFactory and the CommandFactory
 \begin_layout Standard
 These factories are responsible for taking a name of an attribute or command
  and returning an object representing the attribute or command.
- It is also responsible for making sure that the appropriate 
+ It is also responsible for making sure that the appropriate
 \family typewriter
 IDevice
 \family default
  is already available.
  Normally the programmer does not want to use these factory classes directly.
  They are used by TangoATK classes indirectly when the application programmer
- calls the AttributeList's (or CommandList's) 
+ calls the AttributeList's (or CommandList's)
 \noun on
 add()
 \noun default
@@ -4072,11 +4072,11 @@ attributes
 \end_layout
 
 \begin_layout Itemize
-Short 
+Short
 \end_layout
 
 \begin_layout Itemize
-Long 
+Long
 \end_layout
 
 \begin_layout Itemize
@@ -4084,7 +4084,7 @@ Double
 \end_layout
 
 \begin_layout Itemize
-String 
+String
 \end_layout
 
 \begin_layout Itemize
@@ -4113,15 +4113,15 @@ According to Tango specifications, all these types can be of the following
 \end_layout
 
 \begin_layout Itemize
-Scalar, a single value 
+Scalar, a single value
 \end_layout
 
 \begin_layout Itemize
-Spectrum, a single array 
+Spectrum, a single array
 \end_layout
 
 \begin_layout Itemize
-Image, a two dimensional array 
+Image, a two dimensional array
 \end_layout
 
 \begin_layout Standard
@@ -4141,19 +4141,19 @@ The numeric attribute hierarchy is expressed in the following interfaces:
 \end_layout
 
 \begin_layout Description
-INumberScalar extends 
+INumberScalar extends
 \series bold
 INumber
 \end_layout
 
 \begin_layout Description
-INumberSpectrum extends 
+INumberSpectrum extends
 \series bold
 INumber
 \end_layout
 
 \begin_layout Description
-INumberImage extends 
+INumberImage extends
 \series bold
 INumber
 \end_layout
@@ -4165,11 +4165,11 @@ and
 \series bold
  INumber
 \series default
- in turn extends 
+ in turn extends
 \series bold
 IAttribute
 \series default
- 
+
 \begin_inset space ~
 \end_inset
 
@@ -4201,19 +4201,19 @@ commands
 \end_layout
 
 \begin_layout Itemize
-Those which take input 
+Those which take input
 \end_layout
 
 \begin_layout Itemize
-Those which do not take input 
+Those which do not take input
 \end_layout
 
 \begin_layout Itemize
-Those which do output 
+Those which do output
 \end_layout
 
 \begin_layout Itemize
-Those which do not do output 
+Those which do not do output
 \end_layout
 
 \begin_layout Standard
@@ -4221,7 +4221,7 @@ Now, for both input and output we have the following types:
 \end_layout
 
 \begin_layout Itemize
-Double 
+Double
 \end_layout
 
 \begin_layout Itemize
@@ -4233,7 +4233,7 @@ Unsigned Long
 \end_layout
 
 \begin_layout Itemize
-Long 
+Long
 \end_layout
 
 \begin_layout Itemize
@@ -4241,7 +4241,7 @@ Unsigned Short
 \end_layout
 
 \begin_layout Itemize
-Short 
+Short
 \end_layout
 
 \begin_layout Itemize
@@ -4262,11 +4262,11 @@ Unsigned Char Array
 \end_layout
 
 \begin_layout Enumerate
-The StringLongArray 
+The StringLongArray
 \end_layout
 
 \begin_layout Enumerate
-The StringDoubleArray 
+The StringDoubleArray
 \end_layout
 
 \begin_layout Standard
@@ -4306,20 +4306,20 @@ listener
 \end_layout
 
 \begin_layout Standard
-The commands publish results to their 
+The commands publish results to their
 \family typewriter
 IResultListener
 \family default
-s, by the means of a 
+s, by the means of a
 \family typewriter
 ResultEvent
 \family default
 .
- The 
+ The
 \family typewriter
 IResultListener
 \family default
- extends 
+ extends
 \family typewriter
 IErrorListener
 \family default
@@ -4340,7 +4340,7 @@ viewer
 \end_layout
 
 \begin_layout Verbatim
- 
+
 \end_layout
 
 \begin_layout Verbatim

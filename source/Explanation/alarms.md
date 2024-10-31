@@ -10,11 +10,11 @@ conditions.  Four properties are available for alarm purpose.
 
   > For example the voltage of a powersupply set via a DAC and read via an
   > ADC convertor. Both values can be different due to various factors such
-  > as internal resistor or noise on the ADC. Additionally 
+  > as internal resistor or noise on the ADC. Additionally
   > the powersupply may need a certain time to establish its
   > output voltage when changing the set point. The Tango alarm system is able to handle the acceptable noise threshold and the time the device needs to
   > establish the voltage after the writing of the setpoint (time
-  > constant). 
+  > constant).
 
 
 ## The level alarms
@@ -92,4 +92,4 @@ the attribute quality factor will be set to Tango::ATTR_ALARM and if
 the device state is Tango::ON, it is switched to Tango::ALARM.
 
 If the attribute is a spectrum or an image, then the alarm is set if any one of
-the attribute value’s satisfies the above criterium. 
+the attribute value’s satisfies the above criterium.

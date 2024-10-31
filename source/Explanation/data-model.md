@@ -26,7 +26,7 @@ classDiagram
     family
     member
   }
-  Pipe "*" <--* cls 
+  Pipe "*" <--* cls
   Command "*" <--* cls
   Attribute "*" <--* cls
   Event "*" <--* Attribute
@@ -60,7 +60,7 @@ classDiagram
     family
     member
   }
-  Pipe "*" <--* cls 
+  Pipe "*" <--* cls
   Command "*" <--* cls
   Attribute "*" <--* cls
   Event "*" <--* Attribute

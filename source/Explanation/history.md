@@ -7,12 +7,12 @@ The concept was implemented in the TACO control system which was presented at th
 It has been successfully used as the heart of the ESRF Control System of the institute accelerator complex.
 This control system, called TACO, was based on the SUN RPC (also used by the NFS protocol) and C as its core programming language.
 
-In 1999, a renewal of the ESRF distributed control system was started with the aim of replacing SUN/RPC with CORBA, using C++ as the core programming languages. 
+In 1999, a renewal of the ESRF distributed control system was started with the aim of replacing SUN/RPC with CORBA, using C++ as the core programming languages.
 The new software was called TANGO and was presented for the first time at ICALEPCS in 1999 ([TANGO - AN OBJECT ORIENTED CONTROL SYSTEM BASED ON CORBA](https://accelconf.web.cern.ch/ica99/papers/wa2i01.pdf))
 
 In June 2002, Soleil and ESRF officially decided to collaborate to develop TANGO collaboratively.
 [Soleil](https://www.synchrotron-soleil.fr/) is the French synchrotron radiation facility based close to Paris.
-In December 2003, Elettra joined the club. 
+In December 2003, Elettra joined the club.
 [Elettra](https://www.elettra.trieste.it/) is an Italian synchrotron radiation facility located in Trieste.
 Beginning of 2005 ALBA also decided to join.
 [ALBA](https://www.cells.es/en/) is a Spanish synchrotron radiation facility located in Barcelona.

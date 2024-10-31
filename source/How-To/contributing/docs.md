@@ -115,7 +115,7 @@ firefox build/html/index.html
 ```{rubric} Don't see your changes?
 ```
 
-Sometimes you will need to do a fresh build to see some changes. You can do this by first cleaning the build directory with: 
+Sometimes you will need to do a fresh build to see some changes. You can do this by first cleaning the build directory with:
 ```
 make clean
 ```
@@ -246,7 +246,7 @@ The initial setup on Read the Docs needs to performed by someone who is a Read t
     'subproj_name': ('https://<subproject_name>.readthedocs.io/en/latest/', None)
 	}
    ```
-   
+
 3. Configure the mapping in the subproject to be able to link to the parent tango-controls project
 
    In the subproject {file}`src/conf.py` ensure the `intersphinx` extension is specified:
@@ -265,7 +265,7 @@ The initial setup on Read the Docs needs to performed by someone who is a Read t
    ```
 
 4. In the parent tango-controls you can then reference sections in the subproject using the following link format:
-   
+
    ```
    [Explicit text](inv:subproj_name:std#index)
    ```

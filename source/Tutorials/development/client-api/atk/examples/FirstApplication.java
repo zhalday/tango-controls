@@ -14,7 +14,7 @@ import fr.esrf.tangoatk.widget.util.ErrorHistory;
 import fr.esrf.tangoatk.widget.util.ATKMenuBar;
 import fr.esrf.tangoatk.widget.attribute.ScalarListViewer;
 import fr.esrf.tangoatk.widget.command.CommandComboViewer;
- 
+
 
 public class FirstApplication extends JFrame
 {
@@ -34,10 +34,10 @@ public class FirstApplication extends JFrame
                                        // a combobox of commands and execute
                                        // them.
     String             device;         // The name of our device.
-    
+
     public FirstApplication()
     {
-         attributes    = new AttributeList();   
+         attributes    = new AttributeList();
          commands      = new CommandList();
          errorHistory  = new ErrorHistory();
          device        = "id14/eh3_mirror/1";
@@ -56,7 +56,7 @@ public class FirstApplication extends JFrame
          menu.setQuitHandler(new ActionListener()
          {
                  public void actionPerformed(ActionEvent e)
-                 { 
+                 {
                        System.exit(0);
                  }
          });
@@ -68,7 +68,7 @@ public class FirstApplication extends JFrame
 
           menu.setErrorHistory(errorHistory);
 
-//	 
+//
 // A feature of the command and attribute list is that if you
 // supply an errorlistener to these lists, they'll add that
 // errorlistener to all subsequently created attributes or
@@ -87,7 +87,7 @@ public class FirstApplication extends JFrame
 
          try
          {
-	     
+
 //
 // Another feature of the attribute and command list is that they
 // can add wildcard names, currently only `*' is supported.
@@ -99,7 +99,7 @@ public class FirstApplication extends JFrame
          }
          catch (ConnectionException ce)
          {
-             System.out.println("Error fetching " + 
+             System.out.println("Error fetching " +
                                 "attributes from " +
                                 device + " " + ce);
          }
