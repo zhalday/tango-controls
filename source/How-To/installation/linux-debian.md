@@ -38,6 +38,7 @@ The drawback of the stock debian packages is that they don't include any java ap
 If you need these, or a newer tango version, you can consider compiling the tango-controls package (called
 TangoSourceDistribution) in the next section.
 
+(debian-compile-tango-source-distribution)=
 ### Compilation of the TangoSourceDistribution
 
 The following steps have been written for Debian bookworm. Ubuntu should be similiar.

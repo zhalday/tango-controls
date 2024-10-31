@@ -13,5 +13,4 @@ The section is organized as follows:
 overview.md
 client-api/index
 device-api/index
-advanced/TangoDeviceServerModel
 ```

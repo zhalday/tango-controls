@@ -25,6 +25,7 @@ multicasting protocol). Nevertheless, the default event communication
 mode is unicast and propagating events via multicasting requires some
 specific configuration.
 
+(configuring-events-to-use-multicast-transport)=
 ### Configuring events to use multicast transport
 
 Before using multicasting transport for event(s), you have to choose
