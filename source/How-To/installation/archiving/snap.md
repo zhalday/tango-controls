@@ -15,7 +15,7 @@ substitutions:
 
 # SNAPshot (Archiving) installation and configuration
 
-{audience}`administrators, users, developers`
+{audience}`all`
 
 ## Overview
 

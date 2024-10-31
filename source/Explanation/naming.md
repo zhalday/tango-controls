@@ -2,7 +2,7 @@
 
 # Tango object naming (device, attribute and property)
 
-{audience}`developers, users, administrators`
+{audience}`all`
 {lang}`all`
 
 ## Device name

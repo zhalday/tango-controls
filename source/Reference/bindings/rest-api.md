@@ -2,7 +2,7 @@
 
 (rest-api-binding)=
 
-{audience}`developers, users`
+{audience}`all`
 
 - [Server implementations](https://gitlab.com/tango-controls/rest-api#known-server-implementations)
 - [Client implementations](https://gitlab.com/tango-controls/rest-api#reference-client-implementations)

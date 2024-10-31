@@ -2,7 +2,7 @@
 
 (matlab-octave-binding)=
 
-{audience}`developers, users`
+{audience}`all`
 
 - Client API for [Matlab](https://www.mathworks.com/) and [Octave](https://www.gnu.org/software/octave/)
 - Release 2.0.6 for Matlab >= R2009b or Octave >= 3.6.2

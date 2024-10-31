@@ -2,7 +2,7 @@
 
 # The Starter device
 
-{audience}`administrators, developers, users`
+{audience}`all`
 
 ## Introduction
 
