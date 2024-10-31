@@ -144,8 +144,8 @@ Aliases follow the naming scheme and maximum lengths of the object they are poin
 
 The RFC project has the gritty nitty details about acceptable characters and maximum lengths:
 
-- (Device Class)[https://gitlab.com/tango-controls/rfc/-/blob/main/2/Device.md#device-class]
-- (Devices)[https://gitlab.com/tango-controls/rfc/-/blob/main/2/Device.md#naming-convention]
-- (Attributes)[https://gitlab.com/tango-controls/rfc/-/blob/main/4/Attribute.md#attribute-naming-schema]
-- (Commands)[https://gitlab.com/tango-controls/rfc/-/blob/main/3/Command.md#naming-convention]
-- (Property)[]https://gitlab.com/tango-controls/rfc/-/blob/main/5/Property.md#naming-convention
+- [Device Class](https://gitlab.com/tango-controls/rfc/-/blob/main/2/Device.md#device-class)
+- [Devices](https://gitlab.com/tango-controls/rfc/-/blob/main/2/Device.md#naming-convention)
+- [Attributes](https://gitlab.com/tango-controls/rfc/-/blob/main/4/Attribute.md#attribute-naming-schema)
+- [Commands](https://gitlab.com/tango-controls/rfc/-/blob/main/3/Command.md#naming-convention)
+- [Property](https://gitlab.com/tango-controls/rfc/-/blob/main/5/Property.md#naming-convention)
