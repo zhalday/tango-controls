@@ -12,5 +12,6 @@ taurus
 alarm/panic
 pogo
 bensikin
+taranta
 rest-api
 ```

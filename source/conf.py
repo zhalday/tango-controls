@@ -469,6 +469,7 @@ intersphinx_mapping = {
     "jive": ("https://jive.readthedocs.io/en/latest/", None),
     "astor": ("https://tango-astor.readthedocs.io/en/latest/", None),
     "atk": ("https://tangoatk.readthedocs.io/en/latest/", None),
+    "taranta": ("https://taranta.readthedocs.io/en/latest/", None),
 }
 
 # link checking options
