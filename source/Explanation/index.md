@@ -8,7 +8,6 @@
 :hidden: true
 
 overview.md
-installation-minimum-deployment.md
 simplified-data-model.md
 data-model.md
 history.md

@@ -1,36 +1,19 @@
-% What is Tango requirements
-
-# Overview
+# Example deployment of a Tango Controls System
 
 {audience}`administrators, developers`
 
-## What is Tango Controls
+There are different tasks that need to be performed in a Tango Cotnrols System. One can categorise the tasks as follows:
 
-Tango Controls is an object oriented, distributed control system.
-It is a framework for building custom SCADA systems.
-Tango defines communication protocol and API.
-It provides libraries, set of GUI tools and drivers (so called
-{term}`Device Servers <device server>`) for variety of standard and specific control equipment. For more information see:
-<http://www.tango-controls.org/what-tango-controls/>
+- Tango Host: Keep the configuration of all components in the Tango Controls system permanently stored and make it available through its [API](#tangodb).
+- Run Tango Applications: Execute CLI programmes. e.g.{program}`tango_admin` and {program}`iTango`, or GUI programmes, e.g. {program}`Jive` and {program}`Synoptic`.
+- Run Tango Device Server(s): Execute the Tanmgo Device Server that host Tango Devices.
+- Tango development: Implement Device Classes for Tango Devices and Tango clients.
 
-```{image} ../img/logo_tangocontrols.png
-:align: center
-```
-
-Your computer may have different (one or more) roles in the Tango CS system.
-The roles are:
-
-- Tango Host, where configuration of all other components is stored
-- Tango Applications, where you run CLI or GUI applications like {program}`Synoptic`
-- Tango device servers running
-- Tango development, where you develop you Device Servers or Tango applications.
 
 Your computer may perform all above roles simultaneously.
 
-:::{sidebar} Tango Host, DataBaseds
-Each Tango Controls system/deployment has to have at least one running DataBaseds {term}`device server`.
-The machine on which the {term}`device server` is running has a role of so called {term}`Tango Host`.
-DataBaseds is a device server providing configuration information to all other components of the system as well as a runtime catalog of the components/devices.
+:::{sidebar} Tango Host, Databaseds
+Each Tango Controls system/deployment has to have at least one running DataBaseds {term}`device server`. The machine on which the {term}`device server` is running has a role of so called {term}`Tango Host`. Databaseds is a device server providing configuration information to all other components of the system as well as a runtime catalog of the components/devices.
 It allows (among others) client applications to find devices in distributed environment.
 
 The {envvar}`TANGO_HOST` environment variable is providing information about the address or IP number and the port on which the DataBaseds is listening for Tango connections. The {envvar}`TANGO_HOST` environment variable is built as follows:

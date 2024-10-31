@@ -9,4 +9,5 @@
 getting-started/tutorial.md
 atk/atk
 atkpanel/atkpanel
+installation-minimum-deployment.md
 ```
