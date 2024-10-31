@@ -99,16 +99,16 @@ The [Figure 1: Bensikin Account Manager ](#bensikin-fig-1) presents the account 
 Interface, on application start. With this manager, you can create a new
 account, or delete or use an existing one.
 
-To quit the application, simply click on ![cancel](bensikin/image7.png) or ![cancel2](bensikin/image8.png){w=50px} button.
+To quit the application, simply click on ![Cancel and exit](bensikin/image7.png) button.
 
 Existing accounts are listed in the account {guilabel}`Selection Combo Box`, which
-you can reload by clicking on {{ image5 }} button (if you think that someone
+you can reload by clicking on ![Reload account list](bensikin/image9.png) button (if you think that someone
 could have modified it by creating a new account or deleting an existing
 one, for example).
 
 ### Creating a new account
 
-To create a new account, click on the button {{ image6 }} (at the bottom
+To create a new account, click on the button ![New account](bensikin/image10.png) (at the bottom
 left of the panel). A new dialog will appear, as following.
 
 (bensikin-fig-3)=
@@ -120,11 +120,11 @@ Figure 3: Creating a new account
 In this new dialog, you will have to enter the name of your new
 account and the path of the application working directory for this
 account. If you prefer, you can browse for the path by clicking on
-the {{ image8 }} button. Then, a classic browsing dialog will be
+the ![Browse](bensikin/image12.png) button. Then, a classic browsing dialog will be
 displayed, in which you can choose the directory. When both fields
-({guilabel}`Name` and {guilabel}`Path`) are fulfilled, click on {{ image9 }} button to
+({guilabel}`Name` and {guilabel}`Path`) are fulfilled, click on ![Ok](bensikin/image13.png) button to
 validate your new account, which will be automatically added in the
-list of existing accounts. If you click on {{ image10 }} or {{ image11 }}
+list of existing accounts. If you click on ![Cancel](bensikin/image14.png)
 button, you go back to the first dialog, as presented in
 [Figure 1: Bensikin Account Manager ](#bensikin-fig-1),
 and nothing is done.
@@ -186,13 +186,13 @@ Figure 6: Context control panel
 ### Creating a new context
 
 To create a new context, click on the {guilabel}`new` icon in toolbar
-({{ image17 }}), or choose option to make a new context from {guilabel}`File` menu
+(![New file icon](bensikin/image17.png)), or choose option to make a new context from {guilabel}`File` menu
 or {guilabel}`Contexts` menu:
 
-{{ image18 }}{{ image19 }}
+![](bensikin/image18.png) ![](bensikin/image19.png)
 
 You also are ready to make a new context at application first start
-or by clicking on the {guilabel}`reset` icon ({{ image20 }}):
+or by clicking on the {guilabel}`reset` icon (![Trash icon](bensikin/image20.png)):
 
 (bensikin-fig-7)=
 
@@ -200,8 +200,8 @@ or by clicking on the {guilabel}`reset` icon ({{ image20 }}):
 Figure 7: Application first start
 :::
 
-The difference between the {guilabel}`reset` icon({{ image22 }}) and the {guilabel}`new`
-icon({{ image23 }}) is, that the “reset” icon will clear every panel,
+The difference between the {guilabel}`reset` icon(![Trash icon](bensikin/image20.png)) and the {guilabel}`new`
+icon (![New file icon](bensikin/image17.png)) is, that the “reset” icon will clear every panel,
 whereas the “new” icon will only clear the snapshot list and the
 Context Details sub panel.
 
@@ -212,21 +212,21 @@ you to check for available attributes. The one on the right side
 represents your context attributes.
 
 To add attributes in your context browse the left tree, select
-attributes (represented by the icon {{ image24 }}), and click on the
-arrow {{ image25 }} to transfer them to the right tree.
+attributes (represented by the icon ![Select icon](bensikin/image22.png)), and click on the
+green arrow ![Main Bensikin window with Select context details](bensikin/image23.png) to transfer them to the right tree.
 
 To remove attributes from your context, select them in the right
-tree and click on the cross {{ image26 }}.
+tree and click on the red cross ![Main Bensikin window with Select context details](bensikin/image23.png).
 
 Finally, fill the context Meta data (Name, Author, Reason and
 Description) in the corresponding fields (Note that filling the
-fields activates the {guilabel}`register` button {{ image27 }}).
+fields activates the {guilabel}`register` button ![Register this New Context icon](bensikin/image24.png)).
 
 Then, you can save your context in database by clicking on the
-{guilabel}`register` button {{ image28 }}.
+{guilabel}`register` button ![Register this New Context icon](bensikin/image24.png).
 
 Doing so will deactivate the {guilabel}`register` button and activate the
-{guilabel}`launch snapshot` button {{ image29 }}.
+{guilabel}`launch snapshot` button ![Launch snapshot icon](bensikin/image25.png).
 
 You can save your context in a file using the {guilabel}`save`
 icon ![save](bensikin/image26.png).
@@ -283,7 +283,7 @@ Figure 9: Bensikin with context table selection mode (new context)
 
 As for the classic way, you will have to fill the Meta data fields
 and register your context in database by clicking on the {guilabel}`register`
-button {{ image34 }}
+button ![register](bensikin/image24.png)
 
 ### Modifying an existing context
 
@@ -320,7 +320,7 @@ have been created this day (the day when you load the context).
 
 In the {guilabel}`Contexts` menu, choose {guilabel}`load` then select {guilabel}`DB`:
 
-{{ image36 }}
+![Contexts / Load / DB](bensikin/image85.png)
 
 A dialog will then appear to allow you to filter the list of
 contexts in database following different criteria:
@@ -332,7 +332,7 @@ Figure 11: Data base Context filter dialog
 :::
 
 Select no criterion to search for all contexts present in database.
-Click on the {{ image38 }} button to apply the filter. The list of
+Click on the ![search](bensikin/image33.png) button to apply the filter. The list of
 corresponding contexts will then appear in the Context List sub
 panel, as shown in [Figure 6: Context control panel ](#bensikin-fig-6). Double click
 on a context in table to load it and see its details in the Context
@@ -340,15 +340,15 @@ Details sub panel (See [Figure 6: Context control panel ](#bensikin-fig-6)).
 
 If there are too many contexts in the list, you can remove some
 contexts from list (not from database) by selecting them in list and
-clicking on the cross on the top right corner of the list
-({{ image39 }}).
+clicking on the cross on the top right corner of the list:
+![](bensikin/image34.png)
 
 #### Loading a context from file
 
 In the {guilabel}`Contexts` menu, choose {guilabel}`load` then select {guilabel}`File`, or in
 {guilabel}`File` menu choose {guilabel}`load` then select {guilabel}`Context`:
 
-{{ image40 }} {{ image41 }}
+![Load / Context / Load menu](bensikin/image86.png) ![Contexts / Load / File menu](bensikin/image87.png)
 
 A classic file browser will appear. Search for your “.ctx” file and
 select it to load the corresponding context in the {guilabel}`Context Details`
@@ -356,27 +356,27 @@ sub panel (See [Figure 6: Context control panel ](#bensikin-fig-6)).
 
 ### Printing a context
 
-Once you have context ready, click on the {guilabel}`print` icon ({{ image42 }})
+Once you have context ready, click on the {guilabel}`print` icon (![Print](bensikin/image37.png))
 and select {guilabel}`context`:
 
-{{ image43 }}
+![Print / Context menu](bensikin/image88.png)
 
 The classic print dialog will then appear. Validate your print
 configuration to print an xml representation of your context.
 
-User can also print context by pressing the button {{ image44 }}
+User can also print context by pressing the button ![Print](bensikin/image39.png)
 
 ### Saving a context
 
-Once you have context ready, click on the {guilabel}`save` icon ({{ image45 }})
+Once you have context ready, click on the {guilabel}`save` icon (![save](bensikin/image26.png))
 and select {guilabel}`context`:
 
-{{ image46 }}
+![save / context menu](bensikin/image89.png)
 
 You can also go to menu {guilabel}`Contexts` and click on {guilabel}`save`, or go to
 menu {guilabel}`File`, select {guilabel}`Save` and click on {guilabel}`Context`.
 
-{{ image47 }} {{ image48 }}
+![File / Save / Context menu](bensikin/image90.png) ![Contexts / Save menu](bensikin/image111.png)
 
 Then, the behavior is “Word-like”. This means that if this is the
 first time you save this context, you will see the classic file
@@ -384,9 +384,10 @@ browser to choose where to save your context, with file name.
 However, else, it will automatically save in the corresponding file.
 If you want to save in another file, you have to go to {guilabel}`File` menu,
 select {guilabel}`Save As` and click on {guilabel}`Context` or go to {guilabel}`Contexts` menu and
-click on {guilabel}`Save As`
+click on {guilabel}`Save As`:
 
-{{ image49 }} {{ image50 }}
+![File / Save as / Contexts menu](bensikin/image110.png) 
+![Contexts / Save as menu](bensikin/image93.png)
 
 ## Snapshot Management
 
@@ -409,7 +410,7 @@ Figure 12: Snapshot control panel
 
 To create a new snapshot, first select a valid context in the
 context control panel (see [Figure 6: Context control panel ](#bensikin-fig-6)). Then
-click on the button {{ image52 }}. The corresponding snapshot is added
+click on the button ![Launch snapshot](bensikin/image83.png). The corresponding snapshot is added
 in the list of snapshots in the Snapshot List sub panel.
 
 ### Loading a snapshot
@@ -429,10 +430,10 @@ the {guilabel}`Snapshot List` sub panel allows you to filter snapshots from data
 the snapshot you want to load. However, have in mind that this
 filter is “context dependent”, which means that the snapshots which
 will appear in the list by clicking on the {guilabel}`filter` button
-({{ image53 }}) are the one that correspond to your filter criteria
+(![Filter](bensikin/image94.png)) are the one that correspond to your filter criteria
 **AND** the selected context in the {guilabel}`Context Control Panel`. If the
 filter is cleared (which you can obtain by clicking on the
-button {{ image54 }}), you will search for all the snapshots in
+button ![Reset filter parameters](bensikin/image95.png)), you will search for all the snapshots in
 database that correspond to the selected context.
 
 #### Loading a snapshot from file
@@ -440,7 +441,7 @@ database that correspond to the selected context.
 In the {guilabel}`Snapshots` menu, choose {guilabel}`load` then select {guilabel}`File`, or in
 {guilabel}`File` menu choose {guilabel}`load` then select {guilabel}`Snapshot`:
 
-{{ image55 }} {{ image56 }}
+![File / Load / Snapshot menu](bensikin/image96.png) ![Snapshots / Load / File menu](bensikin/image97.png)
 
 A classic file browser will appear. Search for your “.snap” file and
 select it to load the corresponding snapshot in the Snapshot Details
@@ -454,7 +455,7 @@ new tab about this snapshot in the Snapshot Details sub panel, tab
 named by this snapshot ID. If you load a snapshot from file, the
 name of the tab is the name of the file. To differentiate snapshots
 loaded from file and the ones loaded from database, the snapshot
-loaded from file tabs have the icon {{ image57 }}.
+loaded from file tabs have the icon ![](bensikin/image50.png).
 
 ### Setting equipment with a snapshot
 
@@ -464,15 +465,15 @@ which not, by selecting or unselecting the corresponding check box
 in the column {guilabel}`Can Set Equipment`
 (See [Figure 12: Snapshot control panel ](#bensikin-fig-12)).
 By default, every attribute is selected. If you unselect
-some attributes, an icon {{ image58 }} will appear in tab title to
+some attributes, an icon ![select](bensikin/image51.png) will appear in tab title to
 notify you that these attributes will not set equipments. You can
 quick select/unselect all the attributes by clicking on {guilabel}`All`
 and {guilabel}`None` buttons. When you are ready to set equipment with the
-selected write values, click on the button {{ image61 }}.
+selected write values, click on the button ![Set equipments](bensikin/image98.png).
 
 You can also modify the write value before setting equipment by
 editing it in the table. If you do so, the value becomes red and an
-{{ image62 }} icon appears to warn you about the fact that you made
+![red star icon](bensikin/image53.png) icon appears to warn you about the fact that you made
 modifications in this snapshot (these modifications will not be
 saved in database, they are just here to set equipment).
 
@@ -490,18 +491,18 @@ There are 2 ways to compare snapshots:
 
   To do so, select a tab in Snapshot Details sub panel
   ([Figure 12: Snapshot control panel ](#bensikin-fig-12)).
-  Click on button {{ image64 }}. You will
+  Click on button ![Add to comparison](bensikin/image99.png). You will
   see the tab title of this attribute appear in the field
-  “1 {sup}`st` snapshot”. Select another tab and click again on
-  {{ image65 }} button to put this attribute tab title in the field
-  “2 {sup}`nd` snapshot”. Click then on {{ image66 }} button to see the
+  “1{sup}`st` snapshot”. Select another tab and click again on
+  ![Add to comparison](bensikin/image99.png) button to put this attribute tab title in the field
+  “2{sup}`nd` snapshot”. Click then on ![Compare](bensikin/image100.png) button to see the
   comparison between these 2 snapshots.
 
   If user wants to see only the first line of comparison, he must
-  check filter {{ image67 }}
+  check filter ![Filter](bensikin/image55.png)
 
   Else if he/she wants to see all the details of the comparison,
-  he/she must check {{ image68 }}
+  he/she must check ![Highlight](bensikin/image56.png)
 
   (bensikin-fig-14)=
 
@@ -514,11 +515,11 @@ There are 2 ways to compare snapshots:
 - Compare a snapshot with current state:
 
   To compare a snapshot with current state, set this snapshot as
-  “1 {sup}`st` snapshot”, as explained above, and leave the
-  “2 {sup}`nd` snapshot” empty. Note that once the “1 {sup}`st`
-  snapshot is selected, you only can update the “2 {sup}`nd` snapshot
+  “1{sup}`st` snapshot”, as explained above, and leave the
+  “2{sup}`nd` snapshot” empty. Note that once the “1{sup}`st`
+  snapshot is selected, you only can update the “2{sup}`nd` snapshot
   or clear the comparison selection. To do so, click on the
-  button {{ image70 }}. What is hidden behind this is a creation of a
+  button ![](bensikin/image101.png). What is hidden behind this is a creation of a
   snapshot, named “BENSIKIN_AUTOMATIC_SNAPSHOT”, and you compare
   this snapshot with your snapshot. Have in mind that this automatic
   snapshot is registered in database. So, in the comparison table, the
@@ -529,9 +530,9 @@ There are 2 ways to compare snapshots:
 
 As you can see in [Figure 12: Snapshot control panel ](#bensikin-fig-12),
 snapshots are detailed in a table. You can copy this table to clipboard as a
-text-CSV formatted table by clicking on {{ image71 }} or {{ image72 }}
+text-CSV formatted table by clicking on ![Ctrl+C](bensikin/image102.png) or ![Copy to clipboard](bensikin/image58.png)
 button. If you want to see this text result and may be filter it
-(like removing lines), click on {{ image73 }} button. You will see the
+(like removing lines), click on ![Edit/Ctrl+C](bensikin/image104.png) button. You will see the
 text appear in a dialog.
 
 (bensikin-fig-15)=
@@ -542,25 +543,25 @@ Figure 15: Snapshot edit clipboard dialog
 
 ### Modifying a snapshot comment
 
-Once your snapshot details are loaded, click on {{ image75 }} button to
+Once your snapshot details are loaded, click on ![Edit comment](bensikin/image105.png) button to
 modify its comment (and save it in database or file).
 
 ### Printing a snapshot
 
-Once you have context ready, click on the {guilabel}`print` icon ({{ image76 }})
+Once you have context ready, click on the {guilabel}`print` icon (![print](bensikin/image37.png))
 and select {guilabel}`snapshot`:
 
-{{ image77 }}
+![Print / Snapshot menu](bensikin/image61.png)
 
 The classic print dialog will then appear. Validate your print
 configuration to print an xml representation of your snapshot.
 
 ### Saving a snapshot
 
-Once you have context ready, click on the {guilabel}`save` icon ({{ image78 }})
+Once you have context ready, click on the {guilabel}`save` icon (![Save](bensikin/image26.png))
 and select {guilabel}`snapshot`:
 
-{{ image79 }}
+![Save / Snapshot menu](bensikin/image82.png)
 
 You can also go to menu {guilabel}`Context` and click on {guilabel}`Save`, or go to menu
 {guilabel}`File -> Save -> Snapshot`.
@@ -573,7 +574,7 @@ file. If you want to save in another file, you have to go to {guilabel}`File`
 menu, select {guilabel}`Save As` and click on {guilabel}`Snapshot`, or go to {guilabel}`Snapshots`
 menu and click on {guilabel}`Save As`.
 
-{{ image82 }} {{ image83 }}
+![File / Save As / Snapshot menu](bensikin/image65.png) ![Snapshots / Save AS menu](bensikin/image66.png)
 
 ## Favorites
 
@@ -587,7 +588,7 @@ To add a context to your favorites, have your context ready by
 creating or loading it. Then go to {guilabel}`Favorites` menu and click on
 {guilabel}`Add selected context`.
 
-{{ image84 }}
+![Favorites / Add selected context menu](bensikin/image67.png)
 
 ### Switching to a context in favorites
 
@@ -595,7 +596,7 @@ To switch to a context in favorites, which means to load it from
 favorites, go to “Favorites” menu, select “contexts”, and click on
 the context you want to load.
 
-{{ image85 }}
+![Favorites / Contexts menu](bensikin/image68.png)
 
 ## Options
 
@@ -630,7 +631,7 @@ Figure 17: Snapshot options
 
 - In the Comment Panel, you can choose to automatically set or not a
   value to a new snapshot comment. This means, when you click on
-  {{ image89 }} button, the newly created snapshot will or will not have a
+  ![Launch snapshot](bensikin/image83.png) button, the newly created snapshot will or will not have a
   pre-defined comment.
 - In the {guilabel}`Comparison Panel`, you can choose which columns you want to
   show/hide for every block in the Snapshot Comparison table. You can
@@ -658,14 +659,14 @@ or in the Contexts.
 Figure 18: Print option
 :::
 
-When you check {{ image91 }}, you adapt the size of your print to the
+When you check ![Fit Page](bensikin/image72.png), you adapt the size of your print to the
 size of your page.
 
-When you check {{ image92 }}, you cut the length of your print on
+When you check ![Fit Page Width](bensikin/image73.png), you cut the length of your print on
 several parts and the width of your print takes the width of your
 page.
 
-When you check {{ image93 }}, the length and the width of your print
+When you check ![No Fit](bensikin/image74.png), the length and the width of your print
 are cut on several parts.
 
 ## The Bensikin toolbar
@@ -679,12 +680,12 @@ of shortcuts to often used functionalities.
 Figure 19: Bensikin toolbar
 :::
 
-- {{ image101 }} is a shortcut to creating a new Context
-- {{ image102 }} is a shortcut to saving the selected Context/Snapshot into
+- ![New file](bensikin/image17.png) is a shortcut to creating a new Context
+- ![Save](bensikin/image26.png) is a shortcut to saving the selected Context/Snapshot into
   a Context/Snapshot file
-- {{ image103 }} is a shortcut to doing a saving all opened Contexts and
+- ![Save all](bensikin/image78.png) is a shortcut to doing a saving all opened Contexts and
   Snapshots
-- {{ image104 }} is a shortcut to printing the xml representation of the
+- ![Print](bensikin/image37.png) is a shortcut to printing the xml representation of the
   current Context/Snapshot
-- {{ image105 }} is a shortcut to removing all opened Contexts and
+- ![Trash](bensikin/image20.png) is a shortcut to removing all opened Contexts and
   Snapshots from display
