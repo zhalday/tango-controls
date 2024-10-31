@@ -1,11 +1,4 @@
----
-substitutions:
-  image21: |-
-    ```{image} access-control/control.png
-    ```
----
-
-{audience}`administrators, users`
+{audience}`administrators`
 
 (access-control)=
 
@@ -112,11 +105,13 @@ gives Write Access to specific user on specific host (or family) and on
 specific device (or family).
 
 The rights managements are done using the Tango
-[Astor](#astor-manual) tool which has some graphical windows
+[Astor](inv:astor:std#index) tool which has some graphical windows
 allowing to grant/revoke user rights and to define device class allowed
 commands set. The following window dump shows this Astor window.
 
-{{ image21 }}
+```{image} access-control/control.png
+:alt: access-control
+```
 
 In this example, the user taurel has Write Access to the device
 sr/d-ct/1 and to all devices belonging to the domain fe but only from
