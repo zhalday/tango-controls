@@ -2,12 +2,49 @@
 
 {audience}`all`
 
-## Primary Presentation
+This page list and links to the different elements of the Tango Data Model.
+
+## Simplified Model
+
+The following diagram shows the main elements of the Tango Device Model :
+
+```{mermaid}
+classDiagram
+  class cls["Device Class"]
+  class dserver["Device Server"]
+  click dserver href "./device.html#tango-device-server" "Device Server documentation"
+  class Pipe
+  click Pipe href "./pipe.html#tango-pipe-model" "Pipe documentation"
+  class Command
+  click Command href "./command.html#tango-command-model" "Command documentation"
+  class Attribute
+  click Attribute href "./attribute.html#tango-attribute-model" "Attribute documentation"
+  class Event
+  click Event href "./event.html" "Event documentation"
+  class Device {
+    domain
+    family
+    member
+  }
+  Pipe "*" <--* cls 
+  Command "*" <--* cls
+  Attribute "*" <--* cls
+  Event "*" <--* Attribute
+  State --|> Attribute
+  Status --|> Attribute
+  Device *--> "1" cls : belongs
+  dserver *--> "1..*" Device
+  Device *--> "*" DeviceProperty
+```
+
+## Complete Model
+
+Here is a more complete version of the above:
 
 ```{mermaid}
 classDiagram
   direction LR
-  class cls["TANGO Class"]
+  class cls["Device Class"]
   class dserver["Device Server"]
   click dserver href "./device.html#tango-device-server" "Device Server documentation"
   class Pipe
