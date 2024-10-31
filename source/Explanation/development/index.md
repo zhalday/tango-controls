@@ -11,7 +11,6 @@ The section is organized as follows:
 :name: developersguidetoc
 
 overview.md
-naming
 client-api/index
 device-api/index
 advanced/TangoDeviceServerModel
