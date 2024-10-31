@@ -2,5 +2,4 @@
 
 # Jive
 
-% todo: use intersphinx
-See {doc}`Jive documentation <jive:index>` project.
+See [Jive documentation](inv:jive:std#index) project.
