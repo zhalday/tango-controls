@@ -51,7 +51,7 @@ class called **ApiUtil** is also available.
 
 ## Data types
 
-The definition of the basic data type you can transfert using Tango is:
+The definition of the basic data type you can transfer using Tango is:
 
 ```{eval-rst}
 .. csv-table::
@@ -77,7 +77,7 @@ The definition of the basic data type you can transfert using Tango is:
    "DevState", "Tango specific data type"
 ```
 
-Using commands, you are able to transfert all these data types, array of
+Using commands, you are able to transfer all these data types, array of
 these basic types and two other Tango specific data types called
 DevVarLongStringArray and DevVarDoubleStringArray. See chapter \[Data
 exchange\] to get details about them. You are also able to create
@@ -140,10 +140,10 @@ synchronous call methods are :
 - *write_pipe()* to write a Tango device pipe
 - *write_read_pipe()* to write then read Tango device pipe
 
-For commands, data are send/received to/from device using the
-*DeviceData* class. For attributes, data are send/received to/from
+For commands, data are sent/received to/from device using the
+*DeviceData* class. For attributes, data are sent/received to/from
 device attribute using the *DeviceAttribute* class. For pipes, data are
-send/receive to/from device pipe using the *DevicePipe* and
+sent/receive to/from device pipe using the *DevicePipe* and
 *DevicePipeBlob* classes.
 
 In some cases, only attributes provided by a Tango device are
