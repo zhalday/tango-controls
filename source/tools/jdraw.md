@@ -2,5 +2,4 @@
 
 # JDraw
 
-% todo: use intersphinx
-See {doc}`Jdraw documentation <tangoatk:jdraw/jdraw>` project.
+See [Jdraw documentation](inv:tangoatk:std#jdraw/jdraw) project.
