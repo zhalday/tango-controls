@@ -5,7 +5,7 @@
 
 {audience}`all`
 
-## What is Tango Controls
+## What is Tango Controls?
 
 Tango Controls is an object oriented, distributed control system framework which defines a communication protocol,
 an Application Programmers Interface (API) and provides a set of tools and libraries to build software for control systems,

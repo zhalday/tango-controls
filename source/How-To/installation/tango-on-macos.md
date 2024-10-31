@@ -38,7 +38,7 @@ python3 -m pip --require-virtualenv pytango
 - Finally set up TANGO environment:
 
 :::{note}
-You should not use `localhost` as your TANGO_HOST. You should use either `127.0.0.1` or your computers host name.
+You should not use `localhost` as your TANGO_HOST. You should use either `127.0.0.1` or your computer's host name.
 :::
 
 For example:
