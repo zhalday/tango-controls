@@ -22,7 +22,6 @@ pipe.md
 polling.md
 property.md
 tangodb.md
-rest-api.md
 long-term-support.md
 threading
 naming
