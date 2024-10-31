@@ -1,3 +1,5 @@
+(device-explanation)=
+
 # Device
 
 A device is a key concept of Tango Controls. It is an object providing access to its {term}`attributes <attribute>`, {term}`pipes <pipe>` and {term}`commands <command>`. The device may relate to a piece of hardware or it may be a kind of a logical device providing some functionalities not directly related to hardware. 
@@ -38,6 +40,8 @@ The contents of this class can be summarize as:
 - Signal related method (C++ specific)
 - Class constructor. It is protected to implements the Singleton  pattern
 - Class data members like the class command list, the device list, etc
+
+(tango-device-server)=
 
 ## Device Server
 

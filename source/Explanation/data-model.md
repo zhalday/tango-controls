@@ -9,15 +9,15 @@ classDiagram
   direction LR
   class cls["TANGO Class"]
   class dserver["Device Server"]
-  click dserver href "./device/deviceserver.html#tango-device-server-model" "Device Server documentation"
+  click dserver href "./device.html#tango-device-server" "Device Server documentation"
   class Pipe
-  click Pipe href "./pipe/pipe.html#tango-pipe-model" "Pipe documentation"
+  click Pipe href "./pipe.html#tango-pipe-model" "Pipe documentation"
   class Command
-  click Command href "./command/command.html#tango-command-model" "Command documentation"
+  click Command href "./command.html#tango-command-model" "Command documentation"
   class Attribute
-  click Attribute href "./attribute/attribute.html#tango-attribute-model" "Attribute documentation"
+  click Attribute href "./attribute.html#tango-attribute-model" "Attribute documentation"
   class Event
-  click Event href "./event/event.html" "Event documentation"
+  click Event href "./event.html" "Event documentation"
   class Device {
     domain
     family

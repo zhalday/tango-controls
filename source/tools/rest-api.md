@@ -31,7 +31,7 @@ POST - create a new resource
 
 DELETE - remove a resource
 
-Tango REST API exports Tango hosts; Tango devices; Tango device attributes, commands and pipes. So it follows [Tango Device Server Model ](#tango-device-server-model).
+Tango REST API exports Tango hosts; Tango devices; Tango device attributes, commands and pipes. So it follows [Tango Device Server Model](#tango-device-server).
 
 For example, one can request {term}`Tango Host` using Tango REST API:
 
