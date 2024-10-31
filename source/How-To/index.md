@@ -22,4 +22,7 @@ how-to-integrate-with-systemd
 how-to-run-device-server-firewall
 how-to-use-tango-servers-without-db
 how-to-add-subproject-to-the-doc
+how-to-enumerated-attribute
+how-to-forwarded-attribute
+how-to-memorised-attribute
 ```
