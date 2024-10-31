@@ -1751,7 +1751,7 @@ following figure summarizes DevicePipe data structure
 
 (fig-4.1)=
 
-:::{figure} gen_api/pipe.png
+:::{figure} how-to-cpp-client-programmers-guide/pipe.png
 :alt: DevicePipe data structure
 :height: 8.00000cm
 :width: 14.00000cm
