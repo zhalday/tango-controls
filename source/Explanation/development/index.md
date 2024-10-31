@@ -15,5 +15,4 @@ naming
 client-api/index
 device-api/index
 advanced/TangoDeviceServerModel
-advanced/threading
 ```
