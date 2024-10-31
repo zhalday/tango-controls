@@ -1,3 +1,0 @@
-```{toctree}
-attribute-alarms.md
-```

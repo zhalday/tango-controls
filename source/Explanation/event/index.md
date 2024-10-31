@@ -1,5 +1,0 @@
-# Event
-
-```{toctree}
-event.md
-```

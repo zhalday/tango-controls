@@ -55,6 +55,6 @@ This device is used to monitor and control the Device Server process lifecycle. 
 
 Device Servers are linked to the Device classes that they will serve. Device Servers are usually managed by the [Astor](inv:astor:std#index) tool.
 
-```{figure} device/img/deviceservermodel.jpg
+```{figure} device/deviceservermodel.jpg
 Runtime representation of a Device server with two classes A and B
 ```

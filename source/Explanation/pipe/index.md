@@ -1,5 +1,0 @@
-# Pipe
-
-```{toctree}
-pipe.md
-```
