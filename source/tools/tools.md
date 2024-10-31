@@ -1,8 +1,6 @@
 (tools-index)=
 # Tools
 
-{doc}`Astor <astor:index>`
-
 ```{toctree}
 atk
 astor
