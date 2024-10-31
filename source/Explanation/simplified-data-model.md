@@ -1,7 +1,4 @@
-```{highlight} TangoDataModel
-```
-
-# Simplified Tango Device Server Model
+# Tango data model (Simplified version) 
 
 {audience}`all`
 
@@ -11,7 +8,7 @@
 classDiagram
   class cls["TANGO Class"]
   class dserver["Device Server"]
-  click dserver href "./deviceserver/deviceserver.html#tango-device-server-model" "Device Server documentation"
+  click dserver href "./device/deviceserver.html#tango-device-server-model" "Device Server documentation"
   class Pipe
   click Pipe href "./pipe/pipe.html#tango-pipe-model" "Pipe documentation"
   class Command
@@ -43,7 +40,7 @@ classDiagram
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Device         | Abstract concept defined by the TANGO device server object model; itcan be a piece of hardware (an interlock bit) a collection of hardware (a screen attached to a stepper motor)a logical device (a taper) or a combination of all these (an accelerator).                                                                                                                                                                                                                                                     |
 | TANGO Class    | From Object Oriented Programming concept, this is the main class that the developer has to implement                                                                                                                                                                                                                                                                                                                                                                                                            |
-| DeviceServer   | The server (also referred as device server) is a process whose main task is to offer one or more services to one or more clients. To do this, the server has to spend most of its time in a wait loop waiting for clients to connect to it. The devices are hosted in the server process. A server is able to host several classes of devices.In short, it is a process that export devices available to accept requests). Please refer also to the [device server instance](./deviceserver/TangoDeviceServerModel.md#tango-device-server-model). |
+| DeviceServer   | The server (also referred as device server) is a process whose main task is to offer one or more services to one or more clients. To do this, the server has to spend most of its time in a wait loop waiting for clients to connect to it. The devices are hosted in the server process. A server is able to host several classes of devices.In short, it is a process that export devices available to accept requests). Please refer also to the [device server instance](./device/deviceserver.md#tango-device-server-model). |
 | DeviceProperty | Device specific configuration                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | Attribute      | See [attribute](./attribute/attribute.md).                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | Pipe           | See [pipe](./pipe/pipe.md).                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
@@ -69,3 +66,5 @@ classDiagram
 | TANGO Class    | Attribute       | 0..\*            | A TANGO Class can have more than one Attribute associated  |
 | TANGO Class    | Command         | 0..\*            | A TANGO Class can have more than one Command associated    |
 | TANGO Class    | Pipe            | 0..\*            | A TANGO Class can have more than one Pipe associated       |
+
+For more detailed information read the [Tango Data Model](./data-model.md)

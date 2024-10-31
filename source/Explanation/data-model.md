@@ -1,40 +1,73 @@
----
-substitutions:
-  image0: |-
-    ```{image} TangoDeviceServerModel/TangoDeviceServerModel_image1.jpg
-    :height: 6.41667in
-    :width: 6.26772in
-    ```
-  image1: |-
-    ```{image} TangoDeviceServerModel/TangoDeviceServerModel_image2.jpg
-    :height: 3.09722in
-    :width: 6.26772in
-    ```
----
+# Tango Data Model
 
-(tango-device-server-model)=
-
-# Tango Device Server Model
-
-{audience}`advanced, developers`, {lang}`all`
+{audience}`all`
 
 ## Primary Presentation
 
-{{ image0 }}
-
-Figure 1: Tango Device Server Model
-
-{{ image1 }}
-
-Figure 2: Runtime representation of a Device server
+```{mermaid}
+classDiagram
+  direction LR
+  class cls["TANGO Class"]
+  class dserver["Device Server"]
+  click dserver href "./device/deviceserver.html#tango-device-server-model" "Device Server documentation"
+  class Pipe
+  click Pipe href "./pipe/pipe.html#tango-pipe-model" "Pipe documentation"
+  class Command
+  click Command href "./command/command.html#tango-command-model" "Command documentation"
+  class Attribute
+  click Attribute href "./attribute/attribute.html#tango-attribute-model" "Attribute documentation"
+  class Event
+  click Event href "./event/event.html" "Event documentation"
+  class Device {
+    domain
+    family
+    member
+  }
+  Pipe "*" <--* cls 
+  Command "*" <--* cls
+  Attribute "*" <--* cls
+  Event "*" <--* Attribute
+  DeviceInterfaceChangeEvent --|> Event
+  ChangeEvent --|> Event
+  ArchiveEvent --|> Event
+  AlarmEvent --|> Event
+  PeriodicEvent --|> Event
+  UserEvent --|> Event
+  DataReadyEvent --|> Event
+  AttributeConfigurationEvent --|> Event
+  State --|> Attribute
+  Status --|> Attribute
+  Device *--> "1" cls : belongs
+  dserver *--> "1..*" Device
+  Device *--> "*" DeviceProperty
+  AdminDevice --|> Device
+  dserver *--> "1" AdminDevice
+  cls --|> DeviceImpl
+  Property *--> "0..10" PropertyHistory
+  AttributeProperty --|> Property
+  DeviceAttributeProperty --|> AttributeProperty
+  ClassAttributeProperty --|> AttributeProperty
+  Device *--> "*" DeviceAttributeProperty
+  DeviceProperty --|> Property
+  PipeProperty --|> Property
+  DevicePipeProperty --|> PipeProperty
+  ClassPipeProperty --|> PipeProperty
+  FreeProperty --|> Property
+  ClassProperty --|> Property
+  cls *--> "*" ClassProperty
+  Pipe *--> "*" PipeProperty
+  Attribute *--> "*" AttributeProperty
+  note for Attribute "At least State and Status are always available"
+  note for cls "The main class that the developer has to implement"
+```
 
 ## Elements
 
 | **Block**                   | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Device                      | Abstract concept defined by the TANGO device server object model; itcan be a piece of hardware (an interlock bit) a collection of hardware (a screen attached to a stepper motor)a logical device (a taper) or a combination of all these (an accelerator).Please refer also to the [Glossary ](#glossary), {term}`device`.                                                                                                                                                                                 |
+| Device                      | Abstract concept defined by the TANGO device server object model; it can be a piece of hardware (an interlock bit) a collection of hardware (a screen attached to a stepper motor)a logical device (a taper) or a combination of all these (an accelerator). For more information please see the [device documentation](./device/device.md).                                                                                                                                                                                 |
 | TANGO Class                 | From Object Oriented Programming concept, this is the main class that the developer has to implement                                                                                                                                                                                                                                                                                                                                                                                                            |
-| DeviceServer                | The server (also referred as device server) is a process whose main task is to offer one or more services to one or more clients. To do this, the server has to spend most of its time in a wait loop waiting for clients to connect to it. The devices are hosted in the server process. A server is able to host several classes of devices.In short, it is a process that export devices available to accept requests). Please refer also to the [Glossary ](#glossary), {term}`device server instance`. |
+| DeviceServer                | The server (also referred as device server) is a process whose main task is to offer one or more services to one or more clients. To do this, the server has to spend most of its time in a wait loop waiting for clients to connect to it. The devices are hosted in the server process. A server is able to host several classes of devices.In short, it is a process that export devices available to accept requests). Fore more information see the [device server documentation](./device/deviceserver.md). |
 | Property                    | Store a generic configuration                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | DeviceProperty              | Device specific configuration                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | ClassProperty               | Class specific configuration                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
@@ -43,23 +76,23 @@ Figure 2: Runtime representation of a Device server
 | DeviceAttributeProperty     | Specific configuration for a specific attribute of a specific device                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | FreeProperty                | User-defined specific configuration (for instance GUI, generic system and so on)                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | PropertyHistory             | History of the values for a property (maximum 10 latest are stored for each property)                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| Attribute                   | See [Glossary ](#glossary), {term}`attribute`.                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Attribute                   | See [attribute](./attribute/attribute.md).                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | AttributeAlias              | One word which can be used to identify a specific attribute. (shortcut)                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| Pipe                        | See [Glossary ](#glossary), {term}`pipe`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Pipe                        | See [pipe] (./pipe/pipe.md).                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | PipeProperty                | Pipe specific configuration                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | DevicePipeProperty          | Configuration of a specific pipe of a specific device                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | ClassPipeProperty           | Configuration of a specific pipe for a specific class                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| Event                       | Refer to [Events ](#events-tangoclient).                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| Command                     | See [Glossary ](#commands-deviceservermodel); A list of default command are available for the admin device at section [DServer ](#dserverclass-deviceserverwriting).                                                                                                                                                                                                                                                                                                                                    |
-| ChangeEvent                 | It is a type of event that gets fired when the associated attribute changes its value according to its configuration specified in system specific attribute properties (abs_change and rel_change);Refer to [Events ](#events-tangoclient).                                                                                                                                                                                                                                                                 |
-| ArchiveEvent                | It is a type of event that gets fired when the associated attribute should be archived according to its configuration specified in system specific attribute properties (archive_abs_change, archive_rel_change and archive_period);Refer to [Events ](#events-tangoclient).                                                                                                                                                                                                                                |
-| UserEvent                   | It is a type of event that gets fired when the device server programmer wants to;Refer to [Events ](#events-tangoclient).                                                                                                                                                                                                                                                                                                                                                                                   |
-| PeriodicEvent               | It is a type of event that gets fired at a fixed periodic interval;Refer to [Events ](#events-tangoclient).                                                                                                                                                                                                                                                                                                                                                                                                 |
-| DataReadyEvent              | It is a type of event that gets fired to inform a client that it is now possible to read an attribute;Refer to [Events ](#events-tangoclient).                                                                                                                                                                                                                                                                                                                                                              |
-| AttributeConfigurationEvent | It is a type of event that gets fired if the attribute configuration is changed;Refer to [Events ](#events-tangoclient).                                                                                                                                                                                                                                                                                                                                                                                    |
-| DeviceInterfaceChangeEvent  | It is a type of event that gets fired when the device interface changes;Refer to [Events ](#events-tangoclient).                                                                                                                                                                                                                                                                                                                                                                                            |
+| Event                       | See [event](./event/event.md).                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| Command                     | See [command](./command/command.md).                                                                                                                                                                                                                                                                                                                                    |
+| ChangeEvent                 | It is a type of event that gets fired when the associated attribute changes its value according to its configuration specified in system specific attribute properties (abs_change and rel_change). See [events](./event/event.md).                                                                                                                                                                                                                                                                 |
+| ArchiveEvent                | It is a type of event that gets fired when the associated attribute should be archived according to its configuration specified in system specific attribute properties (archive_abs_change, archive_rel_change and archive_period). See [events](./event/event.md).                                                                                                                                                                                                                                |
+| UserEvent                   | It is a type of event that gets fired when the device server programmer wants to. See [events](./event/event.md).                                                                                                                                                                                                                                                                                                                                                                                   |
+| PeriodicEvent               | It is a type of event that gets fired at a fixed periodic interval. See [events](./event/event.md).                                                                                                                                                                                                                                                                                                                                                                                                 |
+| DataReadyEvent              | It is a type of event that gets fired to inform a client that it is now possible to read an attribute. See [events](./event/event.md).                                                                                                                                                                                                                                                                                                                                                              |
+| AttributeConfigurationEvent | It is a type of event that gets fired if the attribute configuration is changed. See [events](./event/event.md).                                                                                                                                                                                                                                                                                                                                                                                   |
+| DeviceInterfaceChangeEvent  | It is a type of event that gets fired when the device interface changes. See [events](./event/event.md).                                                                                                                                                                                                                                                                                                                                                                                            |
 | DeviceImpl                  | Base implementation of every class that will become a device.                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| State                       | The device state is a number which reflects the availability of the device.Refer to [Events ](#choosingdevicestate-deviceserverwriting)                                                                                                                                                                                                                                                                                                                                                                     |
+| State                       | The device state is a number which reflects the availability of the device.                                                                                                                                                                                                                                                                                                                                                                     |
 | Status                      | The state of the device as a formatted ascii string                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | AdminDevice                 | Special type of Device dedicated to creating and managing the devices, i.e. restart device, kill the device server (the process), creating polling mechanism and so on                                                                                                                                                                                                                                                                                                                                          |
 

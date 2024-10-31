@@ -9,8 +9,10 @@
 
 overview.md
 installation-minimum-deployment.md
+simplified-data-model.md
+data-model.md
 history.md
-SimplifiedTangoDatamodel.md
+deviceserver.md
 alarm/index.md
 archiving/archiving.md
 attribute/index.md
