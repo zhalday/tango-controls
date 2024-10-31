@@ -102,6 +102,8 @@ are used to specify a property name.
 
 - **Starter->doc_url** : `doc_url` property for a class called `Starter`
 
+(alias-names)=
+
 ## Device and attribute name alias
 
 Within Tango, each device or attribute can have an alias name defined in

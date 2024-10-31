@@ -30,6 +30,7 @@ rest-api.md
 long-term-support.md
 threading
 naming
+tangodb/tangodb
 ```
 
 Tango Controls is a toolkit for building distributed object based control systems.
