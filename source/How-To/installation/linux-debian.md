@@ -1,10 +1,10 @@
 (linux-debian-installation)=
 
-## Debian
+# Debian
 
 {audience}`administrators, developers`
 
-### Binary packages
+## Binary packages
 
 If you don't have special requirements for a specific tango version, the easiest way is to use the standard debian
 packages.
@@ -39,7 +39,7 @@ If you need these, or a newer tango version, you can consider compiling the tang
 TangoSourceDistribution) in the next section.
 
 (debian-compile-tango-source-distribution)=
-### Compilation of the TangoSourceDistribution
+## Compilation of the TangoSourceDistribution
 
 The following steps have been written for Debian bookworm. Ubuntu should be similiar.
 
