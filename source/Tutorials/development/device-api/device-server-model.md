@@ -463,8 +463,6 @@ communication models implemented. These two models are:
    call-back method is executed when the client receives the server
    answer.
 
-The asynchronous model is available with Tango release 3 and above.
-
 ### Tango events
 
 On top of the two communication model previously described, TANGO offers
@@ -487,37 +485,18 @@ the event has occurred. This paradigm avoids the client polling, frees
 it for doing other things, is fast and makes efficient use of the
 network.
 
-Before TANGO release 8, TANGO used the CORBA OMG COS Notification
-Service to generates events. TANGO uses the omniNotify implementation of
-the Notification service. omniNotify was developed in conjunction with
-the omniORB CORBA implementation also used by TANGO. The heart of the
-Notification Service is the notification daemon. The omniNotify daemons
-are the processes which receive events from device servers and
-distribute them to all clients which are subscribed. In order to
-distribute the load of the events there is one notification daemon per
-host. Servers send their events to the daemon on the local host. Clients
-and servers get the IOR for the host from the TANGO database.
-
-The following figure is a schematic of the Tango event system for Tango
-releases before Tango 8.
-
-{{ image05 }}
-
-Starting with Tango 8, a new design of the event system has been
-implemented. This new design is based on the ZMQ library. ZMQ is a
-library allowing users to create communicating system. It implements
+ZMQ is a library allowing users to create communicating system. It implements
 several well known communication pattern including the Publish/Subscribe
 pattern which is the basic of the new Tango event system. Using this
 library, a separate notification service is not needed anymore and event
 communiction is available with only client and server processes which
-simplifies the overall design. Starting with Tango 8.1, the event
-propagation between devices and clients could be done using a
+simplifies the overall design. The event
+propagation between devices and clients can be done using a
 multicasting protocol. The aim of this is to reduce both the network
 bandwidth use and the CPU consumption on the device server side. See
 chapter on Advanced Features to get all the details on this feature.
 
-The following figure is a schematic of the Tango event system for Tango
-releases starting with Tango release 8.
+The following figure is a schematic of the Tango event system:
 
 {{ image06 }}
 

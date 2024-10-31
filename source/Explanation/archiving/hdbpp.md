@@ -91,9 +91,13 @@ These attributes could be themselves archived to enable a follow up versus time.
 
 ### Event Subscriber Device Server (Archiver)
 
-Also referenced as archiver, is in charge of gathering the values from the Tango devices and storing them into the historical database. To address the requirements coming from large systems the need to distribute the workload over a number of archivers shows up.
-The EventSubscriber Tango device server is the core of the HDB++ archiving system. It subscribes to archive events for the specified Attributes list, stored into a Property in the Tango database,
-as well as a number of additional parameters, such as the hostname and port number where the back-end is running, the name of the database and the username and password to be used. It subscribes to Tango archive events, which are ZeroMQ events in the latest Tango releases,
+Also referenced as archiver, is in charge of gathering the values from the Tango devices and storing them into the
+historical database. To address the requirements coming from large systems the need to distribute the workload over a
+number of archivers shows up.  The EventSubscriber Tango device server is the core of the HDB++ archiving system. It
+subscribes to archive events for the specified Attributes list, stored into a Property in the Tango database, as well as
+a number of additional parameters, such as the hostname and port number where the back-end is running, the name of the
+database and the username and password to be used. It subscribes to Tango archive events, which are ZeroMQ events in the
+latest Tango releases,
 and stores the received events in the historical database. It provides diagnostics data as well.
 
 The EventSubscriber device server allows to perform the following operations:

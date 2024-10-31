@@ -1276,8 +1276,7 @@ device server process. This is necessary for compatibility reason.
 ### The ZmqEventSubscriptionChange command
 
 This command is used as a piece of the heartbeat system between an event
-client and the device server generating the event when client and/or
-device server uses Tango release 8 or above. There is no reason to
+client and the device server generating the event. There is no reason to
 generate events if there is no client which has subscribed to it. It is
 used by the *DeviceProxy::subscribe_event()* method and one of the
 event thread on the client side to inform the server to keep on
@@ -1471,9 +1470,8 @@ for 3 threads used:
 Thread number 2 is in charge of 2 devices. Note that there is an entry
 in this list only for the used threads in the pool.
 
-The rule of the polling_before_9 property is to select the polling
-algorithm which was used in Tango device server process before Tango
-release 9.
+The rule of the polling_before_9 property is to select the old polling
+algorithm.
 
 ## Tango log consumer
 
@@ -1546,9 +1544,7 @@ Service name/Instance name:service device name
 
 ### Tuning the event system buffers (HWM)
 
-Starting with Tango release 8, ZMQ is used for the event based
-communication between clients and device server processes. ZMQ
-implementation provides asynchronous communication in the sense that the
+The ZMQ implementation provides asynchronous communication in the sense that the
 data to be transmitted is first stored in a buffer and then really sent
 on the network by dedicated threads. The size of this buffers (on client
 and device server side) is called High Water Mark (HWM) and is tunable.
@@ -1641,9 +1637,9 @@ allowing Tango release to be checked at compile time. These macros are:
 - TANGO_VERSION_MINOR
 - TANGO_VERSION_PATCH
 
-For instance, with Tango release 8.1.2, TANGO_VERSION_MAJOR will be
-set to 8 while TANGO_VERSION_MINOR will be 1 and TANGO_VERSION_PATCH
-will be 2.
+For instance, with Tango release 100.200.300, TANGO_VERSION_MAJOR will be
+set to 100 while TANGO_VERSION_MINOR will be 200 and TANGO_VERSION_PATCH
+will be 300.
 
 ### Tango specific types
 

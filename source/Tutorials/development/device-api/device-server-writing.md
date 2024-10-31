@@ -471,7 +471,7 @@ Line 31-45 : Device data
 
 This class inherits from the DeviceClass class. Like the DeviceClass
 class, there should be only one instance of the StepperMotorClass. This
-is ensured because this class is written following the 
+is ensured because this class is written following the
 [Singleton](https://en.wikipedia.org/wiki/Singleton_pattern) pattern.
 All controlled object class
 data which should be defined only once per class must be stored in this
@@ -2102,7 +2102,7 @@ Each device server supports a verbose option called **-v**. Four verbose
 levels are defined from 1 to 4. Level 4 is the most talkative one. If
 you use the -v option without specifying level, level 4 will be assumed.
 
-Since Tango release 3, a Tango Logging Service has been introduced
+A Tango Logging Service has been introduced
 (detailed in [](#the-tango-logging-service)). This -v option set-up
 the logging service. If it used, it will automatically add a *console*
 target to all devices embedded within the device server process. Level 1
@@ -2173,7 +2173,7 @@ namespace name is *StepperMotor.*
 ### The device server main function
 
 A device server main function (or method) always follows the same
-framework. It exactly implements all the action described in 
+framework. It exactly implements all the action described in
 [](#device-server-startup-sequence). Even if it could be always the same, it has not been
 included in the library because some linkers are perturbed by the
 presence of two main functions.
@@ -3055,7 +3055,7 @@ This data is still packed into the CORBA Any object.
 #### The methods used for the Position attribute
 
 To enable reading of attributes, the StepperMotor class must re-define
-two or three methods called 
+two or three methods called
 
 *read_attr_hardware(),
 read\_\<Attribute_name>()*
@@ -3071,19 +3071,19 @@ exact data for the wanted attribute and to store this value into the
 Attribute object. Special care has been taken in order to minimize the
 number of data copy and allocation. The data passed to the Attribute
 object as attribute value is passed using pointers. It must be
-allocated by the method 
+allocated by the method
 
 [^footnote-5]
 
  and the Attribute object will not free
 this memory. Data members called attr\_\<Attribute_name>\_read are
-foreseen for this usage. The 
+foreseen for this usage. The
 
 *read_attr_hardware()*
 
  method receives
 a vector of long which are indexes into the main attributes vector of
-the attributes to be read. The 
+the attributes to be read. The
 
 *read_Position()*
 
@@ -3744,7 +3744,7 @@ Line 4 : The MYService class inherits from *Tango::NTService* class
 
 Line 7 : Constructor with one parameter
 
-Line 9 : The 
+Line 9 : The
 
 *start()*
 

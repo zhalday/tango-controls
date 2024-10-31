@@ -28,9 +28,8 @@ system because detecting an event means being able to regularly read the
 data, store it and declaring that it is an event after some
 comparison with older values.
 
-Starting with Tango 9, the default polling algorithm has been modifed. However, it is still possible to use the polling
-as it was in Tango releases prior to release 9. See the reference section on [polling properties](#device-polling-properties)
-to get details on this.
+There are currently two polling algorithms available, the current one and the old one. See the reference section on
+[polling properties](#device-polling-properties) to get details on this.
 
 ## Configuring the polling system
 

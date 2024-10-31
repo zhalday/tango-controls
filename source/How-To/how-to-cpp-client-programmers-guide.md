@@ -245,7 +245,7 @@ to receive events.
 
 #### Configuring events
 
-Please refer to the [Event explanation part](configuring-events) for more 
+Please refer to the [Event explanation part](configuring-events) for more
 details on how to configure the change, periodic and archive events.
 
 #### C++ Clients
@@ -284,8 +284,7 @@ int DeviceProxy::subscribe_event(
 The client implements a callback method which is triggered when the
 event is received. Note that this callback method will be executed by a
 thread started by the underlying ORB. This thread is not the application
-main thread. For Tango releases before 8, a similar call with one extra
-parameter for event filtering is also available.
+main thread.
 
 **Pull model**:
 
@@ -2025,9 +2024,7 @@ could trigger one exception during the insertion. This case is
 
 ## Device locking
 
-Starting with Tango release 7 (and device inheriting from
-Device_4Impl), device locking is supported. For instance, this feature
-could be used by an application doing a scan on a synchrotron beam line.
+This can be used by an application doing a scan on a synchrotron beam line.
 In such a case, you want to move an actuator then read a sensor, move
 the actuator again, read the sensor...You don’t want the actuator to be
 moved by another client while the application is doing the scan. If the

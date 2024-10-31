@@ -2,10 +2,11 @@
 
 {audience}`developers`, {lang}`c++`
 
-Since Tango release 9, enumerated attribute is supported using the new
-data type DevEnum. This data type is not a real C++ enumeration because:
+Enumerated attributes are supported using the data type DevEnum.
 
-1. The enumerated value allways start with 0
+This data type is not a real C++ enumeration because:
+
+1. The enumerated value always start with 0
 2. Values are consecutive
 3. It is transferred on the network as DevShort data type
 
