@@ -4,7 +4,7 @@ A device is a key concept of Tango Controls. It is an object providing access to
 
 Each device belongs to a [Device Class](#device-class). 
 
-Devices are created by [Device Dervers](#device-server), which will call the device classes. Each device is created and stored in a process called a device server. This will call the device class that the device belongs to. Devices are configured at runtime via a set of properties which are stored in the database.
+Devices are created by [Device Servers](#device-server), which will call the device classes. Each device is created and stored in a process called a device server. This will call the device class that the device belongs to. Devices are configured at runtime via a set of properties which are stored in the database.
 
 All devices support a **black box** where client requests for attributes or operations are recorded. This feature allows easier debugging session for device already installed in a running control system.
 
@@ -41,9 +41,9 @@ The contents of this class can be summarize as:
 
 ## Device Server
 
-A Device Server is the process, the executable, that will create, run and serve instances of Devices.
-It must contain one or more [Device Classes](./deviceclass.md), and can instantiate any number of [Devices](./device.md) from those classes.
-[Devices](./device.md) started from the same Device Server will run in the same process and therefore share resources like memory, so it can be convenient for example for performance to group devices in a same Device Server. 
+A Device Server is the process (i.e. the executable) that will create, run and serve instances of Devices.
+It must contain one or more [Device Class](./deviceclass.md), and can instantiate any number of [Devices](./device.md) from those classes.
+[Devices](./device.md) started from the same Device Server will run in the same process and hence share system resources such as memory, therefore it can be convenient to group devices into the same Device Server to optimise performance. 
 
 Each Device Server has a unique name made up of the name of the executable and a character string called the instance name. 
 The pair of executable / instance name has to be unique in a Tango control system. 
@@ -51,9 +51,9 @@ The Device Server is responsible for querying the database to find out the list 
 The Device Server must create the Devices, call their initialise routine and export them once the Device is created.
 
 Device Servers create an internal device of their own called the **Admin** Device. 
-This device is used to monitor and control the Device Server process lifecycle like restarting an all  Devices or the Device Server process, and starting or stopping polling.
+This device is used to monitor and control the Device Server process lifecycle. It can perform tasks like restarting Devices, restarting the Device Server process, and starting or stopping polling.
 
-Device Servers are linked with the Device classes that they will serve. Device Servers are usually managed by the [Astor](inv:astor:std#index) tool.
+Device Servers are linked to the Device classes that they will serve. Device Servers are usually managed by the [Astor](inv:astor:std#index) tool.
 
 ```{figure} img/deviceservermodel.jpg
 Runtime representation of a Device server with two classes A and B
