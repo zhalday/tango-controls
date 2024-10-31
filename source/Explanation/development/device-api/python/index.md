@@ -1,11 +1,5 @@
----
-substitutions:
-  image0: |-
-    ```{image} img/pytango_logo.png
-    ```
----
-
-{{ image0 }}
+```{image} img/pytango_logo.png
+```
 
 # PyTango - a Python binding to Tango
 
