@@ -5,6 +5,7 @@
 :name: Reference
 :maxdepth: 2
 
+RFC
 ecosystem
 cppTango
 pytango
