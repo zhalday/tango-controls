@@ -1,5 +1,3 @@
-# Command
-
 ```{toctree}
 command.md
 ```

@@ -145,19 +145,6 @@ system.
 
 ### The commands
 
-Each device class implements a list of commands. Commands are very
-important because they are the client’s major dials and knobs for
-controlling a device. Commands have a fixed calling syntax - consisting
-of one input argument and one output argument. Arguments type must be
-chosen in a fixed set of data types: All simple types (boolean, short,
-long (32 bits), long (64 bits), float, double, unsigned short, unsigned
-long (32 bits), unsigned long (64 bits) and string) and arrays of simple
-types plus array of strings and longs and array of strings and doubles).
-Commands can execute any sequence of actions. Commands can be executed
-synchronously (the requester is blocked until the command ended) or
-asynchronously (the requester send the request and is called back when
-the command ended).
-
 Commands are executed using two CORBA operations named
 **command_inout** for synchronous commands and
 **command_inout_async** for asynchronous commands. These two
