@@ -42,6 +42,7 @@ The contents of this class can be summarize as:
 - Class data members like the class command list, the device list, etc
 
 (tango-device-server)=
+(device-server-explanation)=
 
 ## Device Server
 

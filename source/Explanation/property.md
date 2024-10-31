@@ -31,7 +31,7 @@ For example, all motors of a specific model might share a class property definin
 
 ## Attribute Properties:
 
-Attributes properties define the configuration of the device [attributes](#tango-attribute-model).
+Attributes properties define the configuration of the device [attributes](#attribute-explanation).
 These include properties such as data type, display range, alarm limits, and units, ensuring attributes have both meaning and safety constraints.
 For example, a temperature sensor’s attribute might have properties defining the minimum and maximum allowable values, units in Celsius, and alarm thresholds.
 

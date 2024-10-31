@@ -1,4 +1,4 @@
-(tango-attribute-model)=
+(attribute-explanation)=
 # Attribute
 
 (attribute)=

@@ -17,7 +17,6 @@ polling.md
 naming
 data-model.md
 tangodb.md
-deviceserver.md
 alarms.md
 archiving/index.md
 pipe.md
