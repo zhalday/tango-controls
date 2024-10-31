@@ -24,6 +24,7 @@ pipe/index.md
 polling/polling
 property/index.md
 tangodb/index.md
+rest-api.md
 long-term-support.md
 ```
 

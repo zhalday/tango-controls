@@ -32,7 +32,7 @@ Nothing is perfect and neither is this documentation. In the likely case that yo
 
 The Tango Controls documentation largely follows the [Grand Unified Theory of Documentation](https://docs.divio.com/documentation-system/) and is organised in the following categories (with some overlap):
 
-- {doc}`Explanation <Explanation/introduction>`: Overview of what Tango Controls is, its origins and who uses it. **If you are new to Tango Controls, then we recommend that you start reading here.**
+- {doc}`Explanation <Explanation/index>`: Overview of what Tango Controls is, its origins and who uses it. **If you are new to Tango Controls, then we recommend that you start reading here.**
 - {doc}`Tutorials <Tutorials/index>`: We show you how to implement Tango Devices, Tango clients and other Tango-related software.
 - {doc}`How-Tos <How-To/index>`: Here we provide solutions to specific problems that you might encounter on the road with Tango Controls.
 - {doc}`Reference <Reference/reference>`: Tango Controls' main programming languages are C++, Java and Python. You will find their APIs here. We also support other languages and tools through bindings that we also document here.
