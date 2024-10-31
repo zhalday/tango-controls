@@ -1,22 +1,3 @@
----
-substitutions:
-  image04: |-
-    ```{image} device-server-model/archi.gif
-    :height: 7.00000cm
-    :width: 12.00000cm
-    ```
-  image05: |-
-    ```{image} device-server-model/event_schematic.png
-    ```
-  image06: |-
-    ```{image} device-server-model/event_schematic_zmq.png
-    ```
----
-
-```{raw} latex
-\clearpage
-```
-
 (deviceservermodel)=
 
 # The TANGO device server model
@@ -442,7 +423,10 @@ In addition to these main classes, many other classes allows a full
 interface to TANGO features. The following figure is a drawing of a
 typical client/server application using TANGO.
 
-{{ image04 }}
+```{image} device-server-model/archi.gif
+:height: 7.00000cm
+:width: 12.00000cm
+```
 
 The database is used during server and client startup phase to establish
 connection between client and server.
@@ -498,7 +482,8 @@ chapter on Advanced Features to get all the details on this feature.
 
 The following figure is a schematic of the Tango event system:
 
-{{ image06 }}
+```{image} device-server-model/event_schematic_zmq.png
+```
 
 [^footnote-1]: In contrary to the state_handler method of the TACO device server
     model which is not specific to each command.

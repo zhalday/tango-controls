@@ -1,13 +1,3 @@
----
-substitutions:
-  image19: |-
-    ```{image} events/jive_simpl.jpg
-    ```
-  image20: |-
-    ```{image} events/jive_sophis.jpg
-    ```
----
-
 {audience}`administrators, developers`
 
 (services-events)=
@@ -41,7 +31,8 @@ informations which have to be provided to Tango to get multicast
 transport. This configuration is done using the **MulticastEvent** free
 property associated to the **CtrlSystem** object.
 
-{{ image19 }}
+```{image} events/jive_simpl.jpg
+```
 
 In the above window dump of the Jive tool, the *change* event on the
 *state* attribute of the *dev/test/11* device has to be transferred
@@ -78,7 +69,8 @@ GBytes in-memory buffer. Whan any of these two optional parameters are
 not set, the default value (defined in next sub-chapter) are used. Here
 is another example of events using multicasting configuration
 
-{{ image20 }}
+```{image} events/jive_sophis.jpg
+```
 
 In this example, there are 5 events which are transmitted using
 multicasting:

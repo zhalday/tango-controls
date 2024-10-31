@@ -1,16 +1,3 @@
----
-substitutions:
-  tbl_prop_beans: Name of the beans file (on CLASSPATH)
-  tbl_prop_dbhost: Database Host name
-  tbl_prop_dbname: Database name
-  tbl_prop_dbpass: Password used to connect ot the database
-  tbl_prop_dbschema: Schema name
-  tbl_prop_dbuser: User name used to connect to the database
-  tbl_prop_desc: Device description
-  tbl_prop_israc: Oracle database is in Rac Mode
-  tbl_prop_title: Project description
----
-
 (snap-installation)=
 
 # SNAPshot (Archiving) installation and configuration
@@ -139,27 +126,27 @@ its database connection properties redefined in the device properties.
 
 | Name         | Description             | Default   | Mand. | Class |
 | ------------ | ----------------------- | --------- | ----- | ----- |
-| Description  | {{ tbl_prop_desc }}     |           |       | ✓     |
-| ProjectTitle | {{ tbl_prop_title }}    |           |       | ✓     |
-| DbUser       | {{ tbl_prop_dbuser }}   | archiver  | ✓     |       |
-| DbPassword   | {{ tbl_prop_dbpass }}   | archiver  | ✓     |       |
-| DbHost       | {{ tbl_prop_dbhost }}   | localhost | ✓     | ✓     |
-| DbName       | {{ tbl_prop_dbname }}   |           | ✓     | ✓     |
-| DbSchema     | {{ tbl_prop_dbschema }} |           | ✓     | ✓     |
-| isRac        | {{ tbl_prop_israc }}    | false     | ✓     | ✓     |
+| Description  | Device description     |           |       | ✓     |
+| ProjectTitle | Project description    |           |       | ✓     |
+| DbUser       | User name used to connect to the database   | archiver  | ✓     |       |
+| DbPassword   | Password used to connect ot the database   | archiver  | ✓     |       |
+| DbHost       | Database Host name   | localhost | ✓     | ✓     |
+| DbName       | Database name   |           | ✓     | ✓     |
+| DbSchema     | Schema name |           | ✓     | ✓     |
+| isRac        | Oracle database is in Rac Mode    | false     | ✓     | ✓     |
 
 ### SnapArchiver properties
 
 | Name          | Description             | Default   | Mand. | Class |
 | ------------- | ----------------------- | --------- | ----- | ----- |
-| Description   | {{ tbl_prop_desc }}     |           |       | ✓     |
-| ProjectTitle  | {{ tbl_prop_title }}    |           |       | ✓     |
-| DbUser        | {{ tbl_prop_dbuser }}   | archiver  |       |       |
-| DbPassword    | {{ tbl_prop_dbpass }}   | archiver  |       |       |
-| DbHost        | {{ tbl_prop_dbhost }}   | localhost |       |       |
-| DbName        | {{ tbl_prop_dbname }}   |           |       |       |
-| DbSchema      | {{ tbl_prop_dbschema }} |           |       |       |
-| beansFileName | {{ tbl_prop_beans }}    | beans.xml |       |       |
+| Description   | Device description     |           |       | ✓     |
+| ProjectTitle  | Project description    |           |       | ✓     |
+| DbUser        | User name used to connect to the database   | archiver  |       |       |
+| DbPassword    | Password used to connect ot the database   | archiver  |       |       |
+| DbHost        | Database Host name   | localhost |       |       |
+| DbName        | Database name   |           |       |       |
+| DbSchema      | Schema name |           |       |       |
+| beansFileName | Name of the beans file (on CLASSPATH)    | beans.xml |       |       |
 
 :::{note}
 This device will check *SnapManager* class properties to discover
@@ -170,10 +157,10 @@ how to connect to the database.
 
 | Name         | Description           | Default | Mand. | Class |
 | ------------ | --------------------- | ------- | ----- | ----- |
-| Description  | {{ tbl_prop_desc }}   |         |       | ✓     |
-| ProjectTitle | {{ tbl_prop_title }}  |         |       | ✓     |
-| DbUser       | {{ tbl_prop_dbuser }} | snap    | ✓     |       |
-| DbPassword   | {{ tbl_prop_dbpass }} | snap    | ✓     |       |
+| Description  | Device description   |         |       | ✓     |
+| ProjectTitle | Project description  |         |       | ✓     |
+| DbUser       | User name used to connect to the database | snap    | ✓     |       |
+| DbPassword   | Password used to connect ot the database | snap    | ✓     |       |
 
 :::{note}
 This device will check *SnapManager* class properties to discover

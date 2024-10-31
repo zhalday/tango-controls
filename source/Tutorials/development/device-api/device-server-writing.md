@@ -1,19 +1,3 @@
----
-substitutions:
-  image15: |-
-    ```{image} device-server-writing/cons.bmp
-    :width: 14.00000cm
-    ```
-  image16: |-
-    ```{image} device-server-writing/help.bmp
-    :width: 9.00000cm
-    ```
----
-
-```{raw} latex
-\clearpage
-```
-
 # Writing a TANGO device server
 
 {audience}`developers`, {lang}`c++`
@@ -3398,7 +3382,9 @@ a complete description of this method.
 
 This window looks like :
 
-{{ image15 }}
+```{image} device-server-writing/cons.bmp
+:width: 14.00000cm
+```
 
 It simply displays all the logging\*\* message when a console target is
 used in the device server.
@@ -3407,7 +3393,9 @@ used in the device server.
 
 This window looks like :
 
-{{ image16 }}
+```{image} device-server-writing/help.bmp
+:width: 9.00000cm
+```
 
 This window displays
 
