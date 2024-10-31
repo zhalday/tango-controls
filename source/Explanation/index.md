@@ -16,7 +16,6 @@ attribute-alarms.md
 archiving/index.md
 attribute.md
 command.md
-development/index.md
 device.md
 event.md
 pipe.md
