@@ -23,7 +23,7 @@ test-docs:
   before_script:
     - python -m pip install -r requirements.txt
   script:
-    - sphinx-build -w sphinx-output.log ./source build
+    - make html
     - echo "Documentation can be found at https://$CI_PROJECT_NAMESPACE.gitlab.io/-/$CI_PROJECT_NAME/-/jobs/$CI_JOB_ID/artifacts/build/index.html"
   artifacts:
     when: always
