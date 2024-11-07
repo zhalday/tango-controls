@@ -7,65 +7,65 @@ You start with the simplest Tango device to control one of these coffee machines
 :::::{tab-set}
 
 ::::{tab-item} Python
-```{literalinclude} src/python/01/main.py
+```{literalinclude} 01-first-steps/python/main.py
 :caption: main.py
 :language: python
 ```
 ::::
 
 ::::{tab-item} Pogo (C++)
-```{literalinclude} src/cpp/01/MegaCoffee3k.xmi
+```{literalinclude} 01-first-steps/cpp/MegaCoffee3k.xmi
 :caption: MegaCoffee3k.xmi
 :language: xml
 ```
 ::::
 
 ::::{tab-item} C++
-```{literalinclude} src/cpp/01/main.cpp
+```{literalinclude} 01-first-steps/cpp/main.cpp
 :caption: main.cpp
 :language: cpp
 ```
 
-```{literalinclude} src/cpp/01/MegaCoffee3kClass.h
+```{literalinclude} 01-first-steps/cpp/MegaCoffee3kClass.h
 :caption: MegaCoffee3kClass.h
 :language: cpp
 ```
 
-```{literalinclude} src/cpp/01/MegaCoffee3kClass.cpp
+```{literalinclude} 01-first-steps/cpp/MegaCoffee3kClass.cpp
 :caption: MegaCoffee3kClass.cpp
 :language: cpp
 ```
 
-```{literalinclude} src/cpp/01/MegaCoffee3k.h
+```{literalinclude} 01-first-steps/cpp/MegaCoffee3k.h
 :caption: MegaCoffee3k.h
 :language: cpp
 ```
 
-```{literalinclude} src/cpp/01/MegaCoffee3k.cpp
+```{literalinclude} 01-first-steps/cpp/MegaCoffee3k.cpp
 :caption: MegaCoffee3k.cpp
 :language: cpp
 ```
 
-```{literalinclude} src/cpp/01/MegaCoffee3kStateMachine.cpp
+```{literalinclude} 01-first-steps/cpp/MegaCoffee3kStateMachine.cpp
 :caption: MegaCoffee3kStateMachine.cpp
 :language: cpp
 ```
 
-```{literalinclude} src/cpp/01/CMakeLists.txt
+```{literalinclude} 01-first-steps/cpp/CMakeLists.txt
 :caption: CMakeLists.txt
 :language: cmake
 ```
 ::::
 
 ::::{tab-item} Pogo (Java)
-```{literalinclude} src/java/01/MegaCoffee3k.xmi
+```{literalinclude} 01-first-steps/java/MegaCoffee3k.xmi
 :caption: MegaCoffee3k.xmi
 :language: xml
 ```
 ::::
 
 ::::{tab-item} Java
-```{literalinclude} src/java/01/org/tango/megacoffee3k/MegaCoffee3k.java
+```{literalinclude} 01-first-steps/java/org/tango/megacoffee3k/MegaCoffee3k.java
 :caption: MegaCoffee3k.java
 :language: java
 ```

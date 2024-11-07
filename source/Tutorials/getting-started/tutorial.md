@@ -33,14 +33,13 @@ called `projects` for all your projects.
 $ cd
 $ mkdir projects
 $ cd projects
-$ mkdir tango-tut
-$ cd tango-tut
 ```
 
 Create a Pixi project, and install all the dependencies we will need.
 
 ```console
-$ pixi init
+$ pixi init tango-tut
+$ cd tango-tut
 $ pixi add python=3.12 pytango tango-test tango-admin jtango jive pogo
 ```
 

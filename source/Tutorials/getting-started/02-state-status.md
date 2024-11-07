@@ -8,7 +8,7 @@ for your first device.  You want to make this a little better.
 :::::{tab-set}
 
 ::::{tab-item} Python
-```{literalinclude} src/python/02/main.py
+```{literalinclude} 02-state-status/python/main.py
 :caption: main.py
 :language: python
 :emphasize-lines: 8,9
@@ -16,58 +16,58 @@ for your first device.  You want to make this a little better.
 ::::
 
 ::::{tab-item} Pogo (C++)
-```{literalinclude} src/cpp/02/MegaCoffee3k.xmi
+```{literalinclude} 02-state-status/cpp/MegaCoffee3k.xmi
 :caption: MegaCoffee3k.xmi
 :language: xml
 ```
 ::::
 
 ::::{tab-item} C++
-```{literalinclude} src/cpp/02/main.cpp
+```{literalinclude} 02-state-status/cpp/main.cpp
 :caption: main.cpp
 :language: cpp
 ```
 
-```{literalinclude} src/cpp/02/MegaCoffee3kClass.h
+```{literalinclude} 02-state-status/cpp/MegaCoffee3kClass.h
 :caption: MegaCoffee3kClass.h
 :language: cpp
 ```
 
-```{literalinclude} src/cpp/02/MegaCoffee3kClass.cpp
+```{literalinclude} 02-state-status/cpp/MegaCoffee3kClass.cpp
 :caption: MegaCoffee3kClass.cpp
 :language: cpp
 ```
 
-```{literalinclude} src/cpp/02/MegaCoffee3k.h
+```{literalinclude} 02-state-status/cpp/MegaCoffee3k.h
 :caption: MegaCoffee3k.h
 :language: cpp
 ```
 
-```{literalinclude} src/cpp/02/MegaCoffee3k.cpp
+```{literalinclude} 02-state-status/cpp/MegaCoffee3k.cpp
 :caption: MegaCoffee3k.cpp
 :language: cpp
 ```
 
-```{literalinclude} src/cpp/02/MegaCoffee3kStateMachine.cpp
+```{literalinclude} 02-state-status/cpp/MegaCoffee3kStateMachine.cpp
 :caption: MegaCoffee3kStateMachine.cpp
 :language: cpp
 ```
 
-```{literalinclude} src/cpp/02/CMakeLists.txt
+```{literalinclude} 02-state-status/cpp/CMakeLists.txt
 :caption: CMakeLists.txt
 :language: cmake
 ```
 ::::
 
 ::::{tab-item} Pogo (Java)
-```{literalinclude} src/java/02/MegaCoffee3k.xmi
+```{literalinclude} 02-state-status/java/MegaCoffee3k.xmi
 :caption: MegaCoffee3k.xmi
 :language: xml
 ```
 ::::
 
 ::::{tab-item} Java
-```{literalinclude} src/java/02/org/tango/megacoffee3k/MegaCoffee3k.java
+```{literalinclude} 02-state-status/java/org/tango/megacoffee3k/MegaCoffee3k.java
 :caption: MegaCoffee3k.java
 :language: java
 ```
