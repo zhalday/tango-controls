@@ -36,7 +36,7 @@ It is perfectly fine to skip the next section about the static metadata if you a
 - Write access: Specifies if the Attribute's quantity can be modified by clients (read-write) or not (read-only). Read-only Attributes are immutable for clients but its quantity can internally be modified by the Device that it is a member of.
 - Its data format: The dimensionality of the Attribute. Currently scalar, one and two dimensional arrays are supported.
 
-Attributes are allowed to contain more static metadata but not less. Which metadata (static, configuration and runtime) an Attribute can contain is listed in the [full specificatin of Tango Attributes](https://tango-controls.readthedocs.io/projects/rfc/en/latest/4/Attribute.html) which is part of the [Tango Controls RFCs](#RFC).
+Attributes are allowed to contain more static metadata but not less. Which metadata (static, configuration and runtime) an Attribute can contain is listed in the [full specification of Tango Attributes](https://tango-controls.readthedocs.io/projects/rfc/en/latest/4/Attribute.html) which is part of the [Tango Controls RFCs](#RFC).
 
 ### Runtime metadata and why one might want to look at it
 
