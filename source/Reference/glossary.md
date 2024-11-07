@@ -104,4 +104,13 @@ property
   properties are called `free properties`. Property values are often used
   by elements of {term}`Tango Controls` system during its startup. These usually provides information required
   to configure things like connections to hardware or to adjust to user preferences.
+
+CORBA
+  The underlying technology for network operations is [CORBA](https://en.wikipedia.org/wiki/Common_Object_Request_Broker_Architecture).
+  This software package allows Tango to work with multiple programming languages as the network interface itself is
+  defined in a markup language from which the code is generated from. For Tango the interface is defined in the
+  [tango-idl](https://gitlab.com/tango-controls/tango-idl) repository.
+
+Pogo
+  Java tool for generating boiler plate code for C++/Java Tango Device servers, see also [here](#pogo-documentation).
 ```
