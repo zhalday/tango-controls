@@ -6,7 +6,7 @@
 
 ## Overview
 
-The [SNAPshot ](#SNAP) system is distributed as a part of the
+The [SNAPshot ](#snap-archiving-tool) system is distributed as a part of the
 [Archiving ](#archiving-overview) solution.
 
 The server side consists of a database (either MySQL or Oracle) and a set of
