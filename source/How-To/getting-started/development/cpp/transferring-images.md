@@ -25,7 +25,7 @@ instance of the EncodedAttribute class within your object
 ```{code} cpp
 :number-lines: 1
 
- class MyDevice::Tango::Device_4Impl
+ class MyDevice::TANGO_BASE_CLASS
   {
       ...
       Tango::EncodedAttribute jpeg;
