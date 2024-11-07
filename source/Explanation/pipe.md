@@ -8,7 +8,7 @@
 ## Introduction
 A Tango {term}`Pipe <pipe>` is like an {term}`Attribute <attribute>` with a flexible data structure, name and description.
 Unlike {term}`Commands <command>` or {term}`Attributes <attribute>`, a {term}`Pipe <pipe>` does not have a pre-defined data type.
-Tango {term}`Pipe <pipe>` data types may be a mixture of the basic Tango data types (or array of) and may change every 
+Tango {term}`Pipe <pipe>` data types may be a mixture of the basic Tango data types (or array of) and may change every
 time a {term}`pipe <pipe>` is read or written.
 
 ## Use Case
@@ -18,11 +18,11 @@ during a scan on one experiment. Because the number of actuators and
 sensors involved in the scan may change from one scan to another, it is
 not possible to use a well-defined data type. TANGO {term}`Pipes <pipe>` have been
 designed for such cases. A TANGO {term}`Pipe <pipe>` is basically a pipe dedicated to
-transfer data between client and device. 
+transfer data between client and device.
 
 ## Pipe metadata
 
-Tango {term}`Pipes <pipe>` are self-describing entities. 
+Tango {term}`Pipes <pipe>` are self-describing entities.
 They are defined by three sets of metadata which are always part of the {term}`Pipes <pipe>`:
 
 - Static metadata that defines the {term}`Pipe <pipe>` like:
@@ -45,12 +45,12 @@ A DevicePipeBlob is composed of :
 - a set of DataElement objects
 
 DataElement objects are composed of:
-- a name: a string containing the name  
-- The values in the DataElement objects can be of any basic Tango data types (or array of) or can be themselves a DevicePipeBlob.  
+- a name: a string containing the name
+- The values in the DataElement objects can be of any basic Tango data types (or array of) or can be themselves a DevicePipeBlob.
 
 The number of DataElement and their value types can change at every {term}`Pipe <pipe>` read or write operation.
 
 ## More about Pipes
 
-{term}`Pipes <pipe>` metadata (static, dynamic and runtime) are listed in the 
+{term}`Pipes <pipe>` metadata (static, dynamic and runtime) are listed in the
 {doc}`full specification of Tango Pipes <rfc:7/Pipe>` which is part of the [Tango Controls RFCs](#RFC).
