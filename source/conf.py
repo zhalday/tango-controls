@@ -107,60 +107,8 @@ version = "10.0"
 release = "10.0.0"
 
 # rst_epilog is added at the end of each rst file. Here it will contain typical substitutions
-rst_epilog = """
-
-.. _`OMG home page`: http://www.omg.org
-
-.. _`TANGO home page`: http://www.tango-controls.org
-
-.. _`TANGO web site`: `Tango home page`_
-
-.. _`Tango web`: `Tango home page`_
-
-.. _`Tango webpage`: `Tango home page`_
-
-.. _`Tango Controls web page`: `Tango home page`_
-
-.. _`ALBA home page`: http://www.cells.es
-
-.. _`Soleil home page`: http://www.synchrotron-soleil.fr
-
-.. _`Elettra home page`: http://www.elettra.trieste.it
-
-.. _`MySQL home page`: http://www.mysql.com
-
-.. _`Tango classes on-line documentation`: http://www.tango-controls.org/developers/dsc
-
-.. _`omniORB home page`: http://omniorb.sourceforge.net
-
-.. _`POGO home page`: http://www.esrf.eu/computing/cs/tango/tango_doc/tools_doc/pogo_doc/index.html
-
-.. _`JacORB home page`: http://www.jacorb.org
-
-.. _`Tango ATK reference on-line documentation`: http://www.esrf.eu/computing/cs/tango/tango_doc/atk_doc/index.html
-
-.. _`ASTOR home page`: http://www.esrf.eu/computing/cs/tango/tango_doc/tools_doc/astor_doc/index.html
-
-.. _`JIVE home page`: http://www.esrf.eu/computing/cs/tango/tango_doc/tools_doc/jive_doc/index.html
-
-.. _`Tango ATK Tutorial`: http://www.esrf.eu/computing/cs/tango/tango_doc/atk_tutorial/Tutorials.pdf
-
-.. _`ATK Tutorial`: `Tango ATK Tutorial`_
-
-.. _`ZMQ home page`: http://zeromq.org/
-
-.. _`Tango class development reference documentation`:
-    http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/cpp_doc/index.html
-
-.. _`Sphinx`: http://www.sphinx-doc.org
-
-.. _`Sphinx webpage`: `Sphinx`_
-
-.. _`Docutils`: http://docutils.sourceforge.net/index.html
-
-.. _`reStructuredText`: http://docutils.sourceforge.net/rst.html
-
-"""
+# rst_epilog = """
+# """
 
 # rst_prolog = """
 # .. role:: audition
