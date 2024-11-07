@@ -1,6 +1,7 @@
 # Scada introduction with TANGO examples
 
-{audience}`all`
+```{tags} audience:all
+```
 
 Scada introduction with TANGO examples from Jean-Charles Tournier. He works at CERN Geneva and teach at EPFL (Ecole Polytechnique Fédérale de Lausanne).
 Important notes from an expert!

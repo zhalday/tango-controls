@@ -2,7 +2,8 @@
 
 # SNAP
 
-{audience}`administrators, developers`
+```{tags} audience:administrators, audience:developers
+```
 
 The SNAP is a set of device servers and an GUI application ({program}`Bensikin`) providing
 so called SNAPshot functionality.

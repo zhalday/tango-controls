@@ -1,6 +1,7 @@
 # Memorized attribute
 
-{audience}`advanced developers`, {lang}`c++`
+```{tags} audience:developers, lang:c++
+```
 
 It is possible to ask Tango to store in its database the last written
 value for attribute of the SCALAR data format and obviously only for

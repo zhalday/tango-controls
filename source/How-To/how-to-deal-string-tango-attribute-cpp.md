@@ -2,8 +2,8 @@
 
 # How to deal with Tango string attributes in C++
 
-{audience}`developers`
-{lang}`c++`
+```{tags} audience:developers, lang:c++
+```
 
 The underlying technology for network operations is {term}`CORBA`. As this was standardized before C++,
 it still uses plain char pointers instead of the std string class.

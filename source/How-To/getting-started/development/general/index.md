@@ -1,6 +1,7 @@
 # Getting started with cppTango (C++ implementation of Tango-Controls)
 
-{audience}`beginner developers`, {lang}`any`
+```{tags} audience:developers, lang:all
+```
 
 ```{toctree}
 :maxdepth: 2

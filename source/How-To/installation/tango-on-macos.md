@@ -1,8 +1,8 @@
 (macos-installation)=
 # macOS
 
-{audience}`administrators, developers`
-{lang}`all`
+```{tags} audience:administrators, audience:developers, lang:all
+```
 
 There are no macOS app installer packages available for Tango Controls. Any installation of Tango Controls libraries or tools is done on the command line.
 

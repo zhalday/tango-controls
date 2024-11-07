@@ -2,7 +2,8 @@
 
 # How to start a device server
 
-{audience}`all`
+```{tags} audience:all
+```
 
 ```{toctree}
 :maxdepth: 2

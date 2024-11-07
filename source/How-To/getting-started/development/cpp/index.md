@@ -1,6 +1,7 @@
 # Getting started with cppTango (C++ implementation of Tango-Controls)
 
-{audience}`beginner developers`, {lang}`c++`
+```{tags} audience:developers, lang:c++
+```
 
 ```{toctree}
 :name: gettingstartedtoc

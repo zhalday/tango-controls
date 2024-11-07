@@ -2,7 +2,8 @@
 
 (igor-pro-binding)=
 
-{audience}`all`
+```{tags} audience:all
+```
 
 - Client API for [Igor Pro](http://wavemetrics.com/)
 - Release 3.0.0 for Igor Pro 7.x

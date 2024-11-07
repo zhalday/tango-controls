@@ -1,6 +1,7 @@
 (hdbpp-timescale)=
 
-{audience}`administrators, developers`, {lang}`SQL`
+```{tags} audience:administrators, audience:developers, lang:SQL
+```
 
 # schema SQL source (TimescaleDb)
 

@@ -6,7 +6,8 @@
 
 # Writing a TANGO client using TANGO C++ APIs
 
-{audience}`developers`, {lang}`c++`
+```{tags} audience:developers, lang:c++
+```
 
 ## Introduction
 

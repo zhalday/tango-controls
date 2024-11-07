@@ -2,7 +2,8 @@
 
 # SNAPshot (Archiving) installation and configuration
 
-{audience}`all`
+```{tags} audience:all
+```
 
 ## Overview
 

@@ -2,7 +2,8 @@
 
 # How to use vectors to set attributes
 
-{audience}`developers`, {lang}`c++`
+```{tags} audience:developers, lang:c++
+```
 
 This page contains examples on how to use C++ vectors to set attribute
 values on the servers side.

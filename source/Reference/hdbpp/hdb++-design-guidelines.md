@@ -1,6 +1,7 @@
 (hdbpp-design)=
 
-{audience}`administrators, developers`, {lang}`C++`
+```{tags} audience:administrators, audience:developers, lang:c++
+```
 
 # HDB++ Design and implementation
 

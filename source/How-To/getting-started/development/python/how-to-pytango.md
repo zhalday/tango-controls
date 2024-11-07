@@ -2,7 +2,8 @@
 
 # How to PyTango
 
-{audience}`developers`, {lang}`python`
+```{tags} audience:developers, lang:python
+```
 
 A list of short recipes for common tasks.
 

@@ -1,6 +1,7 @@
 (hdbpp-es-interface)=
 
-{audience}`administrators, developers`, {lang}`C++`
+```{tags} audience:administrators, audience:developers, lang:c++
+```
 
 # Event Subscriber interface
 

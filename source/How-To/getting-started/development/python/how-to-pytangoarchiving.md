@@ -4,7 +4,8 @@
 
 # PyTangoArchiving Recipes
 
-{audience}`developers`, {lang}`python`
+```{tags} audience:developers, lang:python
+```
 
 *by Sergi Rubio*
 

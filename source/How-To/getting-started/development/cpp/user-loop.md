@@ -2,7 +2,8 @@
 
 # Device server with user defined event loop
 
-{audience}`developers`, {lang}`c++`
+```{tags} audience:developers, lang:c++
+```
 
 Sometimes, it could be usefull to write your own process event handling
 loop. For instance, this feature can be used in a device server process

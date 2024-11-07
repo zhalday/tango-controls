@@ -60,6 +60,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/9e/48/1ea60e74949eecb12cdd6ac43987f9fd331156388dcc2319b45e2ebb81bf/sphinx_copybutton-0.5.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/c6/43/65c0acbd8cc6f50195a3a1fc195c404988b15c67090e73c7a41a9f57d6bd/sphinx_design-0.6.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/5c/43/e10f3e959295464946d409620babc68b35459807ab8e906ae254252b9e1f/sphinx_hoverxref-1.4.1-py2.py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/70/71/1fb5aa2013e04d36e6940b308e65608a48e2d5f59f2a21c98f01f2ce0b85/sphinx_tags-0.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e9/18/267ce39f29d26cdc7177231428ba823fe5ca94db8c56d1bed69033b364c8/sphinx_togglebutton-0.3.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/5d/85/9ebeae2f76e9e77b952f4b274c27238156eae7979c5421fba91a28f4970d/sphinxcontrib_applehelp-2.0.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/35/7a/987e583882f985fe4d7323774889ec58049171828b58c2217e7f79cdf44e/sphinxcontrib_devhelp-2.0.0-py3-none-any.whl
@@ -116,6 +117,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/9e/48/1ea60e74949eecb12cdd6ac43987f9fd331156388dcc2319b45e2ebb81bf/sphinx_copybutton-0.5.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/c6/43/65c0acbd8cc6f50195a3a1fc195c404988b15c67090e73c7a41a9f57d6bd/sphinx_design-0.6.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/5c/43/e10f3e959295464946d409620babc68b35459807ab8e906ae254252b9e1f/sphinx_hoverxref-1.4.1-py2.py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/70/71/1fb5aa2013e04d36e6940b308e65608a48e2d5f59f2a21c98f01f2ce0b85/sphinx_tags-0.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e9/18/267ce39f29d26cdc7177231428ba823fe5ca94db8c56d1bed69033b364c8/sphinx_togglebutton-0.3.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/5d/85/9ebeae2f76e9e77b952f4b274c27238156eae7979c5421fba91a28f4970d/sphinxcontrib_applehelp-2.0.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/35/7a/987e583882f985fe4d7323774889ec58049171828b58c2217e7f79cdf44e/sphinxcontrib_devhelp-2.0.0-py3-none-any.whl
@@ -172,6 +174,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/9e/48/1ea60e74949eecb12cdd6ac43987f9fd331156388dcc2319b45e2ebb81bf/sphinx_copybutton-0.5.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/c6/43/65c0acbd8cc6f50195a3a1fc195c404988b15c67090e73c7a41a9f57d6bd/sphinx_design-0.6.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/5c/43/e10f3e959295464946d409620babc68b35459807ab8e906ae254252b9e1f/sphinx_hoverxref-1.4.1-py2.py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/70/71/1fb5aa2013e04d36e6940b308e65608a48e2d5f59f2a21c98f01f2ce0b85/sphinx_tags-0.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e9/18/267ce39f29d26cdc7177231428ba823fe5ca94db8c56d1bed69033b364c8/sphinx_togglebutton-0.3.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/5d/85/9ebeae2f76e9e77b952f4b274c27238156eae7979c5421fba91a28f4970d/sphinxcontrib_applehelp-2.0.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/35/7a/987e583882f985fe4d7323774889ec58049171828b58c2217e7f79cdf44e/sphinxcontrib_devhelp-2.0.0-py3-none-any.whl
@@ -231,6 +234,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/9e/48/1ea60e74949eecb12cdd6ac43987f9fd331156388dcc2319b45e2ebb81bf/sphinx_copybutton-0.5.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/c6/43/65c0acbd8cc6f50195a3a1fc195c404988b15c67090e73c7a41a9f57d6bd/sphinx_design-0.6.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/5c/43/e10f3e959295464946d409620babc68b35459807ab8e906ae254252b9e1f/sphinx_hoverxref-1.4.1-py2.py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/70/71/1fb5aa2013e04d36e6940b308e65608a48e2d5f59f2a21c98f01f2ce0b85/sphinx_tags-0.4-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e9/18/267ce39f29d26cdc7177231428ba823fe5ca94db8c56d1bed69033b364c8/sphinx_togglebutton-0.3.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/5d/85/9ebeae2f76e9e77b952f4b274c27238156eae7979c5421fba91a28f4970d/sphinxcontrib_applehelp-2.0.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/35/7a/987e583882f985fe4d7323774889ec58049171828b58c2217e7f79cdf44e/sphinxcontrib_devhelp-2.0.0-py3-none-any.whl
@@ -1677,6 +1681,21 @@ packages:
   - sphinxcontrib-bibtex>=2.6.0 ; extra == 'doc'
   - sphinxemoji ; extra == 'doc'
   - tox ; extra == 'test'
+- kind: pypi
+  name: sphinx-tags
+  version: '0.4'
+  url: https://files.pythonhosted.org/packages/70/71/1fb5aa2013e04d36e6940b308e65608a48e2d5f59f2a21c98f01f2ce0b85/sphinx_tags-0.4-py2.py3-none-any.whl
+  sha256: af31203fe4e0ebd39cb95d4fef38720185def6af9fdb921b70275ff659a5dac5
+  requires_dist:
+  - sphinx>=5.1
+  - bs4 ; extra == 'dev'
+  - pytest>=6.0 ; extra == 'dev'
+  - pytest-cov ; extra == 'dev'
+  - pre-commit ; extra == 'dev'
+  - pydata-sphinx-theme>=0.13 ; extra == 'sphinx'
+  - sphinx-design ; extra == 'sphinx'
+  - nbsphinx ; extra == 'sphinx'
+  - myst-parser ; extra == 'sphinx'
 - kind: pypi
   name: sphinx-togglebutton
   version: 0.3.2

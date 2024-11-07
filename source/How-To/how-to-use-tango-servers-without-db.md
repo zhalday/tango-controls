@@ -2,7 +2,8 @@
 
 # Using Tango servers without DB for unit testing
 
-{audience}`advanced developers`, {lang}`java`
+```{tags} audience:developers, lang:java
+```
 
 ## Problem overview
 

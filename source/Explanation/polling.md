@@ -2,8 +2,8 @@
 
 # Device polling
 
-{audience}`developers`
-{lang}`c++, all`
+```{tags} audience:developers, lang:c++, lang:all
+```
 
 ## Introduction
 

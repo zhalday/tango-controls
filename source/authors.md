@@ -2,7 +2,8 @@
 
 (authors)=
 
-{audience}`all`
+```{tags} audience:all
+```
 
 Good documentation needs dedicated authors who spend lots of time writing and reading text instead of code. This labour of love is only rarely appreciated by readers. This section lists the numerous contributors to the Tango documentation. If you are reading this section don't hesitate to send them some positive thoughts and thanks for their "labour of love" right now!
 

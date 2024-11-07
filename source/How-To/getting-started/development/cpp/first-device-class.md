@@ -6,7 +6,8 @@
 
 # Your first C++ TANGO device class
 
-{audience}`beginner developers`, {lang}`c++`
+```{tags} audience:developers, lang:c++
+```
 
 The code given in this chapter as example has been generated using POGO.
 Pogo is a code generator for Tango device server. See

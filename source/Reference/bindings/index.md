@@ -15,7 +15,8 @@ rest-api
 
 ## Overview
 
-{audience}`all`
+```{tags} audience:all
+```
 
 Tango has a number of bindings to other languages and tools. Below we list the currently known bindings.
 

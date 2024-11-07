@@ -1,6 +1,7 @@
 # TANGO Device Server Guidelines
 
-{audience}`developers`, {lang}`all`
+```{tags} audience:developers, lang:all
+```
 
 Contents:
 

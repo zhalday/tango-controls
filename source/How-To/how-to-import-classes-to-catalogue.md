@@ -1,6 +1,7 @@
 # How to import multiple device classes to the Catalogue
 
-{audience}`administrators`
+```{tags} audience:administrators
+```
 
 The Device Classes Catalogue is available on the Tango Controls web page:
 <http://www.tango-controls.org/>.

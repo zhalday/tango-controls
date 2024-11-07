@@ -1,6 +1,7 @@
 # Generating events in a device server
 
-{audience}`advanced developers`, {lang}`c++`
+```{tags} audience:developers, lang:c++
+```
 
 The server is at the origin of events. It will fire events as soon as
 they occur. Standard events (*change*, *periodic* and *archive*) are

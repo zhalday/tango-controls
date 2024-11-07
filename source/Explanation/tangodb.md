@@ -1,4 +1,5 @@
-{audience}`all`
+```{tags} audience:all
+```
 
 (tangodb-explanation)=
 

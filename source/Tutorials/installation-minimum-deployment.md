@@ -1,6 +1,7 @@
 # Example deployment of a Tango Controls System
 
-{audience}`administrators, developers`
+```{tags} audience:administrators, audience:developers
+```
 
 There are different tasks that need to be performed in a Tango Cotnrols System. One can categorise the tasks as follows:
 

@@ -2,7 +2,8 @@
 
 # TANGO C++ Quick start
 
-{audience}`developers`
+```{tags} audience:developers
+```
 
 This quick tutorial will guide you to some fundamental TANGO concepts and how to do the first steps.
 

@@ -1,6 +1,7 @@
 # Tutorials
 
-{audience}`all`
+```{tags} audience:all
+```
 
 ```{toctree}
 :maxdepth: 2

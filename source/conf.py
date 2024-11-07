@@ -49,8 +49,8 @@ extensions = [
     "sphinx_togglebutton",
     "sphinx_design",
     "sphinxcontrib.mermaid",
-    "tangocontrib.metalabels",
-    'hoverxref.extension',
+    "hoverxref.extension",
+    "sphinx_tags",
 ]
 
 myst_enable_extensions = [
@@ -61,11 +61,11 @@ myst_enable_extensions = [
 ]
 
 hoverxref_roles = [
-    'term',
+    "term",
 ]
 
 hoverxref_role_types = {
-    'term': 'tooltip',
+    "term": "tooltip",
 }
 
 # Allow implicit target anchors for headings down to this level
@@ -439,18 +439,14 @@ linkcheck_ignore = [
     r"https://localhost/*",
 ]
 
-# metalabels
-meta_labels = {
-    "audience": {
-        "allowed_values": ["administrators", "developers", "users", "beginners", "all"],
-        "visible": True,
-        "label": "Intended audience: ",
-        "post_label": "",
-    },
-    "lang": {
-        "allowed_values": ["c++", "java", "python", "all"],
-        "visible": True,
-        "label": "Programming language: ",
-        "post_label": "",
-    },
+# See https://sphinx-tags.readthedocs.io/en/latest/configuration.html
+tags_create_tags = True
+tags_extension = ["md"]
+tags_create_badges = True
+tags_intro_text = ""
+tags_page_title = "Tags"
+tags_overview_title = "Site tags"
+tags_badge_colors = {
+    "audience:*": "primary",
+    "lang:*": "success",
 }

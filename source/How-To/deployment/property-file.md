@@ -2,7 +2,8 @@
 
 # The property file syntax
 
-{audience}`administrators, developers`
+```{tags} audience:administrators, audience:developers
+```
 
 ## Property file usage
 

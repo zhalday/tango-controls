@@ -3,7 +3,8 @@
 
 (attribute)=
 
-{audience}`all`, {lang}`all`
+```{tags} audience:all, lang:all
+```
 
 An Attribute is a Tango concept that can represent a physical quantity of a device or equipment. It can also represent a quantity which is not tied to any equipment but might have been computed in software as there is no enforced tie to hardware for Attributes. The main purpose of an Attribute is to provide read and (optionally) write access to this quantity. In object oriented terminology, an Attribute corresponds to an instance variable (also called a field or a member) of a [Device](#device-explanation) object or simpler an Attribute is one of the parts of a Device.
 

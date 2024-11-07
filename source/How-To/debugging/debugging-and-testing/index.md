@@ -1,6 +1,7 @@
 # Debugging and Testing
 
-{audience}`developers`, {lang}`all`
+```{tags} audience:developers, lang:all
+```
 
 In the following articles you will find useful information on testing and debugging of your code.
 

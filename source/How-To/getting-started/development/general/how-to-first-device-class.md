@@ -2,7 +2,8 @@
 
 # How to write your first Device Class
 
-{audience}`developers`, {lang}`all`
+```{tags} audience:developers, lang:all
+```
 
 This HowTo explains how to create your first Device Class regardless of the language used.
 

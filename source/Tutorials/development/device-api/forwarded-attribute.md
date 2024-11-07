@@ -1,6 +1,7 @@
 # Forwarded attribute
 
-{audience}`developers`, {lang}`c++`
+```{tags} audience:developers, lang:c++
+```
 
 ## Definition
 

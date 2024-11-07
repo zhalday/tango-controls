@@ -2,8 +2,8 @@
 
 # Tango object naming (device, attribute and property)
 
-{audience}`all`
-{lang}`all`
+```{tags} audience:all, lang:all
+```
 
 ## Device name
 

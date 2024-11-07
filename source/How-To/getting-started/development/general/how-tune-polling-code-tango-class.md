@@ -2,7 +2,8 @@
 
 # How to tune polling by code in a TANGO class
 
-{audience}`advanced developers`,
+```{tags} audience:developers
+```
 
 This HowTo explains how it is easily possible to tune attribute or command
 polling parameters in the code of a Tango class
@@ -19,7 +20,8 @@ client. With them, you can
 
 ## In C++
 
-{lang}`c++`
+```{tags} lang:c++
+```
 
 To display some information related to polling of the attribute named *TheAtt*:
 
@@ -56,7 +58,8 @@ All these DeviceImpl polling related methods are documented in the [DeviceImpl] 
 
 ## In Python
 
-{lang}`python`
+```{tags} lang:python
+```
 
 To display some information related to polling of the attribute
 named *TheAtt,* in a **DeviceImpl** context type:
@@ -94,7 +97,8 @@ All these DeviceImpl polling related methods are documented in the [PyTango] Dev
 
 ## In Java
 
-{lang}`java`
+```{tags} lang:java
+```
 
 The polling can be retrieved and modified from the DeviceManager class.
 Here is an example:

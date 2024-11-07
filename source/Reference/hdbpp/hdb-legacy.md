@@ -1,6 +1,7 @@
 (hdbpp-legacy)=
 
-{audience}`administrators, developers`, {lang}`SQL`
+```{tags} audience:administrators, audience:developers, lang:SQL
+```
 
 # Legacy HDB tables structure
 

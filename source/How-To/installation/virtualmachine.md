@@ -2,7 +2,8 @@
 
 # Virtual Machine
 
-{audience}`developers, administrators, all`
+```{tags} audience:administrators, audience:developers, audience:all
+```
 
 The purpose of the **TANGO Box Virtual Machine** is to give you a fast,
 out-of-the-box experience of a working TANGO system.

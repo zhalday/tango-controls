@@ -1,6 +1,7 @@
 # How to add a subproject to the readthedocs tango-controls documentation
 
-{audience}`developers`
+```{tags} audience:developers
+```
 
 ## Introduction
 

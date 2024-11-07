@@ -1,6 +1,7 @@
 # Ecosystem
 
-{audience}`all`
+```{tags} audience:all
+```
 
 Tango Controls offers a rich ecosystem for developers and users alike.
 

@@ -2,7 +2,8 @@
 
 # Long Term Support
 
-{audience}`administrators, developers`
+```{tags} audience:administrators, audience:developers
+```
 
 In 2016, the [Tango-Controls Steering Committee](https://www.tango-controls.org/about-us/executive-2016/) requested the
 introduction of Long Term Support versions for some key components of Tango-Controls like cppTango, the C++ Tango Library and JTango.
