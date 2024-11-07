@@ -50,6 +50,7 @@ extensions = [
     "sphinx_design",
     "sphinxcontrib.mermaid",
     "tangocontrib.metalabels",
+    'hoverxref.extension',
 ]
 
 myst_enable_extensions = [
@@ -58,6 +59,14 @@ myst_enable_extensions = [
     "colon_fence",
     "deflist",
 ]
+
+hoverxref_roles = [
+    'term',
+]
+
+hoverxref_role_types = {
+    'term': 'tooltip',
+}
 
 # Allow implicit target anchors for headings down to this level
 myst_heading_anchors = 5
