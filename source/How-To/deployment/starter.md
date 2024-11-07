@@ -56,7 +56,7 @@ The starter will be visible in Astor under the name specified in *member*.
 ## Usage
 
 The Astor GUI can be used to
-[start a new Tango device server](#astor-new-server)
+[start a new Tango device server](inv:astor:std#add_server)
 using the Starter device.
 
 Alternatively, the Starter interface can be used directly, e.g. to start

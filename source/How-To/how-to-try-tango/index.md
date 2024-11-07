@@ -209,7 +209,7 @@ which will be automatically run. Like in this screenshot:
 :scale: 75 %
 :::
 
-See more: {ref}`astor-new-server`.
+See more: [start a new Tango device server](inv:astor:std#add_server).
 
 When the TangoTest device is working, we can run the [atkpanel in jive ](#atkpanel-manual) application
 and see the attribute, properties, all configuration of the selected device. For this purpose,
