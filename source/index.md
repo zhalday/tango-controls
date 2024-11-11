@@ -22,8 +22,6 @@ authors
 Old-but-precious/index
 ```
 
-Welcome!
-
 This is a collection of documents for our Tango Controls community, users of Tango Controls, developers and interested parties. Among the many items that we cover here are explanations of what Tango Controls is, how to use Tango Controls for your controls system, how to write software using the Tango Controls framework and how to use Tango Controls and its tools.
 
 Nothing is perfect and neither is this documentation. In the likely case that you find that information is missing, please get in touch with us. Ideally you would simply [open an issue on GitLab](https://gitlab.com/tango-controls/tango-doc/-/issues/new) so that we can address what you have found.
@@ -33,11 +31,61 @@ Nothing is perfect and neither is this documentation. In the likely case that yo
 
 The Tango Controls documentation largely follows the [Grand Unified Theory of Documentation](https://docs.divio.com/documentation-system/) and is organised in the following categories (with some overlap):
 
-- {doc}`Explanation <Explanation/index>`: Overview of what Tango Controls is, its origins and who uses it. **If you are new to Tango Controls, then we recommend that you start reading here.**
-- {doc}`Tutorials <Tutorials/index>`: We show you how to implement Tango Devices, Tango clients and other Tango-related software.
-- {doc}`How-Tos <How-To/index>`: Here we provide solutions to specific problems that you might encounter on the road with Tango Controls.
-- {doc}`Reference <Reference/reference>`: Tango Controls' main programming languages are C++, Java and Python. You will find their APIs here. We also support other languages and tools through bindings that we also document here.
-- {doc}`Tools <tools/tools>`: The Tango Controls ecosystem is rich with tools that make eveybody's life easier. Here we show you which tools exist and what one can do with them.
+::::{grid} 1 2 2 2
+:gutter: 2
+:class-container: sd-text-center
+
+:::{grid-item-card} Explanation
+:link: explanation-index
+:link-type: ref
+
+Overview of what Tango Controls is, its origins and who uses it. **If you are new to Tango Controls, then we recommend that you start reading here.**
+
++++
+[Learn more »](explanation-index)
+:::
+
+:::{grid-item-card} Tutorials
+:link: tutorials-index
+:link-type: ref
+
+We show you how to implement Tango Devices, Tango clients and other Tango-related software.
+
++++
+[Learn more »](tutorials-index)
+:::
+
+:::{grid-item-card} How-to
+:link: how-to-index
+:link-type: ref
+
+Here we provide solutions to specific problems that you might encounter on the road with Tango Controls.
+
++++
+[Learn more »](how-to-index)
+:::
+
+:::{grid-item-card} Reference
+:link: reference-index
+:link-type: ref
+
+Tango Controls' main programming languages are C++, Java and Python. You will find their APIs here. We also support other languages and tools through bindings that we also document here.
+
++++
+[Learn more »](reference-index)
+:::
+
+:::{grid-item-card} Tools
+:link: tools-index
+:link-type: ref
+
+The Tango Controls ecosystem is rich with tools that make eveybody's life easier. Here we show you which tools exist and what one can do with them.
+
++++
+[Learn more »](tools-index)
+:::
+
+::::
 
 To support our readers in their quest to quickly find the information that they are looking for, we have tagged the pages here with one or more labels:
 

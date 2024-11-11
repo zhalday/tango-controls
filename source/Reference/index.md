@@ -1,4 +1,6 @@
 
+(reference-index)=
+
 # Reference
 
 ```{toctree}

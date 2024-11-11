@@ -1,3 +1,5 @@
+(how-to-index)=
+
 # How-Tos
 
 ```{tags} audience:all

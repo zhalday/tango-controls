@@ -1,3 +1,5 @@
+(explanation-index)=
+
 # Explanation
 
 ```{tags} audience:all
