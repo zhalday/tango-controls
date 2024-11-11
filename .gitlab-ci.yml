@@ -21,6 +21,9 @@ test-docs:
   needs:
     - pre-commit
   before_script:
+    # Install git to install sphinx-tags from a specific git commit
+    - apt update
+    - apt install -y git
     - python -m pip install -r requirements.txt
   script:
     - make html
