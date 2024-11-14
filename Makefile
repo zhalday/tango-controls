@@ -50,9 +50,15 @@ clean:
 	rm -rf $(BUILDDIR)/*
 
 html:
+	@echo Generating glossary
+	@python glossary_generator.py
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
+
+glossary:
+	@echo Generating glossary
+	@python glossary_generator.py
 
 dirhtml:
 	$(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
