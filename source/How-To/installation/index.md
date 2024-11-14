@@ -13,7 +13,7 @@ available on all platforms to get you started quickly.
 
 conda.md
 linux-debian
-linux-centos
+linux-redhat
 tango-on-windows
 tango-on-macos
 virtualmachine

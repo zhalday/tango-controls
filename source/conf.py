@@ -58,6 +58,7 @@ myst_enable_extensions = [
     "attrs_inline",
     "colon_fence",
     "deflist",
+    "fieldlist",
 ]
 
 hoverxref_roles = [

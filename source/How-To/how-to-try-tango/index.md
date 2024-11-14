@@ -18,7 +18,7 @@ If you have installed and configured Tango, you can skip to: {ref}`using-tango`.
 
 1. [Using Ansible](https://github.com/MaxIV-KitsControls/tangobox-ansible)
 2. [Installation on Debian](https://marscity.readthedocs.io/en/latest/doc/setup.html)
-3. [Installation on RedHat(CentOS)](#installation-centos)
+3. [Installation on RedHat](#linux-redhat-installation)
 
 If you want to use Debian/Ubuntu or Docker solution to try Tango you can skip
 this article and go to:
@@ -166,26 +166,6 @@ systemctl enable tango-starter
 ```
 
 See more: {ref}`systemd-integration`
-
-(installation-centos)=
-
-## Installation on CentOS
-
-CentOS base on RPM Package Manager and used YUM as the primary tool to packages management and update the libraries by the
-system command line interfaces.  Thanks **MAX IV Laboratory** that provides the public RPM repository
-with Tango packages now process of installation the Tango Control System can also be simplified.
-It is enough that it is added to the system as a new repository:
-
-```console
-yum-config-manager --add-repo http://pubrepo.maxiv.lu.se/rpm/el7/x86_64/
-```
-
-This command creates a new repository and file in /etc/yum.repos.d containing all necessary information about it.
-Now you can install Tango Starter or Tango Database by the command:
-
-```console
-yum install tango-starter/tango-db
-```
 
 (using-tango)=
 
