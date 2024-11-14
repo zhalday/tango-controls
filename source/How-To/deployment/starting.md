@@ -9,7 +9,7 @@
 
 When used without database, there is no additional process to start.
 Simply starts device server using the -nodb option (and eventually the
--dlist option) on specific port. See [](#run-without-sql-db) to find
+-dlist option) on specific port. See [](#device-server-without-database) to find
 information on how to start/write Tango device server not using the
 database.
 

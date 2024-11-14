@@ -139,4 +139,4 @@ It is possible to run a device server on some computer without a Tango database.
 A configuration without SQL database can be useful for testing purpose. However, it will not benefit the major part of the Tango functionnalities.
 :::
 
-See section [Running a device server without SQL database](#run-without-sql-db) to understand how to use this configuration and what are the limitations.
+See section [Running a device server without SQL database](#device-server-without-database) to understand how to use this configuration and what are the limitations.
