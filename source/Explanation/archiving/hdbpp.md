@@ -29,11 +29,11 @@ HDB++ Runtime View (part two)
 * - HDB++ Configuration
   - Standalone JAVA application that allows interaction with the configuration manager in order to add, modify, move or delete an attribute from the archiving system
 * - Archiving DB
-  - Specific Database devoted to storing attribute values. The currently supported backend are Mysql, PostgreSQL, ElasticSearch or Timescale. Cassandra was once supported but we have deprecated it and it is now unsupported.
-* - Tango Configuration DB
-  - [tangodb-explanation](Tango database or TangoDB) where every property and configuration of the Tango Controls system is stored
+  - Specific Database devoted to storing attribute values. The currently supported backend are Mysql, PostgreSQL, ElasticSearch or Timescale. In the past we supported Cassandra too, but since we have deprecated its use and it is now unsupported.
+* - Tango Configuration Database (:term:`Tango Database`)
+  - The Tango Device Server :term:`Databaseds` together with the MariaDB database backend.
 * - Archiver
-  - The EventSubscriber TANGO device server, or Archiver, is the archiving system engine. On typical usage, it will subscribe to archive events on request by the ConfigurationManager device. The EventSubscriber is designed to start archiving all the already configured Attributes, even if the ConfigurationManager is not running. Moreover, being a TANGO device, the EventSubscriber configuration can be managed with Jive.The list of Attributes to be gathered by each EventSubscriber is stored in the AttributeList Property of the EventSubscriber device.
+  - The EventSubscriber Tango device server, or Archiver, is the archiving system's engine. On typical usage, it will subscribe to archive events on request by the ConfigurationManager device. The EventSubscriber is designed to start archiving all the already configured Attributes, even if the ConfigurationManager is not running. Moreover, being a TANGO device, the EventSubscriber configuration can be managed with Jive.The list of Attributes to be gathered by each EventSubscriber is stored in the AttributeList Property of the EventSubscriber device.
 * - Device server
   - Generic Device server that contains one or more devices that needs to archive one or more attributes
 * - Configurator Server
