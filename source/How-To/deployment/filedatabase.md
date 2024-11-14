@@ -43,4 +43,3 @@ be used :
 - No device or attribute alias name.
 - In case of several device servers running on the same host, the user
   must manually manage a list of already used network port.
-
