@@ -94,10 +94,6 @@ Tango Host
   well as a runtime catalog of the components/devices. It allows (among other things) client applications to find
   devices in distributed environment.
 
-Tango Database
-  A database providing configuration and some runtime information about Tango Controls components in so called
-  Tango System instance or deployment. It is used by *Databaseds* device server and constitutes {term}`Tango Host`.
-
 property
   A configuration parameter stored in the {term}`Tango Database`. Properties can be assigned to
   a {term}`device class`, {term}`device` or elements of device interface ({term}`attributes <attribute>`,

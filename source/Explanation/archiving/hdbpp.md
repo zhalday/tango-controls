@@ -5,7 +5,9 @@
 ```{tags} audience:administrators, audience:developers
 ```
 
-## Primary Presentation
+## An overview
+
+The figures below have been taken from the primary presentation of HDB++. They show the runtime view of HDB++ within a Tango Controls system.
 
 :::{figure} hdbpp/image2.png
 HDB++ Runtime View (part one)
@@ -16,6 +18,7 @@ HDB++ Runtime View (part two)
 :::
 
 ## Elements
+
 ```{list-table}
 :header-rows: 1
 
@@ -26,9 +29,9 @@ HDB++ Runtime View (part two)
 * - HDB++ Configuration
   - Standalone JAVA application that allows interaction with the configuration manager in order to add, modify, move or delete an attribute from the archiving system
 * - Archiving DB
-  - Specific Database devoted to storing attribute values. The currently supported backend are Mysql, Cassandra (support has been dropped), PostgreSQL, ElasticSearch or Timescaledb.
+  - Specific Database devoted to storing attribute values. The currently supported backend are Mysql, PostgreSQL, ElasticSearch or Timescale. Cassandra was once supported but we have deprecated it and it is now unsupported.
 * - Tango Configuration DB
-  - Tango database where every property and configuration of the Tango control framework is stored
+  - [tangodb-explanation](Tango database or TangoDB) where every property and configuration of the Tango Controls system is stored
 * - Archiver
   - The EventSubscriber TANGO device server, or Archiver, is the archiving system engine. On typical usage, it will subscribe to archive events on request by the ConfigurationManager device. The EventSubscriber is designed to start archiving all the already configured Attributes, even if the ConfigurationManager is not running. Moreover, being a TANGO device, the EventSubscriber configuration can be managed with Jive.The list of Attributes to be gathered by each EventSubscriber is stored in the AttributeList Property of the EventSubscriber device.
 * - Device server
