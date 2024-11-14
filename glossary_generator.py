@@ -46,6 +46,6 @@ if text:
                 break
             else:
                 output = output + line
-            
+
     with open("source/Reference/glossary.md", 'w+') as fp:
         fp.write(output)
