@@ -2,7 +2,8 @@
 
 # End-user applications guide
 
-{audience}`user`
+```{tags} audience:all
+```
 
 If you are end-user you are probably interested in documentation for
 [tools delivered with Tango Controls](#tools-index). Below, you will find a list of tools a beginner user

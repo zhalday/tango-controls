@@ -1,6 +1,7 @@
 # Tango Data Model
 
-{audience}`all`
+```{tags} audience:all
+```
 
 This page list and links to the different elements of the Tango Data Model.
 

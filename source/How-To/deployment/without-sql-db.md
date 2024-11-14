@@ -2,7 +2,8 @@
 
 # Running a device server without SQL database
 
-{audience}`administrators, developers`
+```{tags} audience:administrators, audience:developers
+```
 
 (device-server-with-filedatabase)=
 

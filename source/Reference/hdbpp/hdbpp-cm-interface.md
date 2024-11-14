@@ -1,6 +1,7 @@
 (hdbpp-cm-interface)=
 
-{audience}`administrators, developers`, {lang}`C++`
+```{tags} audience:administrators, audience:developers, lang:c++
+```
 
 # Configuration Manager interface
 

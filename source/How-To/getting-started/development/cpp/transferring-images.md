@@ -2,7 +2,8 @@
 
 # Transferring images
 
-{audience}`developers`, {lang}`c++`
+```{tags} audience:developers, lang:c++
+```
 
 Some optimized methods have been written to optimize image transfer
 between client and server using the attribute DevEncoded data type. All

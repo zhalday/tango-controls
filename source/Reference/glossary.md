@@ -4,7 +4,8 @@
 
 # Glossary
 
-{audience}`all`
+```{tags} audience:all
+```
 
 ```{glossary}
 :sorted:

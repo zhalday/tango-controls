@@ -1,7 +1,8 @@
 (linux-centos-installation)=
 # CentOS
 
-{audience}`administrators, developers`
+```{tags} audience:administrators, audience:developers
+```
 
 RPM packages for RedHat based systems are built from the [tango-spec](https://gitlab.com/tango-controls/tango-spec)
 repository using [Copr](https://copr.fedorainfracloud.org/).

@@ -2,7 +2,8 @@
 
 # How to create inheritance link between Tango classes (C++)
 
-{audience}`developers`, {lang}`c++`
+```{tags} audience:developers, lang:c++
+```
 
 This HowTo explains how it is possible to create a new Tango class
 which inherits from an already existing Tango class.

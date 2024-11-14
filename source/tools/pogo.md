@@ -2,7 +2,8 @@
 
 # POGO
 
-{audience}`developers`, {lang}`c++, java, python`
+```{tags} audience:developers, lang:c++, lang:java, lang:python
+```
 
 - Pogo is the [TANGO] code generator written in Java swing.
 

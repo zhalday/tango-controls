@@ -1,4 +1,5 @@
-{audience}`administrators`
+```{tags} audience:administrators
+```
 
 (multiple-sql-dbs)=
 

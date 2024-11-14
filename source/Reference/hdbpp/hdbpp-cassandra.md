@@ -1,6 +1,7 @@
 (hdbpp-cassandra)=
 
-{audience}`administrators, developers`, {lang}`CQL`
+```{tags} audience:administrators, audience:developers, lang:CQL
+```
 
 # schema CQL source (Cassandra)
 

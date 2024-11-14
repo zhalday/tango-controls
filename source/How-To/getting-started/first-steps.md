@@ -2,7 +2,8 @@
 
 # First steps with Tango Controls
 
-{audience}`all`, {lang}`all`
+```{tags} audience:all, lang:all
+```
 
 - In the {doc}`Overview </Explanation/overview>` you will find basic information on Tango Controls. It will let you understand
   concepts of Tango Controls and help dancing it.

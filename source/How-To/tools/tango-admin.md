@@ -2,7 +2,8 @@
 
 # Tango Admin utility
 
-{audience}`administrators`
+```{tags} audience:administrators
+```
 
 The Tango Database can be maintained using a command-line interface with {program}`tango_admin` tool. The following features are available:
 

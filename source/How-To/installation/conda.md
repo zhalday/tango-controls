@@ -2,7 +2,8 @@
 
 # Conda Packages
 
-{audience}`developers, administrators, all`
+```{tags} audience:administrators, audience:developers, audience:all
+```
 
 Most Tango packages are available on [conda-forge](https://conda-forge.org) for Linux, macOS and Windows.
 
@@ -146,7 +147,8 @@ See <https://pixi.sh/latest/reference/cli/#global> for more information.
 
 ### Working on projects
 
-{audience}`developers`
+```{tags} audience:developers
+```
 
 When working on a project, `pixi` can manage environments for you.
 
@@ -163,7 +165,7 @@ You can then add all the requirements you need:
 
 ```console
 $ pixi add python=3.12 pytango
-````
+```
 
 This will automatically update the `pixi.toml` file as well as a `pixi.lock` file
 and create the environment under the `.pixi` directory.
@@ -171,7 +173,7 @@ You can use that environment by running `pixi run` or `pixi shell` to activate i
 
 ```console
 $ pixi run python -c 'import tango; print(tango.utils.info())'
-````
+```
 
 ```console
 $ pixi shell

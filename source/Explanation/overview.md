@@ -3,7 +3,8 @@
 
 # Overview of Tango Controls
 
-{audience}`all`
+```{tags} audience:all
+```
 
 ## What is Tango Controls?
 

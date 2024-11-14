@@ -2,7 +2,8 @@
 
 # Starting a Tango control system
 
-{audience}`all`
+```{tags} audience:all
+```
 
 ## Without database
 

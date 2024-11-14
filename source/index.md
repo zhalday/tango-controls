@@ -5,7 +5,8 @@
 
 # Welcome to the Tango Controls documentation!
 
-{audience}`all`
+```{tags} audience:all
+```
 
 ```{toctree}
 :name: maintoc
@@ -40,11 +41,11 @@ The Tango Controls documentation largely follows the [Grand Unified Theory of Do
 
 To support our readers in their quest to quickly find the information that they are looking for, we have tagged the pages here with one or more labels:
 
-- **Programming language**: Pages that contain information that is relevant to software development are tagged with either one of the three main languages that Tango Controls supports (**C++**, **Java**, **Python**). If the information on a page is programming language independent, we have tagged it with **all**.
+- **Programming language**: Pages that contain information that is relevant to software development are tagged with either one of the three main languages that Tango Controls supports ([lang:c++](#sphx_tag_lang-c), [lang:java](#sphx_tag_lang-java), [lang:python](#sphx_tag_lang-python)). If the information on a page is programming language independent, we have tagged it with [lang:all](#sphx_tag_lang-all).
 - **Target audience**:
-   - **all**: The information on the page might be interesting for general audiences, i.e. everybody.
-   - **developers**: Developers will likely find the information on this page interesting, i.e. it will help them with their implementation of Tango Devices, clients or Tango Controls software in general.
-   - **administrators**: A page with this tag will be useful to the people who have to build, maintain or fix a Tango Controls system.
+   - [audience:all](#sphx_tag_audience-all): The information on the page might be interesting for general audiences, i.e. everybody.
+   - [audience:developers](#sphx_tag_audience-developers): Developers will likely find the information on this page interesting, i.e. it will help them with their implementation of Tango Devices, clients or Tango Controls software in general.
+   - [audience:administrators](#sphx_tag_audience-administrators): A page with this tag will be useful to the people who have to build, maintain or fix a Tango Controls system.
 
 ## Where to go from here?
 
@@ -64,4 +65,5 @@ We understand that it is easy to get lost due to the sheer amount of information
 - {ref}`genindex`
 - {ref}`search`
 - {ref}`Glossary <glossary>`
+- {ref}`Site tags <tagoverview>`
 % - {ref}`modindex`

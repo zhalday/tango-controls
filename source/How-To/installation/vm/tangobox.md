@@ -6,7 +6,8 @@
 (tangobox-vm-installation)=
 # TangoBox 9.3
 
-{audience}`all`
+```{tags} audience:all
+```
 
 TangoBox is a VM image running Tango Controls system and its various tools.
 It is intended to be used for demonstration and training.

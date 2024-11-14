@@ -1,4 +1,5 @@
-{audience}`administrators`
+```{tags} audience:administrators
+```
 
 (access-control)=
 

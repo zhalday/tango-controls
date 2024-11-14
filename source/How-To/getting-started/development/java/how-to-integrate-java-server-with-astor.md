@@ -2,7 +2,8 @@
 
 # Integrate Java Tango servers with Astor
 
-{audience}`developers, administrators`, {lang}`java`
+```{tags} audience:administrators, audience:developers, lang:java
+```
 
 ## Problem overview
 

@@ -1,6 +1,7 @@
 # Attribute alarms
 
-{audience}`all`
+```{tags} audience:all
+```
 
 Tango provides an automatic way of defining alarms. An alarm
 condition will switch the attribute quality factor to alarm and the

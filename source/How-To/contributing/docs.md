@@ -2,7 +2,8 @@
 
 # Tango Documentation
 
-{audience}`developers`
+```{tags} audience:developers
+```
 
 Please follow these guidelines when writing or improving the Tango Controls documentation in order to keep it as consistent as possible. It is also important to know how the contents is structured. You will find necessary information below.
 

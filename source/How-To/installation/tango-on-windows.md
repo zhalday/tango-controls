@@ -1,6 +1,7 @@
 # Windows
 
-{audience}`developers, administrators`
+```{tags} audience:administrators, audience:developers
+```
 
 If you need a full-fledged installation on Windows with Tango Database and JAVA tools like Jive,
 ATK, etc. use the Windows Installer. If you are just looking for precompiled cppTango libraries, head over

@@ -1,4 +1,5 @@
-{audience}`administrators, developers`
+```{tags} audience:administrators, audience:developers
+```
 
 (services-events)=
 

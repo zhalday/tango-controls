@@ -1,6 +1,7 @@
 # Enumerated attribute
 
-{audience}`developers`, {lang}`c++`
+```{tags} audience:developers, lang:c++
+```
 
 Enumerated attribute are supported using the data type DevEnum.
 

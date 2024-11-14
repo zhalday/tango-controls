@@ -2,7 +2,8 @@
 
 # Administration applications guide
 
-{audience}`beginners, administrators`
+```{tags} audience:administrators, audience:all
+```
 
 Starting as Administrator for Tango Controls you should look on the following tools and topics:
 

@@ -1,6 +1,7 @@
 # Getting Started
 
-{audience}`beginners, all`, {lang}`all`
+```{tags} audience:all, lang:all
+```
 
 In this section we will guide you step-by-step to help you getting started with Tango-Controls.
 

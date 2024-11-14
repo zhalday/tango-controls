@@ -4,7 +4,8 @@
 
 # Reference part
 
-{audience}`developers`, {lang}`all`
+```{tags} audience:developers, lang:all
+```
 
 This chapter is only part of the TANGO device server reference guide.
 To get reference documentation about the:

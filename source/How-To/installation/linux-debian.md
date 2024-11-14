@@ -2,7 +2,8 @@
 
 # Debian
 
-{audience}`administrators, developers`
+```{tags} audience:administrators, audience:developers
+```
 
 ## Binary packages
 

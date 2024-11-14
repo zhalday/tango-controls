@@ -2,7 +2,8 @@
 
 # Tango with systemd integration
 
-{audience}`administrators`
+```{tags} audience:administrators
+```
 
 This recipe shows how to set up Tango environment using systemd, for instance on a developer's box
 

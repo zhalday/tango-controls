@@ -1,6 +1,7 @@
 # Services
 
-{audience}`administrators`
+```{tags} audience:administrators
+```
 
 ```{toctree}
 :maxdepth: 2

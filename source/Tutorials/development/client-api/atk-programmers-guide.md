@@ -2,7 +2,8 @@
 
 # TangoATK Programmer’s Guide
 
-{audience}`developers`, {lang}`java`
+```{tags} audience:developers, lang:java
+```
 
 This chapter is only a brief Tango ATK (Application ToolKit)
 programmer’s guide. You can find a reference guide with a full

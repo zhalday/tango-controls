@@ -2,7 +2,8 @@
 
 # Tango Client
 
-{audience}`developers`, {lang}`all`
+```{tags} audience:developers, lang:all
+```
 
 ```{toctree}
 :maxdepth: 2

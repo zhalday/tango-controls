@@ -1,6 +1,7 @@
 # Getting started with PyTango (Python implementation of Tango-Controls)
 
-{audience}`beginner developers`, {lang}`python`
+```{tags} audience:developers, lang:python
+```
 
 ```{toctree}
 :maxdepth: 2

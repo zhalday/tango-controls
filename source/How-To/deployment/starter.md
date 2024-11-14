@@ -2,7 +2,8 @@
 
 # The Starter device
 
-{audience}`all`
+```{tags} audience:all
+```
 
 ## Introduction
 

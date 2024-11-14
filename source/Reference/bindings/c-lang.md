@@ -2,7 +2,8 @@
 
 (c-language-binding)=
 
-{audience}`developers`
+```{tags} audience:developers
+```
 
 C is supported for clients written in old style C (like [SPEC](https://certif.com/)). The C binding does not support all or the latest features of Tango. We strongly encourage everybody to use the C++ API instead because it will provide access to all features of Tango.
 

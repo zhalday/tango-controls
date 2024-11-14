@@ -2,7 +2,8 @@
 
 # How to try Tango Controls
 
-{audience}`all, developers`
+```{tags} audience:developers, audience:all
+```
 
 There are several ways to try the Tango Controls System.
 

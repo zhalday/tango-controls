@@ -2,7 +2,8 @@
 
 # HDB++
 
-{audience}`developers, administrators`
+```{tags} audience:administrators, audience:developers
+```
 
 ## Primary Presentation
 

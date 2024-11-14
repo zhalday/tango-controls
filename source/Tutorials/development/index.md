@@ -1,6 +1,7 @@
 # Developer's Guide
 
-{audience}`developers`, {lang}`all`
+```{tags} audience:developers, lang:all
+```
 
 In this section the process of how to write Tango device servers and clients (applications).
 
