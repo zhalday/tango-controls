@@ -5,7 +5,7 @@
 ```{tags} audience:developers, lang:c++
 ```
 
-This page contains examples on how to use C++ vectors to set attribute
+This page contains examples on how to use the C++ vector class to set and get attribute
 values on the servers side.
 
 :::{warning}
@@ -16,44 +16,74 @@ copy the data! This might slow down execution time when working with
 large amount of data.
 :::
 
-Examples for a vector of short and a vector of string:
+The `std::vector` class takes care of the memory of its entries, so it is mandatory to leave the optional
+`release` parameter of `Attribute::set_value` to the default of `false`.
+
+Examples for a read attribute and vector of shorts and strings:
 
 ```{code-block} cpp
 :linenos: true
 
-void MyClass::read_Spectrum(Tango::Attribute &attr)
+void MyClass::read_spectrum(Tango::Attribute &attr)
 {
-    DEBUG_STREAM << "MyClass::read_Spectrum() entering... "<< endl;
+  DEBUG_STREAM << "MyClass::read_Spectrum(Tango::Attribute &attr) entering... "<< std::endl;
+  /*----- PROTECTED REGION ID(MyClass::read_Spectrum) ENABLED START -----*/
 
-    vector<Tango::DevShort> val;
-    val.push_back(1);
-    val.push_back(2);
-    val.push_back(3);
+  std::vector<Tango::DevShort> val;
+  vec.emplace_back(1);
+  vec.emplace_back(2);
+  vec.emplace_back(3);
 
-    // data copy !!
-    Tango::DevVarShortArray tmp_seq;
-    tmp_seq << val;
+  attr.set_value(val.data(), val.size());
 
-    attr.set_value (tmp_seq.get_buffer(), tmp_seq.length());
+  /*----- PROTECTED REGION END -----*/ // MyClass::read_Spectrum
 }
 ```
 
 ```{code-block} cpp
 :linenos: true
 
-void MyClass::read_StringSpectrum(Tango::Attribute &attr)
+void MyClass::read_string_spectrum(Tango::Attribute &attr)
 {
-    DEBUG_STREAM << "MyClass::read_StringSpectrum() entering... "<< endl;
+  DEBUG_STREAM << "MyClass::read_StringSpectrum(Tango::Attribute &attr) entering... "<< std::endl;
+  /*----- PROTECTED REGION ID(MyClass::read_StringSpectrum) ENABLED START -----*/
 
-    vector<string> val;
-    val.push_back("Hello");
-    val.push_back("cruel");
-    val.push_back("world!");
+  std::vector<std::string> vec;
+  vec.emplace_back("Hello");
+  vec.emplace_back("foggy");
+  vec.emplace_back("garden!");
 
-    // data copy !!
-    Tango::DevVarStringArray tmp_seq;
-    tmp_seq << val;
+  attr.set_value(vec.data(), vec.size());
 
-    attr.set_value (tmp_seq.get_buffer(), tmp_seq.length());
+  /*----- PROTECTED REGION END -----*/ // MyClass::read_StringSpectrum
+}
+```
+
+For a writeable attribute the code looks similiar:
+
+
+```{code-block} cpp
+:linenos: true
+void MyClass::write_double_spectrum(Tango::WAttribute &attr)
+{
+  DEBUG_STREAM << "MyClass::write_double_spectrum(Tango::WAttribute &attr) entering... " << std::endl;
+  // Retrieve number of write values
+  int w_length = attr.get_write_value_length();
+
+  // Retrieve pointer on write values (Do not delete !)
+  const Tango::DevDouble  *w_val;
+  attr.get_write_value(w_val);
+  /*----- PROTECTED REGION ID(MyClass::write_double_spectrum) ENABLED START -----*/
+
+  // not strictly needed, but makes the code easier to grasp
+  if(w_length == 0)
+  {
+    return;
+  }
+
+  std::vector<double> vec;
+  vec.assign(w_val, w_val + w_length);
+
+  /*----- PROTECTED REGION END -----*/ // MyClass::write_double_spectrum
 }
 ```
