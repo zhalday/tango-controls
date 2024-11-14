@@ -9,15 +9,20 @@ Most Tango packages are available on [conda-forge](https://conda-forge.org) for 
 
 Conda packages can be used in production or for development on your machine.
 
-:::{note}
+::::{note}
 :class: dropdown
 
 Running the Tango `Databaseds` requires a `mariadb` database.
-The preferred method is to use your OS package manager to install `mariadb`. This will come with `systemd` integration on Linux. For local development, `docker` can be used.
+The preferred method to install `mariadb` is to use your OS package manager. This will come with `systemd` integration on Linux. For local development, `docker` can be used.
 It is not recommended to use conda for `mariadb` itself (there is currently no `mariadb-server` on `conda-forge` but there is a `mysql-server`).
 
 You can then run `Databaseds` by installing the `tango-database` conda package.
+
+:::{tip}
+For local development, you can run `PyDatabaseds` instead by installing `pytango-db`, a pure Python implementation of the Tango Database
+relying on sqlite. No `mariadb` needed. This isn't recommended for production at this point!
 :::
+::::
 
 ::::{grid} 3
 :::{grid-item-card} C++ packages
@@ -45,6 +50,7 @@ You can then run `Databaseds` by installing the `tango-database` conda package.
 :::
 :::{grid-item-card} Python packages
 * [pytango](https://anaconda.org/conda-forge/pytango)
+* [pytango-db](https://anaconda.org/conda-forge/pytango-db)
 * [itango](https://anaconda.org/conda-forge/itango)
 * [dsconfig](https://anaconda.org/conda-forge/dsconfig)
 * [taurus](https://anaconda.org/conda-forge/taurus)
