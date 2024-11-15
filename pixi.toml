@@ -4,8 +4,13 @@ name = "tango-doc"
 platforms = ["linux-64", "osx-64", "osx-arm64", "win-64"]
 
 [tasks]
-doc = "python -m sphinx -b html -n -W -w sphinx-output.log source build/html"
-doc_no_cache = "python -m sphinx -b html -n -W -w sphinx-output.log -a -E source build/html"
+glossary = "python glossary_generator.py"
+doc = { cmd = "python -m sphinx -b html -n -W -w sphinx-output.log source build/html", depends-on = [
+    "glossary",
+] }
+doc_no_cache = { cmd = "python -m sphinx -b html -n -W -w sphinx-output.log -a -E source build/html", depends-on = [
+    "glossary",
+] }
 update-requirements = "python -m pip freeze > requirements.txt"
 
 [dependencies]
