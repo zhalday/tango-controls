@@ -23,7 +23,7 @@ Tango docker containers
  * tango-rest: a `Tango REST server <https://github.com/tango-controls/rest-server>`_
  * tango-test: the well-established `TangoTest device server <https://gitlab.com/tango-controls/TangoTest>`_
 
-These container images are hosted on `SKAO`_ Harbor service: https://harbor.skao.int/. At the moment they cannot be browsed and one has to search for them. Just enter ska-tango-image in the search box and Harbor will list all images that SKAO provides. The images can then be pulled with the prefix ``harbor.skao.int/production/``
+These container images are hosted on `SKAO`_ Nexus service: https://artefact.skao.int/#browse/browse:docker-all from where they can be pulled with the prefix ``artefact.skao.int/``
 
 The sources for these docker images are hosted and maintained on the SKAO gitlab: https://gitlab.com/ska-telescope/ska-tango-images
 
@@ -47,7 +47,7 @@ Here is a very small example of docker-compose.yml which runs up the DB and the 
 
     services:
       tango-db:
-        image: harbor.skao.int/production/ska-tango-images-tango-db:11.0.2
+        image: artefact.skao.int/ska-tango-images-tango-db:11.0.2
         platform: linux/x86_64
         networks:
           - tango-net
@@ -60,7 +60,7 @@ Here is a very small example of docker-compose.yml which runs up the DB and the 
           - MARIADB_PASSWORD=tango
 
       tango-dbds:
-        image: harbor.skao.int/production/ska-tango-images-tango-cpp:9.5.0
+        image: artefact.skao.int/ska-tango-images-tango-cpp:9.5.0
         platform: linux/x86_64
         networks:
           - tango-net
