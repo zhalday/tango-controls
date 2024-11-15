@@ -7,4 +7,3 @@ new_search.addEventListener("click", (e) => {
         document.dispatchEvent(event);
     });
 });
-
