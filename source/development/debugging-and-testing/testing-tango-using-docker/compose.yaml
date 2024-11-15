@@ -6,7 +6,7 @@ networks:
 
 services:
   tango-db:
-    image: harbor.skao.int/production/ska-tango-images-tango-db:11.0.2
+    image: artefact.skao.int/ska-tango-images-tango-db:11.0.2
     platform: linux/x86_64
     networks:
       - tango-net
@@ -19,7 +19,7 @@ services:
       - MARIADB_PASSWORD=tango
 
   tango-dbds:
-    image: harbor.skao.int/production/ska-tango-images-tango-cpp:9.5.0
+    image: artefact.skao.int/ska-tango-images-tango-cpp:9.5.0
     platform: linux/x86_64
     networks:
       - tango-net
@@ -45,7 +45,7 @@ services:
       - /usr/local/bin/DataBaseds 2 -ORBendPoint giop:tcp:0.0.0.0:10000
 
   tango-rest:
-    image: harbor.skao.int/production/ska-tango-images-tango-rest:1.14.8
+    image: artefact.skao.int/ska-tango-images-tango-rest:1.14.8
     platform: linux/x86_64
     networks:
       - tango-net
@@ -64,7 +64,7 @@ services:
       - /usr/bin/supervisord --configuration /etc/supervisor/supervisord.conf
 
   tango-test:
-    image: harbor.skao.int/production/ska-tango-images-tango-test:3.0.5
+    image: artefact.skao.int/ska-tango-images-tango-test:3.0.5
     platform: linux/x86_64
     networks:
       - tango-net
