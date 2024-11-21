@@ -13,6 +13,6 @@ property-file
 starter
 starting
 filedatabase
-without-sql-db
+device-server-without-db
 access-control
 ```
