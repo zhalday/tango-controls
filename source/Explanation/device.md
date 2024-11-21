@@ -41,7 +41,7 @@ The contents of this class can be summarize as:
 - Class constructor. It is protected to implements the Singleton  pattern
 - Class data members like the class command list, the device list, etc
 
-(tango-device-server)=
+(device-server)=
 (device-server-explanation)=
 
 ## Device Server

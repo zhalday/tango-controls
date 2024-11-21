@@ -19,7 +19,7 @@
 
 The Tango Database, also referred to as TangoDB, is a service mainly used for name lookup and static and runtime configuration storage for the control system. The Tango Database itself is found by clients and servers via the environment variable `TANGO_HOST`. It is possible to run multiple databases for load-balancing and fault-tolerance, see [](#multiple-sql-dbs), and also to run servers without database, see [](#device-server-without-database).
 
-The part of the Tango Database that offers an API is implemented as a [device server](#deviceserver) and should always be running. It is abbreviated as `TDB` in the following paragraphs.
+The part of the Tango Database that offers an API is implemented as a [device server](#device-server) and should always be running. It is abbreviated as `TDB` in the following paragraphs.
 
 ## Name lookup
 
