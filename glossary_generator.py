@@ -23,7 +23,7 @@ for f in files:
                     filelink = f.replace("source/", "")
                     filelink = filelink.replace(".md", "")
                     filename = filelink.split("/")[-1]
-                    text = text + " For more details please see the {doc}`"+filename+" <../" +filelink + ">` section. \n\n"
+                    text = text + " For more details please see the {doc}`"+filename+" <../" +filelink + ">` section.\n\n"
                     save = False
                 else:
                     line = line.replace("%","")
@@ -39,10 +39,10 @@ if text:
         for line in lines:
             line_count+=1
             if line.find(generated) != -1:
-                output = output + generated + text + " ```"
+                output = output + generated + text + " ```\n"
                 break
             elif line_count == len(lines):
-                output = output + generated + text + " ```"
+                output = output + generated + text + " ```\n"
                 break
             else:
                 output = output + line
