@@ -13,7 +13,7 @@ an Application Programmers Interface (API) and provides a set of tools and libra
 especially {term}`SCADA`.
 
 Tango Controls has been designed to manage small and large systems.
-It is build around concept of {term}`devices <device>` and {term}`device classes <device class>`. This is unique feature of Tango Controls and
+It is built around concept of {term}`devices <device>` and {term}`device classes <device class>`. This is unique feature of Tango Controls and
 make it different to other SCADA software which usually treats a controls system as a set of signals and read and
 write of process values.
 
@@ -32,7 +32,7 @@ the dynamic network addresses.
 The database acts also as permanent store of dynamic settings which need to be memorised.
 
 Each Tango Control system is identified by its {term}`Tango Host <Tango Host>`.
-A large system can be made up of tens of thousands or devices (the limit has not been reached yet) and there is no limit on the number of Tango Control system running at the same time. The Tango protocol i.e. the API supports transparent access to devices
+A large system can be made up of tens of thousands or devices (the limit has not been reached yet) and there is no limit on the number of Tango Control systems running at the same time. The Tango protocol i.e. the API supports transparent access to devices
 from multiple systems.
 
 Tango Controls communication protocol defines how all components of the system communicates with each other.
