@@ -5,6 +5,9 @@
 ```{tags} audience:administrators, audience:developers
 ```
 
+%[glossary_term][File database]
+% TODO
+
 For device servers not able to access the Tango database (most of the
 time due to network route or security reason), it is possible to start
 them using file instead of a real database. This is done via the device

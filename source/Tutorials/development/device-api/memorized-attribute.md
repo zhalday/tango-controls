@@ -3,6 +3,9 @@
 ```{tags} audience:developers, lang:c++
 ```
 
+%[glossary_term][Memorized Attribute]
+% TODO
+
 It is possible to ask Tango to store in its database the last written
 value for attribute of the SCALAR data format and obviously only for
 READ_WRITE or READ_WITH_WRITE attribute. This is fully automatic.

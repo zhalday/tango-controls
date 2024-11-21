@@ -3,6 +3,9 @@
 ```{tags} audience:developers, lang:c++
 ```
 
+%[glossary_term][device pattern]
+% TODO
+
 ## The device server framework
 
 This chapter will present the TANGO device server framework. It will
@@ -35,6 +38,8 @@ which are:
   words (For instance MyClassName).
 - Method names are in lowercase and use underscores for compound words
   (For instance my_method_name).
+
+(device-pattern)=
 
 ### The device pattern
 
