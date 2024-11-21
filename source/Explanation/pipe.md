@@ -1,6 +1,9 @@
 (tango-pipe-model)=
 # Pipe
 
+```{tags} audience:all, lang:all
+```
+
 :::{note}
 **Warning**: The {term}`Pipe <pipe>` Feature will get deprecated when the DevDict feature will be implemented.
 :::
