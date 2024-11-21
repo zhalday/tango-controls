@@ -11,7 +11,7 @@
 
 The code given in this chapter as example has been generated using POGO.
 Pogo is a code generator for Tango device server. See
-[POGO home page] for more information about POGO. The
+{ref}`pogo-documentation` for more information. The
 following examples briefly describe how to write device class with
 commands which receives and return different kind of Tango data types
 and also how to write device attributes The device class implements 5

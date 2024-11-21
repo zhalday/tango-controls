@@ -4,7 +4,7 @@
 ```
 
 The Device Classes Catalogue is available on the Tango Controls web page:
-<http://www.tango-controls.org/>.
+<https://www.tango-controls.org/>.
 
 To import multiple device classes to the catalogue from a repository please use an
 [import script](https://github.com/piogor/dsc-import).

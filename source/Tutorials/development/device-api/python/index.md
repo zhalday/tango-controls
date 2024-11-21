@@ -21,5 +21,5 @@ You can find its full documentation [here].
 
 % definitions
 
-[here]: http://pytango.readthedocs.io/en/latest/
+[here]: https://pytango.readthedocs.io/en/latest/
 [python]: https://www.python.org/

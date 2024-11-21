@@ -2100,3 +2100,5 @@ Compiling and linking a Tango client is similar to compiling and linking
 a Tango device server. Please, refer to chapter
 [Compiling and linking a C++ device server ](#compiling-device-server)
 to get all the details.
+
+[TANGO home page]: https://www.tango-controls.org

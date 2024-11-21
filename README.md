@@ -7,10 +7,10 @@
 
 This repository contains the official documentation of the Tango Controls project.
 
-It uses [Sphinx](http://www.sphinx-doc.org/en/stable/) and [myst-parser](https://myst-parser.readthedocs.io)
+It uses [Sphinx](https://www.sphinx-doc.org/en/stable/) and [myst-parser](https://myst-parser.readthedocs.io)
 to generate HTML from markdown files.
 
-It is publicised in HTML format [here](http://tango-controls.readthedocs.io/).
+It is publicised in HTML format [here](https://tango-controls.readthedocs.io/).
 
 ## Working locally
 

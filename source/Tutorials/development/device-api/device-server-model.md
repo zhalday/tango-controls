@@ -374,7 +374,7 @@ list of devices for each class in a device server process. The database
 ensure the uniqueness of device name and of alias. It also links device
 name and it list of aliases.
 
-TANGO uses MySQL ([MySQL home page]) as its database. MySQL is a
+TANGO uses MySQL ([MySQL home page](https://www.mysql.com)) as its database. MySQL is a
 relational database which implements the SQL language. However, this is
 largely enough to implement all the functionalities needed by the TDSOM.
 The database is accessed via a classical TANGO device hosted in a device
@@ -493,3 +493,6 @@ The following figure is a schematic of the Tango event system:
     model
 
 [^footnote-3]: Properties were known as resources in the TACO device server model
+
+[TANGO home page]: https://www.tango-controls.org
+[OMG home page]: https://www.omg.org

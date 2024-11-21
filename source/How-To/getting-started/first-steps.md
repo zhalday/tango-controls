@@ -43,3 +43,5 @@
 % • How to develop your own device class.
 
 % • How to make a device server from one or several device classes
+
+[Tango Controls web page]: https://www.tango-controls.org

@@ -10,9 +10,7 @@ programmer’s guide. You can find a reference guide with a full
 description of TangoATK classes and methods in the ATK JavaDoc
 ([Tango ATK reference on-line documentation]).
 
-A tutorial document [Tango ATK Tutorial] is also provided
-and includes the detailed description of the ATK architecture and the
-ATK components. In the [ATK Tutorial] you
+The [Tango ATK Tutorial](inv:atk:std:doc#guide/atk) includes the detailed description of the ATK architecture and the ATK components. In the tutorial you
 can find some code examples and also Flash Demos which explain how to
 start using Tango ATK.
 
@@ -1050,3 +1048,6 @@ means of a `ResultEvent`. The `IResultListener` extends
 to handle errors. So a viewer of command-results implements
 IResultListener interface and registers itself as a resultListener for
 the command it has to show the results.
+
+% TODO: this doc should be moved to https://tango-controls.readthedocs.io/projects/atk/en/latest/index.html
+[Tango ATK reference on-line documentation]: https://www.esrf.fr/computing/cs/tango/tango_doc/atk_doc/

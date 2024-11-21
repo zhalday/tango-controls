@@ -4605,3 +4605,5 @@ within a pipe.
 
 [^footnote-5]: It can also be data declared as object data members or memory
     declared as static
+
+[OMG home page]: https://www.omg.org

@@ -1713,4 +1713,4 @@ Tango database.
 ## Appendix 1 – Full code samples
 
 Example C++:
-[AttributeSequenceWriter](http://www.tango-controls.org/developers/dsc/ds/1390/)
+[AttributeSequenceWriter](https://www.tango-controls.org/developers/dsc/ds/1390/)

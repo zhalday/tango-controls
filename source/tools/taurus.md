@@ -23,7 +23,7 @@ Taurus - based on Python and [PyQt](https://riverbankcomputing.com/software/pyqt
 or [PySide](http://pyside.github.io/docs/pyside/).
 Widely used by the Python and other communities.
 
-Download taurus from [PyPi](https://pypi.python.org/pypi/taurus).
+Download taurus from [PyPi](https://pypi.org/project/taurus/).
 Source code is on [Gitlab](https://gitlab.com/taurus-org/taurus).
 
 You can find its full documentation [here](https://taurus-scada.org/).

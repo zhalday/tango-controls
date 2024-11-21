@@ -33,7 +33,7 @@ cases are:
    contents using his favorite tool and then reload file content into
    the database.
 
-Jive ([JIVE home page]) is the tool provided to generate and
+Jive ([JIVE documentation](inv:jive:std#index)) is the tool provided to generate and
 load a property file. To generate a device server process properties
 file, select your device server process in the Server tab, right click
 and select Save Server Data. A file selection window pops up allowing
