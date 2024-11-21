@@ -2,6 +2,9 @@
 
 # Events
 
+```{tags} audience:all, lang:all
+```
+
 ## Introduction
 
 Events are a critical part of any distributed control system. Their aim
