@@ -8,7 +8,7 @@
 
 ## What is Tango Controls?
 
-Tango Controls is an object oriented, distributed control system framework which defines a communication protocol,
+Tango Controls is an object-oriented, distributed control system framework which defines a communication protocol,
 an Application Programmers Interface (API) and provides a set of tools and libraries to build software for control systems,
 especially {term}`SCADA`.
 
@@ -55,7 +55,7 @@ TANGO is based on the 21st century technologies :
 
 ## Tango Community
 
-iSince the creation of Tango, over 40 small and large facilities (see <http://www.tango-controls.org/partners/>)
+Since the creation of Tango, over 40 small and large facilities (see <http://www.tango-controls.org/partners/>)
 have adopted Tango for their control system.
 Tango is now used to control not only accelerators but also experimental lasers ([ELI](https://eli-laser.eu/)),
 wind tunnels ([Onera](http://www.onera.fr/en)), and most recently has been adopted by the world's largest
