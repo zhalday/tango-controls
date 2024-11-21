@@ -23,6 +23,8 @@ This is an easy way to build the html documentation locally as `pixi` will insta
 
 Build the documentation by running: `pixi run doc`.
 
+Run `pixi run doc_live` to rebuild Sphinx documentation on changes, with hot reloading in the browser using [sphinx-autobuild].
+
 ### python venv
 
 If you prefer to create a python virtualenv, use (the requirements were generated with Python 3.12):
@@ -43,6 +45,8 @@ python -m sphinx -b html -n -W source build/html
 
 Open `build/html/index.html` in your browser.
 
+Or run `make livehtml` to start [sphinx-autobuild].
+
 ## Updating requirements
 
 The `requirements.txt` file is generated based on the pixi environment.
@@ -51,3 +55,5 @@ If the requirements required to build the documentation need to be updated, you 
 
 * Update the dependencies using `pixi add` / `pixi update` or removing the `pixi.lock` file and regenerating it by running `pixi list`.
 * Update the `requirements.txt` by running `pixi run update-requirements`.
+
+[sphinx-autobuild]: https://github.com/sphinx-doc/sphinx-autobuild#readme

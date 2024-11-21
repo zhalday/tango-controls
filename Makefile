@@ -56,6 +56,11 @@ html:
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
+livehtml:
+	@echo Generating glossary
+	@python glossary_generator.py
+	sphinx-autobuild --ignore source/_tags source "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
 glossary:
 	@echo Generating glossary
 	@python glossary_generator.py

@@ -11,6 +11,9 @@ doc = { cmd = "python -m sphinx -b html -n -W -w sphinx-output.log source build/
 doc_no_cache = { cmd = "python -m sphinx -b html -n -W -w sphinx-output.log -a -E source build/html", depends-on = [
     "glossary",
 ] }
+doc_live = { cmd = "sphinx-autobuild --ignore source/_tags source build/html -n -W", depends-on = [
+    "glossary",
+] }
 update-requirements = "python -m pip freeze > requirements.txt"
 
 [dependencies]
@@ -31,3 +34,4 @@ sphinx-togglebutton = "*"
 sphinxcontrib-mermaid = "*"
 myst-parser = ">=4"
 pillow = "*"
+sphinx-autobuild = "*"
