@@ -8,6 +8,7 @@ jive
 starter
 logviewer
 jdraw
+itango
 taurus
 alarm/panic
 pogo
