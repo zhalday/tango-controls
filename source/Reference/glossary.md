@@ -111,4 +111,7 @@ CORBA
 Pogo
   Java tool for generating boiler plate code for C++/Java Tango Device servers, see also [here](#pogo-documentation).
 
+Interoperable Tango Reference
+  Unique identifier for referencing remote device servers, based on the {term}`CORBA` [IOR](https://en.wikipedia.org/wiki/Interoperable_Object_Reference)
+
 ```

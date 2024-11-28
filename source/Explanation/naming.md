@@ -5,6 +5,11 @@
 ```{tags} audience:all, lang:all
 ```
 
+%[glossary_term][Tango Resource Locator]
+%Schema used to identify tango objects, similiar to [URLs](https://en.wikipedia.org/wiki/URL).
+
+The schema used to identify tango objects is called {term}`Tango Resource Locator`.
+
 ## Device name
 
 A Tango device name is a three fields name. The field separator is the
@@ -52,7 +57,7 @@ optional. The meaning of these fields are:
 
 `#dbase=xx`: The supported value for xx is `yes` and `no`. This field is used to
 specify that the device is a device served by a device server started
-with or without database usage. The default value is `dbase=yes`.
+with or without database usage. The default value is `dbase=yes`. See the [File Database](device-server-with-filedatabase) for an howto using `#dbase=no` at the client side.
 
 `host:port`: This field has different meaning according to the dbase value. If
 `dbase=yes` (the default), the host is the host where the control system

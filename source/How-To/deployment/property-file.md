@@ -1,4 +1,4 @@
-(property-file)=
+(property-file-syntax)=
 
 # The property file syntax
 
