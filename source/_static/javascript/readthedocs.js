@@ -5,5 +5,6 @@ original_search.parentNode.replaceChild(new_search, original_search);
 new_search.addEventListener("click", (e) => {
         const event = new CustomEvent("readthedocs-search-show");
         document.dispatchEvent(event);
+        document.querySelector("readthedocs-search").shadowRoot.querySelector("div form input").style.color="black";
     });
 });
