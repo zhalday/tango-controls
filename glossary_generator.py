@@ -33,7 +33,7 @@ for f in files:
 if text:
     output = ""
     generated = ".. [GENERATED]\n"
-    with open("source/Reference/glossary.md", 'r') as fp:
+    with open("source/Reference/glossary_definitions.md", 'r') as fp:
         lines = fp.readlines()
         line_count = 0
         for line in lines:

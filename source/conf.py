@@ -134,6 +134,7 @@ language = "en"
 exclude_patterns = [
     "_build",
     "_templates",
+    "Reference/glossary_definitions.md",
 ]
 
 # The reST default role (used for this markup: `text`) to use for all
