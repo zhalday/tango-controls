@@ -12,3 +12,6 @@ _tags/
 # pixi environments
 .pixi
 *.egg-info
+
+# Auto-generated glossary file
+source/Reference/glossary.md
