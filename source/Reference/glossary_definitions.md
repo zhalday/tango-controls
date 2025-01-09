@@ -1,4 +1,16 @@
 % This is file to keep glossary
+% Glossary terms can also be added in the section that they refer to and will be picked up during
+% the automated generation of the glossary during 'make html'.
+%
+% To add a glossary definition in place put '%[glossary_term][<term_name>]' on the line above the
+% glossary description.
+%
+% E.g. To add a Hello World definition:
+%    %[glossary_term][Hello World]
+%    %A standard greeting in programming
+%
+% Note: removing the '%' infront of the definition will mean the definition is also displayed
+%       within that section if this is desired.
 
 (glossary)=
 
