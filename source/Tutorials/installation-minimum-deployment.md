@@ -111,7 +111,7 @@ When installing several computers, one should install one Tango host and some cl
 Those clients can play different roles (Client computers, Device servers running, and Development).
 
 Moreover, it is possible to start several Tango Host within the same Tango control system in order to keep the control system working if one of them dies.
-This configuration is described in section [Multiple database servers within a Tango control system](#multiple-sql-dbs).
+This configuration is described in section [Multiple database servers within a Tango control system](#multiple-db-hosts).
 
 ## Multiple control systems
 

@@ -9,7 +9,7 @@
 %A combination of the Tango device server *Databaseds* and a MariaDB backend. It provides static and runtime configuration information about Tango Controls components in a Tango Controls system. It is used by the *Databaseds* device server and constitutes the {term}`Tango Host`.
 
 %[glossary_term][TANGO_HOST]
-%An environment variable that specifies on which host and port a Databaseds device server is running. The host part and port are separated by a colon `:`. Commonly this is also referred to as the TangoDB.
+%An environment variable that specifies on which host and port a Databaseds device server is running. The host part and port are separated by a colon `:`. Commonly this is also referred to as the TangoDB. See also (#multiple-db-hosts).
 
 %[glossary_term][TangoDB]
 %A shorter way to say Tango Databaseds device server and its MariaDB backend.
@@ -17,7 +17,7 @@
 %[glossary_term][Databaseds]
 %The Tango device server of the :term:`TangoDB`.
 
-The Tango Database, also referred to as TangoDB, is a service mainly used for name lookup and static and runtime configuration storage for the control system. The Tango Database itself is found by clients and servers via the environment variable `TANGO_HOST`. It is possible to run multiple databases for load-balancing and fault-tolerance, see [](#multiple-sql-dbs), and also to run servers without database, see [](#device-server-without-database).
+The Tango Database, also referred to as TangoDB, is a service mainly used for name lookup and static and runtime configuration storage for the control system. The Tango Database itself is found by clients and servers via the environment variable `TANGO_HOST`. It is possible to run multiple databases for load-balancing and fault-tolerance, see [](#multiple-db-hosts), and also to run servers without database, see [](#device-server-without-database).
 
 The part of the Tango Database that offers an API is implemented as a [device server](#device-server) and should always be running. It is abbreviated as `TDB` in the following paragraphs.
 

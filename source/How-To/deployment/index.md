@@ -8,7 +8,7 @@
 :name: servicestoc
 
 events
-multiple-sql-dbs
+multiple-db-hosts
 property-file
 starter
 starting
