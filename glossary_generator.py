@@ -11,8 +11,8 @@ for f in files:
         # read all lines in a list
         lines = fp.readlines()
         for line in lines:
-            # check if string present on a current line
-            if line.find(key) != -1:
+            # check current line starts with the glossary signature
+            if line.startswith(key):
                 save = True
                 name = line.replace(key,"")
                 name = name.replace("[","")
@@ -38,6 +38,9 @@ if text:
         line_count = 0
         for line in lines:
             line_count+=1
+            if line.startswith("%"):
+                #ignore comments in definition file
+                continue
             if line.find(generated) != -1:
                 output = output + generated + text + " ```\n"
                 break
@@ -48,4 +51,8 @@ if text:
                 output = output + line
 
     with open("source/Reference/glossary.md", 'w+') as fp:
+        fp.write("% !!!! This is the auto-generated glossary file. Do not manually add defintions\
+ here as they will be overwritten the next time the documentation is built! Instead add them\
+ in the relevant section using the '%[glossary_term][<term_name>]' label or in\
+ glossary_definitions.md file.\n")
         fp.write(output)
