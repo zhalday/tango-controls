@@ -1,46 +1,32 @@
 (property-file-syntax)=
 
-# The property file syntax
+# The property file
 
 ```{tags} audience:administrators, audience:developers
 ```
 
-## Property file usage
+%[glossary_term][Property files]
+% Text format to store device classes and device servers including their properties.
 
-A property file is a file where you store all the property(ies) related
-to device(s) belonging to a specific device server process. In this
+A property file is a file where you store all the propertyies related
+to devices belonging to a specific device server process. In this
 file, one can find:
 
-- Which device(s) has to be created for each Tango class embedded in
+- Which devices have to be created for each Tango class embedded in
   the device server process
-- Device(s) properties
-- Device(s) attribute properties
+- Device properties
+- Device attribute properties
 
-This type of file is not required by a Tango control system. These
-informations are stored in the Tango database and having them also in a
-file could generate some data duplication issues. Nevertheless, in some
-cases, it could very very helpful to generate this type of file. These
-cases are:
+This type of file is not required by a Tango control system as this information is stored in the {term}`Tango
+Database` as well.
 
-1. If you want to run a device server process on a host which does not
-   have access to the Tango control system database. In such a case, the
-   user can generate the file from the database content and run the
-   device server process using this file as database (-file option of
-   device server process)
-2. In case of massive property changes where no tool will be more
-   adapted than your favorite text editor. In such a case, the user can
-   generate a file from the database content, change/add/modify file
-   contents using his favorite tool and then reload file content into
-   the database.
+But if you want to run {term}`File Database` this is the format which will be used. These files can be either
+written from scratch using the below example or exported from [JIVE](inv:jive:std#index). To generate a device
+server process properties file, select your device server process in the `Server` tab, right click and select
+`Save Server Data`. A file selection window pops up allowing you to choose your file name and path. To load a
+file into the Tango database, click on `File` then `Load Property File`.
 
-Jive ([JIVE documentation](inv:jive:std#index)) is the tool provided to generate and
-load a property file. To generate a device server process properties
-file, select your device server process in the Server tab, right click
-and select Save Server Data. A file selection window pops up allowing
-you to choose your file name and path. To reload a file in the Tango
-database, click on File then Load Property File.
-
-## Property file syntax
+## Property file example
 
 ```{code} cpp
 :number-lines: 1
@@ -75,7 +61,7 @@ database, click on File then Load Property File.
  et/to/01/TheAttr->min_value: -5.0
  et/to/01/TheAttr->standard_unit: 1.0
  et/to/01/TheAttr->__value: 111
- et/to/01/BooAttr->event_period: 1000doc_url
+ et/to/01/BooAttr->event_period: 1000
  et/to/01/TestAttr->display_unit: 1.0
  et/to/01/TestAttr->event_period: 1000
  et/to/01/TestAttr->format: %4d
@@ -83,53 +69,70 @@ database, click on File then Load Property File.
  et/to/01/DbAttr->abs_change: 1.1
  et/to/01/DbAttr->event_period: 1000
 
- CLASS/TimeoutTest->InheritedFrom:   Device_4Impl
- CLASS/TimeoutTest->doc_url:   "http://www.esrf.fr/some/path"
+ CLASS/TimeoutTest->InheritedFrom:   Device_6Impl
+ CLASS/TimeoutTest->doc_url:   "https://www.myfancywebsite.eu"
 ```
 
-Line 1 - 3: Comments. Comment starts with the ’#’ character
+### Explanations
 
-Line 4: Blank line
+:Line 1-3:
 
-Line 5 - 7: Devices definition. DEVICE is the keyword to declare a
-device(s) definition sequence. The general syntax is:
+  Comment lines start with the `#` character and extend until the end of the line
 
-\<DS name>/\<inst name>/DEVICE/\<Class name>: dev1,dev2,dev3
+:Line 4:
 
-Device(s) name can follow on next line if the last line character is
-’\\’ (see line 5,6). The ’’ characters around device name are generated
-by the Jive tool and are not mandatory.
+  Blank lines are skipped
 
-Line 12: Device property definition. The general device property syntax
-is
+:Line 5-7:
 
-\<device name>**->**\<property name>: \<property value>
+  Device definition. `DEVICE` is the keyword to declare a devices definition sequence.
+  The syntax is
 
-In case of array, the array element delimiter is the character ’,’.
-Array definition can be splitted on several lines if the last line
-character is ’\\’. Allowed characters after the ’:’ delimiter are space,
-tabulation or nothing.
+  ```text
+      <DS name>/<inst name>/DEVICE/<Class name>: dev1,dev2,dev3
+  ```
 
-Line 13 - 15 and 16 - 17: Device property (array)
+  Devices name can also follow on next line if the line continuation character `\`
+  is used as the last character, see line 5 and 6. The `"` (quote) characters around
+  the device names are generated by Jive and are not mandatory.
 
-Line 18: A device string property with special characters (spaces). The
-’’ character is used to delimit the string
+:Line 12:
 
-Line 24 - 37: Device attribute property definition. The general device
-attribute property syntax is
+  Device property definition. The syntax is
 
-\<device name>/\<attribute name>**->**\<property name>: \<property
-value>
+  ```text
+      <device name>-><property name>: <property value>
+  ```
 
-Allowed characters after the ’:’ delimiter are space, tabulation or
-nothing.
+  In the case of array properties, the array element delimiter is the character `,`.
+  Array definition can be splitted on several lines if the last line
+  character is `\`. Allowed characters after the `:` delimiter are space, tab or nothing.
 
-Line 39 - 40: Class property definition. The general class property
-syntax is
+:Line 13 - 15 and 16 - 17:
 
-CLASS/\<class name>**->**\<property name>: \<property value>
+  Device property (array)
 
-CLASS is the keyword to declare a class property definition. Allowed
-characters after the ’:’ delimiter are space, tabulation or nothing. On
-line 40, the ’’ characters around the property value are mandatory due
-to the ’/’ character contains in the property value.
+:Line 18:
+  A device string property with special characters (spaces). The
+  `"` character is used to delimit the strings.
+
+:Line 24 - 37:
+  Device attribute property definition. The syntax is
+
+  ```text
+      <device name>/<attribute name>-><property name>: <property value>
+  ```
+
+  Allowed characters after the `:` delimiter are space, tab or nothing.
+
+:Line 39 - 40:
+  Class property definition. The syntax is
+
+  ```text
+      CLASS/<class name>-><property name>: <property value>
+  ```
+
+  `CLASS` is the keyword to declare a class property definition. Allowed
+  characters after the `:` delimiter are space, tab or nothing.
+  On line 40, the `"` (quote) characters around the property value are mandatory due
+  to the `/` character being contained in the property value.
