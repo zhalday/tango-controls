@@ -1,52 +1,50 @@
-% How-To try
+# How to tune polling from inside device classes
 
-# How to tune polling by code in a TANGO class
-
-```{tags} audience:developers
+```{tags} audience:developers, lang:all
 ```
 
-This HowTo explains how it is easily possible to tune attribute or command
-polling parameters in the code of a Tango class
+It is possible to configure command or attribute polling from within a {term}`device class`, i. e. an instance
+of `Tango::DeviceImpl`. The available functionality is similiar to the one found in `Tango::DeviceProxy`.
 
-Since Tango 8, it is possible to configure command or attribute polling
-within a Tango class code. A new set of polling related methods has been
-added to the base class **Tango::DeviceImpl.** These methods are similar
-to those you find in the Tango::DeviceProxy class when you write a Tango
-client. With them, you can
+With them, you can:
 
-- Check if a command or attribute is polled
-- Start/Stop polling for a command or a attribute
-- Get or update polling period for a polled attribute or command
+  - Check if a command or attribute is polled
+  - Start/Stop polling for a command or an attribute
+  - Get or update the polling period for a polled attribute or command
 
-## In C++
+:::::{tab-set}
 
-```{tags} lang:c++
-```
-
-To display some information related to polling of the attribute named *TheAtt*:
+::::{tab-item} C++
+To display some information related to polling of the attribute named `TheAtt`:
 
 ```{code-block} cpp
 :linenos: true
 
-string att_name("TheAtt");
-cout << "Attribute " << att_name;
+std::string att_name{"TheAtt"};
+TANGO_LOG_DEBUG << "Attribute" << att_name;
 
-if (is_attribute_polled(att_name) == true)
-   cout << " is polled with period " << get_attribute_poll_period(att_name) << " mS" << endl;
+if(is_attribute_polled(att_name))
+{
+   TANGO_LOG_DEBUG << " is polled with period " << get_attribute_poll_period(att_name) << " ms" << std::endl;
+}
 else
-   cout << " is not polled" << endl;
+{
+   TANGO_LOG_DEBUG << " is not polled" << std::endl;
+}
 ```
 
-To poll a command simply type:
+To poll a command:
 
 ```{code-block} cpp
 :linenos: true
 
-poll_command("TheCmd",250);
+poll_command("TheCmd", 250);
 ```
 
-&#160;If the command is already polled, this method will update its polling
-period to 250 mS. Finally, to stop polling the same command, type:
+If the command is already polled, this method will update its polling
+period to 250 ms.
+
+Finally, to stop polling the same command:
 
 ```{code-block} cpp
 :linenos: true
@@ -54,15 +52,14 @@ period to 250 mS. Finally, to stop polling the same command, type:
 stop_poll_command("TheCmd");
 ```
 
-All these DeviceImpl polling related methods are documented in the [DeviceImpl] class documentation page
+All these DeviceImpl polling related methods are documented in the [DeviceImpl](https://tango-controls.gitlab.io/cppTango/10.0.0/classTango_1_1DeviceImpl.html) class documentation.
 
-## In Python
+::::
 
-```{tags} lang:python
-```
+::::{tab-item} Python
 
 To display some information related to polling of the attribute
-named *TheAtt,* in a **DeviceImpl** context type:
+named `TheAtt` in a `DeviceImpl` class:
 
 ```{code-block} python
 :linenos: true
@@ -70,12 +67,12 @@ named *TheAtt,* in a **DeviceImpl** context type:
 att_name = "TheAtt"
 
 if self.is_attribute_polled(att_name):
-    print("{0} is polled with period {1} ms".format(att_name, self.get_attribute_poll_period(att_name))
+    print(f"{} is polled with period {} ms", att_name, self.get_attribute_poll_period(att_name))
 else:
-    print("{0} is not polled".format(att_name))
+    print(f"{} is not polled", att_name)
 ```
 
-To poll a command, in a **DeviceImpl** context, simply type:
+To poll a command:
 
 ```{code-block} python
 :linenos: true
@@ -84,8 +81,9 @@ self.poll_command("TheCmd", 250)
 ```
 
 If the command is already polled, this method will update its polling
-period to 250 mS. Finally, to stop polling the same command, in
-a **DeviceImpl** context type:
+period to 250 ms.
+
+Finally, to stop polling:
 
 ```{code-block} python
 :linenos: true
@@ -93,15 +91,13 @@ a **DeviceImpl** context type:
 self.stop_poll_command("TheCmd")
 ```
 
-All these DeviceImpl polling related methods are documented in the [PyTango] DeviceImpl class documentation page.
+All these DeviceImpl polling related methods are documented in [DeviceImpl](inv:pytango:py:class#tango.LatestDeviceImpl).
 
-## In Java
+::::
 
-```{tags} lang:java
-```
+::::{tab-item} Java
 
 The polling can be retrieved and modified from the DeviceManager class.
-Here is an example:
 
 ```{code-block} java
 :linenos: true
@@ -110,29 +106,28 @@ import org.tango.server.annotation.Device;
 import org.tango.server.annotation.DeviceManagement;
 import org.tango.server.device.DeviceManager;
 import fr.esrf.Tango.DevFailed;
+
 @Device
 public class Test {
-    @DeviceManagement
-    private DeviceManager deviceManager;
-     ...
-        final String attName = "TheAttr";
-        if (deviceManager.isPolled(attName)) {
-            System.out.println(attName + " is polled with period " + deviceManager.getPollingPeriod(attName) + " mS");
-        } else {
-            System.out.println(attName + " is not polled");
-        }
-        deviceManager.startPolling("TheCmd", 250);
-        deviceManager.stopPolling("TheCmd")
-        ...
+    @DeviceManagement
+    private DeviceManager deviceManager;
+     ...
+        final String attName = "TheAttr";
+        if (deviceManager.isPolled(attName)) {
+            System.out.println(attName + " is polled with period " + deviceManager.getPollingPeriod(attName) + " mS");
+        } else {
+            System.out.println(attName + " is not polled");
+        }
+        deviceManager.startPolling("TheCmd", 250);
+        deviceManager.stopPolling("TheCmd")
+        ...
 
-   public void setDeviceManager(final DeviceManager deviceManager) {
-        this.deviceManager = deviceManager;
-    }
+   public void setDeviceManager(final DeviceManager deviceManager) {
+        this.deviceManager = deviceManager;
+    }
 }
 ```
 
-% definitions
-% ------------
+::::
 
-[deviceimpl]: http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/cpp_doc/classTango_1_1DeviceImpl.html
-[pytango]: http://pytango.readthedocs.io/en/stable/server_api/server.html
+:::::
