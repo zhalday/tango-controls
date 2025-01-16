@@ -1,25 +1,12 @@
-% How-To unit tests
-
-# Using Tango servers without DB for unit testing
+# JUNIT helper classes for device server testing
 
 ```{tags} audience:developers, lang:java
 ```
 
-## Problem overview
+One wants to test a {term}`Device Server` using the full tango stack. This test must not be related to any
+environment and be performed together with other tests. It is possible to start the tango server [without database](#device-server-without-database) or with a {term}`File Database` for testing. These are the default approaches in Python or C++ and that would work for Java as well. The below solution in Java is yet another approach.
 
-One wants to test own server using full tango stack. This test must not be related to any environment and be performed together with other tests.
-
-## Detailed cases
-
-Useful for benchmarking. Testing without setting up the whole Tango infrastructure.
-
-## Solution overview
-
-It is possible to start Tango server without db: see {ref}`device-server-without-database`
-
-## Java:
-
-Below is how one can integrate it into JUnit framework
+Below is how one can integrate it into JUnit framework:
 
 ```{code-block} java
 :linenos: true
@@ -71,7 +58,9 @@ Below is how one can integrate it into JUnit framework
     }
 ```
 
-It is also possible to use 3rd party Tango server to test against. Suppose our Tango server uses other Tango server to perform its tasks (Data aggregation, state monitoring etc). In this case 3rd party binary can be added to the project. This binary can be then launched from within JUnit test:
+It is also possible to use 3rd party Tango server to test against. Suppose our Tango server uses other Tango
+server to perform its tasks (Data aggregation, state monitoring etc). In this case 3rd party binary can be
+added to the project. This binary can be then launched from within JUnit test:
 
 ```{code-block} java
 :linenos: true
@@ -156,11 +145,3 @@ It is also possible to use 3rd party Tango server to test against. Suppose our T
 
     }
 ```
-
-## CPP:
-
-//TODO
-
-## Python:
-
-//TODO

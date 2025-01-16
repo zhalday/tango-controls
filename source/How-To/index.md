@@ -21,7 +21,7 @@ how-to-device-server-startup-time
 how-to-import-classes-to-catalogue
 how-to-integrate-with-systemd
 how-to-run-device-server-firewall
-how-to-use-tango-servers-without-db
+how-to-junit-helper-classes-for-device-server-testing
 how-to-add-subproject-to-the-doc
 how-to-enumerated-attribute
 how-to-forwarded-attribute
