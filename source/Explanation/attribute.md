@@ -8,6 +8,9 @@
 
 An Attribute is a Tango concept that can represent a physical quantity of a device or equipment. It can also represent a quantity which is not tied to any equipment but might have been computed in software as there is no enforced tie to hardware for Attributes. The main purpose of an Attribute is to provide read and (optionally) write access to this quantity. In object oriented terminology, an Attribute corresponds to an instance variable (also called a field or a member) of a [Device](#device-explanation) object or simpler an Attribute is one of the parts of a Device.
 
+%[glossary_term][Attribute]
+%An attribute represents a process value (or values) in the system. It may have different formats or dimensions like scalar(0D), spectrum(1D) or image(2D). The attribute allows to read and/or write these values depending on programmer-defined access. The values may have different data types. In addition, an attribute provides some metadata like {term}`attribute quality`, timestamp or configuration properties. For a complete list please refer to the manual. A list of attributes available for a certain device is defined by its {term}`device class`.
+
 Some example use cases of an Attribute are:
 
 - The wind speed measured by a weather station.
@@ -23,6 +26,12 @@ Tango Attributes are self-describing entities that come in various forms and sha
 - Static metadata that defines the Attribute like its name, data type (e.g. integer, float, string) and data format (e.g. scalar, array).
 - Dynamic metadata that defines the Attribute's behaviour. For example minimum and maximum warning or alarm thresholds for the Attribute's value define when an Attribute might indicate a wraning or alarm condition in its runtime metadata.
 - Runtime metadata describing the Attribute’s value and its current condition like warning or alarm and its timestamp.
+
+%[glossary_term][Attribute quality factor]
+%A value returned by an {term}`Attribute` has a runtime quality facotr which is an enumeration describing the state of the read value (one of VALID, INVALID, ALARM, CHANGING, WARNING).
+
+%[glossary_term][Attribute quality]
+%Another name for {term}`Attribute quality factor`.
 
 :::hint
 It is perfectly fine to skip the next section about the static metadata if you are not a developer. :ok_hand:
@@ -61,6 +70,11 @@ data_format = tango._tango.AttrDataFormat.SCALAR
 ```
 
  Some of the mandatory static metadata is part of the runtime metadata as can be seen above: `data_format`, `name`, `type` (data type) are equivalents of what has been described earlier.
+
+Attributes can be statically defined in the source code of a {term}`Device` or be created in a dynamic way during the runtime of a Device. When an Attribute is added during the runtime of a Device it is referred to as a Dynamic Attribute.
+
+%[glossary_term][Dynamic Attribute]
+%A {term}`device` can create {term}`Attribute`s that have their configration determined during device initialization or even later when the Device is already running. This kind of Attribute is called *Dynamic Attribute*.
 
 ## Enumerated Attribute
 Tango supports enumerated Attributes. They are not implemented on top of the enumeration types of the core Tango languages but they behave like them. In the day-to-day business one will not notice a big difference compared to the language enumerations. A couple of smaller limitations exist though, one being that only Attributes with the scalara data format can be Enumerated Attributes. Meaning: Enumerated Attribute arrays are not supported.
