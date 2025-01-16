@@ -1,24 +1,32 @@
-% How-To try
-
-# How to reconnect Database at device server startup time
+# How to reconnect to the Tango HOST at device server startup time
 
 ```{tags} audience:developers, lang:c++
 ```
 
-This HowTo is a CPP example of how you can program a Tango DS in order
-that it can be started before the Tango's database and which will wait
-for the Tango database to start.
+The following C++ snippet shows how to allow the {term}`Device Server` to start before the {term}`Tango Host`
+is available. In this mode the device server will wait until it can reach the tango host. This mode of operation
+does not make sense to combine with the {term}`File Database` as that is always immediately available.
 
-Add the following lines at the beginning of the main method (File *main.c*):
+Set `_daemon` and `_sleep_between_connect` from `Tango::Util` before initialization in the `main` function.
+This function is located in `main.cpp` when the device server was generated with {term}`Pogo`:
 
 ```{code-block} cpp
 :linenos: true
 
- //  Set an automatic retry on database connection
-    //---------------------------------------------------
+  int main(int argc, char *argv[])
+  {
+    // Set an automatic retry on database connection
+    //----------------------------------------------
     Tango::Util::_daemon = true;
     Tango::Util::_sleep_between_connect = 5;
+
+    // Initialize the device server
+    //--------------------------------
+    tg = Tango::Util::init(argc, argv);
+
+    ...
+  }
 ```
 
-The device server will retry to connect database in case of failure
-periodicaly (every 5 seconds in example).
+The device server will retry to connect to the tango host in case of failures
+periodically. The retry interval is here set to 5 seconds, it defaults to 60 seconds.
