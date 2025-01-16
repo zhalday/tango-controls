@@ -3,9 +3,6 @@
 ```{tags} audience:developers, lang:c++
 ```
 
-%[glossary_term][device pattern]
-% TODO
-
 ## The device server framework
 
 This chapter will present the TANGO device server framework. It will
@@ -42,6 +39,9 @@ which are:
 (device-pattern)=
 
 ### The device pattern
+
+%[glossary_term][device pattern]
+%Provides programmers with a framework on which they can develop new control objects.
 
 Device server are written using the Device pattern. The aim of this
 pattern is to provide the control programmer with a framework in which

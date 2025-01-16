@@ -8,6 +8,9 @@
 **Warning**: The {term}`Pipe <pipe>` Feature will get deprecated when the DevDict feature will be implemented.
 :::
 
+%[glossary_term][pipe]
+%A pipe allows to read and/or write a structured data from and/or to a {term}`device`. The data may be built out of several basic Tango datatypes. The structure of data is defined by a {term}`device class` and is not fixed. It may be changed at runtime by the {term}`device` itself or modified upon request from a client according to `set_pipe_config` operation provided by pipe. List of pipes available for a {term}`device` is defined by its {term}`device class`.
+
 ## Introduction
 A Tango {term}`Pipe <pipe>` is like an {term}`Attribute <attribute>` with a flexible data structure, name and description.
 Unlike {term}`Commands <command>` or {term}`Attributes <attribute>`, a {term}`Pipe <pipe>` does not have a pre-defined data type.

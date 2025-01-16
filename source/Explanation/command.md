@@ -1,6 +1,9 @@
 (tango-command-model)=
 # Command
 
+%[glossary_term][command]
+%A command is an operation a user may invoke on a device (eg. `SwitchOn`, `SwitchOff`). It also relates to a specific method in OOP (Object-Oriented Programming). Tango Controls allows a command to get input argument (argin) and to return a value (argout). List of available commands for a certain device is defined by its {term}`device class`. See the [command section](<#tango-command-model>) of this documentation for more details.
+
 An action to the Tango device is the closest concept of a Command in Tango. Commands are well-suited for sending orders to a device, such as switching from one mode of operation to another. For example, switching a power supply on or off is typically done via a command.
 
 ## Description

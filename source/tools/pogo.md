@@ -4,6 +4,8 @@
 
 ```{tags} audience:developers, lang:c++, lang:java, lang:python
 ```
+%[glossary_term][Pogo]
+%Java tool for generating boiler plate code for C++/Java Tango Device servers.
 
 - Pogo is the [TANGO] code generator written in Java swing.
 

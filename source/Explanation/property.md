@@ -2,6 +2,9 @@
 
 # Property
 
+%[glossary_term][property]
+%A configuration parameter stored in the {term}`Tango Database`. Properties can be assigned to a {term}`device class`, {term}`device` or elements of device interface ({term}`attributes <attribute>`, {term}`commands <command>`, {term}`pipes <pipe>`). Properties can be also not related to {term}`device` - such properties are called `free properties`. Property values are often used by elements of {term}`Tango Controls` system during its startup. These usually provides information required to configure things like connections to hardware or to adjust to user preferences.
+
 The property concept in Tango Control System is foundamental to its approach in managing and controlling devices. In Tango, each device has properties, which are configurations that define the characteristics and the unique behavior of each device.
 
 ## Property format

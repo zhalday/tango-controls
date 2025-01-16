@@ -2,6 +2,9 @@
 
 # Device
 
+%[glossary_term][device]
+%A device is a key concept of Tango Controls. It is an object providing access to its {term}`attributes <attribute>`, {term}`pipes <pipe>` and {term}`commands <command>`. The list of attributes, pipes and commands available for a certain device is defined by its {term}`class <device class>`. The device may be related to a hardware device it interfaces with or it may be a kind of a logical device providing some functionalities not directly related to hardware.
+
 A device is a key concept of Tango Controls. It is an object providing access to its {term}`attributes <attribute>`, {term}`pipes <pipe>` and {term}`commands <command>`. The device may relate to a piece of hardware or it may be a kind of a logical device providing some functionalities not directly related to hardware.
 
 Each device belongs to a [Device Class](#device-class).
@@ -12,6 +15,9 @@ All devices support a **black box** where client requests for attributes or oper
 
 
 ## Device Class
+
+%[glossary_term][device class]
+%A Device Class is an abstraction of a device's interface. It defines {term}`attributes <attribute>`, {term}`pipes <pipe>`, {term}`commands <command>` and {term}`properties <property>` which a device of the class provides to users and to other components of a Tango system. A device class ofter relates to a specific kind of equipment it allows to interface with like a `SerialLine` class defines interface to communicate with serial line equipment.
 
 A device class is an abstraction of a device’s interface. The device class contains a complete description and implementation of the behavior of all members of that class. It defines the list of attributes, pipes and commands
 that are available for a certain device, which are then available to users and to other components of a Tango system.
@@ -45,6 +51,12 @@ The contents of this class can be summarize as:
 (device-server-explanation)=
 
 ## Device Server
+
+%[glossary_term][device server]
+%A Device Server is a program (executable) which is able to create {term}`devices <device>` of certain classes. A Device Server may implement one or multiple classes and instantiate one or more devices. A running device server is called a {term}`device server instance`.
+
+%[glossary_term][device server instance]
+%A running device server is called a device server instance. So it means, it is a process. Every device server instance has an unique name in Tango Controls by which it can be referenced. The name is built as *\{DeviceServerName}*/*\{instanceName}*. For each running device server the system creates a special device of `DServer` {term}`device class`: *dserver/\{DeviceServerName}/\{instanceName}*. This device provides a management facility for the corresponding device server instance (see [DServer class device commands ](#dserver-class-device-commands)).
 
 A Device Server is the process (i.e. the executable) that will create, run and serve instances of Devices.
 It must contain one or more [Device Class](#device-class), and can instantiate any number of [Devices](#device) from those classes.

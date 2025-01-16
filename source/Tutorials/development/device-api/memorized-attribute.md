@@ -4,7 +4,7 @@
 ```
 
 %[glossary_term][Memorized Attribute]
-% TODO
+%The last written value for this type of attribute will automatically be stored in the database so that on startup this value is fetched and written to the attribute.
 
 It is possible to ask Tango to store in its database the last written
 value for attribute of the SCALAR data format and obviously only for
