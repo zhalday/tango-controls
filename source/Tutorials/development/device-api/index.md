@@ -13,7 +13,6 @@ introduction
 ds-guideline/index
 device-server-model
 device-server-writing
-enumerated-attribute
 memorized-attribute
 forwarded-attribute
 generating-events

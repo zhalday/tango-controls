@@ -77,7 +77,13 @@ Attributes can be statically defined in the source code of a {term}`Device` or b
 %A {term}`device` can create {term}`Attribute`s that have their configration determined during device initialization or even later when the Device is already running. This kind of Attribute is called *Dynamic Attribute*.
 
 ## Enumerated Attribute
-Tango supports enumerated Attributes. They are not implemented on top of the enumeration types of the core Tango languages but they behave like them. In the day-to-day business one will not notice a big difference compared to the language enumerations. A couple of smaller limitations exist though, one being that only Attributes with the scalara data format can be Enumerated Attributes. Meaning: Enumerated Attribute arrays are not supported.
+
+%[glossary_term][Enumerated Attribute]
+%Attributes with a scalar data format can be enumerated allowing a set of defined label+value pairs.
+
+Tango supports enumerated Attributes. They are not implemented on top of the enumeration types of the core Tango languages but they behave like them. In the day-to-day business one will not notice a big difference compared to the language enumerations. There are however a couple of smaller limitations, one being that only Attributes with the scalar data format can be enumerated Attributes. This means that enumerated Attribute arrays are not supported.
+
+See the [how-to](#how-to-enumerated-attribute) section for an example on how to use enumerated attributes.
 
 ## Memorised Attribute
 
