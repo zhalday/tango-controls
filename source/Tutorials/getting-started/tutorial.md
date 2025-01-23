@@ -1,3 +1,5 @@
+(tutorial-getting-started)=
+
 # Getting started
 
 ```{toctree}

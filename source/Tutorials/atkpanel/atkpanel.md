@@ -5,14 +5,9 @@
 ```{tags} audience:all
 ```
 
-```{toctree}
-:maxdepth: 2
-
-self
-```
-
 ## Overview
 
+%[glossary_term][AtkPanel]
 AtkPanel is a generic control panel application. It can be used to control any
 Tango device. It supports most of Tango features and data types.
 Using AtkPanel you can view and set attribute values, execute commands, test
