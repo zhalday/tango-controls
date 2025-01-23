@@ -87,9 +87,17 @@ See the [how-to](#how-to-enumerated-attribute) section for an example on how to 
 
 ## Memorised Attribute
 
+%[glossary_term][Memorized Attribute]
+%The last written value for this type of attribute will automatically be stored in the database so that on startup this value is fetched and written to the attribute.
+
 Tango supports that Attributes of scalar data format have their last set quantity automatically and permanently be stored in the [Tango Database](#tangodb-explanation). This is indicated when the Attribute is defined in the source code. Clients are unable to tell if an Attribute is memorised or not. In addition to the storing of the quantity, the last stored value can also be applied to the memorised Attribute when its Device starts, effectively maintaining the Attribute's quantity over Device restarts.
 
+See the [how-to](#how-to-memorized-attribute) section for an example on how to use a memorized attribute.
+
 ## Forwarded Attribute
+
+%[glossary_term][Forwarded Attribute]
+%A forwarded attribute is one that gets its configuration from another attribute, which is known as the *root attribute*. It will forward requests, configuration changes, event subscriptions and locking behaviour to the root attribute.
 
 :::{warning}
 Forwarded attribute is a feature that is not entirely mature. Its use is not recommended.
@@ -100,3 +108,5 @@ A forwarded attribute will retrieve all its metadata and information from the **
 A typical use case is when a single hardware connection let you handle several devices.
 It is then common to implement a Tango class, lets call it **Interface** to handle the hardware connection. The **Interface** class will expose the attributes for each devices.
 We can then use another class, let's call it **device**, that will logically represents each devices. The device class could use forwarded attributes to match its attributes to the one defined in the **Interface** class.
+
+See the [how-to](#how-to-forwarded-attribute) section for an example on how to use a forwarded attribute.

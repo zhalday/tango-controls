@@ -303,6 +303,7 @@ The class contents could be summarizes as :
 - Method to add messages for all attribute with an alarm set
 - Data members with the attribute list
 
+(server-attribute-class)=
 #### The Attribute class
 
 ##### Description

@@ -1,127 +1,37 @@
-# Forwarded attribute
+(how-to-memorized-attribute)=
+# How to use a Memorized Attribute
 
 ```{tags} audience:developers, lang:c++
 ```
 
-## Definition
-
-Let’s take an example to explain what is a forwarded attribute. We
-assume we have to write a Tango class for a ski lift in a ski resort
-somewhere in the Alps. Obviously, the ski lift has a motor for which we
-already have a Tango class. This motor Tango class has one attribute
-*speed*. But for the ski lift, the motor speed is not the only thing
-which has to be controlled. For instance, you also want to give access
-to the wind sensor data installed on the top of the ski lift. Therefore,
-you write a ski-lift Tango class representing the whole ski-lift system.
-This ski-lift class will have at least two attributes which are:
-
-1. The wind speed at the top of the ski-lift
-2. The motor speed
-
-The ski-lift Tango class motor speed attribute is nothing more than the
-motor Tango class speed attribute. All the ski-lift class has to do for
-this attribute is to forward the request (read/write) to the speed
-attribute of the motor Tango class. The speed attribute of the ski-lift
-Tango class is a **forwarded attribute** while the speed attribute of
-the motor Tango class is its **root attribute**.
-
-A forwarded attribute get its configuration from its root attribute and
-it forwards to its root attribute
-
-- Its read / write / write_read requests
-- Its configuration change
-- Its event subscription
-- Its locking behavior
-
-As stated above, a forwarded attribute has the same configuration than
-its root attribute except its *name* and *label* which stays local. All
-other attribute configuration parameters are forwarded to the root
-attribute. If a root attribute configuration parameter is changed, the
-forwarded attribute is informed (via event) and its local configuration
-is also modified.
-
-The association between the forwarded attribute and its root attribute
-is done using a property named
-
-\_\_root_att
-
-belonging to the forwarded attribute. This property value is simply the
-name of the root attribute. Muti-control system is supported and this
-\_\_root_att attribute property value can be something like
-*tango://my_tango_host:10000/my/favorite/dev/the_root_attribute*.
-The name of the root attribute is included in attribute configuration.
-
-It is forbidden to poll a forwarded attribute and one exception is
-thrown if such a case happens. Polling has to be done on the root
-attribute. Nevertheless, if the root attribute is polled, a request to
-read the forwarded attribute with the DeviceProxy object source
-parameter set to CACHE_DEVICE or CACHE will get its data from the root
-attribute polling buffer.
-
-If you subscribe to event(s) on a forwarded attribute, the subscription
-is forwarded to the root attribute. When the event is received by the
-forwarded attribute, the attribute name in the event data is modified to
-reflect the forwarded attribute name and the event is pushed to the
-original client(s).
-
-When a device with forwarded attribute is locked, the device to which
-the root attribute belongs is also locked.
-
-## Coding
-
-As explained in the chapter Writing a Tango device server, each Tango
-class attribute is implemented via a C++ class which has to inherit from
-either *Attr*, *SpectrumAttr* or *ImageAttr* according to the attribute
-data format. For forwarded attribute, the related class has to inherit
-from the **FwdAttr** class whatever its data format is. For classical
-attribute, the programmer can define in the Tango class code default
-value for the attribute properties using one instance of the
-*UserDefaultAttrProp* class. For forwarded attribute, the programmer has
-to create one instance of the **UserDefaultFwdAttrProp** class but only
-the attribute label can be defined. One example of how to program a
-forwarded attribute is given below
+It is possible to ask Tango to store the last written value for
+attribute of the SCALAR data format, which are READ_WRITE or READ_WITH_WRITE,
+in the database. This is fully automatic. During device startup phase all
+device memorized attributes with a value written in the database will
+have their value fetched and applied. A write_attribute
+call can be generated to apply the memorized value to the attribute or
+only the attribute set point can be initialised. The following piece of
+code shows how to set an attribute as memorized and how to initialise
+only the attribute set point.
 
 ```{code} cpp
 :number-lines: 1
 
-  class MyFwdAttr: public Tango::FwdAttr
+ void DevTestClass::attribute_factory(vector<Tango::Attr *> &att_list)
   {
-  public:
-      MyFwdAttr(const string &_n):FwdAttr(_n) {};
-      ~MyFwdAttr() {};
-  };
-
-  void DevTestClass::attribute_factory(vector<Tango::Attr *> &att_list)
-  {
-     ...
-     MyFwdAttr *att1 = new MyFwdAttr("fwd_att_name");
-     Tango::UserDefaultFwdAttrProp att1_prop;
-     att1_prop.set_label("Gasp a fwd attribute");
-     att1->set_default_properties(att1_prop);
-     att_list.push_back(att1);
-     ...
+      ...
+      att_list.push_back(new String_attrAttr());
+      att_list.back()->set_memorized();
+      att_list.back()->set_memorized_init(false);
+      ...
   }
 ```
 
-Line 1 : The forwarded attribute class inherits from FwdAttr class.
+Line 4 : The attribute to be memorized is created and inserted in the
+attribute vector.
 
-Line 4-5 : Only constructor and destructor methods are required
+Line 5 : The `set_memorized()` method of the attribute base class is
+called to define the attribute as memorized.
 
-Line 11 : The attribute object is created
-
-Line 12-14 : A default value for the forwarded attribute label is
-defined.
-
-Line 15: The forwarded attribute is added to the list of attribute
-
-In case of error in the forwarded attribute configuration (for instance
-missing \_\_root_att property), the attribute is not created by the
-Tango kernel and is therefore not visible for the external world. The
-state of the device to which the forwarded attribute belongs to is set
-to ALARM (if not already FAULT) and a detailed error report is available
-in the device status. In case a device with forwarded attribute(s) is
-started before the device(s) with the root attribute(s), the same
-principle is used: forwarded attribute(s) are not created, device state
-is set to ALARM and device status is reporting the error. When the
-device(s) with the root attribute will start, the forwarded attributes
-will automatically be created.
+Line 6 : The `set_memorized_init()` method is called with the parameter
+`false` to define that only the set point should be initialsied.

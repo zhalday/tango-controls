@@ -181,7 +181,7 @@ Each context is exclusive, except for the ALWAYS context. An attribute
 configured to be run in the ALWAYS context will be archived at any time.
 This is why the ALWAYS context must be defined, it it is not it will be
 automatically added to the list of context.
-A new memorized attribute, named **Context**, written by upper layer logic,
+A new {term}`memorized attribute`, named **Context**, written by upper layer logic,
 tells the archiver about the current context status or rather the required
 context transition.
 Being a memorized Attribute, the **Context** attribute needs to be written

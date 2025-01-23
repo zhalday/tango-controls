@@ -1,4 +1,5 @@
-# Forwarded attribute
+(how-to-forwarded-attribute)=
+# How to use a forwarded attribute
 
 ```{tags} audience:developers, lang:c++
 ```
@@ -26,14 +27,14 @@ Tango class is a **forwarded attribute** while the speed attribute of
 the motor Tango class is its **root attribute**.
 
 A forwarded attribute get its configuration from its root attribute and
-it forwards to its root attribute
+it forwards to its root attribute:
 
 - Its read / write / write_read requests
 - Its configuration change
 - Its event subscription
 - Its locking behavior
 
-As stated above, a forwarded attribute has the same configuration than
+As stated above, a forwarded attribute has the same configuration as
 its root attribute except its *name* and *label* which stays local. All
 other attribute configuration parameters are forwarded to the root
 attribute. If a root attribute configuration parameter is changed, the
@@ -41,45 +42,41 @@ forwarded attribute is informed (via event) and its local configuration
 is also modified.
 
 The association between the forwarded attribute and its root attribute
-is done using a property named
-
-\_\_root_att
-
+is done using a property named `\_\_root_att`
 belonging to the forwarded attribute. This property value is simply the
-name of the root attribute. Muti-control system is supported and this
-\_\_root_att attribute property value can be something like
+name of the root attribute. Multi-control system is supported and this
+`\_\_root_att` attribute property value can be something like
 *tango://my_tango_host:10000/my/favorite/dev/the_root_attribute*.
-The name of the root attribute is included in attribute configuration.
+The name of the root attribute is included in the attribute configuration.
 
-It is forbidden to poll a forwarded attribute and one exception is
-thrown if such a case happens. Polling has to be done on the root
-attribute. Nevertheless, if the root attribute is polled, a request to
-read the forwarded attribute with the DeviceProxy object source
-parameter set to CACHE_DEVICE or CACHE will get its data from the root
-attribute polling buffer.
+Polling has to be done on the root attribute. Polling a forwarded attribute
+is not allow and an exception will be thrown if such a case happens.
+If the root attribute is polled, a request to read the forwarded attribute
+with the DeviceProxy object source parameter set to `CACHE_DEVICE` or `CACHE`
+will get its data from the root attribute polling buffer.
 
-If you subscribe to event(s) on a forwarded attribute, the subscription
+If you subscribe to events on a forwarded attribute, the subscription
 is forwarded to the root attribute. When the event is received by the
 forwarded attribute, the attribute name in the event data is modified to
 reflect the forwarded attribute name and the event is pushed to the
 original client(s).
 
 When a device with forwarded attribute is locked, the device to which
-the root attribute belongs is also locked.
+the root attribute belongs to is also locked.
 
 ## Coding
 
-As explained in the chapter Writing a Tango device server, each Tango
+As explained in the section [Writing a Tango device server](#server-attribute-class), each Tango
 class attribute is implemented via a C++ class which has to inherit from
-either *Attr*, *SpectrumAttr* or *ImageAttr* according to the attribute
-data format. For forwarded attribute, the related class has to inherit
-from the **FwdAttr** class whatever its data format is. For classical
-attribute, the programmer can define in the Tango class code default
-value for the attribute properties using one instance of the
-*UserDefaultAttrProp* class. For forwarded attribute, the programmer has
-to create one instance of the **UserDefaultFwdAttrProp** class but only
+either `Attr*`, `SpectrumAttr` or `ImageAttr` according to the attribute
+data format. For a forwarded attribute, the related class has to inherit
+from the **`FwdAttr`** class no matter what its data format is. For classical
+attributes, the programmer can define in the Tango class code default
+values for the attribute properties using one instance of the
+`UserDefaultAttrProp` class. For a forwarded attribute, the programmer has
+to create one instance of the **`UserDefaultFwdAttrProp`** class but only
 the attribute label can be defined. One example of how to program a
-forwarded attribute is given below
+forwarded attribute is given below:
 
 ```{code} cpp
 :number-lines: 1
@@ -103,7 +100,7 @@ forwarded attribute is given below
   }
 ```
 
-Line 1 : The forwarded attribute class inherits from FwdAttr class.
+Line 1 : The forwarded attribute class inherits from `FwdAttr` class.
 
 Line 4-5 : Only constructor and destructor methods are required
 
@@ -114,14 +111,14 @@ defined.
 
 Line 15: The forwarded attribute is added to the list of attribute
 
-In case of error in the forwarded attribute configuration (for instance
-missing \_\_root_att property), the attribute is not created by the
+If there is an error in the forwarded attribute configuration (for instance
+missing `\_\_root_att` property), the attribute is not created by the
 Tango kernel and is therefore not visible for the external world. The
 state of the device to which the forwarded attribute belongs to is set
-to ALARM (if not already FAULT) and a detailed error report is available
+to *ALARM* (if not already *FAULT*) and a detailed error report is available
 in the device status. In case a device with forwarded attribute(s) is
 started before the device(s) with the root attribute(s), the same
 principle is used: forwarded attribute(s) are not created, device state
-is set to ALARM and device status is reporting the error. When the
-device(s) with the root attribute will start, the forwarded attributes
+is set to *ALARM* and device status reports the error. When the
+device(s) with the root attribute starts, the forwarded attributes
 will automatically be created.

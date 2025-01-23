@@ -629,8 +629,8 @@ stop with an exception on the missing property value.
 
 #### Device property vs memorized attributes
 
-In some cases, you could be tempted to use a property for a memorized
-attribute and vice-versa. It is important to distinguish the function of
+In some cases, you could be tempted to use a property for a {term}`memorized
+attribute` and vice-versa. It is important to distinguish the function of
 each, and use them wisely.
 
 - The use of a property must be limited to configuration data which

@@ -13,8 +13,6 @@ introduction
 ds-guideline/index
 device-server-model
 device-server-writing
-memorized-attribute
-forwarded-attribute
 generating-events
 java/index
 python/index
