@@ -1931,6 +1931,7 @@ device-server, the files are actually saved into \$TANGO_LOG_PATH/{
 server_name}/{ server_instance_name}. This means that all the devices
 running within the same process log into the same directory.
 
+(reference-env-var-db)=
 #### The database and controlled access server (MYSQL_USER, MYSQL_PASSWORD, MYSQL_HOST and MYSQL_DATABASE)
 
 The Tango database server and the controlled access server (if used)

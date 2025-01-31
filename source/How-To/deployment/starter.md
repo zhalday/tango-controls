@@ -1,6 +1,6 @@
 (starter)=
 
-# The Starter device
+# Use the Starter device
 
 ```{tags} audience:all
 ```
@@ -13,11 +13,11 @@ on the same host.
 Possible use cases are:
 
 - start all device servers on system startup,
-- get list of all started device servers,
+- get a list of all started device servers,
 - start or stop a device server,
 - get logs from a device server.
 
-[Astor](#introduction to astor) is a graphical client for Starter devices.
+[Astor](#astor-manual) is a graphical client for Starter devices.
 
 ## Installation
 
@@ -30,7 +30,7 @@ There are several ways to install the Starter device server:
 
 ## Configuration
 
-General recommendations for Starter configuration:
+General recommendations for configuring the Starter:
 
 - there should be only one instance of a Starter device server running on a host,
 - the instance name can be arbitrary,
@@ -40,7 +40,7 @@ General recommendations for Starter configuration:
 - the *domain/family* part of a Starter device name should be
   "tango/admin" in order for the Starter device to be detected by Astor.
 
-An example how to define Starter device using *tango_admin* tool:
+Below is an example of how to define a Starter device using the *tango_admin* tool:
 
 ```bash
 host=$(hostname -s)
@@ -49,8 +49,8 @@ Starter $host
 ```
 
 :::{note}
-The requirement for *member* part of the name to match the hostname
-can be disabled by setting environment variable `DEBUG` to `true`.
+The requirement for the *member* part of the name to match the hostname
+can be disabled by setting the environment variable `DEBUG` to `true`.
 The starter will be visible in Astor under the name specified in *member*.
 :::
 
@@ -80,22 +80,22 @@ when searching for executables.
 The Starter device server can be automatically started during system startup
 using a service manager of choice. It can then start any other device servers.
 
-Following are example configuration files for different service managers.
+The following are example configuration files for different service managers:
 
-### systemd
+- **systemd**
 
-Follow [instructions for systemd integration ](#systemd-integration).
+  follow [instructions for systemd integration ](#systemd-integration).
 
-### System V init
+- **System V init**
 
-Follow [instructions in the installation guide ](#howto-sysv-init).
+  follow [instructions in the installation guide ](#howto-sysv-init).
 
-### NSSM (Windows)
+- **NSSM (Windows)**
 
-Follow [NSSM configuration instructions in the installation guide for Windows ](#windows-starter-nssm).
+  follow [NSSM configuration instructions in the installation guide for Windows ](#windows-starter-nssm).
 
-## References
+## Further references
 
 - [Starter documentation](http://www.esrf.fr/computing/cs/tango/tango_doc/ds_doc/tango-ds/System/starter/index.html),
 - [Starter in the Device Servers Catalogue](https://www.tango-controls.org/developers/dsc/ds/423/),
-- [Starter source code repository](https://github.com/tango-controls/starter).
+- [Starter source code repository](https://gitlab.com/tango-controls/starter).

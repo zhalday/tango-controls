@@ -1,68 +1,68 @@
 (device-server-without-database)=
 
-# Running a device server without database
+# Run a device server without a database
 
 ```{tags} audience:administrators, audience:developers
 ```
 
-In some cases (Running a device server within a lab during hardware development, testing, ...), it can be
+In some cases, for example running a device server within a lab during hardware development, testing, etc, it can be
 useful to have a device server able to run even if there is no {term}`Tango database` or {term}`File database`
-available in the control system. Obviously, running a Tango device server without a database means loosing
+available in the control system. Note that running a Tango device server without a database means losing
 some Tango features:
 
-- No check that the same {term}`device server` is running twice
-- No device configuration via {term}`properties <property>`
-- No {term}`memorized attributes <Memorized Attribute>`
-- No device attribute configuration via the database
-- No check that the same {term}`device name <device>` is used twice within the same control system
-- In case of several device servers running on the same host, the user
-  must manually manage a list of already used network port
+- There are no checks that the same {term}`device server` is running twice
+- There is no device configuration via {term}`properties <property>`
+- There are no {term}`memorized attributes <Memorized Attribute>`
+- There is no device attribute configuration via the database
+- There are no checks that the same {term}`device name <device>` is used twice within the same control system
+- If several device servers are running on the same host, the user
+  must manually manage a list of network ports alreaady in use
 
-To run a device server without database, the **-nodb** command line option for the device server must be used.
-One problem when running a device server without the database is to pass device name(s) to the device server.
-Within Tango, it is possible to define these device names at two different levels :
+To run a device server without a database, the `-nodb` command line option for the device server must be used.
+One problem when running a device server without the database is passing device names to the device server.
+Within Tango, it is possible to define these device names at two different levels:
 
-1. At the command line with the **-dlist** option: In case of a device
+1. At the command line with the `-dlist` option: In the case of a device
    server with several {term}`device pattern` implementations, the device name
-   list given at the command line is only for the last device pattern
-   created in the *class_factory()* method. In the device name list,
+   list given at the command line is only used for the last device pattern
+   created in the `class_factory()` method. In the device name list,
    the device name separator is the comma character.
 
 <!-- TODO unclear/broken, see https://gitlab.com/tango-controls/cppTango/-/issues/1355 -->
 
-2. At the device pattern implementation level: In the class inherited
-   from the Tango::DeviceClass class via reimplemntation of the method
-   *device_name_factory()* (cppTango and PyTango).
+2. At the device pattern implementation level: in the class inherited
+   from the `Tango::DeviceClass` class via reimplemntation of the method
+   `device_name_factory()` (cppTango and PyTango).
 
-Device definition at the command line has higher priority than overriding *device_name_factory*.
+Device definition at the command line has higher priority than overriding `device_name_factory()`.
 
 If nothing is passed or set, the device name *NoName* is used for each device pattern implementation.
 
-## Example of device server started without database usage
+## Example of a device server started without database usage
 
-Without database, you need to start a Tango device server on a
+Without a database, you need to start a Tango device server on a
 pre-defined port, and you must use one of the underlying ORB options
-called *endPoint* like
+called *endPoint*, i.e.:
 
-{command}`server inst -ORBendPoint giop:tcp::<port number> -nodb -dlist a/b/c`
+`server inst -ORBendPoint giop:tcp::<port number> -nodb -dlist a/b/c`
 
 <!-- TODO Mention Class:: syntax once https://gitlab.com/tango-controls/cppTango/-/issues/1355 is fixed -->
 
-which would start the device server executable `server` as the instance `inst` on all available network
+This will start the device server executable `server` as the instance `inst` on all available network
 interfaces giving it the device name `a/b/c`.
 
-Two examples of starting a device server without database
-database when the *device_name_factory()* method is not re-defined.
+Below are two examples of starting a device server without a
+database - note that in this case the `device_name_factory()` method has not been re-defined.
 
-- {command}`StepperMotor et -nodb -dlist id11/motor/1,id11/motor/2`
+- `StepperMotor et -nodb -dlist id11/motor/1,id11/motor/2`
 
   This command line starts the device server with two devices named *id11/motor/1* and *id11/motor/2*
 
-- {command}`StepperMotor et -nodb`
+- `StepperMotor et -nodb`
   This command line starts a device server with one device named *NoName*
 
-When the *device_name_factory()* method is re-defined within the
-StepperMotorClass class.
+Below is an example where the `device_name_factory()` method has been re-defined within the
+`StepperMotorClass` class.
 
 ```{code} cpp
 :number-lines: 1
@@ -74,25 +74,25 @@ StepperMotorClass class.
   }
 ```
 
-- {command}`StepperMotor et -nodb`
+- `StepperMotor et -nodb`
 
   This commands starts a device server with two devices named *sr/cav-tuner/1* and *sr/cav-tuner/2*
 
-- {command}`StepperMotor et -nodb -dlist id12/motor/1`
+- `StepperMotor et -nodb -dlist id12/motor/1`
 
   Starts a device server with only one device named *id12/motor/1*
 
-## Connecting clients to a device within a device server started without database
+## Connecting clients to a device within a device server started without a database
 
 In this case, the host and port on which the device server is running
-are part of the device name. If the device name is *a/b/c*, the host is
-*mycomputer* and the port *1234*, the device name to be used by client
+are part of the device name. For example, if the device name is *a/b/c*, the host is
+*mycomputer* and the port is *1234*, then the device name to be used by a client
 is
 
-{command}`mycomputer:1234/a/b/c#dbase=no`
+`mycomputer:1234/a/b/c#dbase=no`
 
-Some clients like atkpanel require *tango://* prefix:
+Some clients, like {term}`Atkpanel`, require the *tango://* prefix:
 
-{command}`tango://mycomputer:1234/a/b/c#dbase=no`
+`tango://mycomputer:1234/a/b/c#dbase=no`
 
-See [device naming ](#tango-object-naming) for all details about Tango object naming.
+See [device naming ](#tango-object-naming) for further details on Tango object naming.

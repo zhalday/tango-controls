@@ -2,17 +2,19 @@
 
 ```{tags} audience:administrators
 ```
+This section provides instructions on how to use some of the available Tango services.
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 1
 :name: servicestoc
+:caption: How to...
 
 events
 multiple-db-hosts
 property-file
 starter
-starting
 filedatabase
+starting
 device-server-without-db
 access-control
 ```

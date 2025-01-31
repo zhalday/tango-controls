@@ -3,12 +3,12 @@
 
 (multiple-db-hosts)=
 
-# Multiple database servers within a Tango control system
+# Use multiple database servers within a Tango control system
 
-The database device server, TangoDatabase in most cases, serves as {term}`Tango Host` in a control system. The
+The database device server, TangoDatabase in most cases, serves as the {term}`Tango Host` in a control system. The
 host name and port number of the database server is known via the {term}`TANGO_HOST` environment variable. If
 you want to use several tango hosts in order to handle one being unreachable (either due to a network outage, a
-crash or an hardware issue), use the following `TANGO_HOST` syntax
+crash or a hardware issue), use the following `TANGO_HOST` syntax:
 
 ```text
 TANGO_HOST=<host_1>:<port_1>,<host_2>:<port_2>,<host_3>:<port_3>
