@@ -27,5 +27,6 @@ how-to-enumerated-attribute
 how-to-forwarded-attribute
 how-to-memorised-attribute
 how-to-aliases
+how-to-telemetry
 how-to-cpp-client-programmers-guide
 ```
