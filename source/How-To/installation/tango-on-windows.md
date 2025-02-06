@@ -243,3 +243,11 @@ If in doubt you should prefer the `XXX_x64_shared_release.zip` packages. If you 
 
 Regarding linkage against the Visual Studio runtime libraries, the static cppTango library links **statically**
 against the VC libraries and the dynamic library links **dynamically** against it.
+
+### Silent installation
+
+The MSI packages support silent installation via the [documented](https://learn.microsoft.com/en-us/windows/win32/msi/standard-installer-command-line-options?redirectedfrom=MSDN) flags:
+
+```
+msiexec /package libtango*.msi /quiet /passive
+```
