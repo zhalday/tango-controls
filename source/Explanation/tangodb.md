@@ -9,7 +9,7 @@
 %A combination of the Tango device server *Databaseds* and a MariaDB backend. It provides static and runtime configuration information about Tango Controls components in a Tango Controls system. It is used by the *Databaseds* device server and constitutes the {term}`Tango Host`.
 
 %[glossary_term][TANGO_HOST]
-%An environment variable that specifies on which host and port a Databaseds device server is running. The host part and port are separated by a colon `:`. Commonly this is also referred to as the {term}`TangoDB`. See also (#multiple-db-hosts).
+%An environment variable that specifies on which host and port a Databaseds device server is running. The host part and port are separated by a colon `:`. Commonly this is also referred to as the {term}`TangoDB`. See also [how to user multiple database servers](#multiple-db-hosts).
 
 %[glossary_term][TangoDB]
 %A shorter way to say Tango Databaseds device server and its MariaDB backend.
