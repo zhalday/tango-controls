@@ -23,6 +23,8 @@ for f in files:
                     filelink = f.replace("source/", "")
                     filelink = filelink.replace(".md", "")
                     filename = filelink.split("/")[-1]
+                    if filename == "index":
+                        filename = filelink.split("/")[-2]
                     text = text + " For more details please see the {doc}`"+filename+" <../" +filelink + ">` section.\n\n"
                     save = False
                 else:
