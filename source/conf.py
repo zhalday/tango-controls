@@ -96,7 +96,7 @@ master_doc = "index"
 
 # General information about the project.
 project = "Tango Controls"
-copyright = "2017-2025, Tango Community, Creative Commons Attribution 4.0 International (CC BY 4.0)"
+# copyright in _templates/copyright.html
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
