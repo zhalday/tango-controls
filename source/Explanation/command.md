@@ -14,7 +14,7 @@ Commands can execute any sequence of actions. They can be executed synchronously
 
 ## The Default Commands
 
-There are three default commands that every device must respond to in order to enhance standard behavior in a TANGO control system. These commands are **State**, **Status**, and **Init**.
+There are three default commands that every device must respond to in order to enhance standard behavior in a Tango control system. These commands are **State**, **Status**, and **Init**.
 
 ### State Command
 

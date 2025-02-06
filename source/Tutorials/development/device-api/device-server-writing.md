@@ -649,7 +649,7 @@ method which implements the command.
 ### The automatically added commands
 
 In order to increase the common behavior of every kind of devices in a
-TANGO control system, three commands are automatically added to each
+Tango control system, three commands are automatically added to each
 class of devices. These commands are :
 
 - State
@@ -778,7 +778,7 @@ Figure 6.5: Write attribute sequencing
 
 A device server pattern implementation is embedded in a process called a
 **device server**. Several instances of the same device server process
-can be used in a TANGO control system. To identify instances, a device
+can be used in a Tango control system. To identify instances, a device
 server process is started with an **instance name** which is different
 for each instance. The device server name is the couple device server
 executable name/device server instance name. For instance, a device

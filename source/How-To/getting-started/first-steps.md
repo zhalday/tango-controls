@@ -30,7 +30,7 @@
 
 - You may be also interested in the content of [Tango Controls web page]
 
-% • what is necessary to have a minimum tango control system on a single machine or on several hosts sharing a single tango database, etc...
+% • what is necessary to have a minimum Tango control system on a single machine or on several hosts sharing a single Tango database, etc...
 
 % • how and what to install it on a single machine, on a set of machine sharing the same database server.
 
