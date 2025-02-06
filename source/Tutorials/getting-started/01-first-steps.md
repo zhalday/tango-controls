@@ -88,8 +88,7 @@ Now you can run your first Tango device server, using PyTango's `test_context` u
 
 You see the output:
 ```{code-block} console
-:emphasize-lines: 2
-Can't create notifd event supplier. Notifd event not available
+:emphasize-lines: 1
 Ready to accept request
 MegaCoffee3k started on port 8888 with properties {}
 Device access: tango://127.0.0.1:8888/test/nodb/megacoffee3k#dbase=no
@@ -212,6 +211,14 @@ This means the device server is not running.   Make sure it is still running in 
 (tango-tut) $ python -m tango.test_context main.MegaCoffee3k --host 127.0.0.1
 ```
 
+::::
+
+(admin-device-hint)=
+::::{admonition} Bonus tip: admin device
+:class: dropdown, tip
+The second Tango resource locator, for *Server access*, points to another Tango device that is
+run automatically.  It is called the "admin" device or "DServer", and is used for management
+of the {term}`device server instance`.  E.g., restarting individual devices, or configuring logging.
 ::::
 
 ## Finishing up

@@ -1,6 +1,6 @@
 # Coffee Crisis!
 
-To make sure this tutorial isn't *super* boring, imagine you are new employee at **Tango MegaCorp Inc.** working
+To make sure this tutorial isn't *super* boring, imagine you are a new employee at **Tango MegaCorp Inc.** working
 in the DevOps team.
 
 On your first day, your manager calls you into her office, with a worried expression on her face.

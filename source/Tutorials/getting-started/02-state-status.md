@@ -87,14 +87,14 @@ tango._tango.DevState.OFF
 >>>
 ```
 
-It works, super easy!  Nice.
+It works, super easy!
 
 :::{tip}
 It is good practice to set the state and status values at the same time, since
 clients will often read both of them, and they need to agree.
 :::
 
-There `DevState` enum has many values, but the other common ones are `STANDBY`, `ON`, `RUNNING`, `ALARM`, and `FAULT`.
+The `DevState` enum has many values, including `STANDBY`, `ON`, `RUNNING`, `ALARM`, and `FAULT`.
 
 But what was that `init_device` method?  It is part of the device implementation class, and
 it is called automatically when the device starts up.  You'll learn more about it soon.
