@@ -154,4 +154,4 @@ Both solutions assume that maven is used to handle project’s lifecycle.
 
 % definitions
 
-[issue]: https://github.com/tango-controls/Astor/issues/6
+[issue]: https://gitlab.com/tango-controls/Astor/issues/6

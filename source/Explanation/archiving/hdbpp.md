@@ -271,7 +271,7 @@ host, port and device name.
 - {download}`HDB++ Cassandra presentation at the ICALEPCS 2015 Tango workshop <hdbpp/hdbcassandra-tango-workshop.pptx>`
 
 [cassandramonitor]: https://gitlab.com/tango-controls/hdbpp/CassandraMonitor
-[egiga2m]: https://github.com/luciozambon/eGiga2m
+[egiga2m]: https://gitlab.elettra.eu/puma/client/egiga2m
 [hdbpp-benchmark]: https://gitlab.com/tango-controls/hdbpp/hdbpp-benchmark
 [hdbpp-cm]: https://gitlab.com/tango-controls/hdbpp/hdbpp-cm
 [hdbpp-cm-es]: https://gitlab.com/tango-controls/hdbpp/hdbpp-cm-es

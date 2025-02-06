@@ -19,7 +19,7 @@ Once docker is installed one can pull docker images with pre-installed tango.
 
 > - tango-db: a (mysql-compatible) mariadb container with the Tango schema
 > - tango-cpp: a container with core Tango libraries and dependencies that can run the `DatabaseDS` Device Server
-> - tango-rest: a [Tango REST server](https://github.com/tango-controls/rest-server)
+> - tango-rest: a [Tango REST server](https://gitlab.com/tango-controls/rest-server)
 > - tango-test: the well-established [TangoTest device server](https://gitlab.com/tango-controls/TangoTest)
 
 These container images are hosted on [SKAO] Harbor service: <https://harbor.skao.int/>. At the moment they cannot be browsed and one has to search for them. Just enter ska-tango-image in the search box and Harbor will list all images that SKAO provides. The images can then be pulled with the prefix `harbor.skao.int/production/`
@@ -92,7 +92,7 @@ For instance, one can start [jive] (assuming it is installed on the system) and 
 
 ### Tango docker stack for Tango REST API
 
-One can setup Tango docker stack for Tango REST API as well. [SKAO] provides a containerized build of the [Tango Rest Server](https://github.com/tango-controls/rest-server).
+One can setup Tango docker stack for Tango REST API as well. [SKAO] provides a containerized build of the [Tango Rest Server](https://gitlab.com/tango-controls/rest-server).
 
 The following {download}`compose.yaml <testing-tango-using-docker/compose.yaml>` compose.yaml assembles the whole stack:
 

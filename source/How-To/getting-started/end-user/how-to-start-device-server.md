@@ -118,4 +118,4 @@ You can use the [tango_admin] utility to register server from scripts or
 command line. There are also some device servers (e.g. Sardana) that can
 register themselves upon starting.
 
-[tango_admin]: https://github.com/tango-controls/tango_admin
+[tango_admin]: https://gitlab.com/tango-controls/tango_admin

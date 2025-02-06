@@ -60,7 +60,7 @@ The full reference can be found following this [link](http://tango-rest-api.read
 
 Since Tango REST API itself is only a specification one needs an actual implementation running some where.
 
-Known implementations are listed in the Tango REST API [readme](https://github.com/tango-controls/rest-api#known-server-implementations).
+Known implementations are listed in the Tango REST API [readme](https://gitlab.com/tango-controls/rest-api#known-server-implementations).
 
 Please refer to the corresponding implementation documentation on how to install and use it.
 
@@ -98,7 +98,7 @@ In this installation REST API exports readonly forwarded attributes and is acces
 ```{image} rest-api/ESRF.png
 ```
 
-Every request passes HAProxy configured to use https protocol for secure connection. On its backend HAproxy speaks with Tango REST server which in turn can access only one tango host where a device of class [ForwardComposer](https://github.com/tango-controls/ForwardedComposer) is defined. This device provides read only access to MStatus Tango device with status information about the storage ring at ESRF.
+Every request passes HAProxy configured to use https protocol for secure connection. On its backend HAproxy speaks with Tango REST server which in turn can access only one tango host where a device of class [ForwardComposer](https://gitlab.com/tango-controls/ForwardedComposer) is defined. This device provides read only access to MStatus Tango device with status information about the storage ring at ESRF.
 
 In addition Tango REST API can be integrated with authentication and authorisation services like kerberos.
 
@@ -116,6 +116,6 @@ Deploy everything in the local network or in the cloud.
 
 \[1\] [Tango REST API specification](http://tango-rest-api.readthedocs.io/en/latest)
 
-\[2\] [Tango REST API specification on GitHub](https://github.com/tango-controls/rest-api)
+\[2\] [Tango REST API specification on GitLab](https://gitlab.com/tango-controls/rest-api)
 
-\[4\] [Tango REST Server wiki](https://github.com/tango-controls/rest-server/wiki)
+\[4\] [Tango REST Server wiki](https://gitlab.com/tango-controls/rest-server/wiki)

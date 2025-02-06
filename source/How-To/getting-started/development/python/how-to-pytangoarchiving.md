@@ -572,7 +572,7 @@ stats = ptaf.CheckArchivingConfiguration(borf,period=300)
 % definitions
 % ------------
 
-[archiving]: https://github.com/tango-controls/PyTangoArchiving
+[archiving]: https://gitlab.com/tango-controls/hdbpp/libhdbpp-python
 [archivingroot]: https://sourceforge.net/projects/tango-cs/files/tools/ArchivingRoot-16.2.4.zip/download
 [installation-of-hdb-and-tdb-in-linux]: http://www.tango-controls.org/community/forums/c/general/installation/installation-of-hdb-and-tdb-in-linux
 [pytango]: https://pypi.python.org/pypi/PyTango
@@ -580,4 +580,4 @@ stats = ptaf.CheckArchivingConfiguration(borf,period=300)
 [sourceforge]: https://sourceforge.net/p/tango-cs/code/HEAD/tree/archiving/tool/PyTangoArchiving
 [tango-archiving]: http://www.tango-controls.org/community/forums/c/general/development/tango-archiving
 [taurus]: https://pypi.python.org/pypi/Taurus
-[userguide]: https://github.com/sergirubio/PyTangoArchiving/blob/documentation/doc/PyTangoArchiving_UserGuide.rst
+[userguide]: https://gitlab.com/tango-controls/hdbpp/libhdbpp-pytangoarchiving/-/blob/master/doc/PyTangoArchiving_UserGuide.rst

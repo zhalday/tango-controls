@@ -487,7 +487,7 @@ already needed by the core.
 
 ## Project references and source code
 
-The HDB++ project page is available on [GitHub](https://github.com/tango-controls-hdbpp).
+The HDB++ project page is available on [GitLab](https://gitlab.com/tango-controls/hdbpp).
 
 The HDB++ source code for the archiving engine as well as the
 configuration tools, extraction libraries and GUI are available on

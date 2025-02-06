@@ -14,6 +14,6 @@
   : - tested with Matlab R2009b
 - [Binary distribution 3.1.0](https://sourceforge.net/projects/tango-cs/files/bindings/tango-binding-3.1.0-matlab-windows-x64-msvc-12.zip/download) for Windows x64
   : - tested with Matlab R2016b
-    - this release contains a major change - see the [README](https://github.com/tango-controls/matlab-binding/blob/master/README.md) file for details
-- Source code available on [GitHub](https://github.com/tango-controls/matlab-binding)
+    - this release contains a major change - see the [README](https://gitlab.com/tango-controls/matlab-binding/blob/master/README.md) file for details
+- Source code available on [GitLab](https://gitlab.com/tango-controls/matlab-binding)
   : - please visit the [MathWorks web site](https://fr.mathworks.com/support/sysreq/previous_releases.html) in order to identify the official gcc version associated with your Matlab version

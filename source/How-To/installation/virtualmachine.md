@@ -29,8 +29,8 @@ There is currently no up-to-date documentation.
 - You may download TangoBox 9.3 from
   [here](https://s2innovation.sharepoint.com/:f:/s/Developers/EovD2IBwhppAp-ZLXtawQ6gB9F6aXPPs2msr2hgPGTO-FQ?e=Ii3tnr).
 - Please read {doc}`Tango Controls demo VM’s documentation <vm/tangobox>`.
-- See also [a release note](https://github.com/tango-controls/tangobox/releases/tag/v9.3.3)
-  and [README](https://github.com/tango-controls/tangobox/blob/develop/README.md).
+- See also [a release note](https://gitlab.com/tango-controls/tangobox/releases/tag/v9.3.3)
+  and [README](https://gitlab.com/tango-controls/tangobox/blob/develop/README.md).
 
 ### Minimum Requirements
 

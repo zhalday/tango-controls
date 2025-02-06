@@ -16,4 +16,4 @@
 - Patch for release 3.0.0
   : - requires LabVIEW >= 2014
     - this [Vi library](https://sourceforge.net/projects/tango-cs/files/bindings/tango_vi.llb/download) contains some bug fixes, simply replace the original one in the /vis directory
-- Source code available on [GitHub](https://github.com/tango-controls/labview-binding)
+- Source code available on [GitLab](https://gitlab.com/tango-controls/labview-binding)
