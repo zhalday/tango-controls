@@ -1,50 +1,47 @@
-% How-To try
-
 # How to run a device server with an active Windows firewall
 
 ```{tags} audience:administrators, audience:developers
 ```
 
-When running Tango device servers on a Windows PC with active firewall
-you might find some problems when trying to reconnect to a restarted
-server. In some cases the client will never reconnect.
+When running Tango {term}`device servers <device server>` on a Windows
+PC with active firewall you might find some problems when trying to
+reconnect to a restarted server. In some cases the client will never reconnect.
 
-This behavior  is due  to the automatic  closure  of the used device
+This behavior is due to the automatic closure of the used device
 server port when stopping the process. The client will only receive a
-timeout exception on the blocked port instead of an expected "connection
-failed" exception  which triggers the reconnection.
+timeout exception on the blocked port, instead of an expected "connection
+failed" exception which triggers the reconnection.
 
-When restarting  a device server it will dynamically open another port.
-New clients can  connect to the new port. But old clients might not
-reconnect.
+When restarting a device server it will dynamically open another port.
+New clients can connect to the new port. But old clients might not reconnect.
 
 To overcome the problem, start your device server with a fixed port
 (11000 in this example) as
 
 ```console
-$ TangoTest win -ORBendPoint giop:tcp11000
+TangoTest win -ORBendPoint giop:tcp11000
 ```
 
 and open the fixed port in the firewall as
 
 ```console
-$ Netsh firewall add portopening TCP 11000 TangoTest
+Netsh firewall add portopening TCP 11000 TangoTest
 ```
 
 You can verify the open ports for the firewall with
 
 ```console
-$ Netsh firewall show portopening
+Netsh firewall show portopening
 ```
 
 The result should look like
 
-```console
+```output
 Port configuration for Domaine profile:
 
-Port     Protocol    Mode      Name
+Port     Protocol    Mode       Name
 
 -----------------------------------------------------------------------------
 
-11000    TCP         Enable    TangoTest
+11000    TCP         Enable     TangoTest
 ```
