@@ -1,22 +1,16 @@
 (howto-start-device-server)=
 
-# How to start a device server
+# Start a device server
 
 ```{tags} audience:all
-```
-
-```{toctree}
-:maxdepth: 2
-
-self
 ```
 
 While reading this how-to please refer to manuals of [Jive](inv:jive:std#index) and [Astor](#astor-manual) tools.
 
 ## Starting device servers with Jive
 
-In Jive select {guilabel}`Tools > Server Wizard` from the menu. In the wizard,
-fill the server and the instance name and click {guilabel}`Next`. The server
+- In Jive select {guilabel}`Tools > Server Wizard` from the menu.
+- In the wizard, fill the server and the instance name and click {guilabel}`Next`. The server
 name should be the same as the server executable name, and instance name can be
 any name you provide.
 
@@ -26,10 +20,10 @@ any name you provide.
 Wizard - step 1 - device server instance
 :::
 
-The wizard will now wait until you start the device server. You can do this
-from command line, device servers usually take the instance name as an
-argument. For this example you can use `TangoTest test2` command. When done
-click {guilabel}`Next`.
+- The wizard will now wait until you start the device server, which you can do
+from the command line. Device servers usually take the instance name as an
+argument. For this example you can use the command `TangoTest test2` where *test2*
+is the instance name. When done click {guilabel}`Next`.
 
 :::{figure} how-to-start-device-server/wizard2.png
 :alt: Wizard - step 2
@@ -37,11 +31,11 @@ click {guilabel}`Next`.
 Wizard - step 2 - starting the device server
 :::
 
-In the next steps you will be asked to configure the devices that your device
+- In the next steps you will be asked to configure the devices that your device
 server instance will host. For this you need to pick a class and name for your
 device. A list of supported classes is provided by the device server, and the
-name of the device can be any name unique in the system in the
-`<domain>/<family>/<member>` format.
+name of the device can be any name unique in the system following the format
+`<domain>/<family>/<member>`.
 
 :::{figure} how-to-start-device-server/wizard3.png
 :alt: Wizard - step 3
@@ -55,7 +49,7 @@ Wizard - step 3 - device class
 Wizard - step 4 - device name
 :::
 
-Next, you can configure properties for the newly created devices.
+- Next, you can configure properties for the newly created devices.
 
 :::{figure} how-to-start-device-server/wizard5.png
 :alt: Wizard - step 5
@@ -63,7 +57,7 @@ Next, you can configure properties for the newly created devices.
 Wizard - step 5 - device properties
 :::
 
-After that you can create another device of the same class by clicking
+- After that you can create another device of the same class by clicking
 {guilabel}`New Device` or pick another class by clicking {guilabel}`New Class`.
 You can also finish the configuration and exit the wizard with the
 {guilabel}`Finish` button.
@@ -74,7 +68,7 @@ You can also finish the configuration and exit the wizard with the
 Wizard - step 6 - finish
 :::
 
-After the configuration, the device server must be restarted to load and start
+- After the configuration, the device server must be restarted to load and start
 configured devices.
 
 :::{figure} how-to-start-device-server/wizard7.png
@@ -91,8 +85,8 @@ installed and running on the host you want to start your device server on.
 Device server should be available in paths configured for the Starter.
 :::
 
-In Astor go to the host control panel and click {guilabel}`Start New` button in
-the top left corner. If you want just to start an existing device server
+- In Astor go to the host control panel and click {guilabel}`Start New` button in
+the top left corner. If you want to just start an existing device server
 instance, pick it from the list and click {guilabel}`Start Server`.
 
 :::{figure} how-to-start-device-server/start_server.png
@@ -101,9 +95,10 @@ instance, pick it from the list and click {guilabel}`Start Server`.
 Server list in Astor
 :::
 
-If you want to add new server, click {guilabel}`Create New Server`. This will
+- If you want to add new server, click {guilabel}`Create New Server`. This will
 open the device installation wizard from Jive. Astor will handle starting the
-device server for you in step 2 of the wizard. After finishing the wizard, you
+device server for you in step 2 of the wizard.
+- At the end of the wizard, you
 will be asked to select the startup level of the new server.
 
 :::{figure} how-to-start-device-server/startup_level.png
@@ -114,8 +109,8 @@ Startup level configuration
 
 ## Other options
 
-You can use the [tango_admin] utility to register server from scripts or
-command line. There are also some device servers (e.g. Sardana) that can
+You can also use the [Tango Admin](#tango-admin) utility to register servers from scripts or
+the command line. There are also some device servers (e.g. [Sardana](#sardana)) that can
 register themselves upon starting.
 
 [tango_admin]: https://gitlab.com/tango-controls/tango_admin
