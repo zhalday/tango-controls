@@ -2,24 +2,32 @@
 
 # Tango Admin utility
 
+%[glossary_term][tango_admin]
+%Command line utility for administrative tasks related to the {term}`TangoDB`
+
 ```{tags} audience:administrators
 ```
 
-The Tango Database can be maintained using a command-line interface with {program}`tango_admin` tool. The following features are available:
+The Tango Database can be maintained using a command-line interface with the {term}`tango_admin` tool.
 
-- ping the database server
-- check if a device is defined in DB
-- check if a server is defined in DB
-- create a server in DB
-- delete a server from the DB
-- create a property in DB
-- delete a property from DB
+The following features are available:
 
-## Using tango_admin
+- Ping the {term}`tango database server <TangoDB>`
+- Check if a {term}`device`/{term}`device server` is defined
+- Create/Delete a server
+- Create a {term}`property`
+- List server/devices
+- Unexport devices
 
-```console
-$ /usr/lib/tango/tango_admin --help
+## Tango Admin help
 
+```bash
+tango_admin --help
+```
+
+Output:
+
+```text
 Usage:
  --help  		Prints this help
  --ping-database	[max_time (s)] Ping database
@@ -38,3 +46,40 @@ Usage:
  --unexport-device <dev> Unexport a device from DB.  USE WITH CARE.
 ```
 This is the output of version 1.24.
+
+## Examples
+
+### Adding a device server
+
+```text
+# For python this is the device server source file name without `.py` extension,
+# for C++ this is the executable name
+executable=fancyMotor
+
+class=fancyMotorClass
+
+instance=1
+device=vacuum/innerCircle/valve1
+
+tango_admin --add-server "${executable}/${instance}" $class $device
+```
+
+### Adding a device server property
+
+```text
+device=vacuum/innerCircle/valve1
+
+tango_admin --add-property $device RemotePort 127.0.0.1
+```
+
+### Checking if a device server is alive
+
+```text
+tango_admin --check-device sys/database/2
+```
+
+### Checking if a device server is exported
+
+```text
+tango_admin --check-device-exported sys/tg_test/1
+```
