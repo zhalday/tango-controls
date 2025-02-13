@@ -9,7 +9,7 @@ A list of short recipes for common tasks.
 
 ## Installation notes
 
-See the [PyTango installation guide](inv:pytango:std:label#installation).
+See the [PyTango installation guide](inv:pytango:std:label#installation-guide).
 
 ## Before anything else
 

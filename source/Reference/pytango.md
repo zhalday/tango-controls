@@ -3,7 +3,7 @@
 ## PyTango usage
 
 For instructions on how to use PyTango, the Python binding for Tango Controls,
-please refer to the [PyTango documentation](inv:pytango:std:label#contents)
+please refer to the [PyTango documentation](inv:pytango:std#index)
 
 (pytango-api-docs)=
 ## PyTango API reference

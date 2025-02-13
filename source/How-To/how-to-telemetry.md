@@ -8,4 +8,4 @@ cppTango and PyTango support telemetry via the
 Please see their respective documentation for more instructions:
 
 - [cppTango](https://tango-controls.gitlab.io/cppTango/10.0.0/telemetry.html)
-- [PyTango](inv:pytango:std:label#telemetry_howto)
+- [PyTango](inv:pytango:std:label#telemetry-howto)
