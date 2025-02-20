@@ -9,7 +9,13 @@
 ```{tags} audience:developers, lang:all
 ```
 
-Tango provides REST API specification. This can be used to implement integrations of Tango with 3rd party products using http protocol instead of tango protocol.
+:::{warning}
+**The Tango REST API is in life support mode.**
+
+The Tango collaboration will not make any improvements or fix bugs. If you are interested in becoming its maintainer, please get in touch with us on our mailing list, in our forum, on our Slack channel or at our bi-weekly Tango kernel meetings.
+:::
+
+Tango provides a REST API implementation. It can be used to implement integrations of Tango with 3rd party products using the http protocol instead of the tango protocol.
 
 Simple example of such 3rd product can be a mobile client application for monitoring Tango.
 
