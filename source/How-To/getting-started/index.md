@@ -20,7 +20,7 @@ Some first steps might include:
     - read [how to start a device server ](#howto-start-device-server)
     - or read {doc}`development/cpp/first-device-class` and follow a guide [How to write your device class ](#how-to-write-first-device-class) if your device is not yet supported by any existing {term}`device server`.
 
-- Writing your first C++ client following instruction from {doc}`development/cpp/first-client`.
+- Writing your first client following instruction from {doc}`development/general/first-client`.
 
 - Learn how to use some of the tools provided in Tango:
     - [Jive](inv:jive:std#index)
