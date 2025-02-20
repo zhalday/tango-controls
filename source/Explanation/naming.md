@@ -6,7 +6,7 @@
 ```
 
 %[glossary_term][Tango Resource Locator]
-%Schema used to identify tango objects, similiar to [URLs](https://en.wikipedia.org/wiki/URL).
+%Schema used to identify tango objects, similiar to [URLs](https://en.wikipedia.org/wiki/URL). The Tango Resource Locator is defined in [Tango's RFC 16](https://tango-controls.readthedocs.io/projects/rfc/en/latest/16/TangoResourceLocator.html)
 
 The schema used to identify tango objects is called {term}`Tango Resource Locator`.
 
