@@ -9,48 +9,47 @@
 ```{tags} audience:developers, lang:c++
 ```
 
-The code given in this chapter as example has been generated using POGO.
-Pogo is a code generator for Tango device server. See
-{ref}`pogo-documentation` for more information. The
-following examples briefly describe how to write device class with
-commands which receives and return different kind of Tango data types
-and also how to write device attributes The device class implements 5
-commands and 3 attributes. The commands are :
+The example code given in this chapter has been generated using the
+Tango code generator [Pogo]`pogo-documentation`. The
+following examples briefly describe how to write a device class with
+commands that receive and return different kinds of Tango data types.
+It also covers how to write device attributes.
 
-- The command **DevSimple** deals with simple Tango data type
-- The command **DevString** deals with Tango strings
-- **DevArray** receive and return an array of simple Tango data type
-- **DevStrArray** which does not receive any data but which returns an
+This example device class implements 5 commands and 3 attributes. The commands are:
+
+- The command `DevSimple`: handles the simple Tango data type
+- The command `DevString`: handles Tango strings
+- `DevArray`: receives and returns an array containing the simple Tango data type
+- `DevStrArray`: does not receive any data but which returns an
   array of strings
-- **DevStruct** which also does not receive data but which returns one
-  of the two Tango composed types (DevVarDoubleStringArray)
+- `DevStruct`: does not receive data but which returns one
+  of the two Tango composed data types (`DevVarDoubleStringArray`)
 
-For all these commands, the default behavior of the state machine
-(command always allowed) is acceptable. The attributes are :
+For all of these commands, the default (*always allowed*)behavior of
+the state machine is used.
 
-- A spectrum type attribute of the Tango string type called **StrAttr**
-- A readable attribute of the Tango::DevLong type called
-  **LongRdAttr**. This attribute is linked with the following writable
+The attributes are :
+
+- A spectrum type attribute of the Tango string type called `StrAttr`
+- A readable attribute of the `Tango::DevLong` type called
+  `LongRdAttr`. This attribute is linked with the following writable
   attribute
-- A writable attribute also of the Tango::DevLong type called
-  **LongWrAttr**.
+- A writable attribute also of the `Tango::DevLong` type called
+  `LongWrAttr`.
 
-Since release 9, a Tango device also supports pipe. This is an advanced
-feature reserved for some specific cases. Therefore, there is no device
-pipe example in this Getting started chapter.
 
 ## The commands and attributes code
 
-For each command called DevXxxx, pogo generates in the device class a
-method named dev_xxx which will be executed when the command is
+For each command called DevXxxx, Pogo generates a method named `dev_xxx`
+in the device class which will be executed when the command is
 requested by a client. In this chapter, the name of the device class is
-*DocDs*
+`DocDs`.
 
-### The DevSimple command
+### The `DevSimple` command
 
-This method receives a Tango::DevFloat type and also returns a data of
-the Tango::DevFloat type which is simply the double of the input value.
-The code for the method executed by this command is the following:
+This method receives and returns a `Tango::DevFloat` data type which is simply
+a double representation of the input value. The code for the method executed
+by this command is the following:
 
 ```{code} cpp
 :number-lines: 1
@@ -68,16 +67,13 @@ The code for the method executed by this command is the following:
 ```
 
 This method is fairly simple. The received data is passed to the method
-as its argument. It is
+as an argument and it is doubled at line 8 before being returning the result.
 
-doubled at line 8 and the method simply returns the result.
+### The `DevArray` command
 
-### The DevArray command
-
-This method receives a data of the Tango::DevVarLongArray type and also
-returns a data of the Tango::DevVarLongArray type. Each element of the
-array is doubled. The code for the method executed by the command is the
-following :
+This method receives and returns a `Tango::DevVarLongArray` data type. Each
+element of the array is doubled. The code for the method executed by this command is the
+following:
 
 ```{code} cpp
 :number-lines: 1
@@ -104,20 +100,19 @@ following :
   }
 ```
 
-The argout data array is created at line 8. Its length is set at line 15
-from the input argument length. The array is populated at line 16,17 and
-returned. This method allocates memory for the argout array. This memory
+The `argout` array is created at line 8. Its length is set at line 15
+from the input argument length. The array is populated at line 16 & 17 and
+then returned. This method allocates memory for the `argout` array, which
 is freed by the Tango core classes after the data have been sent to the
-caller (no delete is needed). It is also possible to return data from a
-statically allocated array without copying. Look at chapter \[Data
-exchange\] for all the details.
+caller, therefore the array does not need to be explictly deleted in the method.
+It is also possible to return data from a
+statically allocated array without copying.
 
-### The DevString command
+### The `DevString` command
 
-This method receives a data of the Tango::DevString type and also
-returns a data of the Tango::DevString type. The command simply displays
-the content of the input string and returns a hard-coded string. The
-code for the method executed by the command is the following :
+This method receives and returns a `Tango::DevString` data type. The command
+simply displays the content of the input string and returns a hard-coded string. The
+code for the method executed by this command is the following:
 
 ```{code} cpp
 :number-lines: 1
@@ -138,24 +133,24 @@ code for the method executed by the command is the following :
 
           string str("Am I a good Tango dancer ?");
           argout = new char[str.size() + 1];
-          strcpy(argout,str.c_str());
+          strcpy(argout, str.c_str());
 
           return argout;
   }
 ```
 
-The argout string is created at line 8. Internally, this method is using
+The `argout` string is created at line 8. Internally, this method is using
 a standard C++ string. Memory for the returned data is allocated at line
-16 and is initialized at line 17. This method allocates memory for the
-argout string. This memory is freed by the Tango core classes after the
-data have been sent to the caller (no delete is needed). It is also
+16 and is initialized at line 17. Again, this memory is freed by the Tango core
+classes after the data have been sent to the caller and therefore
+does not need to be explictly deleted in the method. It is also
 possible to return data from a statically allocated string without
-copying. Look at chapter \[Data exchange\] for all the details.
+copying.
 
-### The DevStrArray command
+### The `DevStrArray` command
 
-This method does not receive input data but returns an array of strings
-(Tango::DevVarStringArray type). The code for the method executed by
+This method does not receive any input data but returns an array of strings
+(the `Tango::DevVarStringArray` data type). The code for the method executed by
 this command is the following:
 
 ```{code} cpp
@@ -183,17 +178,17 @@ this command is the following:
   }
 ```
 
-The argout data array is created at line 8. Its length is set at line
-14\. The array is populated at line 15,16 and 18. The last array element
+The `argout` data array is created at line 8. Its length is set at line
+14\. The array is populated at line 15, 16 and 18. The last array element
 is initialized from a standard C++ string created at line 17. Note the
-usage of the *string_dup* function of the Tango namespace. This is
-necessary for strings array due to the CORBA memory allocation schema.
+usage of the `string_dup` function within the Tango namespace. This is
+necessary for string arrays due to the CORBA memory allocation schema.
 
-### The DevStruct command
+### The `DevStruct` command
 
 This method does not receive input data but returns a structure of the
-Tango::DevVarDoubleStringArray type. This type is a composed type with
-an array of double and an array of strings. The code for the method
+`Tango::DevVarDoubleStringArray` data type. This type is a composed type with
+an array of doubles and an array of strings. The code for the method
 executed by this command is the following:
 
 ```{code} cpp
@@ -226,21 +221,21 @@ executed by this command is the following:
   }
 ```
 
-The argout data structure is created at line 8. The length of the double
+The `argout` data structure is created at line 8. The length of the double
 array in the output structure is set at line 14. The array is populated
 between lines 15 and 17. The length of the string array in the output
 structure is set at line 19. This string array is populated between
 lines 20 an 22 from a hard-coded string and from a standard C++ string.
-This method allocates memory for the argout data. This memory is freed
-by the Tango core classes after the data have been sent to the caller
-(no delete is needed). Note the usage of the *string_dup* function of
-the Tango namespace. This is necessary for strings array due to the
-CORBA memory allocation schema.
+This method allocates memory for the `argout` data, which is freed by the
+Tango core classes after the data have been sent to the caller, therefore
+the array does not need to be explictly deleted in the method. Again, note
+the usage of the `string_dup` function of the Tango namespace. This is
+necessary for strings array due to the CORBA memory allocation schema.
 
 ### The three attributes
 
-Some data have been added to the definition of the device class in order
-to store attributes value. These data are (part of the class definition)
+Some variables have been added to the definition of the device class in order
+to store attribute values. These are a part of the class definition
 \:
 
 ```{code} cpp
@@ -254,14 +249,17 @@ to store attributes value. These data are (part of the class definition)
          Tango::DevLong          attr_wr;
 ```
 
-One data has been created for each attribute. As the StrAttr attribute
-is of type spectrum with a maximum X dimension of 5, an array of length
+One variable has been created for each attribute. As the `StrAttr` attribute
+is of type spectrum with a maximum *X* dimension of 5, an array of length
 5 has been reserved.
 
-Several methods are necessary to implement these attributes. One method
-to read the hardware which is common to all readable attributes plus one
-read method for each readable attribute and one write method for each
-writable attribute. The code for these methods is the following :
+Several methods are necessary for these attributes:
+  - One method to read from the hardware, which is common to all readable attributes
+  (e.g. `read_attr_hardware` in the example below)
+  - One read method for each readable attribute (e.g. `read_LongRdAttr`, etc in the example below) and
+  - One write method for each writable attribute (e.g. `write_LongWrAttr`, etc in the example below)
+
+The code for these methods is the following:
 
 ```{code} cpp
 :number-lines: 1
@@ -269,7 +267,7 @@ writable attribute. The code for these methods is the following :
  void DocDs::read_attr_hardware(vector<long> &attr_list)
  {
      DEBUG_STREAM << "DocDs::read_attr_hardware(vector<long> &attr_list) entering... "<< endl;
- // Add your own code here
+     // Add your own code here
 
      string att_name;
      for (long i = 0;i < attr_list.size();i++)
@@ -316,30 +314,35 @@ writable attribute. The code for these methods is the following :
  }
 ```
 
-The *read_attr_hardware()* method is executed once when a client
-execute the read_attributes CORBA request whatever the number of
-attribute to be read is. The rule of this method is to read the hardware
+The `read_attr_hardware()` method is executed once when a client
+executes the `read_attributes` CORBA request whatever the number of
+attribute to be read is. The rule of this method is to read values from the hardware
 and to store the read values somewhere in the device object. In our
 example, only the LongRdAttr attribute internal value is set by this
-method at line 13. The method *read_LongRdAttr()* is executed by the
-read_attributes CORBA call when the LongRdAttr attribute is read but
-after the read_attr_hardware() method has been executed. Its rule is
+method at line 13.
+
+The method `read_LongRdAttr()` is executed by the
+`read_attributes` CORBA call when the `LongRdAttr` attribute is read but
+after the `read_attr_hardware()` method has been executed. Its rule is
 to set the attribute value in the TANGO core classes object representing
-the attribute. This is done at line 22. The method *read_LongWrAttr()*
-will be executed when the LongWrAttr attribute is read (after the
-*read_attr_hardware()* method). The attribute value is set at line 29.
-In the same manner, the method called *read_StrAttr()* will be executed
-when the attribute StrAttr is read. Its value is initialized in this
+that attribute. This is done at line 22.
+
+The method `read_LongWrAttr()`
+will be executed when the `LongWrAttr` attribute is read (again, after the
+`read_attr_hardware()` method). The attribute value is set at line 29.
+In the same manner, the method called `read_StrAttr()` will be executed
+when the attribute `StrAttr` is read. Its value is initialized in this
 method at line 44 and 45. There
-are several ways to code spectrum or image attribute of the DevString
-data type. A HowTo related to this topic is available on the Tango
-control system Web site. The *write_LongWrAttr()* method is executed
-when the LongWrAttr attribute value is set by a client. The new
-attribute value coming from the client is stored in the object data at
+are several ways to code spectrum or image attribute of the `DevString`
+data type.
+
+The `write_LongWrAttr()` method is executed
+when the `LongWrAttr` attribute value is set by a client. The new
+attribute value coming from the client is stored in the data object at
 line 36.
 
 Pogo also generates a file called DocDsStateMachine.cpp (for a Tango
-device server class called DocDs). This file is used to store methods
-coding the device state machine. By default a allways allowed state
+device server class called *DocDs*). This file is used to store methods
+for the device state machine. By default an *always allowed* state
 machine is provided. For more information about coding the state
-machine, refer to the chapter Writing a device server.
+machine, refer to the chapter on [state machine management](#state-machine-management).

@@ -1338,6 +1338,7 @@ Semantics recommended for {samp}`{FAULT}` and {samp}`{ALARM}` states is as follo
 - {samp}`{FAULT}` (red): A problem which prevents the normal functioning (including during the initialization). Getting out from a FAULT state is possible only by repairing the cause of the problem and/or executing a Reset command.
 - {samp}`{ALARM}` (orange): the device is functional but one element is out of range (bad parameters but not preventing the functioning, limit switch of a motor). An attribute is out of range.
 
+(state-machine-management)=
 ### State machine management
 
 #### Pogo or developer code

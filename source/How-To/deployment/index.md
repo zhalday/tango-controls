@@ -1,3 +1,4 @@
+(how-to-services)=
 # Services
 
 ```{tags} audience:administrators

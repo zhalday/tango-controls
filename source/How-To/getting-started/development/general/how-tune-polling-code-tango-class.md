@@ -1,15 +1,15 @@
-# How to tune polling from inside device classes
+# Tune polling from inside device classes
 
 ```{tags} audience:developers, lang:all
 ```
 
-It is possible to configure command or attribute polling from within a {term}`device class`, i. e. an instance
+It is possible to configure {term}`command` or {term}`attribute` polling from within a {term}`device class`, i.e. an instance
 of `Tango::DeviceImpl`. The available functionality is similiar to the one found in `Tango::DeviceProxy`.
 
 With them, you can:
 
   - Check if a command or attribute is polled
-  - Start/Stop polling for a command or an attribute
+  - Start/stop polling for a command or an attribute
   - Get or update the polling period for a polled attribute or command
 
 :::::{tab-set}

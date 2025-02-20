@@ -1,61 +1,47 @@
 (how-to-write-first-device-class)=
 
-# How to write your first Device Class
+# Write your first Device class
 
 ```{tags} audience:developers, lang:all
 ```
 
-This HowTo explains how to create your first Device Class regardless of the language used.
+This How-to explains how to create your first Device class regardless of the language used.
 
-Prerequisite : Tango Environment.
+Prerequisite: This how-to assumes that you have a Tango installed.
 
-## Start [Pogo](#pogo-documentation) Generator
+- Start [Pogo](#pogo-documentation) code generator: Now you can create a new class:
+    - Click on ![pogo](how-to-first-device-class/PogoFileImage.png) and then {guilabel}`New`.
 
-Now you can create a new Class. Click on ![pogo](how-to-first-device-class/PogoFileImage.png) and New.
+- Add the following required information for your class:
+    - The Device Class identification information (shown in the left panel below)
+    - The class name, language and description (shown in the right panel below)
 
-## Fill in your Class
+    ```{image} how-to-first-device-class/PogoFirstConfiguration.png
+    ```
 
-Fill in required informations.
-The Device Class identification on the left part and the description on the right.
+- Once completed, you will see an empty Pogo interface:
 
-```{image} how-to-first-device-class/PogoFirstConfiguration.png
-```
+    ```{image} how-to-first-device-class/PogoEmptyImage.png
+    ```
 
-You will see an empty Pogo interface.
+    You can add {term}`Properties <Property>`, {term}`Commands <Command>` and {term}`Attributes <Attribute>` by double-clicking on each one.
+    Below is an example after having defined some of these:
 
-```{image} how-to-first-device-class/PogoEmptyImage.png
-```
+    ```{image} how-to-first-device-class/PogoFilled.png
+    ```
 
-You can add some Properties, Commands and Attributes, by double-clicking on each one.
-There are different possible configuraton.
+- Generate your files from {guilabel}`File` -> {guilabel}`Generate` and press {guilabel}`OK` in the window.
+    - Choose your output path and the files you want to create. For example, on linux OS in C++, the minimum set of files that need to be created are: an XMI file, Code files and a Makefile. See the example below:
 
-```{image} how-to-first-device-class/PogoFilled.png
-```
+        ```{image} how-to-first-device-class/PogoGenerate.png
+        ```
 
-## Generate
+    - You will now see the {program}`Pogo` generated files in your folder:
+        ```{image} how-to-first-device-class/PogoFilesGenerated.png
+        ```
+        {program}`Pogo` has creates skeleton files with your Properties, Commands and Attributes.
 
-Generate your files ![pogo](how-to-first-device-class/PogoGenerateButton.png)
-Choose your folder's path and files you want to create. For example, on linux OS with Cpp language, the minimum is XMI File, Code files and Makefile like you can see behind.
 
-```{image} how-to-first-device-class/PogoGenerate.png
-```
+- Next you will need to develop your device. Information on how to do this can be found in the language specific how-to sections: [C++](#cpp-client-programmers-guide), [Java](#getting-started-with-jtango-server) or [Python](#getting-started-pytango)
 
-You can now see {program}`Pogo`'s files in your folder. {program}`Pogo` had create skeleton files with your Properties, Commands and Attributes.
-
-```{image} how-to-first-device-class/PogoFilesGenerated.png
-```
-
-Now you have a basic server who's make nothing. You can provide contents or fill it with different needs.
-
-You can have some informations about how to start [here](#getting-started-as-developer)
-
-You can have more informations about device server usage [here](#device-api).
-
-How to fill your device in [Cpp](#cpp-client-programmers-guide), [Java](#getting-started-with-jtango-server) and [Python](#getting-started-pytango)
-
-## Compile And Run
-
-Now you can compile and [Run](#howto-start-device-server) your Class.
-
-% definitions
-% --------------
+- Finally, to compile and run your class see the section on [how to start a device server](#howto-start-device-server).
