@@ -1,6 +1,6 @@
 (how-to-write-first-device-class)=
 
-# Write your first Device class
+# Create your first Device class
 
 ```{tags} audience:developers, lang:all
 ```

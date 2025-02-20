@@ -4,7 +4,7 @@
 
 (first-cpp-device-class-implementation)=
 
-# Your first C++ TANGO device class
+# Write your first C++ TANGO device class
 
 ```{tags} audience:developers, lang:c++
 ```
