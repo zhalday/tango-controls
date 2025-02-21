@@ -15,6 +15,7 @@ Some common task are given below:
 
 general/how-to-first-device-class
 general/first-client
+general/generating-events
 general/how-tune-polling-code-tango-class
 
 ```
