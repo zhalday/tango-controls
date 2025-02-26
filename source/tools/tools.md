@@ -7,6 +7,7 @@ astor
 jive
 starter
 logviewer
+tango-admin
 jdraw
 itango
 taurus

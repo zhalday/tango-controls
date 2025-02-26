@@ -14,4 +14,5 @@ One recommended way of testing newly developed Tango device servers is by using 
 :hidden:
 
 testing-tango-using-docker
+how-to-junit-helper-classes-for-device-server-testing
 ```

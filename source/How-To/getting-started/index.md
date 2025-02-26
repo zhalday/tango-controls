@@ -12,15 +12,15 @@ Some first steps might include:
 
 - Start with either a preconfigured virtual machine or try installing a basic Tango controls set up on your own computer - see [trying Tango Controls ](#howto-try-tango).
 
-- Installing Tango Controls on your own system following instructiond from the [Installation guides ](#getting-started-installation).
+- Installing Tango Controls on your own system following instructions from the [Installation guides ](#getting-started-installation).
 
 - Start connecting your devices to Tango Controls :
     - browse the [Device Classes Catalogue](http://www.tango-controls.org/developers/dsc/) to find device servers
     for your equipment
     - read [how to start a device server ](#howto-start-device-server)
-    - or read {doc}`development/cpp/first-device-class` and follow a guide [How to write your device class ](#how-to-write-first-device-class) if your device is not yet supported by any existing {term}`device server`.
+    - or read {doc}`../development/cpp/first-device-class` and follow a guide [How to write your device class ](#how-to-write-first-device-class) if your device is not yet supported by any existing {term}`device server`.
 
-- Writing your first client following instruction from {doc}`development/general/first-client`.
+- Writing your first client following instruction from {doc}`../development/general/first-client`.
 
 - Learn how to use some of the tools provided in Tango:
     - [Jive](inv:jive:std#index)
@@ -50,10 +50,9 @@ Some first steps might include:
 :maxdepth: 1
 :caption: How to:
 
-end-user/end-user-apps
-end-user/how-to-start-device-server
-development/index
-administration/index
+how-to-try-tango
+end-user-apps
+how-to-start-device-server
 ```
 
 [Tango Controls web page]: https://www.tango-controls.org

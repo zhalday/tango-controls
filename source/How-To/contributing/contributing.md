@@ -18,5 +18,6 @@ tangoidl
 cpptango
 pytango
 jtango
-docs
+docs/docs
+docs/how-to-add-subproject-to-the-doc
 ```

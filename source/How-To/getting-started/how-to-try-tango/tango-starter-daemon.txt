@@ -1,8 +1,4 @@
-(tango-starter-daemon-source)=
-
-# Tango starter daemon source
-
-```bash
+#
 #!/bin/sh
 #
 # tango-starter
@@ -133,4 +129,3 @@ case "$1" in
 esac
 
 exit 0
-```

@@ -84,7 +84,7 @@ show where is the mysqlclient-lib.
 
 If the configuration of the system ends successfully, you should see this output:
 
-:::{figure} tango-configuration-successful.png
+:::{figure} how-to-try-tango/tango-configuration-successful.png
 :align: center
 :scale: 75 %
 :::
@@ -115,7 +115,16 @@ So the process of starting the two main server-side elements of the tango enviro
 ({term}`Tango Database` and [Tango Starter](#Starter)) can be optimized.
 
 For creating the **Tango DB services** make in your `/lib/systemd/system directory`, file named tango-db.service,
-containing [tango_db.service](#tango-db-service-source).
+containing the following information:
+
+:::{dropdown} tango-db.service
+:open:
+
+```{literalinclude} how-to-try-tango/tango-db-service.txt
+```
+:::
+
+
 
 In this service system start the mariadb database process, so for the mysql database this requirement must be changed:
 
@@ -142,7 +151,17 @@ MYSQL_PASSWORD=tango
 (howto-sysv-init)=
 
 To proper setup the **Tango Starter daemon**, create the file in the `/etc/init.d/tango-starter`,
-containing [tango_starter](#tango-starter-daemon-source). Starter daemon similar like the Tango DB service
+containing the following information.
+
+:::{dropdown} tango-starter
+:open:
+
+```{literalinclude} how-to-try-tango/tango-starter-daemon.txt
+:lines: 2-
+```
+:::
+
+Starter daemon similar like the Tango DB service
 uses the TANGO_HOST variables to create a connection with a database. The second setting equals the system user,
 used to start the daemon. The variables informing about this user are configured in the `/etc/sysconfig/tango-starter` file:
 
@@ -185,7 +204,7 @@ which can be used for the testing process. In help with Astor the process of sta
 After opening the control panel for specific hosts (in Astor application), we can start a new device server
 which will be automatically run. Like in this screenshot:
 
-:::{figure} astor-tangotest.png
+:::{figure} how-to-try-tango/astor-tangotest.png
 :align: center
 :scale: 75 %
 :::
@@ -197,7 +216,7 @@ and see the attribute, properties, all configuration of the selected device. For
 we can run the jive application (by typing the command {command}`jive`) and chose in the GUI
 options {guilabel}`Monitor Device` on the {term}`Tango Device <device>`, like in this screenshot:
 
-:::{figure} jive-tangotest.png
+:::{figure} how-to-try-tango/jive-tangotest.png
 :align: center
 :scale: 75 %
 :::
@@ -219,7 +238,7 @@ So to better visualization of changes the selected values, the user can use [Tau
 TangoTest attribute is generate using trigonometric functions, so it is easy to check if the device works correctly.
 The TaurusTrend for TangoTest attribute should look like in the screen below:
 
-:::{figure} taurus-trend-example.png
+:::{figure} how-to-try-tango/taurus-trend-example.png
 :align: center
 :scale: 75 %
 :::
@@ -238,8 +257,3 @@ taurusdevicepanel sys/tg_test/1/double_scalar_rww
 
 To storage the longtime history of changes of the attributes,
 you can use the [Tango Archiving System ](#hdbpp-manual).
-
-```{toctree}
-tango-db-service
-tango-starter-daemon
-```

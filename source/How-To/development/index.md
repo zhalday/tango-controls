@@ -1,6 +1,6 @@
 (getting-started-as-developer)=
 
-# How to develop for Tango Controls
+# Development
 
 ```{tags} audience:developers, lang:all
 ```
@@ -17,6 +17,7 @@ general/how-to-first-device-class
 general/first-client
 general/generating-events
 general/how-tune-polling-code-tango-class
+general/how-to-telemetry
 
 ```
 

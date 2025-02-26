@@ -17,4 +17,12 @@ transferring-images
 user-loop
 how-to-create-inheritance-link
 use-vectors-set-attributes
+how-to-dynamic-attributes-device-class
+how-to-deal-string-tango-attribute-cpp
+how-to-device-server-startup-time
+how-to-enumerated-attribute
+how-to-forwarded-attribute
+how-to-memorised-attribute
+how-to-aliases
+how-to-cpp-client-programmers-guide
 ```

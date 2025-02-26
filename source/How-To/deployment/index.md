@@ -1,9 +1,9 @@
-(how-to-services)=
-# Services
+(how-to-deployment)=
+# Deployment
 
 ```{tags} audience:administrators
 ```
-This section provides instructions on how to use some of the available Tango services.
+This section provides a set of common how-to tasks relating to the deployment of Tango.
 
 ```{toctree}
 :maxdepth: 1
@@ -18,4 +18,7 @@ filedatabase
 starting
 device-server-without-db
 access-control
+how-to-import-classes-to-catalogue
+how-to-integrate-with-systemd
+how-to-run-device-server-firewall
 ```

@@ -58,7 +58,7 @@ We understand that it is easy to get lost due to the sheer amount of information
 - You will find that Tango comes with a rich set of {doc}`tools <tools/tools>`. They are command line tools, graphical toolkits and programming tools for management, developing graphical applications, connecting with other systems and applications. All, **End Users**, **Developers** and **System Adminstrators**, should take a look at the toolkits' manuals.
 - {doc}`Tutorials <Tutorials/index>` and {doc}`How-Tos <How-To/index>` give step by step guidance and teach you how to work with Tango Controls or get your job done efficiently.
 - If you would like to contribute to the documentation then please read the
-  {doc}`documentation workflow tutorial <How-To/contributing/docs>`.
+  {doc}`documentation workflow tutorial <How-To/contributing/docs/docs>`.
 
 ## Indices and tables
 
