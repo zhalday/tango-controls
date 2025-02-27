@@ -16,8 +16,10 @@ There are different tasks that need to be performed in a Tango Cotnrols System. 
 It is possible that all of the tasks above are done on the same computer at the same time.
 :::
 
-:::{sidebar} Tango Host, Databaseds
-Each Tango Controls system/deployment has to have at least one running DataBaseds {term}`device server`. The machine on which the {term}`device server` is running has a role of so called {term}`Tango Host`. Databaseds is a device server providing configuration information to all other components of the system as well as a runtime catalog of the components/devices.
+:::{hint}
+**Tango Host, Databaseds**
+
+Each Tango Controls system/deployment has to have at least one running {term}`DataBaseds <databaseds>` {term}`device server`. The machine on which the device server is running has the role of the so called {term}`Tango Host <tango host>`. Databaseds is a {term}`device server` providing configuration information to all other components of the system as well as a runtime catalog of the components/{term}`devices <device>`.
 It allows (among others) client applications to find devices in distributed environment.
 
 The `TANGO_HOST` environment variable is providing information about the address or IP number and the port on which the DataBaseds is listening for Tango connections. The `TANGO_HOST` environment variable is built as follows:
