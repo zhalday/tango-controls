@@ -22,9 +22,9 @@ It is possible that all of the tasks above are done on the same computer at the 
 Each Tango Controls system/deployment has to have at least one running {term}`DataBaseds <databaseds>` {term}`device server`. The machine on which the device server is running has the role of the so called {term}`Tango Host <tango host>`. Databaseds is a {term}`device server` providing configuration information to all other components of the system as well as a runtime catalog of the components/{term}`devices <device>`.
 It allows (among others) client applications to find devices in distributed environment.
 
-The `TANGO_HOST` environment variable is providing information about the address or IP number and the port on which the DataBaseds is listening for Tango connections. The `TANGO_HOST` environment variable is built as follows:
+The {term}`TANGO_HOST` environment variable is providing information about the host name or IPv4 address and the port on which the DataBaseds is listening for Tango connections. The `TANGO_HOST` environment variable is built as follows:
 
-*host_name_or_IP:port*, example: `localhost:10000`
+*host_name_or_IPv4_address:port*, example: `localhost:10000`
 :::
 
 Tango installation can be very simple running on a single machine for managing a few devices
