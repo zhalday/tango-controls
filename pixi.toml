@@ -32,6 +32,7 @@ sphinx-hoverxref = "*"
 sphinx-tags = { git = "https://github.com/melissawm/sphinx-tags.git", rev = "4863328" }
 sphinx-togglebutton = "*"
 sphinxcontrib-mermaid = "*"
+sphinx-reredirects = "*"
 myst-parser = ">=4"
 pillow = "*"
 sphinx-autobuild = "*"

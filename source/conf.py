@@ -51,6 +51,7 @@ extensions = [
     "sphinxcontrib.mermaid",
     "hoverxref.extension",
     "sphinx_tags",
+    "sphinx_reredirects",
 ]
 
 myst_enable_extensions = [
@@ -451,4 +452,20 @@ tags_overview_title = "Site tags"
 tags_badge_colors = {
     "audience:*": "primary",
     "lang:*": "success",
+}
+
+# redirects main sections from Tango 9.3 to new sections in Tango 10
+# wildcards seems to only work for existing documents or everything
+redirects = {
+    # authors.html didn't move
+    "overview/index.html": "../Explanation/",
+    "installation/index.html": "../How-To/installation/",
+    "getting-started/index.html": "../Tutorials/",
+    "development/index.html": "../index.html",  # could go to Tutorials or How-To
+    "tools-and-extensions/index.html": "../tools/",
+    "administration/index.html": "../index.html",
+    "tutorials-and-howtos/tutorials/index.html": "../../Tutorials/",
+    "tutorials-and-howtos/how-tos/index.html": "../../How-To/",
+    "tutorials-and-howtos/index.html": "../Tutorials/",
+    # reference didn't move
 }

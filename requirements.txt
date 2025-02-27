@@ -32,9 +32,10 @@ sphinx-autobuild==2024.10.3
 sphinx-book-theme==1.1.3
 sphinx-copybutton==0.5.2
 sphinx-hoverxref==1.4.1
-sphinx-tags @ git+https://github.com/beenje/sphinx-tags.git@490f40f0042792ca410c249e195f29c96e33b25b
+sphinx-tags @ git+https://github.com/melissawm/sphinx-tags.git@486332850518547e6f309fac0d3d93c18ba27e92
 sphinx-togglebutton==0.3.2
 sphinx_design==0.6.1
+sphinx_reredirects==0.1.5
 sphinxcontrib-applehelp==2.0.0
 sphinxcontrib-devhelp==2.0.0
 sphinxcontrib-htmlhelp==2.1.0
