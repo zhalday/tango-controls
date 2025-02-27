@@ -413,12 +413,26 @@ Interface (API). The API is implemented as a library in C++ and as a
 package in Java. The API is what makes TANGO clients easy to write. The
 API’s consists the following basic classes :
 
-- DeviceProxy which is a *proxy* to the real device
+%[glossary_term][AttributeProxy]
+%The AttributeProxy is a placeholder on the client side with exectly the same interface that a real {term}`Attribute <attribute>` exposes. Only when an operation on a AttributeProxy is performed, a connection to the Attribute of a real Device is attempted and on success the operation performed. In case the Attribute of the real Device cannot be reached, a client-side Tango exception is raised.
+
+%[glossary_term][DeviceProxy]
+%The DeviceProxy is a placeholder on the client side with exectly the same interface that a real {term}`Device <device>` exposes. Only when an operation on a DeviceProxy is performed, a connection to the real Device is attempted and on success the operation performed. In case the real Device cannot be reached, a client-side Tango exception is raised.
+
+%[glossary_term][client]
+%In Tango a client is either a {term}`DeviceProxy` or an {term}`AttributeProxy` instance created by a program.
+
+- DeviceProxy which is a *proxy* to the real {term}`device`
+- AttributeProxy which is a *proxy* to an {term}`Attribute <attribute>` of a real device
 - DeviceData to encapsulate data send/receive from/to device via
   commands
 - DeviceAttribute to encapsulate data send/receive from/to device via
   attributes
 - Group which is a *proxy* to a group of devices
+
+:::{note}
+In Tango the term client usually refers to either an {term}`AttributeProxy` or to a {term}`DeviceProxy`.
+:::
 
 In addition to these main classes, many other classes allows a full
 interface to TANGO features. The following figure is a drawing of a
