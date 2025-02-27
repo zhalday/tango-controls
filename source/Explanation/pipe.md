@@ -4,12 +4,15 @@
 ```{tags} audience:all, lang:all
 ```
 
-:::{note}
-**Warning**: The {term}`Pipe <pipe>` Feature will get deprecated when the DevDict feature will be implemented.
+:::{warning}
+The {term}`Pipe <pipe>` feature will get deprecated when the DevDict feature will be implemented.
+
+PyTango has deprecated the Pipe feature in PyTango 10.0.2 and will remove it in PyTango 10.1.0.
 :::
 
+
 %[glossary_term][pipe]
-%A pipe allows to read and/or write a structured data from and/or to a {term}`device`. The data may be built out of several basic Tango datatypes. The structure of data is defined by a {term}`device class` and is not fixed. It may be changed at runtime by the {term}`device` itself or modified upon request from a client according to `set_pipe_config` operation provided by pipe. List of pipes available for a {term}`device` is defined by its {term}`device class`.
+%A pipe allows to read and/or write structured data from and/or to a {term}`device`. The data consists of one or more basic Tango data types. The structure of the data is defined by a {term}`device class` but is not static. It can be changed at runtime by the {term}`device` itself or modified upon request by a {term}`client` according to the `set_pipe_config` operation provided by pipe. The list of available pipes in a {term}`device` is defined by the {term}`device's <device>` {term}`device class`.
 
 ## Introduction
 A Tango {term}`Pipe <pipe>` is like an {term}`Attribute <attribute>` with a flexible data structure, name and description.
