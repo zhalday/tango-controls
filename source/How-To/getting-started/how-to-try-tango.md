@@ -7,236 +7,62 @@
 
 There are several ways to try the Tango Controls System.
 
-For the first quick look, you can download and run the [TangoBox Virtual Machine](#tangobox-vm-installation).
-Also, it is a possibility to build the system from [source code](#debian-compile-tango-source-distribution).
+For a first quick look, you can download and run the [TangoBox Virtual Machine](#tangobox-vm-installation).
+Alternatively, you can go ahead and install Tango on your system - see the [installation section](#getting-started-installation)
+for a full set of instructions on how to do this on your chosen operating system.
 
-If you have installed and configured Tango, you can skip to: {ref}`using-tango`.
+It may also be worth looking at configuring the Tango components to run as services using systemd to automate the start up, please see [](#systemd-integration).
 
-## Installation notes on Linux base distribution OS
-
-### SHORTCUTS
-
-1. [Using Ansible](https://github.com/MaxIV-KitsControls/tangobox-ansible)
-2. [Installation on Debian](https://marscity.readthedocs.io/en/latest/doc/setup.html)
-3. [Installation on RedHat](#linux-redhat-installation)
-
-If you want to use Debian/Ubuntu or Docker solution to try Tango you can skip
-this article and go to:
-
-- [How to install Tango on Debian](#linux-debian-installation)
-- [Using Tango docker containers](#tango-using-docker)
-
-Tango requires:
-
-- omniORB - CORBA implementation
-- zeroMQ - event system
-
-You can install this library from source:
-[omniORB](https://sourceforge.net/projects/omniorb/files/omniORB/omniORB-4.2.5/omniORB-4.2.5.tar.bz2/download),
-[zeroMQ](http://zeromq.org/intro:get-the-software) or by your package-management tools like yum or apt-get.
-
-:::{note}
-Remember that Tango needs the header files (.h) in the compilation process so is a need
-to install developers version of these libraries.
-:::
-
-Also, many elements of the Tango ecosystem and the Control System itself requires the **MariaDB**
-or **MySQL** database. You can easily install it using apt or yum:
-
-```console
-apt install mysql-server/mariadb-server
-```
-
-or
-
-```console
-yum install mysql-server/mariadb-server
-```
-
-Download the source of the Tango Control System
-
-```console
-wget -L https://gitlab.com/api/v4/projects/24125890/packages/generic/TangoSourceDistribution/9.3.5/tango-9.3.5.tar.gz
-tar xzf tango-9.3.5.tar.gz
-```
-
-In this directory, a good practice is to create the build folder, to don't mix
-a configuration/compile file with the source.
-
-```console
-cd tango-9.3.5
-mkdir build
-```
-
-### Compile and installation notes
-
-To fully configure TANGO installation you can tell where is the omniORB, ZMQ library and where you want to install
-Tango Controls System. Also, you need to configure the connection with the database and
-show where is the mysqlclient-lib.
-
-```console
-../configure                                 \
-     --prefix=/usr/install_dir_linux         \
-     --with-omni=/usr/update                 \
-     --with-zmq=/usr/update                  \
-     --with-mysqlclient-lib=/usr/lib64/mysql
-```
-
-If the configuration of the system ends successfully, you should see this output:
-
-:::{figure} how-to-try-tango/tango-configuration-successful.png
-:align: center
-:scale: 75 %
-:::
-
-If the value of the **database server** and **database schema create** is **no**, this means that during the
-configuration process the connection with the database can't be established. In this case, check if the path
-to the mysqlclient-lib is correct. The second reason can be the database credentials. Because the default value for the
-mysql-user and mysql-password is blank. For setup the proper database configuration can be used
-the **--with-mysql-admin** and **--with-mysql-admin-pass** flag adding to the configure command.
-Also is a possibility to add the **--with-mysql-ho** flag to set up the different host with the database to connect.
-
-Now compile and install TANGO by the command:
-
-```console
-make all
-make install
-```
-
-## Running the Tango System
-
-It is essential to correctly run the Tango elements, to better maintain and automate the process starting
-the necessary part of the Tango Control System. For this purpose, it is recommended to create the system services.
-
-In the case when the system is installed from a .deb package or is running in a docker container the package or the image provides services.
-However, in the approach described in the above paragraph creating the services and daemon have to be done manually.
-
-So the process of starting the two main server-side elements of the tango environment
-({term}`Tango Database` and [Tango Starter](#Starter)) can be optimized.
-
-For creating the **Tango DB services** make in your `/lib/systemd/system directory`, file named tango-db.service,
-containing the following information:
-
-:::{dropdown} tango-db.service
-:open:
-
-```{literalinclude} how-to-try-tango/tango-db-service.txt
-```
-:::
-
-
-
-In this service system start the mariadb database process, so for the mysql database this requirement must be changed:
-
-```console
-Requires=mysqld.service
-After=mysqld.service
-```
-
-There are two main environment files used in this service. One containing the {term}`Tango Host`
-address in file `/etc/tangorc`:
-
-```console
-TANGO_HOST=address:port
-```
-
-The second file is providing the database credentials. Tango automatically creates it in the `/etc/sysconfig/tango-db`.
-This file contains the database setting e.q:
-
-```console
-MYSQL_USER=tango
-MYSQL_PASSWORD=tango
-```
-
-(howto-sysv-init)=
-
-To proper setup the **Tango Starter daemon**, create the file in the `/etc/init.d/tango-starter`,
-containing the following information.
-
-:::{dropdown} tango-starter
-:open:
-
-```{literalinclude} how-to-try-tango/tango-starter-daemon.txt
-:lines: 2-
-```
-:::
-
-Starter daemon similar like the Tango DB service
-uses the TANGO_HOST variables to create a connection with a database. The second setting equals the system user,
-used to start the daemon. The variables informing about this user are configured in the `/etc/sysconfig/tango-starter` file:
-
-```console
-TANGO_USER=tangosys
-```
-
-When all configuration is done, finally system is ready to start the Tango Control System main elements:
-
-```console
-systemctl start tango-db
-systemctl start tango-starter
-```
-
-The {command}`systemctl start` command run the process once. If these services should automatically start
-on the boot of the machine, it needs to run the enable command for these processes:
-
-```console
-systemctl enable tango-db
-systemctl enable tango-starter
-```
-
-See more: {ref}`systemd-integration`
+Assuming you have installed and configured Tango you can begin to use it.
 
 (using-tango)=
 
 ## Play with Tango Controls
 
-Tango eco-system provides a lot of management application and framework to visualization the data.
-This chapter provides a quick overview of a basic use case for Tango Control.
+The Tango eco-system provides a lot of management applications and frameworks to visualize the data.
+This section provides a quick overview of a basic use case for Tango Controls.
 
-The new host is adding automatically by tango-starter daemon, but we can do this manually using the **Astor**.
-This application is used to configuring the Control System and its components. Moreover,
-it provides a quick view of the statuses of all {term}`device servers<device server>` in the Tango.
-If you want to add the new host manually see: {ref}`astor-new-host`.
-For more information about Astor application see: {ref}`astor-manual`.
+If you have set up a tango-starter systemd service then it will automatically add the new host,
+however this can also be done manually using [**Astor**](#astor-manual).
+This application is used to configure the Control System and its components.
+It also provides a quick view of the statuses of all {term}`device servers<device server>` in the Tango DB.
+To add a new host manually using Astor see: {ref}`astor-new-host`.
 
-TangoTest this is a {term}`device class` provides all types of attribute available in Tango Devices
-which can be used for the testing process. In help with Astor the process of starting this device server is simplified.
-After opening the control panel for specific hosts (in Astor application), we can start a new device server
-which will be automatically run. Like in this screenshot:
+TangoTest this is a {term}`device class` that provides all types of attributes available in Tango Devices
+and so can be used for testing purposes. Astor can be used to start this device server.
+After opening the control panel for the specific host, you can start a new device server, e.g.:
 
 :::{figure} how-to-try-tango/astor-tangotest.png
 :align: center
 :scale: 75 %
 :::
 
-See more: [start a new Tango device server](inv:astor:std#add_server).
+Tango Starter also needs to be running. Further information is available on [starting a new Tango device server in Astor](inv:astor:std#add_server).
 
-When the TangoTest device is working, we can run the [atkpanel in jive ](#atkpanel-manual) application
-and see the attribute, properties, all configuration of the selected device. For this purpose,
-we can run the jive application (by typing the command {command}`jive`) and chose in the GUI
-options {guilabel}`Monitor Device` on the {term}`Tango Device <device>`, like in this screenshot:
+We can the open the [AtkPanel](#atkpanel-manual) from the [Jive](inv:jive:std#index) application
+and view the attributes, properties, and all configuration settings for the selected device.
+
+Open the Jive application by typing the command `jive` in a console. Then select the
+{guilabel}`Monitor Device` option from the right-click menu on that {term}`Tango Device <device>`, e.g.:
 
 :::{figure} how-to-try-tango/jive-tangotest.png
 :align: center
 :scale: 75 %
 :::
 
-In atkpanel users can [execute the command ](#device-testing)  directly to the selected TangoTest device.
-List of useful command for this device:
+Users can use the AtkPanel to [execute commands](#device-testing) on the selected TangoTest device.
+Some useful commands one might try issuing for this device are:
 
-> - {command}`SwitchStates` - changes states of the device (form RUN states to FAULT or FAULT to RUN)
-> - {command}`DevType` - this is a DevType command example
-> - {command}`State` - return the states of the device
-> - {command}`CrashFromX` - simulate the crash of the device
+- `SwitchStates` - changes the state of the device (e.g. from RUN to FAULT or FAULT to RUN)
+- `DevType` - this is a DevType command example
+- `State` - return the state of the device
+- `CrashFromX` - simulate a crash of the device
 
-Jive is an application design to browse and edit the static TANGO database, configure event and test devices.
-Full documentation for this application you can see [here](inv:jive:std#index).
+The attributes shown in the AtkPanel are mostly real-time values. If instead a user wants to
+view how the attribute value changes they can use the [Taurus framework](#taurus) widgets.
 
-In the atkpanel the attribute shows mainly the real-time values.
-So to better visualization of changes the selected values, the user can use [Taurus framework ](#taurus) widgets.
-
-TangoTest attribute is generate using trigonometric functions, so it is easy to check if the device works correctly.
-The TaurusTrend for TangoTest attribute should look like in the screen below:
+TangoTest has an attribute that is generated using a trigonometric functions, so it is easy to check if the device is working correctly.
+Below is the `TaurusTrend` view of the `double_scalar_rww` TangoTest attribute:
 
 :::{figure} how-to-try-tango/taurus-trend-example.png
 :align: center
@@ -246,14 +72,13 @@ The TaurusTrend for TangoTest attribute should look like in the screen below:
 To run TaurusTrend uses a command:
 
 ```console
-taurustrend sys/tg_test/1/double_scalar_rww
+taurus trend sys/tg_test/1/double_scalar_rww
 ```
 
-To see custom Taurus device panel (similar like atkpanel) run the different command:
+Taurus also has a custom device panel (similar to the AtkPanel) which can be started with:
 
 ```console
-taurusdevicepanel sys/tg_test/1/double_scalar_rww
+taurus device sys/tg_test/1/double_scalar_rww
 ```
 
-To storage the longtime history of changes of the attributes,
-you can use the [Tango Archiving System ](#hdbpp-manual).
+The [Tango Archiving System](#hdbpp-manual) can be used to store the attribute value changes long term.

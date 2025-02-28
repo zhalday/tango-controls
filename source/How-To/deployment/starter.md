@@ -86,10 +86,6 @@ The following are example configuration files for different service managers:
 
   follow [instructions for systemd integration ](#systemd-integration).
 
-- **System V init**
-
-  follow [instructions in the installation guide ](#howto-sysv-init).
-
 - **NSSM (Windows)**
 
   follow [NSSM configuration instructions in the installation guide for Windows ](#windows-starter-nssm).
