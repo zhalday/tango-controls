@@ -21,7 +21,7 @@ This type of file is not required by a Tango control system as this information 
 Database` as well.
 
 But if you want to run the {term}`File Database` this is the format that will be used. These files can either be
-written from scratch using the example below or exported from [JIVE](inv:jive:std#index). To generate a device
+written from scratch using the example below or exported from [Jive](inv:jive:std#index). To generate a device
 server process properties file, select your device server process in the `Server` tab, right click and select
 `Save Server Data`. A file selection window pops up allowing you to choose your file name and path. To load a
 file into the Tango database, click on `File` then `Load Property File`.

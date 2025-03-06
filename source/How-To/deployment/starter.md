@@ -78,7 +78,7 @@ when searching for executables.
 ## Autostarting Starter
 
 The Starter device server can be automatically started during system startup
-using a service manager of choice. It can then start any other device servers.
+using a service manager of choice. It can then start any other device server.
 
 The following are example configuration files for different service managers:
 
