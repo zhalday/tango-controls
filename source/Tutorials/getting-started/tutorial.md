@@ -8,6 +8,7 @@ intro.md
 01-first-steps.md
 02-state-status.md
 03-init-delete-device.md
+04-version-info.md
 ```
 
 This tutorial shows you how to get started with **Tango**, covering the major features, step by step.
