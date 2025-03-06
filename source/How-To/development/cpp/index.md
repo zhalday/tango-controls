@@ -13,7 +13,6 @@ Note that this chapter assumes that you have already installed Tango in your loc
 
 cpp-quick-start
 first-device-class
-transferring-images
 user-loop
 how-to-create-inheritance-link
 use-vectors-set-attributes

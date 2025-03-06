@@ -18,6 +18,7 @@ general/first-client
 general/generating-events
 general/how-tune-polling-code-tango-class
 general/how-to-telemetry
+general/transferring-images
 
 ```
 
