@@ -11,11 +11,13 @@ One wants to control Java Tango servers using Astor after deployment.
 
 ## Detailed cases
 
-Simplify deployment and integration of new Java Tango servers with existing Tango environment. Give users ability to use well known tools for controlling and monitoring Java Tango servers.
+Simplify deployment and integration of new Java Tango servers with existing Tango environment. Give users
+ability to use well known tools for controlling and monitoring Java Tango servers.
 
 ## Solution overview
 
-The following describes solutions for linux. Windows users may use the same strategy except bash files must be replaced with corresponding batch files.
+The following describes solutions for linux. Windows users may use the same strategy except bash files must be
+replaced with corresponding batch files.
 
 There are two possible ways we can prepare this receipt:
 
@@ -60,19 +62,21 @@ To use our server we just copy it to some location on the target machine and use
     /usr/bin/java -jar /absolute/path/to/our/jar $1 hzg.wpn.tango.TestServer $1
 ```
 
-Super easy, isn't it? (Do not mind the last two parameters they are here to workaround this [issue])
+Do not mind the last two parameters they are here to workaround an
+[issue](https://gitlab.com/tango-controls/Astor/-/issues/6).
 
-This script is saved into /usr/lib/tango/server/TestServer. /usr/lib/tango/server can be replaced with any other location where Starter can find the script, i.e. defined in StartDsPath property.
+This script is saved into `/usr/lib/tango/server/TestServer`. `/usr/lib/tango/server` can be replaced with any
+other location where Starter can find the script, i.e. defined in StartDsPath property.
 
-We need to specify an absolute path to the jar file as Astor runs servers from /var/tmp/ds.log folder
+We need to specify an absolute path to the jar file as Astor runs servers from `/var/tmp/ds.log` folder
 
 PROS
 
-> - it is much easier to deal with immutable artifacts
+> - It is much easier to deal with immutable artifacts
 
 CONS
 
-> - fat jar… imagine 1000 servers each requires 17MB
+> - A lot of duplication, imagine 1000 servers each requiring 17MB
 
 2. Use exploded assembly, i.e. first package everything into tar.gz
 
@@ -114,7 +118,7 @@ CONS
     </assembly>
 ```
 
-When deployed it is extracted from the archive and copied to some placed aka SERVER_ROOT. Exploded archive has the following structure:
+When deployed it is extracted from the archive and copied to some place e.g. `SERVER_ROOT`. Exploded archive has the following structure:
 
 ```console
 SERVER_ROOT\
@@ -138,20 +142,21 @@ Startup bash script may look like this:
     /usr/bin/java -cp $SERVER_ROOT/lib/* -Dconf=$SERVER_ROOT/conf/test.xml hzg.wpn.tango.TestServer
 ```
 
-Again the script is in /usr/lib/tango/server/TestServer. /usr/lib/tango/server can be replaced with any other location where Starter can find the script, i.e. defined in StartDsPath property.
+Again the script is in `/usr/lib/tango/server/TestServer`. `/usr/lib/tango/server` can be replaced with any
+other location where Starter can find the script, i.e. defined in `StartDsPath` property.
 
-We need to specify an absolute path to the lib and conf folders as Astor runs servers from /var/tmp/ds.log folder
+We need to specify an absolute path to the `lib` and `conf` folders as Astor runs servers from
+`/var/tmp/ds.log` folder:
 
-PROS
+PROS:
 
-> - if there are several servers common dependencies can be placed into a single location, hence safe some hdd space - server may use external resources (like conf in the example above), just make sure to use absolute pathes
+> - if there are several servers common dependencies can be placed into a single location, hence save some
+>   disc space
+> - server may use external resources (like conf in the example above), just make sure to use absolute
+>   paths
 
-CONS
+CONS:
 
 > - dealing with exploded assemblies quickly becomes messy
 
-Both solutions assume that maven is used to handle project’s lifecycle.
-
-% definitions
-
-[issue]: https://gitlab.com/tango-controls/Astor/issues/6
+Both solutions assume that maven is used to handle project's lifecycle.
