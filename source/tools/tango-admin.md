@@ -49,6 +49,8 @@ This is the output of version 1.24.
 
 ## Examples
 
+(tango-admin-add-device-server)=
+
 ### Adding a device server
 
 ```text
