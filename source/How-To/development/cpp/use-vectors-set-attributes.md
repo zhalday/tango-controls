@@ -1,25 +1,26 @@
 (use-vector-set-attributes)=
 
-# How to use vectors to set attributes
+# Use C++ `std::vector` to set attributes
 
 ```{tags} audience:developers, lang:c++
 ```
 
 This page contains examples on how to use the C++ vector class to set and get attribute
-values on the servers side.
+values on the server side.
 
 :::{warning}
-Tango is optimized not to copy data. For this reason all the attribute
-set_value() methods only take pointers as input. If you are going to
-use C++ vectors, you should be aware of the fact that you are going to
-copy the data! This might slow down execution time when working with
-large amount of data.
+Tango does not create copies of data for optimization reasons and because of this all of the attribute
+`set_value()` methods only take pointers as an input. If you are going to
+use C++ vectors you should be aware of the fact that you are going to be
+copying the data, which may slow down the execution time when working with
+large amounts of data.
 :::
 
-The `std::vector` class takes care of the memory of its entries, so it is mandatory to leave the optional
-`release` parameter of `Attribute::set_value` to the default of `false`.
+The `std::vector` class takes care of the memory in its entries so it is mandatory to leave the optional
+`release` parameter of `Attribute::set_value` set to the default of `false`.
 
-Examples for a read attribute and vector of shorts and strings:
+Below are two examples of setting data for a read attribute using a vector of shorts and
+a vector of strings:
 
 ```{code-block} cpp
 :linenos: true
@@ -59,7 +60,7 @@ void MyClass::read_string_spectrum(Tango::Attribute &attr)
 }
 ```
 
-For a writeable attribute the code looks similiar:
+Below is an example for a writeable attribute using a vector of doubles:
 
 
 ```{code-block} cpp
