@@ -1,17 +1,18 @@
 # Generate events in a device server
 
-```{tags} audience:developers, lang:c++
+```{tags} audience:developers, lang:c++,python
 ```
 
-The server is the origin of events. It will fire events as soon as
-they occur. For a detailed explanation of the different types of events
+The {term}`device server` is the origin of all events. It will fire events as soon as
+they occur or are created. For a detailed explanation of the different types of events
 in Tango please see the [events section](#events-tangoclient).
-Standard events (*change*, *periodic* and *archive*) are
-detected automatically in the polling thread and fired immediately.
-The *periodic* events can only be handled by the polling
-thread. The *change*, *data ready* and *archive* events can also be manually pushed
-from the device server code. To allow a client to subscribe to events
-of attributes that are not polled the server has to declare that events are pushed
+
+Standard events (`change`, `periodic`, `alarm`, `data ready` and `archive`) are
+detected automatically in the polling thread and fired immediately (if enabled).
+The `periodic` events can only be fired by the polling
+thread. The `alarm`, `change`, `data ready` and `archive` events can also be manually pushed
+from the device server. To allow a client to subscribe to events
+of attributes that are not polled, the server has to declare that events are pushed
 from the code. Four methods are available for this purpose:
 
 :::::{tab-set}
@@ -31,7 +32,7 @@ For example:
 ```{code} cpp
 :number-lines: 1
   // Create a new read-only, short attribute
-  Tango::Attr *at = new Tango::Attr("some_attribute", Tango::DEV_SHORT, Tango::READ);
+  auto *at = new Tango::Attr("some_attribute", Tango::DEV_SHORT, Tango::READ);
 
   // Indicate that the following events will be push manually
   // for this attribute
@@ -87,10 +88,10 @@ additional parameter `attr_name` defining the attribute name:
 ```{code} cpp
 :number-lines: 1
 
-  DeviceImpl::set_change_event(string attr_name, bool implemented, bool detect = true);
-  DeviceImpl::set_archive_event(string attr_name, bool implemented, bool detect = true);
-  DeviceImpl::set_alarm_event(string attr_name, bool implemented, bool detect = true);
-  DeviceImpl::set_data_ready_event(string attr_name, bool implemented);
+  DeviceImpl::set_change_event(std::string attr_name, bool implemented, bool detect = true);
+  DeviceImpl::set_archive_event(std::string attr_name, bool implemented, bool detect = true);
+  DeviceImpl::set_alarm_event(std::string attr_name, bool implemented, bool detect = true);
+  DeviceImpl::set_data_ready_event(std::string attr_name, bool implemented);
 ```
 
 For example:
@@ -98,23 +99,23 @@ For example:
 :number-lines: 1
 
   // Constructor
-  TestDevice::TestDevice(Tango::DeviceClass *cl, std::string &s): TANGO_BASE_CLASS(cl, s.c_str())
+  TestDevice::TestDevice(Tango::DeviceClass *cl, std::string &s)
+    : TANGO_BASE_CLASS(cl, s.c_str())
   {
     init_device()
   }
-  ...
 
+  // ...
 
   void TestDevice::init_device()
   {
     // Indicate that the following events will be push manually for the attribute
     // named "some_attribute"
-    this->set_change_event("some_attribute", true);
-    this->set_archive_event("some_attribute", true);
-    this->set_alarm_event("some_attribute", true);
-    this->set_data_ready_event("some_attribute", true);
+    set_change_event("some_attribute", true);
+    set_archive_event("some_attribute", true);
+    set_alarm_event("some_attribute", true);
+    set_data_ready_event("some_attribute", true);
   }
-
 
 ```
 
@@ -139,7 +140,7 @@ For example:
 
       super().init_device()
 
-      # Indicate that the following events will be push manually for the attribute
+      # Indicate that the following events will be pushed manually for the attribute
       # named "some_attribute"
       self.set_change_event("some_attribute", True)
       self.set_archive_event("some_attribute", True)
@@ -150,10 +151,8 @@ For example:
 ::::
 :::::
 
-
 To push events manually from the code a set of data type dependent
 methods can be used:
-
 
 :::::{tab-set}
 
@@ -162,11 +161,11 @@ methods can be used:
 ```{code} cpp
 :number-lines: 1
 
-  DeviceImpl::push_change_event(string attr_name, ...);
-  DeviceImpl::push_archive_event(string attr_name, ...);
-  DeviceImpl::push_alarm_event(string attr_name, ...);
+  DeviceImpl::push_change_event(std::string attr_name, ...);
+  DeviceImpl::push_archive_event(std::string attr_name, ...);
+  DeviceImpl::push_alarm_event(std::string attr_name, ...);
   // ctr = Optional "counter"
-  DeviceImpl::push_data_ready_event(string attr_name, Tango::DevLong ctr = 0);
+  DeviceImpl::push_data_ready_event(std::string attr_name, Tango::DevLong ctr = 0);
 ```
 where the `ctr` is an optional counter, which will be passed within the event.
 
@@ -178,13 +177,13 @@ For example:
   {
     Tango::DevDouble v{10};
     // Push an alarm event for the attribute "some_attribute"
-    this->push_alarm_event("some_attribute", &v);
+    push_alarm_event("some_attribute", &v);
     // Push a change event for the attribute "some_attribute"
-    this->push_change_event("some_attribute", &v);
+    push_change_event("some_attribute", &v);
     // Push an archive event for the attribute "some_attribute"
-    this->push_archive_event("some_attribute", &v);
+    push_archive_event("some_attribute", &v);
     // Push a 'data ready' event for the attribute "some_attribute"
-    this->push_data_ready_event("some_attribute");
+    push_data_ready_event("some_attribute");
   }
 
 
@@ -209,11 +208,11 @@ For example:
 
 def sendEventTest(self):
   # Push an alarm event for the attribute "some_attribute"
-  self.push_change_event("some_attribute", 10)
-  # Push a change event for the attribute "some_attribute"
-  self.push_archive_event("some_attribute", 10)
-  # Push an archive event for the attribute "some_attribute"
   self.push_alarm_event("some_attribute", 10)
+  # Push a change event for the attribute "some_attribute"
+  self.push_change_event("some_attribute", 10)
+  # Push an archive event for the attribute "some_attribute"
+  self.push_archive_event("some_attribute", 10)
   # Push a 'data ready' event for the attribute "some_attribute"
   self.push_data_ready_event("some_attribute", 10)
 ```
@@ -221,10 +220,14 @@ def sendEventTest(self):
 ::::
 :::::
 
-
 See the appropriate API for all available interfaces.
 - C++: [C++ API documentation](https://tango-controls.gitlab.io/cppTango/)
 - Python: [PyTango API documentation](inv:pytango:std:doc#api)
+
+:::{warning}
+CORBA events using notfid are deprecated and about to be removed, see this
+cppTango [issue](https://gitlab.com/tango-controls/cppTango/-/issues/1084).
+:::
 
 For non-standard events a single call exists for pushing the data to the
 CORBA Notification Service (omniNotify). Clients who are subscribed to
@@ -234,7 +237,6 @@ unpack it accordingly.
 To push non-standard events, the following api call is available to
 all device servers:
 
-
 :::::{tab-set}
 
 ::::{tab-item} C++
@@ -242,9 +244,9 @@ all device servers:
 ```{code} cpp
 :number-lines: 1
 
-  DeviceImpl::push_event(string attr_name,
-               vector<string> &filterable_names,
-               vector<double> &filterable_vals,
+  DeviceImpl::push_event(std::string attr_name,
+               std::vector<std::string> &filterable_names,
+               std::vector<double> &filterable_vals,
                ...);
 ```
 
@@ -282,22 +284,22 @@ set to the attribute value.
 
   void MyClass::read_Sinusoide(Tango::Attribute &attr)
   {
-    ...
-       struct timeval tv;
-       gettimeofday(&tv, NULL);
+    // ...
+       struct timeval tv{};
+       gettimeofday(&tv, nullptr);
        sinusoide = 100 * sin( 2 * 3.14 * frequency * tv.tv_sec);
 
-       if (sinusoide >= 0)
+       if(sinusoide >= 0)
        {
-          vector<string> filterable_names;
-          vector<double> filterable_value;
+          std::vector<std::string> filterable_names;
+          std::vector<double> filterable_value;
 
           filterable_names.push_back("value");
           filterable_value.push_back((double)sinusoide);
 
           push_event(attr.get_name(),filterable_names, filterable_value);
        }
-    ...
+    // ...
  }
 ```
 line 13-14 : The filter pair name/value is initialised
@@ -312,7 +314,7 @@ line 16 : The event is pushed
 :number-lines: 1
 
   def read_Sinusoide(self, attr):
-    ...
+    # ...
 
     time_of_day = datetime.datetime.now.timestamp()
     sinusoide = 100 * sin( 2 * 3.14 * frequency * time_of_day)
@@ -323,7 +325,7 @@ line 16 : The event is pushed
 
       push_event(attr.get_name(), filterable_names, filterable_value)
 
-    ...
+    # ...
 ```
 
 line 8-9 : The filter pair name/value is initialised
