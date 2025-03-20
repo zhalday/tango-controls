@@ -19,13 +19,14 @@ Assuming you have installed and configured Tango you can begin to use it.
 
 ## Play with Tango Controls
 
-The Tango eco-system provides a lot of management applications and frameworks to visualize the data.
+The Tango ecosystem provides a lot of management applications and frameworks to visualize the data.
 This section provides a quick overview of a basic use case for Tango Controls.
 
 If you have set up a tango-starter systemd service then it will automatically add the new host,
-however this can also be done manually using [**Astor**](#astor-manual).
+however this can also be done manually using [Astor](#astor-manual).
 This application is used to configure the Control System and its components.
-It also provides a quick view of the statuses of all {term}`device servers<device server>` in the Tango DB.
+It also provides a quick view of the statuses of all {term}`device servers<device server>` in the
+{term}`Tango Database`.
 To add a new host manually using Astor see: {ref}`astor-new-host`.
 
 TangoTest this is a {term}`device class` that provides all types of attributes available in Tango Devices
