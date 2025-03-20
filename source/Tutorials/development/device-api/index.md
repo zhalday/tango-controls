@@ -13,7 +13,6 @@ introduction
 ds-guideline/index
 device-server-model
 device-server-writing
-generating-events
 java/index
 python/index
 ```
