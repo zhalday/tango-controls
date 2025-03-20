@@ -5,7 +5,7 @@
 
 [Python] is a commonly used programming language in the scientific community, due to its many advantages
 (the most important of those is probably simplicity of its syntax).
-{term}`Tango Controls` also supports it in a form of a Boost-based binding to C++ Tango implementation.
+{term}`Tango Controls` also supports it in a form of a pybind11-based binding to the [cppTango] implementation.
 
 In "pythonic" terms, it is a package [available at PyPI](https://pypi.python.org/pypi/PyTango)
 that exposes the complete Tango API (both the client and the server parts of it) as well as provides a framework
