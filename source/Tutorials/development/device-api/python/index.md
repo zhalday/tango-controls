@@ -12,8 +12,8 @@ that exposes the complete Tango API (both the client and the server parts of it)
 for unit-testing your {term}`device servers<device server>`.
 
 :::{note}
-You should use PyTango that has major and minor version numbers the same as Tango C++ library that you have.
-So if you have Tango C++ library version X.Y.Z, you should have PyTango version X.Y.V (where V might equal Z,
+You should use a PyTango version that has the same major and minor version numbers as cppTango that you have.
+So if you have cppTango version X.Y.Z, you should have PyTango version X.Y.V (where V might equal Z,
 but its not required).
 :::
 
@@ -23,3 +23,4 @@ You can find its full documentation [here].
 
 [here]: https://pytango.readthedocs.io/en/latest/
 [python]: https://www.python.org/
+[cppTango]: https://tango-controls.gitlab.io/cppTango/
