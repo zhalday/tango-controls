@@ -24,10 +24,7 @@ Once docker is installed one can pull docker images with pre-installed tango.
 
 The sources for these docker images are hosted and maintained on the SKAO gitlab: <https://gitlab.com/ska-telescope/ska-tango-images>
 
-These container images are hosted on [SKAO] artefact repository: <https://artefact.skao.int>. At the moment they cannot be browsed for via the
-repository website, however, it is possible to search for images at the [SKAO] 
-
--These container images are hosted on [SKAO] Harbor service: <https://harbor.skao.int/>. At the moment they cannot be browsed and one has to search for them. Just enter ska-tango-image in the search box and Harbor will list all images that SKAO provides. The images can must be pulled with the prefix `artefact.skao.int/`.  [SKAO] also provide a catalogue of images which can be viewed here: <https://developer.skao.int/projects/ska-tango-images/en/stable/>.  This catalogue contains basic usage instructions for each image.
+These container images are hosted on [SKAO] artefact repository: <https://artefact.skao.int>. At the moment they cannot be browsed for via the repository website, however, it is possible to search for images at the [SKAO] Harbor service: <https://harbor.skao.int/>. Just enter ska-tango-image in the search box and Harbor will list all images that SKAO provides. The images can must be pulled with the prefix `artefact.skao.int/`.  [SKAO] also provide a catalogue of images which can be viewed here: <https://developer.skao.int/projects/ska-tango-images/en/stable/>.  This catalogue contains basic usage instructions for each image.
 
 ### Tango docker stack
 
