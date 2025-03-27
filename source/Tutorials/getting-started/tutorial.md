@@ -76,7 +76,6 @@ PyTango runtime is:
     Python   : 3.12.5
     Numpy    : 2.1.2
     Tango    : 10.1.0
-    pybind11 : None
 
 PyTango running on:
 uname_result(system='Darwin', node='my.machine', release='24.0.0', version='Darwin Kernel Version 24.0.0: Tue Sep 24 23:39:07 PDT 2024; root:xnu-11215.1.12~1/RELEASE_ARM64_T6000', machine='arm64')
