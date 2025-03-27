@@ -1,26 +1,27 @@
+
 from tango.server import Device, command
 
 
 class MegaCoffee3k(Device):
 
     @command
-    def brew(self):
+    def Brew(self):
         print("brewing coffee! (but nobody knows)")
 
     @command
-    def brew_no_name(self) -> str:
+    def BrewNoName(self) -> str:
         return "brewing coffee for someone!"
 
     @command
-    def brew_name(self, name: str) -> str:
+    def BrewName(self, name: str) -> str:
         return f"brewing coffee for {name}!"
 
     @command
-    def brew_names(self, names: list[str]) -> list[str]:
+    def BrewNames(self, names: list[str]) -> list[str]:
         return [f"brewing coffee for {name}!" for name in names]
 
     @command(doc_in="Name of coffee drinker", doc_out="Order response")
-    def brew_name_doc(self, name: str) -> str:
+    def BrewNameDoc(self, name: str) -> str:
         return f"brewing coffee for {name}!"
 
     @command(
@@ -29,7 +30,7 @@ class MegaCoffee3k(Device):
         dtype_out=str,
         doc_out="Order response",
     )
-    def brew_name_doc_dtype(self, name):
+    def BrewNameDocDtype(self, name):
         return f"brewing coffee for {name}!"
 
 

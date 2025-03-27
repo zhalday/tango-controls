@@ -26,41 +26,63 @@ Sorry, still TODO!
 In Python, you need to import {py:func}`~tango.server.command` and then use that to decorate a method on the {py:class}`~tango.server.Device`. In other languages, it is a little more complicated.
 
 You have the following commands:
-* `brew` has no input or output parameters.
-* `brew_no_name` has no input, but returns a string.
-* `brew_name` accepts an input string and returns a string.
-* `brew_names` accepts a list of strings and returns a list of strings.
-* `brew_name_doc` shows how the input and output parameters can be documented.  There isn't a way to document the command itself.
-* `brew_name_doc_dtype` is the same as the previous, but shows an alternative (older) way of declaring the types.
+* `Brew` has no input or output parameters.
+* `BrewNoName` has no input, but returns a string.
+* `BrewName` accepts an input string and returns a string.
+* `BrewNames` accepts a list of strings and returns a list of strings.
+* `BrewNameDoc` shows how the input and output parameters can be documented.  There isn't a way to document the command itself.
+* `BrewNameDocDtype` is the same as the previous, but shows an alternative (older) way of declaring the types.
 
-Run this example, and in a second terminal, use the [device proxy client](01-first-steps.md#first-tango-client) to check if it is working  :
+The command names use capitalisation as per the Tango [Naming Rules](#naming-rules).
+
+Run this example, and in a second terminal, use the [device proxy client](01-first-steps.md#first-tango-client) to check if it is working:
 
 ```python-console
->>> dp.brew()  # nothing on client, but server will print a message
->>> dp.brew_no_name()
+>>> dp.Brew()  # nothing on client, but server will print a message
+>>> dp.BrewNoName()
 'brewing coffee for someone!'
->>> dp.brew_name("Java01")
+>>> dp.BrewName("Java01")
 'brewing coffee for Java01!'
->>> dp.brew_names(["I", "need", "coffee"])
+>>> dp.BrewNames(["I", "need", "coffee"])
 ['brewing coffee for I!', 'brewing coffee for need!', 'brewing coffee for coffee!']
+```
+
+Calling the command as a function is a convenience provided by the `DeviceProxy` object.  You can also use the more low-level {py:meth}`~tango.DeviceProxy.command_inout` method:
+
+```python-console
+>>> dp.command_inout("BrewNoName")
+'brewing coffee for someone!'
+>>> dp.command_inout("BrewName", "Java01")
+'brewing coffee for Java01!'
+```
+
+Tango is case insensitive when accessing commands by name, so all of the following calls access the same command:
+
+```python-console
+>>> dp.BrewNoName()
+'brewing coffee for someone!'
+>>> dp.brewnoname()
+'brewing coffee for someone!'
+>>> dp.command_inout("brewNONAME")
+'brewing coffee for someone!'
 ```
 
 You can also see how the documentation is available to the client:
 ```python-console
->>> help(dp.brew_name_doc)
+>>> help(dp.BrewNameDoc)
 # shows:
 
 Help on function f in module tango.device_proxy:
 
 f(*args, **kwds)
-    brew_name_doc(DevString) -> DevString
+    BrewNameDoc(DevString) -> DevString
 
     -  in (DevString): Name of coffee drinker
     - out (DevString): Order response
 
->>> print(dp.get_command_config("brew_name_doc"))
+>>> print(dp.get_command_config("BrewNameDoc"))
 CommandInfo[
-     cmd_name = 'brew_name_doc'
+     cmd_name = 'BrewNameDoc'
       cmd_tag = 0
    disp_level = tango._tango.DispLevel.OPERATOR
       in_type = tango._tango.CmdArgType.DevString
@@ -68,9 +90,9 @@ CommandInfo[
      out_type = tango._tango.CmdArgType.DevString
 out_type_desc = 'Order response']
 
->>> print(dp.get_command_config("brew_name_doc_dtype"))
+>>> print(dp.get_command_config("BrewNameDocDtype"))
 CommandInfo[
-     cmd_name = 'brew_name_doc_dtype'
+     cmd_name = 'BrewNameDocDtype'
       cmd_tag = 0
    disp_level = tango._tango.DispLevel.OPERATOR
       in_type = tango._tango.CmdArgType.DevString
@@ -78,9 +100,9 @@ CommandInfo[
      out_type = tango._tango.CmdArgType.DevString
 out_type_desc = 'Order response']
 
->>> print(dp.get_command_config("brew_name"))
+>>> print(dp.get_command_config("BrewName"))
 CommandInfo[
-     cmd_name = 'brew_name'
+     cmd_name = 'BrewName'
       cmd_tag = 0
    disp_level = tango._tango.DispLevel.OPERATOR
       in_type = tango._tango.CmdArgType.DevString
@@ -101,6 +123,19 @@ To simplify the implementation of all clients and servers, the data types availa
 
 :::{tip}
 For more complicated input and output data structures, it is common to use a string that is serialised and de-serialised using JSON.  This allows structures like dicts to be passed between client and server.  The downside is that the schema of those dicts is not obvious.
+:::
+
+:::{tip}
+You can easily get a list of all the commands a Tango device offers:
+
+```python-console
+>>> dp.get_command_list()
+['Brew', 'BrewName', 'BrewNameDoc', 'BrewNameDocDtype', 'BrewNames', 'BrewNoName', 'Init', 'State', 'Status']
+```
+
+State and Status are special, and show up as commands and attributes.  Normally we access them as commands.
+Init is a built-in command.
+
 :::
 
 :::{note}
