@@ -34,26 +34,23 @@ for f in files:
 
 if text:
     output = ""
-    generated = ".. [GENERATED]\n"
+    glossary_started = False
     with open("source/Reference/glossary_definitions.md", 'r') as fp:
         lines = fp.readlines()
-        line_count = 0
         for line in lines:
-            line_count+=1
+            if line.strip() == "```{glossary}" and not glossary_started:
+                glossary_started = True
             if line.startswith("%"):
                 #ignore comments in definition file
                 continue
-            if line.find(generated) != -1:
-                output = output + generated + text + " ```\n"
-                break
-            elif line_count == len(lines):
-                output = output + generated + text + " ```\n"
+            elif line.strip() == "```" and glossary_started:
+                output = output + "\n" + text + " ```\n"
                 break
             else:
                 output = output + line
 
     with open("source/Reference/glossary.md", 'w+') as fp:
-        fp.write("% !!!! This is the auto-generated glossary file. Do not manually add defintions\
+        fp.write("% !!!! This is the auto-generated glossary file. Do not manually add definitions\
  here as they will be overwritten the next time the documentation is built! Instead add them\
  in the relevant section using the '%[glossary_term][<term_name>]' label or in\
  glossary_definitions.md file.\n")
