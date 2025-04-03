@@ -7,7 +7,7 @@ key = "%[glossary_term]"
 text = ""
 save = False
 for f in files:
-    with open(f, 'r') as fp:
+    with open(f, 'r', encoding="utf-8") as fp:
         # read all lines in a list
         lines = fp.readlines()
         for line in lines:
