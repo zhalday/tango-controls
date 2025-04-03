@@ -54,8 +54,12 @@ CORBA
   defined in a markup language from which the code is generated from. For Tango the interface is defined in the
   [tango-idl](https://gitlab.com/tango-controls/tango-idl) repository.
 
-
 Interoperable Tango Reference
   Unique identifier for referencing remote device servers, based on the {term}`CORBA` [IOR](https://en.wikipedia.org/wiki/Interoperable_Object_Reference)
 
+tangorc
+  Tango configuration file holding various settings in the format `key=value`. This can be created globally in
+  `/etc/tangorc` for unix-like OSes and in `${TANGO_ROOT}/tangorc` for Windows. Or for the current user only
+  in `~/.tangorc` for unix-like OSes (not available for Windows). Environment variables with the same name
+  override the entries from the files and the per-user file overrides the gobal one.
 ```
