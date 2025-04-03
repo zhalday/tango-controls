@@ -12,6 +12,7 @@ intro.md
 05-commands.md
 06-attributes.md
 07-device-properties.md
+09-running-db.md
 ```
 
 This tutorial shows you how to get started with **Tango**, covering the major features, step by step.
