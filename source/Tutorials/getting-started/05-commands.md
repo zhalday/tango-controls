@@ -35,6 +35,13 @@ You have the following commands:
 
 The command names use capitalisation as per the Tango [Naming Rules](#naming-rules).
 
+:::{tip}
+Some names are bad choice for commands:
+- `Init`, `State`, and `Status` commands already exist
+- Methods that already exist on the {py:class}`~tango.DeviceProxy` class, including: `alias`, `connect`, `description`, `info`, `lock`, `name`, `ping`, `reconnect`, `unlock`, `get_...`, `set_...`, `is_...`, `put_`, `read_...`, `write_...`, etc.
+- Anything starting with an underscore, `_`.
+:::
+
 Run this example, and in a second terminal, use the [device proxy client](01-first-steps.md#first-tango-client) to check if it is working:
 
 ```python-console
@@ -56,7 +63,7 @@ Calling the command as a function is a convenience provided by the `DeviceProxy`
 'brewing coffee for Java01!'
 ```
 
-Tango is case insensitive when accessing commands by name, so all of the following calls access the same command:
+Tango is case *insensitive* when accessing commands by name, so all of the following calls access the same command:
 
 ```python-console
 >>> dp.BrewNoName()

@@ -36,6 +36,13 @@ You have the following attributes:
 
 The attribute names use capitalisation as per the Tango [Naming Rules](#naming-rules).
 
+:::{tip}
+Some names are bad choice for attributes:
+- `Init`, `State`, and `Status` already exist as commands.
+- Methods that already exist on the {py:class}`~tango.DeviceProxy` class, including: `alias`, `connect`, `description`, `info`, `lock`, `name`, `ping`, `reconnect`, `unlock`, `get_...`, `set_...`, `is_...`, `put_`, `read_...`, `write_...`, etc.
+- Anything starting with an underscore, `_`.
+:::
+
 Run this example, and in a second terminal, use the [device proxy client](01-first-steps.md#first-tango-client) to check if it is working  :
 
 ```python-console
@@ -111,7 +118,7 @@ w_dimension = AttributeDimension(dim_x = 0, dim_y = 0)
     w_value = None]
 ```
 
-Tango is case insensitive when accessing attributes by name, so all of the following calls access the same attribute:
+Tango is case *insensitive* when accessing attributes by name, so all of the following calls access the same attribute:
 
 ```python-console
 >>> dp.brewingTemperature

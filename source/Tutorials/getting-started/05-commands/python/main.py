@@ -1,4 +1,3 @@
-
 from tango.server import Device, command
 
 
