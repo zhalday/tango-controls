@@ -181,28 +181,30 @@ If you're wondering, the value `382` is the ping response time in microseconds.
 ```python-console
 >>> dp.ping()
 Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/Users/projects/tango-tut/.pixi/envs/default/lib/python3.12/site-packages/tango/green.py", line 234, in greener
+  File "<python-input-8>", line 1, in <module>
+    dp.ping()
+    ~~~~~~~^^
+  File "/path/to/pytango/tango/green.py", line 226, in greener
     return executor.run(fn, args, kwargs, wait=wait, timeout=timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/projects/tango-tut/.pixi/envs/default/lib/python3.12/site-packages/tango/green.py", line 124, in run
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/path/to/pytango/tango/green.py", line 116, in run
     return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "/Users/projects/tango-tut/.pixi/envs/default/lib/python3.12/site-packages/tango/device_proxy.py", line 1974, in __DeviceProxy__ping
+  File "/path/to/pytango/tango/device_proxy.py", line 2056, in __DeviceProxy__ping
     return self._ping(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^
 PyTango.DevFailed: DevFailed[
-DevError[
-    desc = TRANSIENT CORBA system exception: TRANSIENT_ConnectFailed
-  origin = void Tango::Connection::connect(const std::string &) at (/Users/runner/miniforge3/conda-bld/cpptango_1729356321178/work/src/client/devapi_base.cpp:633)
-  reason = API_CorbaException
-severity = ERR]
-
-DevError[
-    desc = Failed to connect to device test/nodb/megacoffee3k
-  origin = void Tango::Connection::connect(const std::string &) at (/Users/runner/miniforge3/conda-bld/cpptango_1729356321178/work/src/client/devapi_base.cpp:633)
-  reason = API_ServerNotRunning
-severity = ERR]
+    DevError[
+        desc = TRANSIENT CORBA system exception: TRANSIENT_ConnectFailed
+        origin = void Tango::Connection::connect(const std::string &) at (/Users/runner/miniforge3/conda-bld/cpptango_1739462625904/work/src/client/devapi_base.cpp:635)
+        reason = API_CorbaException
+        severity = ERR
+    ],
+    DevError[
+        desc = Failed to connect to device test/nodb/megacoffee3k
+        origin = void Tango::Connection::connect(const std::string &) at (/Users/runner/miniforge3/conda-bld/cpptango_1739462625904/work/src/client/devapi_base.cpp:635)
+        reason = API_ServerNotRunning
+        severity = ERR
+    ]
 ]
 ```
 

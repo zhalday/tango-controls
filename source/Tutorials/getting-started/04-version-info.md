@@ -28,18 +28,36 @@ If you run this example, and in a second terminal, use the [device proxy client]
 
 ```python-console
 >>> dp.info()
-DeviceInfo(dev_class = 'MegaCoffee3k', dev_type = 'MegaCoffee3k', doc_url = 'Doc URL = http://www.tango-controls.org', server_host = 'mypc.local', server_id = 'MegaCoffee3k/MegaCoffee3k', server_version = 6, version_info = {'Build.PyTango.pybind11': '2.13.6', 'Build.PyTango.NumPy': '2.0.2', 'Build.PyTango.Python': '3.12.7', 'Build.PyTango.cppTango': '10.1.0', 'MegaCoffee3k.Name': 'MegaCoffee3k Tango device', 'MegaCoffee3k.Repo': 'https://gitlab.tango-mega-corp.com/controls/dev-tmc-megacoffee3k', 'MegaCoffee3k.Source': '/path/to/tango-tut/src/04-version-info/python/main.py', 'MegaCoffee3k.Version': '0.1.0', 'NumPy': '2.1.2', 'PyTango': '10.0.0', 'Python': '3.12.5', 'cppTango': '10.0.0', 'cppTango.git_revision': 'unknown', 'cppzmq': '41000', 'idl': '6.0.2', 'omniORB': '4.3.2', 'opentelemetry-cpp': '1.17.0', 'zmq': '40305'})
->>>
+DeviceInfo(dev_class = 'MegaCoffee3k', dev_type = 'MegaCoffee3k', doc_url = 'Doc URL = http://www.tango-controls.org', server_host = 'my.computer', server_id = 'MegaCoffee3k/MegaCoffee3k', server_version = 6, version_info = {'Build.PyTango.NumPy': '2.2.3', 'Build.PyTango.Pybind11': '2.13.6', 'Build.PyTango.Python': '3.13.2', 'Build.PyTango.cppTango': '10.0.2', 'MegaCoffee3k.Name': 'MegaCoffee3k Tango device', 'MegaCoffee3k.Repo': 'https://gitlab.tango-mega-corp.com/controls/dev-tmc-megacoffee3k', 'MegaCoffee3k.Source': '/path/to/tango-tut/src/04-version-info/python/main.py', 'MegaCoffee3k.Version': '0.1.0', 'NumPy': '2.2.3', 'PyTango': '10.1.0rc2', 'Python': '3.13.2', 'cppTango': '10.0.2', 'cppTango.git_revision': 'unknown', 'cppzmq': '41000', 'idl': '6.0.2', 'omniORB': '4.3.2', 'opentelemetry-cpp': '1.18.0', 'zmq': '40305'})
 >>> print(dp.info())
 DeviceInfo[
-     dev_class = 'MegaCoffee3k'
-      dev_type = 'MegaCoffee3k'
-       doc_url = 'Doc URL = http://www.tango-controls.org'
-   server_host = 'mypc.local'
-     server_id = 'MegaCoffee3k/MegaCoffee3k'
-server_version = 6
-  version_info = {'Build.PyTango.pybind11': '2.13.6', 'Build.PyTango.NumPy': '2.0.2', 'Build.PyTango.Python': '3.12.7', 'Build.PyTango.cppTango': '10.1.0', 'MegaCoffee3k.Name': 'MegaCoffee3k Tango device', 'MegaCoffee3k.Repo': 'https://gitlab.tango-mega-corp.com/controls/dev-tmc-megacoffee3k', 'MegaCoffee3k.Source': '/path/to/tango-tut/src/04-version-info/python/main.py', 'MegaCoffee3k.Version': '0.1.0', 'NumPy': '2.1.2', 'PyTango': '10.1.0', 'Python': '3.12.5', 'cppTango': '10.0.0', 'cppTango.git_revision': 'unknown', 'cppzmq': '41000', 'idl': '6.0.2', 'omniORB': '4.3.2', 'opentelemetry-cpp': '1.17.0', 'zmq': '40305'}]
->>>
+    dev_class = "MegaCoffee3k"
+    dev_type = "MegaCoffee3k"
+    doc_url = "Doc URL = http://www.tango-controls.org"
+    server_host = "my.computer"
+    server_id = "MegaCoffee3k/MegaCoffee3k"
+    server_version = 6
+    version_info = {
+        "Build.PyTango.NumPy": "2.2.3",
+        "Build.PyTango.Pybind11": "2.13.6",
+        "Build.PyTango.Python": "3.13.2",
+        "Build.PyTango.cppTango": "10.0.2",
+        "MegaCoffee3k.Name": "MegaCoffee3k Tango device",
+        "MegaCoffee3k.Repo": "https://gitlab.tango-mega-corp.com/controls/dev-tmc-megacoffee3k",
+        "MegaCoffee3k.Source": "/path/to/tango-tut/src/04-version-info/python/main.py",
+        "MegaCoffee3k.Version": "0.1.0",
+        "NumPy": "2.2.3",
+        "PyTango": "10.1.0rc2",
+        "Python": "3.13.2",
+        "cppTango": "10.0.2",
+        "cppTango.git_revision": "unknown",
+        "cppzmq": "41000",
+        "idl": "6.0.2",
+        "omniORB": "4.3.2",
+        "opentelemetry-cpp": "1.18.0",
+        "zmq": "40305"
+    }
+]
 ```
 
 Using `print` gives us a much more readable ouput of the data structure.

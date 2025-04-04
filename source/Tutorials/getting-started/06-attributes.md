@@ -68,23 +68,30 @@ Getting the value by reading the attribute name directly on the `DeviceProxy` ob
 >>> reading = dp.read_attribute("waterLevel")
 >>> print(reading)
 DeviceAttribute[
-data_format = tango._tango.AttrDataFormat.SCALAR
-      dim_x = 1
-      dim_y = 0
- has_failed = False
-   is_empty = False
-       name = 'waterLevel'
+    data_format = tango._tango.AttrDataFormat.SCALAR
+    dim_x = 1
+    dim_y = 0
+    has_failed = False
+    is_empty = False
+    name = "waterLevel"
     nb_read = 1
- nb_written = 0
+    nb_written = 0
     quality = tango._tango.AttrQuality.ATTR_VALID
-r_dimension = AttributeDimension(dim_x = 1, dim_y = 0)
-       time = TimeVal(tv_nsec = 0, tv_sec = 1742478185, tv_usec = 208290)
-       type = tango._tango.CmdArgType.DevDouble
-      value = 54.2
+    r_dimension = AttributeDimension[
+        dim_x = 1
+        dim_y = 0
+    ]
+    time = TimeVal(tv_nsec = 0, tv_sec = 1743749828, tv_usec = 308868)
+    type = tango._tango.CmdArgType.DevDouble
+    value = 54.2
     w_dim_x = 0
     w_dim_y = 0
-w_dimension = AttributeDimension(dim_x = 0, dim_y = 0)
-    w_value = None]
+    w_dimension = AttributeDimension[
+        dim_x = 0
+        dim_y = 0
+    ]
+    w_value = None
+]
 
 >>> reading.value
 54.2
@@ -99,23 +106,30 @@ As a high-level convenience, you can also get the struct using indexed access in
 >>> reading = dp["waterLevel"]
 >>> print(reading)
 DeviceAttribute[
-data_format = tango._tango.AttrDataFormat.SCALAR
-      dim_x = 1
-      dim_y = 0
- has_failed = False
-   is_empty = False
-       name = 'waterLevel'
+    data_format = tango._tango.AttrDataFormat.SCALAR
+    dim_x = 1
+    dim_y = 0
+    has_failed = False
+    is_empty = False
+    name = "waterLevel"
     nb_read = 1
- nb_written = 0
+    nb_written = 0
     quality = tango._tango.AttrQuality.ATTR_VALID
-r_dimension = AttributeDimension(dim_x = 1, dim_y = 0)
-       time = TimeVal(tv_nsec = 0, tv_sec = 1742478283, tv_usec = 8934)
-       type = tango._tango.CmdArgType.DevDouble
-      value = 54.2
+    r_dimension = AttributeDimension[
+        dim_x = 1
+        dim_y = 0
+    ]
+    time = TimeVal(tv_nsec = 0, tv_sec = 1743749877, tv_usec = 460608)
+    type = tango._tango.CmdArgType.DevDouble
+    value = 54.2
     w_dim_x = 0
     w_dim_y = 0
-w_dimension = AttributeDimension(dim_x = 0, dim_y = 0)
-    w_value = None]
+    w_dimension = AttributeDimension[
+        dim_x = 0
+        dim_y = 0
+    ]
+    w_value = None
+]
 ```
 
 Tango is case *insensitive* when accessing attributes by name, so all of the following calls access the same attribute:
@@ -150,32 +164,56 @@ The {py:meth}`~tango.DeviceProxy.get_attribute_config` method provides all the d
 >>> config = dp.get_attribute_config("brewingTemperature")
 >>> print(config)
 AttributeInfoEx[
-            alarms = AttributeAlarmInfo(delta_t = 'Not specified', delta_val = 'Not specified', extensions = [], max_alarm = 'Not specified', max_warning = 'Not specified', min_alarm = 'Not specified', min_warning = 'Not specified')
-       data_format = tango._tango.AttrDataFormat.SCALAR
-         data_type = tango._tango.CmdArgType.DevDouble
-       description = 'No description'
-        disp_level = tango._tango.DispLevel.OPERATOR
-      display_unit = 'No display unit'
-       enum_labels = []
-            events = AttributeEventInfo(arch_event = ArchiveEventInfo(archive_abs_change = 'Not specified', archive_period = 'Not specified', archive_rel_change = 'Not specified', extensions = []), ch_event = ChangeEventInfo(abs_change = 'Not specified', extensions = [], rel_change = 'Not specified'), per_event = PeriodicEventInfo(extensions = [], period = '1000'))
+    alarms = AttributeAlarmInfo[
+        delta_t = "Not specified"
+        delta_val = "Not specified"
         extensions = []
-            format = '%6.2f'
-             label = 'brewingTemperature'
-         max_alarm = 'Not specified'
-         max_dim_x = 1
-         max_dim_y = 0
-         max_value = 'Not specified'
-         memorized = tango._tango.AttrMemorizedType.NONE
-         min_alarm = 'Not specified'
-         min_value = 'Not specified'
-              name = 'brewingTemperature'
-    root_attr_name = 'Not specified'
-     standard_unit = 'No standard unit'
+        max_alarm = "Not specified"
+        max_warning = "Not specified"
+        min_alarm = "Not specified"
+        min_warning = "Not specified"
+    ]
+    data_format = tango._tango.AttrDataFormat.SCALAR
+    data_type = tango._tango.CmdArgType.DevDouble
+    description = "Temperature to brew coffee at [deg C]"
+    disp_level = tango._tango.DispLevel.OPERATOR
+    display_unit = "No display unit"
+    enum_labels = []
+    events = AttributeEventInfo[
+        arch_event = ArchiveEventInfo[
+            archive_abs_change = "Not specified"
+            archive_period = "Not specified"
+            archive_rel_change = "Not specified"
+            extensions = []
+        ]
+        ch_event = ChangeEventInfo[
+            abs_change = "Not specified"
+            extensions = []
+            rel_change = "Not specified"
+        ]
+        per_event = PeriodicEventInfo[
+            extensions = []
+            period = "1000"
+        ]
+    ]
+    extensions = []
+    format = "%6.2f"
+    label = "brewingTemperature"
+    max_alarm = "Not specified"
+    max_dim_x = 1
+    max_dim_y = 0
+    max_value = "Not specified"
+    memorized = tango._tango.AttrMemorizedType.NONE
+    min_alarm = "Not specified"
+    min_value = "Not specified"
+    name = "brewingTemperature"
+    root_attr_name = "Not specified"
+    standard_unit = "No standard unit"
     sys_extensions = []
-              unit = ''
-          writable = tango._tango.AttrWriteType.READ_WRITE
-writable_attr_name = 'brewingTemperature']
-
+    unit = ""
+    writable = tango._tango.AttrWriteType.READ_WRITE
+    writable_attr_name = "brewingTemperature"
+]
 ```
 
 To simplify the implementation of all clients and servers, the data types available to attributes are limited:

@@ -89,33 +89,36 @@ f(*args, **kwds)
 
 >>> print(dp.get_command_config("BrewNameDoc"))
 CommandInfo[
-     cmd_name = 'BrewNameDoc'
-      cmd_tag = 0
-   disp_level = tango._tango.DispLevel.OPERATOR
-      in_type = tango._tango.CmdArgType.DevString
- in_type_desc = 'Name of coffee drinker'
-     out_type = tango._tango.CmdArgType.DevString
-out_type_desc = 'Order response']
+    cmd_name = "BrewNameDoc"
+    cmd_tag = 0
+    disp_level = tango._tango.DispLevel.OPERATOR
+    in_type = tango._tango.CmdArgType.DevString
+    in_type_desc = "Name of coffee drinker"
+    out_type = tango._tango.CmdArgType.DevString
+    out_type_desc = "Order response"
+]
 
 >>> print(dp.get_command_config("BrewNameDocDtype"))
 CommandInfo[
-     cmd_name = 'BrewNameDocDtype'
-      cmd_tag = 0
-   disp_level = tango._tango.DispLevel.OPERATOR
-      in_type = tango._tango.CmdArgType.DevString
- in_type_desc = 'Name of coffee drinker'
-     out_type = tango._tango.CmdArgType.DevString
-out_type_desc = 'Order response']
+    cmd_name = "BrewNameDocDtype"
+    cmd_tag = 0
+    disp_level = tango._tango.DispLevel.OPERATOR
+    in_type = tango._tango.CmdArgType.DevString
+    in_type_desc = "Name of coffee drinker"
+    out_type = tango._tango.CmdArgType.DevString
+    out_type_desc = "Order response"
+]
 
 >>> print(dp.get_command_config("BrewName"))
 CommandInfo[
-     cmd_name = 'BrewName'
-      cmd_tag = 0
-   disp_level = tango._tango.DispLevel.OPERATOR
-      in_type = tango._tango.CmdArgType.DevString
- in_type_desc = 'Uninitialised'
-     out_type = tango._tango.CmdArgType.DevString
-out_type_desc = 'Uninitialised']
+    cmd_name = "BrewName"
+    cmd_tag = 0
+    disp_level = tango._tango.DispLevel.OPERATOR
+    in_type = tango._tango.CmdArgType.DevString
+    in_type_desc = "Uninitialised"
+    out_type = tango._tango.CmdArgType.DevString
+    out_type_desc = "Uninitialised"
+]
 
 ```
 
