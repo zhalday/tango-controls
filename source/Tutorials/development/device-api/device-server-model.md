@@ -5,42 +5,49 @@
 ```{tags} audience:developers, lang:all
 ```
 
-This chapter will present the TANGO device server object model hereafter
-referred as TDSOM. First, it will introduce CORBA. Then, it will
-describe each of the basic features of the TDSOM and their function. The
-TDSOM can be divided into the following basic elements - the *device*,
-the *server*, the *database* and the *application programmers
-interface*. This chapter will treat each of the above elements
+%[glossary_term][TDSOM]
+%The TANGO device server object model. Abstract model how TANGO devices and client interact.
+
+We present the TANGO device server object model hereafter
+referred as {term}`TDSOM`. First, we will introduce CORBA. Then, we will
+describe each of the basic features of the TDSOM and their function.
+
+The TDSOM can be divided into the following basic elements:
+
+- device
+- server
+- database
+- API
+
+This chapter will treat each of the above elements
 separately.
 
 ## Introduction to CORBA
 
-CORBA is a definition of how to write object request brokers (ORB). The
+{term}`CORBA` is a definition of how to write object request brokers (ORB). The
 definition is managed by the Object Management Group ([OMG home page]).
-Various commercial and non-commercial
-implementations exist for CORBA for all the mainstream operating
-systems. CORBA uses a programming language independent definition
-language (called IDL) to defined network object interfaces. Language
-mappings are defined from IDL to the main programming languages e.g.
-C++, Java, C, COBOL, Smalltalk and ADA. Within an interface, CORBA
-defines two kinds of actions available to the outside world. These
-actions are called **attributes** and **operations**.
+Various open-source and proprietary implementations exist for CORBA for nearly all operating systems.
+CORBA uses a programming language independent definition language (called IDL) to define network object
+interfaces. Language mappings are defined from IDL to a variety of programming languages e.g. C++, Java, C, Python.
+Within an interface, CORBA defines two kinds of actions available to the outside world.
+These actions are called `attributes` and `operations`.
 
-Operations are all the actions offered by an interface. For instance,
+`Operations` are all the actions offered by an interface. For instance,
 within an interface for a Thermostat class, operations could be the
-action to read the temperature or to set the nominal temperature. An
-attribute defines a pair of operations a client can call to send or
+action to read the temperature or to set the nominal temperature.
+
+An `attribute` defines a pair of operations a client can call to send or
 receive a value. For instance, the position of a motor can be defined as
-an attribute because it is a data that you only set or get. A read only
-attribute defines a single operation the client can call to receives a
+an attribute because it is data that you only set or get. A read-only
+attribute defines a single operation the client can call to receive a
 value. In case of error, an operation is able to throw an exception to
 the client, attributes cannot raises exception except system exception
 (du to network fault for instance).
 
-Intuitively, IDL interface correspond to C++ classes and IDL operations
+Intuitively, IDL interfaces correspond to C++ classes and IDL operations
 correspond to C++ member functions and attributes as a way to read/write
 public member variable. Nevertheless, IDL defines only the interface to
-an object and say nothing about the object implementation. IDL is only a
+an object and says nothing about the object implementation. IDL is only a
 descriptive language. Once the interface is fully described in the IDL
 language, a compiler (from IDL to C++, from IDL to Java...) generates
 code to implement this interface. Obviously, you still have to write how
@@ -54,74 +61,69 @@ same address space as the caller, the invocation is accomplished as an
 ordinary function call to avoid the overhead of using a networking
 protocol.
 
-The complete TANGO IDL file can be found in
-the [TANGO home page] or at the end of this
-document in the appendix 2 chapter.
+For the curious the tango-idl file is available [here](https://gitlab.com/tango-controls/tango-idl/-/blob/main/include/tango.idl?ref_type=heads).
 
 ## The model
 
-The basic idea of the TDSOM is to treat each device as an **object**.
+The basic idea of the TDSOM is to treat each device as an `object`.
 Each device is a separate entity which has its own data and behavior.
 Each device has a unique name which identifies it in network name space.
-Devices are organized according to **classes**, each device belonging to
+Devices are organized according to `classes`, each device belonging to
 a class. All classes are derived from one root class thus allowing some
-common behavior for all devices. Four kind of requests can be sent to a
-device (locally i.e. in the same process, or remotely i.e. across the
-network) :
+common behavior for all devices. Five kind of requests can be sent to a
+device:
 
-- Execute actions via **commands**
-- Read/Set data specific to each device belonging to a class via TANGO
-  **attributes**
-- Read/Set data specific to each device belonging to a class via TANGO
-  **pipes**
-- Read some basic device data available for all devices via CORBA
-  attributes.
-- Execute a predefined set of actions available for every devices via
+- Execute actions via TANGO `commands`
+- Read/Set data specific to each device belonging to a class via TANGO `attributes`
+- Read/Set data specific to each device belonging to a class via TANGO `pipes`
+- Read some basic device data available for all devices via CORBA attributes
+- Execute a predefined set of actions available for every device via
   CORBA operations
 
-Each device is stored in a process called a **device server**. Devices
-are configured at runtime via **properties** which are stored in a
-**database**.
+Each device is stored in a process called a `device server`. Devices
+are configured at runtime via `properties` which are stored in the
+`database`.
 
 (devicesection-deviceservermodel)=
 
 ## The device
 
-The device is the heart of the TDSOM. A device is an abstract concept
+The device is at the heart of the TDSOM. A device is an abstract concept
 defined by the TDSOM. In reality, it can be a piece of hardware (an
-interlock bit) a collection of hardware (a screen attached to a stepper
-motor) a logical device (a taper) or a combination of all these (an
+interlock bit), a collection of hardware (a screen attached to a stepper
+motor), a logical device (a taper) or a combination of all these (an
 accelerator). Each device has a unique name in the control system and
 eventually one alias. Within Tango, a four field name space has been
 adopted consisting of
 
-\[//FACILITY/\]DOMAIN/CLASS/MEMBER
+```
+[//TANGO_HOST:PORT/]DOMAIN/FAMILY/MEMBER
+```
 
-Facility refers to the control system instance, domain refers to the
-sub-system, class the class and member the instance of the device.
+`TANGO_HOST:PORT` refers to the {term}`TDB <tango database>`,
+domain refers to the sub-system, family the group and member the instance of the device.
 Device name alias(es) must also be unique within a control system. There
-is no predefined syntax for device name alias.
+is no predefined syntax for device name alias. TODO continue here
 
 Each device belongs to a class. The device class contains a complete
 description and implementation of the behavior of all members of that
 class. New device classes can be constructed out of existing device
 classes. This way a new hierarchy of classes can be built up in a short
-time. Device classes can use existing devices as sub-classes or as
-sub-objects. The practice of reusing existing classes is classical for
-Object Oriented Programming and is one of its main advantages.
+time. Device classes can reuse existing devices as sub-classes.
+The practice of reusing existing classes is one of the main advantages of
+Object Oriented Programming.
 
 All device classes are derived from the same class (the device root
 class) and implement **the same CORBA interface**. All devices
-implementing the same CORBA interface ensures all control object support
+implementing the same CORBA interface ensures that all control object support
 the same set of CORBA operations and attributes. The device root class
 contains part of the common device code. By inheriting from this class,
 all devices shared a common behavior. This also makes maintenance and
 improvements to the TDSOM easy to carry out.
 
-All devices also support a **black box** where client requests for
-attributes or operations are recorded. This feature allows easier
-debugging session for device already installed in a running control
-system.
+All devices also bring a `black box` where client requests for
+attributes and operations are recorded. This feature helps in debugging sessions
+of devices already installed in a running control system.
 
 (commands-deviceservermodel)=
 
