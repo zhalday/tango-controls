@@ -160,7 +160,7 @@ You should be able to see the predefined servers in the database: `DataBaseds`, 
 
 You can access `sys/database/2`, but `sys/tg_test/1` isn't exported because `TangoTest` isn't running.
 
-```{image} 09-running-db/img/jive-tangotest-not-exported.png
+```{image} 08-running-db/img/jive-tangotest-not-exported.png
 :alt: Jive TangoTest not exported
 :align: center
 ```
@@ -170,7 +170,7 @@ You can access `sys/database/2`, but `sys/tg_test/1` isn't exported because `Tan
 
 If you get the following error when running `jive`, then the database isn't running on the given port or host. Check that you used the same `TANGO_HOST` when starting the database and Jive.
 
-```{image} 09-running-db/img/jive-no-tangodb.png
+```{image} 08-running-db/img/jive-no-tangodb.png
 :alt: Jive Connection to Database failed
 :align: center
 ```
@@ -189,7 +189,7 @@ In another terminal, run:
 
 As you started `TangoTest` after Jive, you have to refresh the tree:
 
-```{image} 09-running-db/img/jive-refresh-tree.png
+```{image} 08-running-db/img/jive-refresh-tree.png
 :alt: Jive Refresh tree
 :scale: 50%
 :align: center
@@ -197,13 +197,13 @@ As you started `TangoTest` after Jive, you have to refresh the tree:
 
 You can now test the device by sending commands or reading/writing attributes.
 
-```{image} 09-running-db/img/jive-test-device.png
+```{image} 08-running-db/img/jive-test-device.png
 :alt: Jive Test device
 :scale: 50%
 :align: center
 ```
 
-```{image} 09-running-db/img/jive-tangotest-status.png
+```{image} 08-running-db/img/jive-tangotest-status.png
 :alt: Jive TangoTest status
 :scale: 50%
 :align: center
