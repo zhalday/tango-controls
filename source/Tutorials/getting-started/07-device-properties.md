@@ -14,6 +14,7 @@ starts up, it reads the property values from the database. You'll learn more abo
 ```{literalinclude} 07-device-properties/python/main.py
 :caption: main.py
 :language: python
+:lines: 4-
 :emphasize-lines: 1,6,7,8
 ```
 ::::

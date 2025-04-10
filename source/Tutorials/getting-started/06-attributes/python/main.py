@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: All Contributors to the Tango Controls Community tutorials
+# SPDX-License-Identifier: LGPL-3.0-or-later
+
 from enum import IntEnum
 
 from tango import AttrWriteType

@@ -9,6 +9,7 @@ For starters, here are some very simple commands.  Commands have a name, an opti
 ```{literalinclude} 05-commands/python/main.py
 :caption: main.py
 :language: python
+:lines: 4-
 :emphasize-lines: 1
 ```
 ::::

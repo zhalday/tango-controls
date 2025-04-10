@@ -8,6 +8,7 @@ Tango devices are discoverable on the network, and their APIs can be queried.  T
 ```{literalinclude} 04-version-info/python/main.py
 :caption: main.py
 :language: python
+:lines: 4-
 :emphasize-lines: 10-16
 ```
 ::::

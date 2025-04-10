@@ -10,6 +10,7 @@ You start with the simplest Tango device to control one of these coffee machines
 ```{literalinclude} 01-first-steps/python/main.py
 :caption: main.py
 :language: python
+:lines: 4-
 ```
 ::::
 

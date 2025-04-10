@@ -11,6 +11,7 @@ Attributes have a name and a data type.  They can be read-only, read/write or wr
 ```{literalinclude} 06-attributes/python/main.py
 :caption: main.py
 :language: python
+:lines: 4-
 :emphasize-lines: 4
 ```
 ::::

@@ -11,6 +11,7 @@ As you saw in the [previous lesson](02-state-status.md#state-and-status) there i
 ```{literalinclude} 03-init-delete-device/python/main.py
 :caption: main.py
 :language: python
+:lines: 4-
 :emphasize-lines: 15,16,17
 ```
 ::::

@@ -11,6 +11,7 @@ for your first device.  You want to make this a little better.
 ```{literalinclude} 02-state-status/python/main.py
 :caption: main.py
 :language: python
+:lines: 4-
 :emphasize-lines: 8,9
 ```
 ::::
