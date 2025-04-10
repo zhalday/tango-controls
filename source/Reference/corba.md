@@ -3,7 +3,7 @@
 ```{tags} audience:developers, lang:all
 ```
 
-01. **You don’t need to know CORBA to work with TANGO**
+01. **You don’t need to know {term}`CORBA` to work with TANGO**
 02. CORBA is the acronym for **C**ommon **O**bject **R**equest **B**roker **A**rchitecture and it is a standard defined by the [Object Management Group (OMG)](http://www.omg.org)
 03. CORBA enables communication between software written in different languages and running on different computers
 04. CORBA applications are composed of many objects; objects are running software that provides functionalities and that can represent something in the real world
