@@ -61,7 +61,7 @@ Ready to accept request
 Start the python interpreter after setting the `TANGO_HOST` variable to point to the running Database server.
 
 ```console
-(tango-tut) ➜  tango-tut TANGO_HOST=localhost:10000 python
+(tango-tut) $ TANGO_HOST=localhost:10000 python
 ```
 
 To interact with a Tango Database from PyTango, you use the [tango.Database](inv:pytango:py:class#tango.Database) class, which provides methods for all database commands.
