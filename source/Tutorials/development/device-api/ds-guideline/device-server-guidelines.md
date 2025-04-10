@@ -34,7 +34,7 @@ To this aim the document is divided in 3 main chapters:
 The document has been initiated within the collaborative framework
 between SOLEIL and MAX-IV to define common software quality rules for
 shared software between these 2 institutes. It has since been adopted by
-the Tango community and is maintained for and by the community.
+the Tango Controls community and is maintained for and by the community.
 
 The objectives are therefore to enhance the general software quality of
 Device Servers developed by the various sites using Tango. This will
@@ -684,7 +684,7 @@ It is necessary to:
 
 - Systematically evaluate prior the coding of a device, the
   possibility of reusing a device available in the code
-  repositories (Tango community, local repository), in order to
+  repositories (Tango Controls community, local repository), in order to
   avoid several implementations of the same equipment.
 - Design the device as reusable/extensible as possible because it may
   interest the others developers in the community.
@@ -884,7 +884,7 @@ When the design of the Tango class requires threading:
 
 ### Language
 
-The Tango community is international and the developments could be
+The Tango Controls community is international and the developments could be
 shared with the community, so it is recommended to use English for documenting a
 device development.
 

@@ -64,7 +64,7 @@ A huge **Thank You** to all of you!
 
 The current Tango documentation would not be possible without the help of:
 
-- **Sphinx** - a big thank you especially to Georg Brandl for inventing Sphinx (by chance Georg is also a member of the Tango community)
+- **Sphinx** - a big thank you especially to Georg Brandl for inventing Sphinx (by chance Georg is also a member of the Tango Controls community)
 - **MyST** - for the simple but powerful markdown language
 - **Github** - for hosting the tango-doc repository
 - **Travis** - for the continuous integration of tango-doc

@@ -277,7 +277,7 @@ latex_documents = [
         "contents",
         "TangoControlsDocumentation.tex",
         "Tango Controls Documentation",
-        "Tango Community (CC BY 4.0)",
+        "Tango Controls Community (CC BY 4.0)",
         "manual",
     ),
 ]
@@ -312,7 +312,7 @@ man_pages = [
         "index",
         "tangocontrolsdocumentation",
         "Tango Controls Documentation Documentation",
-        ["Tango Community, 3Controls, Piotr Goryl"],
+        ["Tango Controls Community, 3Controls, Piotr Goryl"],
         1,
     )
 ]
@@ -331,7 +331,7 @@ texinfo_documents = [
         "index",
         "TangoControlsDocumentation",
         "Tango Controls Documentation",
-        "Tango Community (CC BY 4.0)",
+        "Tango Controls Community (CC BY 4.0)",
         "TangoControlsDocumentation",
         "One line description of project.",
         "Miscellaneous",
@@ -355,9 +355,9 @@ texinfo_documents = [
 
 # Bibliographic Dublin Core info.
 epub_title = "Tango Controls Documentation"
-epub_author = "Tango Community"
-epub_publisher = "Tango Community"
-epub_copyright = "2017-2023, Tango Community, CC BY 4.0"
+epub_author = "Tango Controls Community"
+epub_publisher = "Tango Controls Community"
+epub_copyright = "2017-2023, Tango Controls Community, CC BY 4.0"
 
 # The basename for the epub file. It defaults to the project name.
 # epub_basename = u'Tango Controls Documentation'

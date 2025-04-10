@@ -52,7 +52,7 @@ TANGO is based on the 21st century technologies :
 - Hosted on Gitlab (<https://gitlab.com/tango-controls>)
 - Extensive documentation + tools, large community
 
-## Tango Community
+## Tango Controls Community
 
 Since the creation of Tango, over 40 small and large facilities (see <http://www.tango-controls.org/partners/>)
 have adopted Tango for their control system.
