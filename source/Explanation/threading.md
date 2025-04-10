@@ -35,10 +35,13 @@ serialization models are available. In order to limit the thread number, the
 underlying ORB (omniORB) is configured to shutdown threads dedicated to
 client if the connection is inactive for more than 3 minutes. To also
 limit thread number, the ORB is configured to create one thread per
-connection up to 55 threads. When this level is reached, the threading
-model is automatically switch to a thread pool model with up to 100
-threads. If the number of threads decrease down to 50, the threading
-model will return to one thread per connection model.
+connection up to 55 threads. When this level is reached, omniORB automatically
+switches to a thread pool model in which all connections are listened to by a single
+thread that dispatches incoming calls to a thread pool of up to 100 threads.
+The active *per-connection* threads are kept until they exit. When the number
+of connections decreases down to 50, then omniORB switches back to *per-connection*
+model for new incoming connections. More information can be read on
+[omniORB documentation § 6.4](https://omniorb.sourceforge.io/omni43/omniORB/omniORB006.html).
 
 If you are using events, the event system for its internal heartbeat
 system periodically (every 200 seconds) sends a command to the admin device.
