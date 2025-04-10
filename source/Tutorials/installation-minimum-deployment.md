@@ -19,22 +19,16 @@ It is possible that all of the tasks above are done on the same computer at the 
 :::{hint}
 **Tango Host, Databaseds**
 
-Each Tango Controls system/deployment has to have at least one running {term}`DataBaseds <databaseds>` {term}`device server`. The machine on which the device server is running has the role of the so called {term}`Tango Host <tango host>`. Databaseds is a {term}`device server` providing configuration information to all other components of the system as well as a runtime catalog of the components/{term}`devices <device>`.
-It allows (among others) client applications to find devices in distributed environment.
-
-The {term}`TANGO_HOST` environment variable is providing information about the host name or IPv4 address and the port on which the DataBaseds is listening for Tango connections. The `TANGO_HOST` environment variable is built as follows:
+In order to allow clients to connect to components in a Tango Controls system, i.e. connect to Tango {term}`Tango device servers <device server>` and their {term}`Tango devices <device>`, such a system needs to have at least one {term}`Tango Host <tango host>`. The `Tango Host`'s responsibility is maintain a catalog of the Tango `device servers` and `devices` that have been configured to run in the system. A `Tango Host` typically runs the {term}`DataBaseds <databaseds>` `device server`. This `device server` provides the configuration information about the Tango Controls system to the `device servers`, `devices` and clients in the system. Usually clients will make use of the {term}`TANGO_HOST` environment variable which contains information about the host name or IPv4 address and the port on which the `Databaseds` is listening. The `TANGO_HOST` environment variable consists of a host and a port part, spearated by a column:
 
 *host_name_or_IPv4_address:port*, example: `localhost:10000`
 :::
 
-Tango installation can be very simple running on a single machine for managing a few devices
-or it can be a fully blown installation managing tens of thousands of devices and
-multiple Tango control systems.
+Simple Tango Controls systems can consist of just a single computer that acts as `Tango Host` and runs at the same time only one or a few `device servers` with only a couple `devices`. A complex system on the other hand can easily consist of tens of thousands of `device servers` and their`devices` that are spread out over multiple Tango Controls systems, each with their own `Tango Host` but still allowing clients to connect to every `device` in every individual Tango Controls system.
 
 ## Tango Host Role
 
-The central role of a Tango control system is Tango Host role, it is created by running the {program}`DataBaseds` device server.
-This device server requires MariaDB or MySQL database in its most common application.
+The central role of a Tango control system is Tango Host role, it is created by running the `DataBaseds` `device server`. This `device server` needs either a MariaDB or a MySQL database backend to act as permanent storage for the `device server`.
 
 The recommended way of running device servers is to use the [Starter](#Starter) service.
 
