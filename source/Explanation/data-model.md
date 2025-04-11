@@ -10,6 +10,17 @@ This page list and links to the different elements of the Tango Data Model.
 The following diagram shows the main elements of the Tango Device Model :
 
 ```{mermaid}
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#fff0e6',
+      'primaryTextColor': '#ff6600',
+      'primaryBorderColor': '#000',
+      'lineColor': '#ff6600'
+    }
+  }
+}%%
 classDiagram
   class cls["Device Class"]
   class dserver["Device Server"]
@@ -43,6 +54,17 @@ classDiagram
 Here is a more complete version of the above:
 
 ```{mermaid}
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#fff0e6',
+      'primaryTextColor': '#ff6600',
+      'primaryBorderColor': '#000',
+      'lineColor': '#ff6600'
+    }
+  }
+}%%
 classDiagram
   direction LR
   class cls["Device Class"]
