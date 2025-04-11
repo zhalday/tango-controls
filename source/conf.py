@@ -189,7 +189,6 @@ html_theme_options = {
 # Add any paths that contain custom themes here, relative to this directory.
 # html_theme_path = ['_theme']
 
-
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
 # html_title = None
@@ -469,3 +468,24 @@ redirects = {
     "tutorials-and-howtos/index.html": "../Tutorials/",
     # reference didn't move
 }
+
+mermaid_init_js = """
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+
+const make_config = () => {
+  let prefersDark = localStorage.getItem('theme') === 'dark' ||
+   (localStorage.getItem('theme') === null && window.matchMedia
+    && window.matchMedia('(prefers-color-scheme: dark)').matches)
+  return({
+    startOnLoad:false,
+    darkMode: prefersDark,
+    theme: prefersDark ? "dark" : "default"
+  })
+}
+async function init_mermaid() {
+    let config = make_config()
+    mermaid.initialize(config);
+    await mermaid.run()
+}
+init_mermaid();
+"""
