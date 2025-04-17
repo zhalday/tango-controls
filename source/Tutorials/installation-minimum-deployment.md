@@ -19,28 +19,26 @@ It is possible that all of the tasks above are done on the same computer at the 
 :::{hint}
 **Tango Host, Databaseds**
 
-In order to allow clients to connect to components in a Tango Controls system, i.e. connect to Tango {term}`Tango device servers <device server>` and their {term}`Tango devices <device>`, such a system needs to have at least one {term}`Tango Host <tango host>`. The `Tango Host`'s responsibility is maintain a catalog of the Tango `device servers` and `devices` that have been configured to run in the system. A `Tango Host` typically runs the {term}`DataBaseds <databaseds>` `device server`. This `device server` provides the configuration information about the Tango Controls system to the `device servers`, `devices` and clients in the system. Usually clients will make use of the {term}`TANGO_HOST` environment variable which contains information about the host name or IPv4 address and the port on which the `Databaseds` is listening. The `TANGO_HOST` environment variable consists of a host and a port part, spearated by a column:
+In order to allow clients to connect to components in a Tango Controls system, i.e. connect to Tango {term}`Tango device servers <device server>` and their {term}`Tango devices <device>`, such a system needs to have at least one {term}`Tango Host <tango host>`. The `Tango Host`'s responsibility is maintain a catalog of the Tango `device servers` and `devices` that have been configured to run in the system. A `Tango Host` typically runs the {term}`DataBaseds <databaseds>` `device server`. This `device server` provides the configuration information about the Tango Controls system to the `device servers`, `devices` and clients in the system. Usually clients will make use of the {term}`TANGO_HOST` environment variable which contains information about the host name or IPv4 address and the port on which the `Databaseds` is listening. The `TANGO_HOST` environment variable consists of a host and a port part separated by a column:
 
 *host_name_or_IPv4_address:port*, example: `localhost:10000`
 :::
 
 Simple Tango Controls systems can consist of just a single computer that acts as `Tango Host` and runs at the same time only one or a few `device servers` with only a couple `devices`. A complex system on the other hand can easily consist of tens of thousands of `device servers` and their`devices` that are spread out over multiple Tango Controls systems, each with their own `Tango Host` but still allowing clients to connect to every `device` in every individual Tango Controls system.
 
-## Tango Host Role
+## Starter
 
-The central role of a Tango control system is Tango Host role, it is created by running the `DataBaseds` `device server`. This `device server` needs either a MariaDB or a MySQL database backend to act as permanent storage for the `device server`.
+In a larger Tango Controls system starting many `device servers` can turn into a laborious task that takes much longer than one would want it to. Fortunately Tango comes with some batteries included and it provides the [Starter](#Starter) `device server`. One can think of it as a boot-strapping device server that is able to start and stop other device servicers on the same host. Usually one puts `Starter` under control of one of the init systems of the OS.
+## Example for a very small installation
 
-The recommended way of running device servers is to use the [Starter](#Starter) service.
+Here we give an example for a very small installation:
 
-- a Database server (MariaDB or MySQL)
-
-:::{warning}
-root password for database can be different from the computer root password.
-This password should not be empty. tango database password for tango database can be empty.
-:::
-
-- an official Oracle Java JRE (Java Runtime Environment) >= 1.7
-- a Tango database. It will ask for a port number, this port will be the one used by the server for Tango requests. The hostname has then to be known from all the computers which will access to Tango Host. It is mandatory to install this tango database **before** every tango client.
+- A `Tango Host`. It will require a port number on that host which will be used by `Databaseds` for Tango requests. The hostname needs to be resolveable by all computers that run Tango software in this Tango Controls system or the host's IP address needs to be known by the same computers. It is mandatory to start the `Databaseds` **before** any other Tango program.
+- A different computer on which a cppTango, jTango or PyTango `device server` will run. On the same computer can also run clients.
+- - On that computer:
+- - - cppTango and/or jTango and/or PyTango
+- - - Oracle Java JRE (Java Runtime Environment) >= 1.7 to run Tango's Java tools or jTango code.
+- - - Python >= 3.9 in order to run PyTango (clients or `devices` and `device servers`).
 
 ## Tango development Role
 
@@ -63,7 +61,7 @@ To play this role, you need:
 ## Tango device servers Role
 
 This role is to run device servers (drivers):
-The recommended way of running device servers is to use {program}`Starter` service.
+The recommended way of running device servers is to use `Starter` service.
 
 To play this role, you need:
 
