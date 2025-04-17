@@ -5,6 +5,10 @@
 
 # Use the Tango controlled access system
 
+%[glossary_term][Tango Access Control]
+%A device server that manages user's rights to perform read/write requests
+%on a particular device.
+
 ## User rights definition
 
 Within the Tango control system, you give rights to a user. The 'user' is

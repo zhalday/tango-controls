@@ -25,9 +25,9 @@
 
   > project: <https://gitlab.com/tango-controls/pogo>
   >
-  > download: <https://bintray.com/tango-controls/maven/Pogo/_latestVersion>
+  > download: <https://repo1.maven.org/maven2/org/tango-controls/Pogo/>
 
 [emf]: http://www.eclipse.org/
 [tango]: http://www.tango-controls.org/
-[xtend]: http://www.eclipse.org/Xtend
-[xtext]: http://www.eclipse.org/Xtext
+[xtend]: https://eclipse.dev/Xtext/xtend/
+[xtext]: https://eclipse.dev/Xtext/

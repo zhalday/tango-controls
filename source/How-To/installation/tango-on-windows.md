@@ -65,7 +65,7 @@ Set up environment variables providing credentials to access MariaDB:
     For production environment it is
     suggested to create an additional user with `DB Admin` privileges. On Windows you may use `MariaDB Installer`
     from `Start` menu and select the option `Reconfigure` for MariaDB Server.
-    Please refer to: <http://dev.MariaDB.com/doc/refman/5.7/en/adding-users.html>
+    Please refer to: <https://mariadb.com/kb/en/create-user/>
     :::
 
   - Populate database with an initial Tango configuration:

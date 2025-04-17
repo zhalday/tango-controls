@@ -24,7 +24,7 @@ Old-but-precious/index
 
 This is a collection of documents for our Tango Controls community, users of Tango Controls, developers and interested parties. Among the many items that we cover here are explanations of what Tango Controls is, how to use Tango Controls for your controls system, how to write software using the Tango Controls framework and how to use Tango Controls and its tools.
 
-Nothing is perfect and neither is this documentation. In the likely case that you find that information is missing, please get in touch with us. Ideally you would simply [open an issue on GitLab](https://gitlab.com/tango-controls/tango-doc/-/issues/new) so that we can address what you have found.
+Nothing is perfect and neither is this documentation. In the likely case that you find that information is missing, please get in touch with us. Ideally you would simply [open an issue on GitLab](https://gitlab.com/tango-controls/tango-doc/-/issues/) so that we can address what you have found.
 
 
 ## How this documentation is organised

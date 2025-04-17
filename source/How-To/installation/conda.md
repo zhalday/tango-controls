@@ -149,7 +149,7 @@ You can now invoke any of them (no activation needed):
 $ jive
 ```
 
-See <https://pixi.sh/latest/reference/cli/#global> for more information.
+See <https://pixi.sh/latest/reference/cli/#global-options> for more information.
 
 ### Working on projects
 

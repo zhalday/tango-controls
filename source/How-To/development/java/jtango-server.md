@@ -59,9 +59,9 @@ This command generates skeleton project using special Maven artifact that define
 
 Latest version of JTango is
 
-```{image} https://api.bintray.com/packages/tango-controls/jtango/JTango/images/download.svg
+```{image} https://img.shields.io/maven-central/v/org.tango-controls/JTango/9.7.4.svg?label=Maven%20Central
 :alt: JTango latest version
-:target: https://bintray.com/tango-controls/jtango/JTango/_latestVersion
+:target: https://central.sonatype.com/artifact/org.tango-controls/JTango
 ```
 
 The following output indicates that project has been successfully generated:

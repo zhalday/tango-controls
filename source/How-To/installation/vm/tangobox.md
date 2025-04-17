@@ -174,7 +174,7 @@ View on a ModbusComposer device and configured ModbusPal simulator.
 
 ### JupyTango
 
-JupyTango is a [Jupyter](http://jupyter.org/) featuring Tango related kernels. With JupyterLab you may interact
+JupyTango is a [Jupyter](https://jupyter.org/) featuring Tango related kernels. With JupyterLab you may interact
 and do scripting for Tango through a web browser.
 
 :::{figure} tangobox/jupytango.png
@@ -184,7 +184,7 @@ Browser window with JupyTango in action
 **In case you want to try it, here's the procedure:**
 
 1. start jupyterlab (it is started by default): {code}`docker start tangobox-jupytango`
-2. open a new browser window and go to <http://tangobox-jupytango:8888/lab>
+2. open a new browser window and go to `http://tangobox-jupytango:8888/lab`
 3. enjoy!
 
 **Here are the JupyTango additions to itango:**

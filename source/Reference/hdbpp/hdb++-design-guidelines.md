@@ -426,7 +426,7 @@ appendix. The main points can be summarized as:
 :::{note}
 There are some special OS settings to tune for Cassandra to work as expected, in particular, it is recommended to disable the SWAP and
 to change the resource limits on Linux, as described in this documentation page:
-[Recommended production settings for Linux](http://docs.datastax.com/en/archived/cassandra/2.2/cassandra/install/installRecommendSettings.html/).
+[Recommended production settings for Linux](https://docs.datastax.com/en/cassandra-oss/3.0/cassandra/install/installRecommendSettings.html).
 :::
 
 ## Deployment best practices

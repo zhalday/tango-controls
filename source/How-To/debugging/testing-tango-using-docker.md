@@ -19,7 +19,7 @@ Once docker is installed one can pull docker images with pre-installed tango.
 
 > - ska-tango-images-tango-db: a (mysql-compatible) mariadb container with the Tango schema
 > - ska-tango-images-tango-cpp: a container with core Tango libraries and dependencies that can run the `DatabaseDS` Device Server
-> - ska-tango-images-rest-server: a [Tango REST server](https://gitlab.com/tango-controls/rest-server)
+> - ska-tango-images-rest-server: a [Tango REST server](https://github.com/tango-controls/rest-server)
 > - ska-tango-images-tango-test: the well-established [TangoTest device server](https://gitlab.com/tango-controls/TangoTest)
 
 The sources for these docker images are hosted and maintained on the SKAO gitlab: <https://gitlab.com/ska-telescope/ska-tango-images>
