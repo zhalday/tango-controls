@@ -22,6 +22,8 @@ The TDSOM can be divided into the following basic elements:
 This chapter will treat each of the above elements
 separately.
 
+(corbasection-deviceservermodel)=
+
 ## Introduction to CORBA
 
 {term}`CORBA` is a definition of how to write object request brokers (ORB). The
@@ -103,48 +105,43 @@ adopted consisting of
 `TANGO_HOST:PORT` refers to the {term}`TDB <tango database>`,
 domain refers to the sub-system, family the group and member the instance of the device.
 Device name alias(es) must also be unique within a control system. There
-is no predefined syntax for device name alias. TODO continue here
+is no predefined syntax for device name alias.
 
 Each device belongs to a class. The device class contains a complete
 description and implementation of the behavior of all members of that
 class. New device classes can be constructed out of existing device
 classes. This way a new hierarchy of classes can be built up in a short
 time. Device classes can reuse existing devices as sub-classes.
-The practice of reusing existing classes is one of the main advantages of
-Object Oriented Programming.
 
-All device classes are derived from the same class (the device root
-class) and implement **the same CORBA interface**. All devices
-implementing the same CORBA interface ensures that all control object support
+All device classes are derived from the exact same base class (the device root
+class) and implements the **identical CORBA interface**. All devices
+implementing the identical CORBA interface ensures that all control objects support
 the same set of CORBA operations and attributes. The device root class
 contains part of the common device code. By inheriting from this class,
-all devices shared a common behavior. This also makes maintenance and
+all devices share a common behavior. This also makes maintenance and
 improvements to the TDSOM easy to carry out.
 
 All devices also bring a `black box` where client requests for
 attributes and operations are recorded. This feature helps in debugging sessions
-of devices already installed in a running control system.
+of devices already installed in a running control system. This is a lightweight alternative to
+[telemetry](telemetry-howto).
 
 (commands-deviceservermodel)=
 
-### The commands
+### TANGO Commands
 
-Commands are executed using two CORBA operations named
-**command_inout** for synchronous commands and
-**command_inout_async** for asynchronous commands. These two
-operations called a special method implemented in the device root class
-\- the *command_handler* method. The *command_handler* calls an
-*is_allowed* method implemented in the device class before calling the
-command itself. The *is_allowed* method is specific to each
-command [^footnote-1]. It checks to see whether the command to be executed is
-compatible with the present device state. The command function is
-executed only if the *is_allowed* method allows it. Otherwise, an
+Commands are executed using two CORBA operations named `command_inout` for synchronous commands and
+`command_inout_async` for asynchronous commands. These two operations call a special method implemented in
+the device root class, the `command_handler` method. The `command_handler` calls an `is_allowed` method
+implemented in the device class before calling the command itself. The `is_allowed` method is specific to each
+command [^fn:command]. It checks to see whether the command to be executed is compatible with the present
+device state. The command function is executed only if the `is_allowed` method allows it. Otherwise, an
 exception is sent to the client.
 
-### The TANGO attributes
+### TANGO attributes
 
 In addition to commands, TANGO devices also support normalized data
-types called attributes [^footnote-2]. Commands are device specific and the data
+types called attributes [^fn:attribute]. Commands are device specific and the data
 they transport are not normalized i.e. they can be any one of the TANGO
 data types with no restriction on what each byte means. This means that
 it is difficult to interpret the output of a command in terms of what
@@ -153,36 +150,39 @@ what the data returned represents, in what units it is, plus additional
 information like minimum, maximum, quality etc. Tango attributes solve
 this problem.
 
-TANGO attributes are zero, one or two dimensional data which have a fix
+TANGO attributes are zero, one or two dimensional data which have a fixed
 set of properties e.g. quality, minimum and maximum, alarm low and high.
-They are transferred in a specialized TANGO type and can be read, write
-or read-write. A device can support a list of attributes. Clients can
+They are transferred in a specialized TANGO type and can be READ, WRITE
+or READ-WRITE. A device can support a list of attributes. Clients can
 read one or more attributes from one or more devices. To read TANGO
-attributes, the client uses the **read_attributes** operation. To write
-TANGO attributes, a client uses the **write_attributes** operation. To
+attributes, the client uses the `read_attributes` operation. To write
+TANGO attributes, a client uses the `write_attributes` operation. To
 write then read TANGO attributes within the same network request, the
-client uses the **write_read_attributes** operation. To query a device
+client uses the `write_read_attributes` operation. To query a device
 for all the attributes it supports, a client uses the
-**get_attribute_config** operation. A client is also able to modify
-some of parameters defining an attribute with the
-**set_attribute_config** operation. These five operations are defined
+`get_attribute_config` operation. A client is also able to modify
+some of the parameters defining an attribute with the
+`set_attribute_config` operation. These five operations are defined
 in the device CORBA interface.
 
-TANGO support thirteen data types for attributes (and arrays of for one
+TANGO support thirteen data types for attributes (and arrays for one
 or two dimensional data) which are: boolean, short, long (32 bits), long
 (64 bits), float, double, unsigned char, unsigned short, unsigned long
 (32 bits), unsigned long (64 bits), string, a specific data type for
 Tango device state and finally another specific data type to transfer
 data as an array of unsigned char with a string describing the coding of
-these data.
+the data.
 
 ### The TANGO pipes
 
-Since release 9, in addition to commands and attributes, TANGO devices
-also support pipes.
+:::{warning}
+Pipes are slated for removal.
+:::
+
+TANGO devices also support pipes.
 
 In some cases, it is required to exchange data between client and device
-of varrying data type. This is for instance the case of data gathered
+of varying data type. This is for instance the case of data gathered
 during a scan on one experiment. Because the number of actuators and
 sensors involved in the scan may change from one scan to another, it is
 not possible to use a well defined data type. TANGO pipes have been
@@ -191,33 +191,33 @@ transfer data between client and device. A pipe has a set of two
 properties which are the pipe label and its description. A pipe can be
 read or read-write. A device can support a list of pipes. Clients can
 read one or more pipes from one or more devices. To read a TANGO pipe,
-the client uses the **read_pipe** operation. To write a TANGO pipe, a
-client uses the **write_pipe** operation. To write then read a TANGO
+the client uses the `read_pipe` operation. To write a TANGO pipe, a
+client uses the `write_pipe` operation. To write then read a TANGO
 pipe within the same network request, the client uses the
-**write_read_pipe** operation. To query a device for all the pipes it
-supports, a client uses the **get_pipe_config** operation. A client is
+`write_read_pipe` operation. To query a device for all the pipes it
+supports, a client uses the `get_pipe_config` operation. A client is
 also able to modify some of parameters defining a pipe with the
-**set_pipe_config** operation. These five operations are defined in
+`set_pipe_config` operation. These five operations are defined in
 the device CORBA interface.
 
-In contrary of commands or attributes, a TANGO pipe does not have a
+In contrast to commands or attributes, a TANGO pipe does not have a
 pre-defined data type. Data transferred through pipes may be of any
 basic Tango data type (or array of) and this may change every time a
 pipe is read or written.
 
-### Command, attributes or pipes ?
+### Commands, attributes or pipes?
 
 There are no strict rules concerning what should be returned as command
 result and what should be implemented as an attribute or as a pipe.
-Nevertheless, attributes are more adapted to return physical value which
+Nevertheless, attributes are more adapted to return physical values which
 have a kind of time consistency. Attribute also have more properties
 which help the client to precisely know what it represents. For
 instance, the state and the status of a power supply are not physical
 values and are returned as command result. The current generated by the
 power supply is a physical value and is implemented as an attribute. The
 attribute properties allow a client to know its unit, its label and some
-other informations which are related to a physical value. Command are
-well adapted to send order to a device like switching from one mode of
+other informations which are related to a physical value. Commands are
+well adapted to send orders to a device like switching from one mode of
 operation to another mode of operation. For a power supply, the switch
 from a STANDBY mode to a ON mode is typically done via a command.
 Finally pipe is well adapted when the kind and number of data exchanged
@@ -226,93 +226,90 @@ between the client and the device change with time.
 ### The CORBA attributes
 
 Some key data implemented for each device can be read without the need
-to call a command or read an attribute. These data are :
+to call a command or read an attribute:
 
 - The device state
 - The device status
 - The device name
-- The administration device name called adm_name
+- The administration device name called `adm_name`
 - The device description
 
-The device state is a number representing its state. A set of predefined
-states are defined in the TDSOM. The device status is a string
-describing in plain text the device state and any additional useful
-information of the device as a formatted ascii string. The device name
-is its name as defined in \[sec:dev\]. For each set of devices grouped
-within the same server, an administration device is automatically added.
-This adm_name is the name of the administration device. The device
-description is also an ascii string describing the device rule.
+The device state is a number representing its state. A set of predefined states are defined in the TDSOM. The
+device status is a string describing in plain text the device state and any additional useful information of
+the device as a formatted ASCII string. The device name is its name as defined
+[here](devicesection-deviceservermodel). For each set of devices grouped within the same server, an
+administration device is automatically added. This `adm_name` is the name of the administration device. The
+device description is also an ASCII string describing the device.
 
-These five CORBA attributes are implemented in the device root class and
-therefore do not need any coding from the device class programmer. As
-explained in \[sec:corba\], the CORBA attributes are not allowed to raise
-exceptions whereas command (which are implemented using CORBA
-operations) can.
+These five CORBA attributes are implemented in the device root class and therefore do not need to be
+implemented by the device server developer. As explained in the [CORBA](corbasection-deviceservermodel)
+paragraph, the CORBA attributes are not allowed to raise exceptions whereas command (which are implemented
+using CORBA operations) can.
 
 ### The remaining CORBA operations
 
 The TDSOM also supports a list of actions defined as CORBA operations in
 the device interface and implemented in the device root class.
 Therefore, these actions are implemented automatically for every TANGO
-device. These operations are :
+device:
 
-```{eval-rst}
-.. csv-table::
+```{list-table}
+:header-rows: 1
 
-   "ping", "to ping a device to check if the device is alive. Obviously, it checks
-   only the connection from a client to the device and not all the device functionalities"
-
-   "command_list_query", "request a list of all the commands supported by a device with their
-   input and output types and description"
-
-   "command_query", "request information about a specific command which are its input and
-   output type and description"
-
-   "info", "request general information on the device like its name, the host where
-   the device server hosting the device is running..."
-
-   "black_box", "read the device black-box as an array of strings"
+* - Operation
+  - Explanation
+* - ping
+  - Ping a device to check if the device is alive and reachable over the network
+    Obviously, it checks only the connection from a client to the device and not all the device functionalities
+* - command_list_query
+  - Request a list of all the commands supported by a device with their input, output types and description
+* - command_query
+  - Request information about a specific command which are its input, output type and description
+* - info
+  - Request general information on the device like its name, the host where the device server hosting the
+    device is running etc.
+* - black_box
+  - Read the device black-box as an array of strings
 ```
 
 ### The special case of the device state and status
 
-Device state and status are the most important key device informations.
-Nearly all client software dealing with Tango device needs device(s)
-state and/or status. In order to simplify client software developper
+Device state and status is the most important device information.
+Nearly all client software dealing with Tango device need device
+state and/or status. In order to simplify client software developer
 work, it is possible to get these two piece of information in three
 different manners :
 
-1. Using the appropriate CORBA attribute (state or status)
-2. Using command on the device. The command are called State or Status
-3. Using attribute. Even if the state and status are not real attribute,
+1. Using the appropriate CORBA attribute (`state` and `status`)
+2. Using command on the device. The commands are called `State` and `Status`
+3. Using attributes: Even if the state and status are not real attributes,
    it is possible to get their value using the read_attributes
    operation. Nevertheless, it is not possible to set the attribute
    configuration for state and status. An error is reported by the
-   server if a client try to do so.
+   server if a client tries to do so.
 
-### The device polling
+### Device polling
 
 Within the Tango framework, it is also possible to force executing
-command(s) or reading attribute(s) at a fixed frequency. It is called
-*device polling*. This is automatically handled by Tango core software
-with a polling threads pool. The command result or attribute value are
-stored in circular buffers. When a client want to read attribute value
-(or command result) for a polled attribute (or a polled command), he has
+commands or reading attributes at a fixed frequency. It is called
+`device polling`. This is automatically handled by Tango core software
+with a pool of polling threads. The command results or attribute values are
+stored in circular buffers. When a client wants to read an attribute value,
+or command result, for a polled attribute/command she has
 the choice to get the attribute value (or command result) with a real
-access to the device of from the last value stored in the device ring
+access to the device or from the last value stored in the device ring
 buffer. This is a great advantage for “slow” devices. Getting data from
 the buffer is much faster than accessing the device itself. The
 technical disadvantage is the time shift between the data returned from
 the polling buffer and the time of the request. Polling a command is
-only possible for command without input arguments. It is not possible to
-poll a device pipe.
+only possible for commands without input arguments and these commands should also be idempotent.
+It is not possible to poll a device pipe.
 
-Two other CORBA operations called *command_inout_history_X* and
-*read_attribute \_history_X* allow a client to retrieve the history of
-polled command or attribute stored in the polling buffers. Obviously,
-this history is limited to the depth of the polling buffer.
+Two other CORBA operations called `command_inout_history_X` and
+`read_attribute_history_X` allow a client to retrieve the history of
+polled commands/attributes stored in the polling buffers.
 
-See [](#device-polling) for details.
+See the [device polling](./../../../Explanation/polling.md#device-polling) explanation for details.
 
 ## The server
 
@@ -322,12 +319,9 @@ offer one or more services to one or more clients. To do this, the
 server has to spend most of its time in a wait loop waiting for clients
 to connect to it. The devices are hosted in the server process. A server
 is able to host several classes of devices. In the TDSOM, a device of
-the **DServer** class is automatically hosted by each device server.
+the `DServer` class is automatically hosted by each device server.
 This class of device supports commands which enable remote device server
 process administration.
-
-TANGO supports device server process on two families of operating system
-\: Linux and Windows.
 
 (tango-logging-service-overview)=
 ## The Tango Logging Service
@@ -339,42 +333,43 @@ informations which help to:
 - Report on error
 - Give regular information to user
 
-This is classically done using `cout` (or C `printf`) in C++ or `println`
-method in Java language. In a highly distributed control system, it is
-difficult to get all these informations coming from a high number of
-different processes running on a large number of computers. Since its
-release 3, Tango has incorporated a Logging Service called the Tango
-Logging Service (TLS) which allows print messages to be:
+This is classically done using the `print` functions of your favourite programming language. In a highly
+distributed control system, it is difficult to get all this information coming from a high number of
+different processes running on a large number of computers. Since early on, Tango has incorporated a
+Logging Service called the Tango Logging Service (TLS) which allows print messages to be:
 
 - Displayed on a console (the classical way)
 
 - Sent to a file
 
-- Sent to specific Tango device called log consumer. Tango package has
-  an implementation of log consumer where every consumer device is
-  associated to a graphical interface. This graphical interface display
-  messages but could also be used to sort messages, to filter
-  messages... Using this feature, it is possible to centralise display
-  of these messages coming from different devices embedded within
-  different processes. These log consumers can be:
+- Sent to specific Tango device called `LogConsumer`. The Tango package has
+  an implementation of a log consumer where every consumer device is
+  associated to a graphical interface.
+
+The log consumer's graphical interface displays messages but could also be used to sort messages, to filter
+messages etc. With this feature it is possible to centralize these messages coming from different devices
+embedded within different processes.
+
+These log consumers can be:
 
   - Statically configured meaning that it memorizes the list of Tango
-    devices for which it will get and display messages.
-  - Dynamically configured. The user, with the help of the graphical
-    interface, chooses devices from which he want to see messages.
+    devices for which it will get and display messages
+  - Dynamically configured. The user chooses devices from which he want to see messages
 
 ## The database
 
 To achieve complete device independence, it is necessary however to
 supplement device classes with a possibility for configuring device
 dependencies at runtime. The utility which does this in the TDSOM is the
-**property database**. Properties [^footnote-3] are identified by an ascii string
+`property database`. Properties [^fn:properties] are identified by an ASCII string
 and the device name. TANGO attributes are also configured using
-properties. This database is also used to store device network addresses
+properties. This {term}`database <Tango Database>` is also used to store device network addresses
 (CORBA IOR’s), list of classes hosted by a device server process and
 list of devices for each class in a device server process. The database
-ensure the uniqueness of device name and of alias. It also links device
+ensure the uniqueness of device name and of aliases. It also links device
 name and it list of aliases.
+
+TODO continue here
 
 TANGO uses MySQL ([MySQL home page](https://www.mysql.com)) as its database. MySQL is a
 relational database which implements the SQL language. However, this is
@@ -502,13 +497,13 @@ The following figure is a schematic of the Tango event system:
 ```{image} device-server-model/event_schematic_zmq.png
 ```
 
-[^footnote-1]: In contrary to the state_handler method of the TACO device server
+[^fn:command]: In contrary to the state_handler method of the TACO device server
     model which is not specific to each command.
 
-[^footnote-2]: TANGO attributes were known as signals in the TACO device server
+[^fn:attribute]: TANGO attributes were known as signals in the TACO device server
     model
 
-[^footnote-3]: Properties were known as resources in the TACO device server model
+[^fn:properties]: Properties were known as resources in the TACO device server model
 
 [TANGO home page]: https://www.tango-controls.org
 [OMG home page]: https://www.omg.org
