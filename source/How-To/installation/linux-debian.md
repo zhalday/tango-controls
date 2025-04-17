@@ -54,7 +54,9 @@ The following steps have been written for Debian bookworm and Ubuntu 24.04.
    :::::{tab-set}
    ::::{tab-item} Debian
    ```console
-   sudo apt-get install g++ openjdk-17-jre-headless mariadb-server libmariadb-dev zlib1g-dev libzmq3-dev cmake
+   sudo apt-get install g++ openjdk-17-jdk mariadb-server libmariadb-dev \
+   zlib1g-dev libzmq3-dev cmake git protobuf-compiler-grpc libprotobuf-dev \
+   libcurl4-openssl-dev libjpeg-dev libgrpc++-dev libabsl-dev
    ```
 
    For omniORB you need to use the packages from bookworm/backports.
@@ -80,12 +82,16 @@ The following steps have been written for Debian bookworm and Ubuntu 24.04.
    - Install omniORB 4.3.x
 
       ```console
-      sudo apt install libomniorb4-dev/bookworm-backports libcos4-dev/bookworm-backports omniidl/bookworm-backports
+      sudo apt install libomniorb4-dev/bookworm-backports libcos4-dev/bookworm-backports \
+      omniidl/bookworm-backports
       ```
    ::::
    ::::{tab-item} Ubuntu
    ```console
-   sudo apt-get install g++ openjdk-17-jdk mariadb-server libmariadb-dev zlib1g-dev libzmq3-dev cmake git libomniorb4-dev libcos4-dev omniidl protobuf-compiler-grpc libprotobuf-dev libcurl4-openssl-dev libjpeg-dev  libgrpc++-dev
+   sudo apt-get install g++ openjdk-17-jdk mariadb-server libmariadb-dev \
+   zlib1g-dev libzmq3-dev cmake git libomniorb4-dev libcos4-dev omniidl \
+   protobuf-compiler-grpc libprotobuf-dev libcurl4-openssl-dev libjpeg-dev \
+   libgrpc++-dev
    ```
    ::::
    :::::
@@ -116,7 +122,8 @@ The following steps have been written for Debian bookworm and Ubuntu 24.04.
     cd opentelemetry
 
     wget https://github.com/open-telemetry/opentelemetry-cpp/archive/refs/tags/vX.X.X.tar.gz
-    cd opentelemetry-cpp
+    tar xzvf opentelemetry-cpp-*.tar.gz
+    cd opentelemetry-cpp-*
     ```
 
 5. Build OpenTelemetry
@@ -129,7 +136,10 @@ The following steps have been written for Debian bookworm and Ubuntu 24.04.
 
     - Configure build
         ```console
-        cmake .. -DWITH_OTLP_GRPC=ON -DWITH_OTLP_HTTP=ON -DBUILD_SHARED_LIBS=ON -DCMAKE_POSITION_INDEPENDENT_CODE=ON -DWITH_ABSEIL=ON -DWITH_BENCHMARK=OFF -DWITH_EXAMPLES=OFF -DWITH_FUNC_TESTS=OFF -DWITH_DEPRECATED_SDK_FACTORY=OFF -DBUILD_TESTING=OFF -DCMAKE_BUILD_TYPE=RelWithDebInfo
+        cmake .. -DWITH_OTLP_GRPC=ON -DWITH_OTLP_HTTP=ON -DBUILD_SHARED_LIBS=ON \
+        -DCMAKE_POSITION_INDEPENDENT_CODE=ON -DWITH_ABSEIL=ON -DWITH_BENCHMARK=OFF \
+        -DWITH_EXAMPLES=OFF -DWITH_FUNC_TESTS=OFF -DWITH_DEPRECATED_SDK_FACTORY=OFF \
+        -DBUILD_TESTING=OFF -DCMAKE_BUILD_TYPE=RelWithDebInfo
         ```
 
     - Compile
@@ -165,14 +175,15 @@ The following steps have been written for Debian bookworm and Ubuntu 24.04.
         ```console
         mv ../tango-*.tar.gz .
         tar xzvf tango-*.tar.gz
-        cd tango-X.X.X/
+        cd tango-*
         ```
 
 8. Configure tango-controls to build and install in /usr/local (replacing `<mypassword>` with the password you set
    in step 3):
 
     ```console
-    cmake -B build -S . -DMYSQL_ADMIN=root -DMYSQL_ADMIN_PASSWD=<mypassword> -DTDB_DATABASE_SCHEMA=ON
+    cmake -B build -S . -DMYSQL_ADMIN=root -DMYSQL_ADMIN_PASSWD=<mypassword> \
+    -DTDB_DATABASE_SCHEMA=ON
     ```
 
    :::{note}
@@ -236,7 +247,8 @@ password you set in step 3:
     :::{note}
     If you receive an error at this stage similar to
     ```console
-    error while loading shared libraries: libtango.so.10.0: cannot open shared object file: No such file or directory
+    error while loading shared libraries: libtango.so.10.0: cannot open
+    shared object file: No such file or directory
     ```
     you will need to run the following command to get /usr/local/lib into the default runtime search path:
     ```
