@@ -220,7 +220,7 @@ You can of course use PyTango [DeviceProxy](inv:pytango:py:class#tango.DevicePro
 161.10643365358285
 ```
 
-If you don't need `TangoTest`, you can enter `CTRL-C` in your terminal to stop it.
+If you don't need `TangoTest`, you can use the keyboard combination `Ctrl`+`C` in your terminal to stop it.
 
 ## Summary
 
