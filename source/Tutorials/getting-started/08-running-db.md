@@ -32,6 +32,10 @@ This is the file containing the SQLite database.
 You can change the name of that file with the `PYTANGO_DATABASE_NAME` environment variable.
 :::
 
+:::{tip}
+As we use SQLite, you can easily store the database in memory instead of the ordinary disk file. Set `PYTANGO_DATABASE_NAME` variable to the special filename `:memory:`.
+:::
+
 ::::{admonition} Bonus tip: `pytango-db`
 :class: dropdown, tip
 The PyTango Database Device Server code has been forked to a separate [repository](https://gitlab.com/tango-controls/incubator/pytango-db) for easier development.
