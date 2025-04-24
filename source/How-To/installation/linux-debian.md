@@ -122,7 +122,7 @@ The following steps have been written for Debian bookworm and Ubuntu 24.04.
     cd opentelemetry
 
     wget https://github.com/open-telemetry/opentelemetry-cpp/archive/refs/tags/vX.X.X.tar.gz
-    tar xzvf opentelemetry-cpp-*.tar.gz
+    tar xzvf v*.tar.gz
     cd opentelemetry-cpp-*
     ```
 
@@ -155,30 +155,26 @@ The following steps have been written for Debian bookworm and Ubuntu 24.04.
 
 6. Download the Tango source code:
 
-    The latest version can be downloaded from [here](https://gitlab.com/tango-controls/TangoSourceDistribution/-/releases),
+    - Create a new directory under ~/:
+        ```console
+        mkdir ~/tango
+        cd ~/tango
+        ```
+
+    - The latest version can be downloaded from [here](https://gitlab.com/tango-controls/TangoSourceDistribution/-/releases),
     you want the `Tango Source Distribution` file. You can use `wget` to get the version you require:
 
-    ```console
-    wget https://gitlab.com/api/v4/projects/24125890/packages/generic/TangoSourceDistribution/X.X.X/tango-X.X.X.tar.gz
-    ```
-
-7. Unpack in a sub-directory called tango:
-
-   - Create a new directory:
         ```console
-        mkdir tango
-        cd tango
+        wget https://gitlab.com/api/v4/projects/24125890/packages/generic/TangoSourceDistribution/X.X.X/tango-X.X.X.tar.gz
         ```
 
-    - Move the downloaded tar.gz file containing the source code into our working directory and unpack:
-
+    - Unpack:
         ```console
-        mv ../tango-*.tar.gz .
         tar xzvf tango-*.tar.gz
-        cd tango-*
+        cd tango-X.X.X
         ```
 
-8. Configure tango-controls to build and install in /usr/local (replacing `<mypassword>` with the password you set
+7. Configure tango-controls to build and install in /usr/local (replacing `<mypassword>` with the password you set
    in step 3):
 
     ```console
@@ -192,20 +188,20 @@ The following steps have been written for Debian bookworm and Ubuntu 24.04.
 
    Further CMake compilations flags are described in [](debian-compile-cmake-options).
 
-9. Compile
+8. Compile
 
     ```console
     cmake --build build --parallel $(nproc)
     ```
     where `$(nproc)` is the number of processes to use, for example `2`.
 
-10. Install:
+9. Install:
 
     ```console
     sudo cmake --build build --target install
     ```
 
-11. Add the following lines to the start script /usr/local/bin/tango, replacing `<mypassword>` with the
+10. Add the following lines to the start script /usr/local/bin/tango, replacing `<mypassword>` with the
 password you set in step 3:
 
     ```console
@@ -219,14 +215,14 @@ password you set in step 3:
     export MYSQL_PASSWORD=<mypassword>
     ```
 
-12. Start tango-controls database server:
+11. Start tango-controls database server:
 
     ```console
     sudo /usr/local/bin/tango start
     ```
 
 
-13. Set the TANGO_HOST variable in `/etc/tangorc`:
+12. Set the TANGO_HOST variable in `/etc/tangorc`:
 
     ```console
     sudo nano /etc/tangorc
@@ -238,7 +234,7 @@ password you set in step 3:
     TANGO_HOST=127.0.0.1:10000
     ```
 
-14. Start the TangoTest device server:
+13. Start the TangoTest device server:
 
     ```console
     /usr/local/bin/TangoTest test &
@@ -255,7 +251,7 @@ password you set in step 3:
     sudo ldconfig
     ```
 
-15. Test Jive:
+14. Test Jive:
 
     ```console
     /usr/local/bin/jive &
