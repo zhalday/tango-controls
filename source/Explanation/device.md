@@ -13,6 +13,11 @@ Devices are created by [Device Servers](#device-server), which will call the dev
 
 All devices support a **black box** where client requests for attributes or operations are recorded. This feature allows easier debugging session for device already installed in a running control system.
 
+In the real world, devices vary from serial line devices to devices interfaced by field-bus to memory mapped VME cards or PC cards to entire
+data acquisition systems. The definition of a device depends very much on the user’s requirements. In the simple case a device server can be
+used to hide the serial line protocol required to communicate with a device. For more complicated devices the device server can be used to
+hide the entire complexity of the device timing, configuration and acquisition cycle behind a set of high level commands.
+
 
 ## Device Class
 

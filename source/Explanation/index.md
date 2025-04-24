@@ -24,6 +24,7 @@ alarms.md
 archiving/index.md
 pipe.md
 threading
+device-server-model
 long-term-support.md
 history.md
 ```

@@ -1,4 +1,4 @@
-# Writing a TANGO device server
+# Developing a Tango device server
 
 ```{tags} audience:developers, lang:c++
 ```

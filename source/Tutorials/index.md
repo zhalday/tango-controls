@@ -12,7 +12,7 @@ In this section you will find a set of tutorials to get you started with using T
 
 - A tutorial on how to use {term}`AtkPanel`s to control a Tango device is given in the [ATKPanel](#atkpanel-manual) subsection. This is a good example of how to interact with device servers using a client.
 
-- Finally, a more in-depth tutorials on how to write Tango device servers and clients, including examples in all three languages; C++, Python and Java, can be found in the [Developer's Guide](#tutorial-developers) subsection.
+- The remaining tutorials contain guidance and structure for developers developing Tango clients and Tango Device servers.
 
 
 ```{toctree}
@@ -23,5 +23,7 @@ In this section you will find a set of tutorials to get you started with using T
 getting-started/tutorial.md
 installation-minimum-deployment.md
 atkpanel/atkpanel
-development/index.md
+atk-programmers-guide.md
+ds-guideline/device-server-guidelines
+device-server-writing
 ```

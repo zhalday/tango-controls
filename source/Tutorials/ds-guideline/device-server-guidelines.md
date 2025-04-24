@@ -1,6 +1,6 @@
 (ds-guidelines)=
 
-# Guidelines
+# Guidelines for developing a Tango Device Server
 
 ```{tags} audience:developers, lang:all
 ```

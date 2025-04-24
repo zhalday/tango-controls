@@ -1,6 +1,6 @@
 (atk-programmers-guide)=
 
-# TangoATK Programmer’s Guide
+# Developing clients with the TangoATK
 
 ```{tags} audience:developers, lang:java
 ```
@@ -16,7 +16,7 @@ start using Tango ATK.
 
 ## Introduction
 
-This document describes how to develop applications using the Tango
+This chapter describes how to develop applications using the Tango
 Application Toolkit, TangoATK for short. It will start with a brief
 description of the main concepts behind the toolkit, and then continue
 with more practical, real-life examples to explain key parts.
@@ -53,7 +53,7 @@ view and the controller of the MVC-pattern are merged into one object.
 This pattern made the choice of labor division quite easy: all
 non-graphic parts of TangoATK reside in the packages beneath
 `fr.esrf.tangoatk.core`, and anything remotely graphic are located
-beneath `fr.esrf.tangoatk.widge`t. More on the content and
+beneath `fr.esrf.tangoatk.widget`. More on the content and
 organization of this will follow.
 
 The communication between the non-graphic and graphic objects are done

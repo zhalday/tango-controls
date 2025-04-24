@@ -3,6 +3,7 @@
 # Tools
 
 ```{toctree}
+developers-toolkit
 atk
 astor
 jive

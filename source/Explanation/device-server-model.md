@@ -1,6 +1,6 @@
 (deviceservermodel)=
 
-# The TANGO device server model
+# The Tango device server model
 
 ```{tags} audience:developers, lang:all
 ```
@@ -309,7 +309,7 @@ Two other CORBA operations called `command_inout_history_X` and
 `read_attribute_history_X` allow a client to retrieve the history of
 polled commands/attributes stored in the polling buffers.
 
-See the [device polling](./../../../Explanation/polling.md#device-polling) explanation for details.
+See the [device polling](./../Explanation/polling.md#device-polling) explanation for details.
 
 ## The server
 
