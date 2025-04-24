@@ -13,7 +13,6 @@ intro.md
 06-attributes.md
 07-device-properties.md
 08-running-db.md
-09-adding-server.md
 ```
 
 This tutorial shows you how to get started with **Tango**, covering the major features, step by step.
@@ -84,6 +83,7 @@ PyTango runtime is:
 PyTango running on:
 uname_result(system='Darwin', node='my.machine', release='24.0.0', version='Darwin Kernel Version 24.0.0: Tue Sep 24 23:39:07 PDT 2024; root:xnu-11215.1.12~1/RELEASE_ARM64_T6000', machine='arm64')
 ```
+We can exit the python console with the `exit()` command or using `CTRL+D`.
 
 We can exit the Pixi shell with the `exit` command:
 ```console
