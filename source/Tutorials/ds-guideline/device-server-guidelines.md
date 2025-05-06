@@ -735,15 +735,15 @@ Semantics recommended for {samp}`{FAULT}` and {samp}`{ALARM}` states is as follo
 It is import to consider how state transitions are handled as a mis-managed
 transition can cause misleading information to be transmitted to the client.
 
-For example, consider the case of a motor system. The client can use a 
+For example, consider the case of a motor system. The client can use a
 *poll* (i.e. periodically read the state attribute of the motor) the motor
-to get the motor state, e.g. `STANDBY, MOVING, FAULT`. This *could* lead 
+to get the motor state, e.g. `STANDBY, MOVING, FAULT`. This *could* lead
 to inconsistent behaviour due to inappropriate management of the state.
 
 A typical example is to launch an axis movement through the writing
 of the position attribute. The motor should make the transition from
-`STANDBY` to the `MOVING` state and the client will be expecting it 
-to be in the `MOVING` state. 
+`STANDBY` to the `MOVING` state and the client will be expecting it
+to be in the `MOVING` state.
 
 However, this will only work if the device state is switched to `MOVING`
 *before* the position write request returns. Otherwise, the client

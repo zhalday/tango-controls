@@ -45,13 +45,13 @@ Tango DeviceServer code. In case an error occurs during the
 - If in the `init_device` method an error occurs that causes a change of
 state in which the writing of an attribute is impossible, this error
 will prohibit the restoration of the memorized value of the attribute.
-- The order of reloading is deterministic but complex (*order of 
+- The order of reloading is deterministic but complex (*order of
 ClassFactory then device definition in database then attribute
 definition in Pogo*). Therefore relying on this order might have some
 side effects particularly in case attributes are modified through
 Pogo when attributes values are linked (*e.g. sampling frequency and
 number of samples*).
-- There could be performance issues in the case that the setpoint is 
+- There could be performance issues in the case that the setpoint is
 written at a high frequency as the static Tango database is queried
 on each write of the memorized attribute. Since Tango 9 the database has been optimised
 for memorized attributes and it should be possible to update memorized

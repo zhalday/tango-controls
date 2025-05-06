@@ -30,7 +30,7 @@ hide the entire complexity of the device timing, configuration and acquisition c
 A device is the basic entity of the control system. In the Tango world, everything is a {term}`device`.
 A Device has an interface composed of {term}`commands <command>` and {term}`attributes <attribute>`, which
 provides the service of the device. It also has {term}`properties <property>`, stored in the relational database, which are generally used as
-configuration settings. 
+configuration settings.
 
 Each device belongs to a [Device Class](#device-class).
 

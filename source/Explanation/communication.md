@@ -2,7 +2,7 @@
 
 # Communication paradigms
 
-Tango offers three communication paradigms: 
+Tango offers three communication paradigms:
 - synchronous
 - asynchronous
 - publish-subscribe calls
@@ -12,13 +12,13 @@ the call is initiated by the client who contacts the server.
 The server handles the client's request and sends
 the answer to the client or throws an exception, which the client
 catches. This paradigm involves two network calls to receive a single answer and
-requires the client to be active in initiating the request. 
+requires the client to be active in initiating the request.
 
 The calls initiated by the client may be done via 2 mechanisms:
 
 1. The **synchronous** mechanism where the client waits (and is blocked) for the server to send the answer or until the timeout is reached
 2. The **asynchronous** mechanism where the client sends the request and immediately returns.
-   In this method it is not blocked and is free to do perform other tasks 
+   In this method it is not blocked and is free to do perform other tasks
    such as updating a graphical user interface. The client has
    the choice to retrieve the server answer by checking if the reply has
    arrived. This is done via a specific API call or by requesting that a

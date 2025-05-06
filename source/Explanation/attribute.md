@@ -13,7 +13,7 @@ An Attribute is a Tango concept that can represent a physical quantity of a devi
 - A device associated with a motor **has** a {samp}`{position}` attribute expressed in mm.
 - A device associated with a thermocouple **has** a {samp}`{temperature}` attribute expressed in Celsius (or any another suitable unit).
 
-The main purpose of an Attribute is to replace getters and setters by providing read and (optionally) write access to this quantity. For example: the position of a motor will be obtained by reading the associated attribute (position) and not by running a command like `get_position`. 
+The main purpose of an Attribute is to replace getters and setters by providing read and (optionally) write access to this quantity. For example: the position of a motor will be obtained by reading the associated attribute (position) and not by running a command like `get_position`.
 
 In object oriented terminology, an Attribute corresponds to an instance variable (also called a field or a member) of a [Device](#device-explanation) object or simpler an Attribute is one of the parts of a Device.
 
@@ -41,7 +41,7 @@ There are 3 types of *Attribute Properties*:
 
 Attributes can be statically defined in the source code of a {term}`Device` or be created in a dynamic way during the runtime of a Device. When an Attribute is added during the runtime of a Device it is referred to as a Dynamic Attribute.
 
-These metadata are hosted in the class itself and can be set by the programmer or by a configuration in the Tango database. The following section goes into more detail with examples of static and dynamic properties 
+These metadata are hosted in the class itself and can be set by the programmer or by a configuration in the Tango database. The following section goes into more detail with examples of static and dynamic properties
 
 
 ### Static attribute properties
@@ -50,12 +50,12 @@ The following list contains some of the mandatory static metadata of an Attribut
 
 - `name`: The name identifies the Attribute and is unique for a Device. There cannot be other entities with the same name in a Device. Some restrictions to the allowed characters in a name apply, but alphanumerical characters are supported. For example: OutCurrent, InCurrent…
 - `data_type`: The attribute data type identifies the Tango numeric type associated to the attribute: *DevBoolean, DevUChar, Dev\[U\]Short, Dev\[U\]Long, Dev\[U\]Long64, DevFloat, DevDouble, DevString, DevEncoded* (the Tango type that encapsulates client data). Enumerations are supported and explained more in the [Enumerated Attribute](#enumerated-attribute) document. To learn more about the all of available data types, please refer to the [Tango Controls RFCs](#RFC), especially the [RFC for the Tango Data Types](https://tango-controls.readthedocs.io/projects/rfc/en/latest/9/DataTypes.html).
-- `writeable`: specifies if the Attribute's quantity can be modified by clients (read-write) or not (read-only). Read-only Attributes are immutable for clients but its quantity can internally be modified by the Device that it is a member of. There are 4 possible types of access but in many cases only 2 really need to be used: 
+- `writeable`: specifies if the Attribute's quantity can be modified by clients (read-write) or not (read-only). Read-only Attributes are immutable for clients but its quantity can internally be modified by the Device that it is a member of. There are 4 possible types of access but in many cases only 2 really need to be used:
   - **READ**: The attribute can only be read (e.g. a temperature)
   - WRITE: The attribute can only be written (to be used only in very specific cases. The READ_WRITE is generally more suitable for real cases)
   - **READ_WRITE**: The attribute can be written and read (the most common case) e.g. The current of a power supply, The position of an axis…
   - READ_WITH_WRITE (deprecated, do not use)
-- `data_format`: describes the dimension of the data. This can be a scalar (value), spectrum (1D array) or and image (2D array). 
+- `data_format`: describes the dimension of the data. This can be a scalar (value), spectrum (1D array) or and image (2D array).
 
 Attributes are allowed to contain more static metadata but not less. Which metadata (static, configuration and runtime) an Attribute can contain is listed in the [full specification of Tango Attributes](https://tango-controls.readthedocs.io/projects/rfc/en/latest/4/Attribute.html) which is part of the [Tango Controls RFCs](#RFC).
 
@@ -96,7 +96,7 @@ These settings are used for tuning the events related to the attribute.
 
 ### Runtime properties
 
-Below is the output of a PyTango client that reads an attribute from a Device - it demonstrates how the runtime metadata of an Attribute can be used. 
+Below is the output of a PyTango client that reads an attribute from a Device - it demonstrates how the runtime metadata of an Attribute can be used.
 
 ```python
 In [7]: attr = "my_rw_attribute"  # The Attribute's name.
@@ -138,7 +138,7 @@ See the [how-to](#how-to-enumerated-attribute) section for an example on how to 
 %[glossary_term][Memorized Attribute]
 %The last written value for this type of attribute will automatically be stored in the database so that on startup this value is fetched and written to the attribute.
 
-Attributes with a scalar data format can be configured to have their last set quantity automatically and permanently be stored in the [Tango Database](#tangodb-explanation). This is done by defining such an attribute in the source code. 
+Attributes with a scalar data format can be configured to have their last set quantity automatically and permanently be stored in the [Tango Database](#tangodb-explanation). This is done by defining such an attribute in the source code.
 
 In addition to the storing of the quantity, the stored value will be reloaded into the set value associated with this attribute at device start-up and (optionally) upon each execution of the “Init” command, effectively maintaining the Attribute's quantity over Device restarts. The Tango code generator (Pogo) provides the interface allowing the developer to select the expected behaviour.
 
@@ -147,7 +147,7 @@ Memorized attributes are only possible with an attribute with WRITE or READ_WRIT
 SCALAR type
 :::
 
-Clients are unable to tell if an Attribute is memorized or not. 
+Clients are unable to tell if an Attribute is memorized or not.
 
 See the [how-to](#how-to-memorized-attribute) section for an example on how to use a memorized attribute.
 
