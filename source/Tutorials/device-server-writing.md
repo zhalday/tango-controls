@@ -914,6 +914,7 @@ The device server startup sequence is the following :
 3. Wait for incoming request with the *server_run()* method of the
    Tango::Util class.
 
+(device-server-exchanging-data)=
 ## Exchanging data between client and server
 
 Exchanging data between clients and server means most of the time
@@ -1659,6 +1660,7 @@ possible to use memory statically allocated for these types. Each
 structure element must be initialized as described in the previous
 sub-chapters using the dynamically allocated memory case.
 
+(device-server-reporting-errors)=
 ### Reporting errors
 
 Tango uses the C++ try/catch plus exception mechanism to report errors.

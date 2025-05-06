@@ -71,10 +71,93 @@ Hierarchical view of devices
 Every Tango device has a state implemented by a *finite state machine*. It reflects the internal state of the system it represents.
 
 The available states are limited to:
+`ON`, `OFF`, `CLOSE`, `OPEN`, `INSERT`, `EXTRACT`,
+`MOVING`, `STANDBY`, `FAULT`, `INIT`,
+`RUNNING`, `ALARM`, `DISABLE`, `UNKNOWN`
 
-- `ON`, `OFF`, `CLOSE`, `OPEN`, `INSERT`, `EXTRACT`,
-  `MOVING`, `STANDBY`, `FAULT`, `INIT`,
-  `RUNNING`, `ALARM`, `DISABLE`, `UNKNOWN`
+A color code is associated to each state and is used in the main GUI tools to have a unified manner of representing the state of equipment.
+
+```{eval-rst}
+.. table::
+   :class: longtable
+
+   +-----------+--------------------+---------------------------------------------------------------------------+
+   | State     | Colour             | Meaning                                                                   |
+   +===========+====================+===========================================================================+
+   | ON        | green              | | This state could have been called OK or OPERATIONAL. It means that the  |
+   |           |                    | | device is in its operational state. (E.g. the power supply is giving its|
+   |           |                    | | nominal current, the motor is ON and ready to move, the instrument is   |
+   |           |                    | | operating). This state is modified by the Attribute alarm checking of   |
+   |           |                    | | the DeviceImpl:dev\_state method. i.e if the state is ON and one        |
+   |           |                    | | attribute has it’s quality factor to ALARM, then the state is modified  |
+   |           |                    | | to ALARM                                                                |
+   +-----------+--------------------+---------------------------------------------------------------------------+
+   | OFF       | white              | | The device is in normal condition but is not active. e.g the            |
+   |           |                    | | power supply main circuit breaker is open; the RF transmitter has no    |
+   |           |                    | | power etc…                                                              |
+   +-----------+--------------------+---------------------------------------------------------------------------+
+   | CLOSE     | white              | | Synonym of OFF state. Can be used when OFF is not adequate for the      |
+   |           |                    | | device e.g case of a valve, a door, a relay, a switch.                  |
+   +-----------+--------------------+---------------------------------------------------------------------------+
+   | OPEN      | green              | | Synonym of ON state. Can be used when ON is not adequate for the device |
+   |           |                    | | e.g case of a valve, a door, a relay, a switch.                         |
+   +-----------+--------------------+---------------------------------------------------------------------------+
+   | INSERT    | white              | | Synonym of OFF state. Can be used when OFF is not adequate for the      |
+   |           |                    | | device. Case of insertable/extractable equipment, absorbers, etc…       |
+   |           |                    | |                                                                         |
+   |           |                    | | This state is here for compatibility reason we recommend to use OFF or  |
+   |           |                    | | CLOSE when possible.                                                    |
+   +-----------+--------------------+---------------------------------------------------------------------------+
+   | EXTRACT   | green              | | Synonym of ON state. Can be used when ON is not adequate for the device |
+   |           |                    | | Case of insertable/extractable equipment, absorbers, etc…               |
+   |           |                    | |                                                                         |
+   |           |                    | | This state is here for compatibility reason we recommend to use ON or   |
+   |           |                    | | OPEN when possible.                                                     |
+   +-----------+--------------------+---------------------------------------------------------------------------+
+   | MOVING    | light blue         | | The device is in a transitory state. It is the case of a device moving  |
+   |           |                    | | from one state to another.( E.g a motor moving from one position to     |
+   |           |                    | | another, a big instrument is executing a sequence of operation, a       |
+   |           |                    | | macro command is being executed.)                                       |
+   +-----------+--------------------+---------------------------------------------------------------------------+
+   | STANDBY   | yellow             | | The device is not fully active but is ready to operate. This state does |
+   |           |                    | | not exist in many devices but may be useful when the device has an      |
+   |           |                    | | intermediate state between OFF and ON. E.g the main circuit breaker is  |
+   |           |                    | | closed but there is no output current. Usually Standby is used when it  |
+   |           |                    | | can be immediately switched ON. While OFF is used when a certain time   |
+   |           |                    | | is necessary before switching ON.                                       |
+   +-----------+--------------------+---------------------------------------------------------------------------+
+   | FAULT     | red                | | The device has a major failure that prevents it to work. For instance,  |
+   |           |                    | | A power supply has stopped due to over temperature A motor cannot move  |
+   |           |                    | | because it has fault conditions. Usually we cannot get out from this    |
+   |           |                    | | state without an intervention on the hardware or a reset command.       |
+   +-----------+--------------------+---------------------------------------------------------------------------+
+   | INIT      | beige              | | This state is reserved to the starting phase of the device server.      |
+   |           |                    | | It means that the software is not fully operational and that the user   |
+   |           |                    | | must wait                                                               |
+   +-----------+--------------------+---------------------------------------------------------------------------+
+   | RUNNING   | dark green         | | This state does not exist in many devices but may be useful when the    |
+   |           |                    | | device has a specific state above the ON state. (E.g. the detector      |
+   |           |                    | | system is acquiring data, An automatic job is being executed).          |
+   |           |                    | | Note that this state is different from the MOVING state. It is not a    |
+   |           |                    | | transitory situation and may be a normal operating state above the ON   |
+   |           |                    | | state.                                                                  |
+   +-----------+--------------------+---------------------------------------------------------------------------+
+   | ALARM     | orange             | | The device is operating but one of this attribute is out of range.      |
+   |           |                    | | It can be linked to alarm conditions set by attribute properties or a   |
+   |           |                    | | specific case. (E.g. temperature alarm on a stepper motor, end switch   |
+   |           |                    | | pressed on a stepper motor, up water level in a tank, etc…) In alarm,   |
+   |           |                    | | usually the device does it’s job but the operator has to perform an     |
+   |           |                    | | action to avoid a bigger problem that may switch the state to FAULT.    |
+   +-----------+--------------------+---------------------------------------------------------------------------+
+   | DISABLE   | magenta            | | The device cannot be switched ON for an external reason. e.g. the       |
+   |           |                    | | power supply has it’s door open, the safety conditions are not          |
+   |           |                    | | satisfactory to allow the device to operate                             |
+   +-----------+--------------------+---------------------------------------------------------------------------+
+   | UNKNOWN   | grey               | | The device cannot retrieve its state. It is the case when there is a    |
+   |           |                    | | communication problem to the hardware (network cut, broken cable etc…). |
+   |           |                    | | It could also represent an incoherent situation                         |
+   +-----------+--------------------+---------------------------------------------------------------------------+
+```
 
 ## Device Class
 
