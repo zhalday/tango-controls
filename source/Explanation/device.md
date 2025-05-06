@@ -2,10 +2,35 @@
 
 # Device
 
+## Concept
+
 %[glossary_term][device]
 %A device is a key concept of Tango Controls. It is an object providing access to its {term}`attributes <attribute>`, {term}`pipes <pipe>` and {term}`commands <command>`. The list of attributes, pipes and commands available for a certain device is defined by its {term}`class <device class>`. The device may be related to a hardware device it interfaces with or it may be a kind of a logical device providing some functionalities not directly related to hardware.
 
-A device is a key concept of Tango Controls. It is an object providing access to its {term}`attributes <attribute>`, {term}`pipes <pipe>` and {term}`commands <command>`. The device may relate to a piece of hardware or it may be a kind of a logical device providing some functionalities not directly related to hardware.
+A device is a key concept of Tango Controls. This concept can be directly linked to the notion of microservice: **1 device = 1 microservice**.
+
+A device can represent:
+
+- A piece of equipment (eg: a power supply),
+- Multiple pieces of equipment (eg: a set of 4 motors driven by the same controller),
+- A set of software functions (eg: image processing),
+- A group of devices representing a subsystem
+
+The Tango Device abstracts away the specific nature of a piece of equipment, i.e. it hides the specific implementation details from the user who
+does not need to care about communication protocols etc. and provides the user with a model which speaks their languages e.g. physical
+or engineering parameters.
+
+In the real world, devices vary from serial line devices to devices interfaced by field-bus to memory mapped VME cards or PC cards to entire
+data acquisition systems. The definition of a device depends very much on the user’s requirements. In the simple case a device server can be
+used to hide the serial line protocol required to communicate with a device. For more complicated devices the device server can be used to
+hide the entire complexity of the device timing, configuration and acquisition cycle behind a set of high level commands.
+
+## Description
+
+A device is the basic entity of the control system. In the Tango world, everything is a {term}`device`.
+A Device has an interface composed of {term}`commands <command>` and {term}`attributes <attribute>`, which
+provides the service of the device. It also has {term}`properties <property>`, stored in the relational database, which are generally used as
+configuration settings. 
 
 Each device belongs to a [Device Class](#device-class).
 
@@ -13,11 +38,43 @@ Devices are created by [Device Servers](#device-server), which will call the dev
 
 All devices support a **black box** where client requests for attributes or operations are recorded. This feature allows easier debugging session for device already installed in a running control system.
 
-In the real world, devices vary from serial line devices to devices interfaced by field-bus to memory mapped VME cards or PC cards to entire
-data acquisition systems. The definition of a device depends very much on the user’s requirements. In the simple case a device server can be
-used to hide the serial line protocol required to communicate with a device. For more complicated devices the device server can be used to
-hide the entire complexity of the device timing, configuration and acquisition cycle behind a set of high level commands.
 
+## Device hierarchy
+
+A Tango control system can be hierarchically organized.
+
+At the lower level, we find elementary devices which are associated with equipments, e.g. a vacuum pump, a motor, an I/O card.
+
+At higher levels, the devices are « logical ». These devices, based on the lower-level devices, manage and represent a subset of the control
+system. This is usually a synthetic view of a set of equipments with a high-level steering (functions can perform sequences of actions on
+several basic devices).
+
+For example, a high-level device achieves “complex” features. This device is usually bound to evolve regardless of the hardware. Therefore,
+it is necessary to separate and segregate responsibilities related to the logic functionality and those related to hardware interfaces.
+
+It is possible to access any other device from every device at every level.
+
+The following diagram illustrates the concept of hierarchy of devices:
+
+:::{figure} device/image1.png
+The software bus view of devices
+:::
+
+:::{figure} device/image2.png
+Hierarchical view of devices
+:::
+
+
+(device-state)=
+## Device State
+
+Every Tango device has a state implemented by a *finite state machine*. It reflects the internal state of the system it represents.
+
+The available states are limited to:
+
+- `ON`, `OFF`, `CLOSE`, `OPEN`, `INSERT`, `EXTRACT`,
+  `MOVING`, `STANDBY`, `FAULT`, `INIT`,
+  `RUNNING`, `ALARM`, `DISABLE`, `UNKNOWN`
 
 ## Device Class
 
@@ -80,3 +137,38 @@ Device Servers are linked to the Device classes that they will serve. Device Ser
 ```{figure} device/deviceservermodel.jpg
 Runtime representation of a Device server with two classes A and B
 ```
+
+## Summary
+
+Sometimes there are misuses of language regarding the concepts of a
+device, device server and a Tango class. Below is a summary:
+
+- **DeviceClass** class: a class defining the interface and state machine (only used in C++ device classes).
+- **Device** class: a class implementing the device control.
+- **Device**: An instance of a Device class giving access to the services of
+  the DeviceClass class.
+- **Device Server**: process in which one or more Tango classes are
+  executed ({term}`device server`).
+
+The diagrams below illustrate these concepts:
+
+:::{figure} device/image3.png
+Tango Deployment
+:::
+
+A Device Server can host several Device classes, each class can be
+instantiated one or more times within the same device server. There are no
+specific rules regarding the maximum number of classes or the maximum
+number of instances operating within a single Device Server.
+
+In particular cases, due to limitations imposed by the hardware
+or software interface, it is not
+always possible to run several instances of a Device class within the
+same Device Server:
+
+- **Case of a DLL’s use:** some DLLs can’t be used by two threads of the same process.
+
+In other cases, it is useful to have multiple devices running in the
+same Device Server:
+
+- **Case of motors:** a single axis controller for 4 motors.

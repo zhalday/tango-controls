@@ -53,6 +53,7 @@ Some first steps might include:
 how-to-try-tango
 end-user-apps
 how-to-start-device-server
+how-to-configure-properties
 ```
 
 [Tango Controls web page]: https://www.tango-controls.org

@@ -6,670 +6,25 @@
 ```
 
 This chapter describes Guidelines for developing Device Servers.
-The purpose of this document is not to rewrite the Tango documentation
-but to propose the community an interpretation of Tango device
-development.
 The Tango Device Server Model is flexible and permits different interpretations
-of how to implement Device Servers.
-However there is a right way of using Tango to implement device servers.
-This chapter documents the best practices from experienced developers
-(some of them thee original developers of Tango) for device development.
+of how to implement Device Servers,
+however there is a recommended way of using Tango to implement device servers.
+This chapter will document some of the best practices from experienced developers
+for device development.
 
-Other ways of using Tango which do not follow these guidelines are possible
-and can be useful but they might run into difficulties because Tango
-was not designed to be use that way.
-All developers should start off by first reading these guidelines and then
-deciding if they want to ignore them or not.
-We strongly recommend you stick to them to make your Device Classes
-easier to share and your Tango control system as efficient as possible.
+This chapter focuses on:
 
-To this aim the document is divided in 3 main chapters:
+1. Device Server design consideration
+2. Implementation good practices
 
-1. Tango concepts
-2. DeviceServers design consideration
-3. Implementation good practices
-
-## About this document
-
-The document has been initiated within the collaborative framework
-between SOLEIL and MAX-IV to define common software quality rules for
-shared software between these 2 institutes. It has since been adopted by
-the Tango Controls community and is maintained for and by the community.
-
-The objectives are therefore to enhance the general software quality of
-Device Servers developed by the various sites using Tango. This will
-also facilitate the reusability of developments between sites by allowing
-finding “reliable off-the-shelves” Tango servers in public repositories.
-
-**Last but not least, this document can be freely distributed (under the
-Creative Commons license) to subcontractors, students, etc...**.
-Our hope is (*as all writers*) to have as many readers as possible!!
-
-:::{note}
-Throughout the rest of the document, the issued recommendations are specified as below:
-
-**The recommendation is to …**
-:::
-
-:::{note}
-**Important note:** The content of this document is generally
-independent of the programming language used. However, there are some
-“C++ oriented” recommendations. For Java and Python refer to the relevant
-documentation for language specific issues. In the future we hope to add
-guidelines for Java and Python too.
-:::
-
-The present document refers to the Tango 8 or higher versions features.
+These guidelines apply to features available in Tango v8 or higher.
 
 # Tango Concepts
 
-The following explanations are from the [Tango Device
-Server Model ](#deviceservermodel).
+Some understanding of the basic Tango concepts is required to make use of
+this tutorial. Please refer to the [](#explanation-index) section if further
+information on these concepts is required.
 
-## Tango Control system
-
-The Tango control system is an abstract concept which represents a set
-of “microservices” based on a common technology: Tango. Tango is itself a
-control/command oriented specialization of CORBA/ZMQ. CORBA supports the
-concept of software bus running over a network interconnected machines.
-It provides transparent access to any software object (or microservice)
-connected to the bus and abstracts the notions of programming language
-(C++, Java, Python…) and operating systems (Linux, Windows…) via a
-binary network protocol (based on CORBA and ZMQ).
-
-Tango hides the complexity of the underlying protocols to the
-programmer, while adding specific control system features (alarms,
-events, logging, data archiving…).
-
-## Device concept
-
-The {term}`device` is the core concept of Tango. This concept can be directly
-linked to the notion of microservice: **1 device = 1 microservice**
-
-A device can represent:
-
-- An equipment (eg: a power supply),
-- A set of equipments (eg: a set of 4 motors driven by the same controller),
-- A set of software functions (eg: image processing),
-- A group of devices representing a subsystem
-
-The Tango Device allows making abstraction of the equipment’s nature:
-the device hides the implementation specific details from the user who
-does not need to care about communication protocols etc. and
-provides the user with a model which speaks their languages e.g. physical
-or engineering parameters.
-
-## Hierarchy
-
-A Tango control system can be hierarchically organized.
-
-At the lower level, we find elementary devices which are associated
-with equipments.
-
-- e.g.: a vacuum pump, a motor, an I/O card
-
-At higher levels, the devices are « logical ». These devices, based on
-the lower-level devices, manage and represent a subset of the control
-system. This is usually a synthetic view of a set of equipments with a
-high-level steering (functions can perform sequences of actions on
-several basic devices).
-
-For example, a high-level device achieves “complex” features. This
-device is usually bound to evolve regardless of the hardware. Therefore,
-it is necessary to separate and segregate responsibilities related to
-the logic functionality and those related to hardware interfaces.
-
-It is possible to access any other device from every device at every level.
-
-The following diagram illustrates the concept of hierarchy of devices:
-
-:::{figure} media/image1.png
-The software bus view of devices
-:::
-
-:::{figure} media/image2.png
-Hierarchical view of devices
-:::
-
-## Communication paradigms
-
-Tango offers three communication paradigm: synchronous, asynchronous
-and publish-subscribe calls.
-
-In the synchronous and asynchronous paradigms
-the call is initiated by the client who contacts the server.
-The server handles the client's request and sends
-the answer to the client or throws an exception which the client
-catches. This paradigm involves two network calls to receive a single answer and
-requires the client to be active in initiating the request. The calls
-initiated by the client may be done by 2 mechanisms:
-
-:::{note}
-1. the **synchronous** mechanism where the client waits (and is blocked) for the server to send the answer or until the timeout is reached
-2. the **asynchronous** mechanism where the clients send the request and immediately returns.
-   It is not blocked. It is free to do whatever it
-   has to do like updating a graphical user interface. The client has
-   the choice to retrieve the server answer by checking if the reply is
-   arrived by calling an API specific call or by requesting that a
-   call-back method is executed when the client receives the server
-   answer.
-:::
-
-If the client needs to know a value every time it changes
-or at regular intervals then he is obliged to poll
-the server for an update in a value every time. This is not efficient in
-terms of network bandwidth nor in terms of client programming.
-For this the publish-subscribe events communication is more efficient.
-
-:::{note}
-3. the **publish-subscribe** communication paradigm is a more efficient
-   and natural way of programming. In this paradigm the client registers
-   his interest once in an event (value). An event can be a change in value,
-   a regular update at a fixed frequency or an archive event.
-   After that the server informs  the client every time an event has occurred.
-   This paradigm avoids the client polling, frees it for doing other things,
-   is fast and  makes efficient use of the network.
-:::
-
-## Class, Device and Device Server
-
-### Reminders
-
-Sometimes, there are misuses of language regarding the concepts of:
-device, device server and Tango class.
-
-- **DeviceClass** class: a class defining the interface and state machine.
-- **Device** class: a class implementing the device control.
-- **Device**: An instance of a Device class giving access to the services of
-  the DeviceClass class.
-- **Device Server**: process in which one or more Tango classes are
-  executed ({term}`device server`).
-
-:::{note}
-DeviceClass class is only used in C++ device classes
-:::
-
-:::{hint}
-**These four concepts are closely related, and they express very
-important concepts of Tango.
-Take time to clearly understand them!**
-:::
-
-The diagrams below illustrate these concepts:
-
-:::{figure} media/image3.png
-Tango Deployment
-:::
-
-A Device Server can host several Device classes, each class can be
-instantiated one or more times within the same device server. There are no
-specific rules regarding the maximum number of classes or the maximum
-number of instances operating within a single Device Server.
-
-In particular cases, due to limitations imposed by the hardware
-or software interface, it is not
-always possible to run several instances of a Device class within the
-same Device Server:
-
-- **Case of a DLL’s use:** some DLLs can’t be used by two threads of the same process.
-
-In other cases, it is useful to have multiple devices running in the
-same Device Server:
-
-- **\*Case of motors:** a single axis controller for 4 motors.
-
-### Device
-
-:::{note}
-This is the basic entity of the control system. In the Tango world,
-everything is a {term}`device`.
-:::
-
-A Tango Device must be “self-consistent”. In case it represents a subset
-of the control system, it must enable the access to all the associated
-features (unless otherwise specified). The limit of its
-“responsibilities”, meaning “separation of concerns”, is clearly
-defined: 1 Device = 1 microservice = 1 element of the system. The analogy
-with object-oriented programming is straightforward.
-
-A Device is a **microservice** made available to any number of unspecified
-clients. Its implementation and/or behaviour must not make
-**assumptions about the nature and the number of its potential
-clients**. In all cases, reactivity must be ensured (i.e. the
-response time of the device, must be minimized).
-
-A Device has an interface composed of {term}`commands <command>`
-and {term}`attributes <attribute>`, which
-provides the service of the device. It also has {term}`properties <property>`,
-stored in the relational database, which are generally used as
-configuration settings. These concepts are explained later in this
-document.
-
-### Device attributes
-
-#### Purpose of an attribute
-
-Attributes correspond to physical quantities carried by the device. Any
-value that you want available on the Tango bus is an attribute. For
-example:
-
-- A device associated with a motor **has** a {samp}`{position}` attribute
-  expressed in mm.
-- A device associated with a thermocouple **has** a {samp}`{temperature}`
-  attribute expressed in Celsius (or any another suitable unit).
-
-:::{note}
-The main purpose of an attribute is to replace getters and
-setters.
-:::
-
-- For example: the position of a motor will be obtained by reading the
-  associated attribute (position) and not by running a command like
-  *get_position.*
-- The data associated with the Tango attributes are the only values
-  that can be archived. The Tango *archiving system* (HDB/TDB) doesn’t
-  have any functions to archive the result of a command. Similarly,
-  some mechanisms to store the experimental data (such as those
-  implemented by the DataRecorder of SOLEIL) are only based on
-  attributes.
-
-#### Attribute Properties
-
-A Tango attribute has a group of settings that describe it.
-
-These configuration parameters are called AttributeProperties. They can
-be considered as meta-data to enhance the semantic and describe the
-data. They can be used by GUI clients for configuring their viewers in
-the best manner and displaying extra information.
-
-Those Attribute properties describe the attribute data and define some
-of its behaviour such as alarm limits, units etc…
-
-The first set of *Attribute Properties* are static metadata. They
-describe the kind of data carried by the Tango Attribute. The static
-metadata includes properties such as the name, the type, the dimension,
-if the attribute is writable or not. These data are hardcoded, defined
-for the whole life of the attribute and cannot be modified.
-
-The second set of *Attribute Properties*, are dynamic. They describe
-more precisely the meaning of the data and some behaviour. They are
-used by GUI viewers to configure themselves. They can be modified at run
-time.
-
-All these metadata are hosted in the class itself and can be set by the
-programmer or by a configuration in the Tango database.
-
-#### Static attribute Properties
-
-- {samp}`{name}`: the attribute name
-
-  - Type: string e.g : OutCurrent, InCurrent…
-
-- {samp}`{data_type}`: the attribute data type
-
-  - Identifier of the Tango numeric type associated to the attribute:
-    *DevBoolean, DevUChar, Dev\[U\]Short, Dev\[U\]Long, Dev\[U\]Long64,
-    DevFloat, DevDouble, DevString, DevEncoded*
-  - Note: *Tango::DevEncoded* is the Tango type that encapsulates
-    client data.
-
-- {samp}`{data_format}`: describes the dimension of the data.
-
-  - Type: scalar (value), spectrum (1D array), image (2D array)
-
-- {samp}`{writable}`: defines 4 possible types of access. In practical, we
-  can say that only 2 are really useful and answer to practically all
-  the cases.
-
-  - READ, The attribute can only be read (e.g. a temperature)
-  - WRITE, The attribute can only be written ( to be used only in very
-    specific cases. the READ_WRITE is generally more suitable for
-    real cases)
-  - READ_WRITE, The attribute can be written and read (the most
-    common case) e.g. The current of a powersupply, The position of an
-    axis…
-  - READ_WITH_WRITE (deprecated, do not use)
-
-- {samp}`{max_dim_x}`: this property is valid only for data_format
-  spectrum or image. It gives the maximum number of element in the
-  dimension X. e.g. the max length of a spectrum or the maximum number
-  of rows of an image. This property is used to reserve memory space to
-  host the data. Nothing prevent to have a real length much shorter
-  that this maximum.
-
-  - e.g. 0 for a scalar, n for a spectrum of max n elements, n for an
-    image of max n rows
-
-- {samp}`{max_dim_y}`: this property is valid only for data_format
-  image. It gives the maximum number of element in the dimension Y.
-  e.g. the maximum number of columns of an image. This property is used
-  to reserve memory space to host the data. Nothing prevent to have a
-  real length much shorter that this maximum.
-
-  - 0 for a scalar or a spectrum, n for an image of max n columns
-
-- {samp}`{display_level}`: enables to hide the attribute regarding the
-  client mode (expert or not)
-
-  - Tango::OPERATOR or Tango::EXPERT
-
-:::{warning}
-*writable_attr_name*: **deprecated since version 8, do not use anymore**
-:::
-
-#### Modifiable attribute properties
-
-These properties carries out information regarding the display of a
-value (they are editable while the device is running). Those
-properties enhance the meaning of the attribute and should as much
-as possible be defined by the device server programmer as default
-value when known. For instance, in the general case, the programmer
-knows the unit of the data and is able to describe it. Feeling the
-attribute property at the development stage will allow all generic
-clients to display the data in the best manner
-
-- {samp}`{description}`: describes the attribute
-
-  - Type: string e.g. “The powersupply output current”
-
-- {samp}`{label}`: label used on the GUIs
-
-  - Type: string e.g. “Output Current”, “Input Current”
-
-- {samp}`{unit}`: attribute unit to be displayed in the client viewer
-
-  - Type: string (eg “mA”, “mm”...)
-
-- {samp}`{standard_unit}`: conversion factor to get attribute value into
-  S.I (M.K.S.A)\_unit. Be careful this information is intended to be
-  used ONLY by the client (.e.g ATKPanel uses it, but jive->test device
-  does not)
-
-  - Type: string interpreted as a floating point value E.g. If the
-    device attribute gives the current in mA, we have to divide by
-    1000 to obtain it in Amp. Then we will set this property to 1E-03
-
-- {samp}`{display_unit}`: used by the GUIs to display the attribute into a
-  unit more appropriate for the user. Be careful this information is
-  intended to be used ONLY by the client (e.g ATKPanel uses it, but
-  JiveTest device does not).
-
-  - Type: string interpreted as a floating point value If the device
-    attribute gives a current in mA. If we want to display it in
-    microA, then we have to multiply by 1000 to obtain it in microAmp.
-    Then we will set this property to 1000.0.
-
-- {samp}`{format}`: specifies how a numeric attribute value should be
-  presented
-
-  - Type: string : e.g. « %6.3f »
-  - Note: we use a “printf” like syntax
-
-- {samp}`{min_value}` and {samp}`{max_value}`: minimum and maximum allowable
-  value. These properties are automatically checked at each execution
-  of a write attribute. If the value requested is not between the
-  min_value and the max_value, an exception will be returned to the
-  client.
-
-  - Type: string interpreted as a floating point value (e.g. 10.1,
-    1E01, 0.12.)
-  - Note: these properties are valid only for writable attributes
-
-
-#### Attributes properties related to Events configuration
-
-These settings are used for tuning the events related to the attribute.
-
-- *Rel_change:* relative change in the value in percent
-- *Abs_change*: absolute change in the value in the standard unit.
-- *Period*: period between two consecutive events
-- *Archive_rel_change*: relative change in the value
-- *Archive_abs_change*: absolute change in the value
-- *Archive_period*: period between two consecutives events.
-
-#### Particular case of a memorized attribute
-
-:::{note}
-Memorised attributes are only possible with an attribute with WRITE or READ_WRITE mode and
-SCALAR type
-:::
-
-A memorized attribute can store its last written value in the database
-(i.e. the last setpoint received by the device for this attribute can
-optionally persist into the Tango database).
-
-The stored value will be reloaded into the set value associated with
-this attribute at device start-up and (optionally) upon each execution
-of the “Init” command. The Tango code generator (Pogo) provides the
-interface allowing the developer to select the expected behaviour.
-
-:::{note}
-**BE CAREFUL:** this mechanism has the following **behaviour**:
-
-> - The writing of the memorized attributes is carried out after the
->   function `init_device`, executed by the Tango layer, and not by the
->   Tango DeviceServer code. In case  an error occurs during the
->   `init_device` it cannot be caught by the Tango DeviceServer
->   programmer.
-> - If in the `init_device` method an error occurs that causes a change of
->   state in which the writing of an attribute is impossible, this error
->   will prohibit the restoration of the memorized value of the
->   attribute.
-> - The order of reloading is deterministic but complex (*order of
->   ClassFactory then device definition in database then attribute
->   definition in Pogo*). Therefore relying on this order might have some
->   side effects particularly in case attributes are modified through
->   Pogo when attributes values are linked (*eg: sampling frequency and
->   number of samples*).
-:::
-
-:::{warning}
-Performance issues may happen in case the setpoint is written at high
-frequency, the static Tango database is requested on each write of
-the memorized attribute. Since Tango 9 the database has been optimised
-for memorised attributes and it should be possible to update memorised
-attributes at 10 Hz without taking a performance hit.
-:::
-
-:::{tip}
-If this standard Tango behaviour for reloading memorized values doesn’t
-fit your need, we recommend to code the reloading of attribute values
-yourself. This is especially true for fast (> 10 Hz)
-feedback loops which can trigger the writing of attributes at a high frequency.
-:::
-
-### Device commands
-
-A {term}`command` is associated with an action. *On, Off, Start, Stop* are
-commons examples.
-
-A Tango command has, optionally, ONE input argument and ONE output
-argument.
-
-The different types of data compatible for input and output are:
-
-- void, boolean, short, long, long64, float, double, string, unsigned
-  short, unsigned long, unsigned long64
-- *1D array of the followings types :* char, short, long, long64,
-  float, double, unsigned short, unsigned long, unsigned long64, string
-- State: enumeration, representing the different states described in
-  the section on [Device State ](#device-state).
-- 2 particular types: longstringarray and doublestringarray. These are
-  structures including one array of long/double and one array of
-  string.
-
-The list of data types is fixed. If you need to add your
-own data type then use the DevEncoded type and encode your own
-data type. Or you can use the DevPipe communication channel (avaliable
-since Tango 9).
-
-For each command to implement, it is essential to generate exceptions
-depending on possible errors. The error handling is described more
-in details below.
-
-(device-state)=
-
-### Device State
-
-#### State transitions
-
-:::{note}
-Every Tango device has a state implemented by *finite state machine*.
-:::
-
-The device state is a key element in its integration into the control
-system. Therefore, **you should be very careful in the management of
-state transitions** in the device implementation.
-
-**The device state must, at any time, reflect the internal state of the
-system it represents. The state should represent any change made by a
-client’s request.**
-
-This is crucial information. Indeed, the “clients” will primarily, or
-only, use this information to determine the internal state of a system.
-
-The available states are limited to:
-
-- `ON`, `OFF`, `CLOSE`, `OPEN`, `INSERT`, `EXTRACT`,
-  `MOVING`, `STANDBY`, `FAULT`, `INIT`,
-  `RUNNING`, `ALARM`, `DISABLE`, `UNKNOWN`
-
-The main thing is to ensure a predictable behaviour of the device
-regarding the state transitions.
-
-For example:
-
-- Consider the case of a motor system. The client knows the motor state
-  ({samp}`{STANDBY}, {MOVING}, {FAULT},`)\* with a *polling* mechanism (periodic
-  reading of the state attribute of the motor – instead of using the
-  Tango event system).
-
-  > In such cases, this can easily lead to inconsistent behaviour due to
-  > inappropriate management of the state.
-  >
-  > A typical example is to launch an axis movement through the writing
-  > of the position attribute then the client is pending on the `MOVING`
-  > state (the motor is supposed to make a transition *STANDBY MOVING*).
-  > Such a method will only work if the writing of the position
-  > attribute switches the device state to `MOVING` *before* the return of
-  > the writing request of the position attribute. Otherwise, the client
-  > can read (non-zero probability) the `STANDBY` state, and interpret it
-  > as “movement ended” while this one had not even started!
-  >
-  > This behaviour is described in figure 4 below.
-
-:::{tip}
-The developer has to guarantee the clients the same behaviour regardless
-the type of state monitoring (polling or events). This relates to the
-above rule: **Do not make assumptions about the nature of the clients!**
-:::
-
-The state transitions and the “associated guarantees” must be
-documented. In the previous example, rereading the STANDBY state after
-performing any movement must ensure that the required movement is
-completed (and not that it has not yet been started!!).
-
-:::{figure} media/image4.jpeg
-Example of State transitions
-:::
-
-### Properties
-
-#### Concepts
-
-By default Tango is based on a relational database (MySQL) to store
-configuration information for devices namely the {term}`properties <property>`.
-
-The properties are used to configure a device without changing the
-Tango class code. Taking an axis controller as example, the controller
-must be configured for the motor mechanics according to the
-characteristics of the actuator and the movements to achieve.
-
-Configuration properties are available on different levels:
-
-1. **The device level:** These are properties to configure the device
-   itself and its attributes. The device properties configure the device
-   with the necessary set-up information during initialisation.
-   Attribute properties are used to configure alarms or specify the way
-   the attribute value is displayed to the user (Label, Format,
-   Unit...).
-2. **The class level:** Device or attribute properties configured at the
-   class level are valid for all instances of a class. A property
-   defined on the class level will be overwritten by a property of the
-   same name on the device level.
-3. **Free properties:** These are configuration values which are not
-   attached to any device or class and can be freely used by
-   programmers.
-
-Class level and device level properties are automatically loaded during
-device initialisation when starting-up a device server or calling the
-“Init” command. The reading and writing of free properties must be
-handled by the programmer.
-
-Configuration properties can have the following data types:
-
-- boolean, short, long, float, double, unsigned short, unsigned long,
-  string
-- array of: short, long, float, double, string
-
-On top of those basic concepts, device and class level properties can be
-initialised with default values which are entered, for example, with
-[Pogo](#pogo-documentation) at the interface creation time.
-Default values are stored in the
-device server code and are overwritten when another value is found in
-the configuration database.
-
-It is necessary to assign a default value for every property. This value
-will be used when the property is not defined in the Tango database. If
-a default value for a device property does not make sense, the property
-should be declared as mandatory.
-A mandatory property has to have a value configured in the Tango
-database. If no value is configured, the device initialisation will
-stop with an exception on the missing property value.
-
-#### Device property vs memorized attributes
-
-In some cases, you could be tempted to use a property for a {term}`memorized
-attribute` and vice-versa. It is important to distinguish the function of
-each, and use them wisely.
-
-- The use of a property must be limited to configuration data which
-  value doesn’t change at runtime (the IP address of equipment for
-  example).
-
-- The memorized attributes are reserved for physical quantities subject
-  to change at runtime (*attribute read/write*) for which you want to
-  retain (store) the value from one execution to the other.
-
-  > e.g. speed or acceleration on a motor.
-
-:::{tip}
-In the case you want to manually manage the memorization of the
-attribute set points, you should use an attribute property called
-*\_\_value* (as natively done by Tango).
-:::
-
-#### How to configure a new device
-
-To set-up a new device you need to know about all the device properties
-and their values which must be configured to make the device work. You
-need to have a description on the property which should indicate clearly
-its use. Also you need to know about a specified default value.
-
-When creating the device interface with Pogo a description and a default
-value can be entered for every device property. This information is used
-by the device installation wizard (available with Jive) to guide you
-through the configuration.
-
-When creating a new server start the wizard from the Tools menu ->
-Server Wizard. It allows you to create a new device and to initialise it
-property by property. For every property the description is displayed
-and the default value can be viewed. To use the wizard on an already
-existing device you can right click on the device and choose Device
-Wizard. You will be guided again through all the properties of the
-device. At the end the device can be re-started when necessary. Because
-the wizard is part of Jive, you can test the device configuration
-immediately.
 
 # Tango Device Design
 
@@ -758,7 +113,21 @@ The state machine must follow these rules:
 - The state should represent any change made by a client’s request.
 - The device behaviour is specified and documented.
 
+
 ## Device interface definition
+
+A Tango Device must be “self-consistent”. In the case where it represents a subset
+of the control system, it must enable the access to all the associated
+features (unless otherwise specified). The limit of its
+“responsibilities”, meaning “separation of concerns”, is clearly
+defined: 1 Device = 1 microservice = 1 element of the system. The analogy
+with object-oriented programming is straightforward.
+
+A Device is a **microservice** made available to any number of unspecified
+clients. Its implementation and/or behaviour must not make
+**assumptions about the nature and the number of its potential
+clients**. In all cases, reactivity must be ensured (i.e. the
+response time of the device, must be minimized).
 
 The first step in designing a device is to define the commands and the
 attributes via Pogo (use {program}`Pogo` to define the Tango interface).
@@ -1206,6 +575,29 @@ In the general case, we recommend to:
 - Use a memorized attribute to store values that you want to re-inject
   during a new execution of the device.
 
+### Device property vs memorized attributes
+
+In some cases, you could be tempted to use a property for a {term}`memorized
+attribute` and vice-versa. It is important to distinguish the function of
+each, and use them wisely.
+
+- The use of a property must be limited to configuration data which
+  value doesn’t change at runtime (the IP address of equipment for
+  example).
+
+- The memorized attributes are reserved for physical quantities subject
+  to change at runtime (*attribute read/write*) for which you want to
+  retain (store) the value from one execution to the other.
+
+  > e.g. speed or acceleration on a motor.
+
+:::{tip}
+In the case you want to manually manage the memorization of the
+attribute set points, you should use an attribute property called
+*\_\_value* (as natively done by Tango).
+:::
+
+
 ## Device state management
 
 ### States choice
@@ -1220,82 +612,82 @@ representing the state of equipment.
 .. table::
    :class: longtable
 
-   +-----------+--------------------+--------------------------------------------------------------------------+
-   | State     | Colour             | Meaning                                                                  |
-   +===========+====================+==========================================================================+
-   | ON        | green              | | This state could have been called OK or OPERATIONAL. It means that the |
-   |           |                    | | device is in its operational state. (E.g. the powersupply is giving its|
-   |           |                    | | nominal current, the motor is ON and ready to move, the instrument is  |
-   |           |                    | | operating). This state is modified by the Attribute alarm checking of  |
-   |           |                    | | the DeviceImpl:dev\_state method. i.e if the state is ON and one       |
-   |           |                    | | attribute has it’s quality factor to ALARM, then the state is modified |
-   |           |                    | | to ALARM                                                               |
-   +-----------+--------------------+--------------------------------------------------------------------------+
-   | OFF       | white              | | The device is in normal condition but is not active. e.g the           |
-   |           |                    | | powersupply main circuit breaker is open; the RF transmitter has no    |
-   |           |                    | | power etc…                                                             |
-   +-----------+--------------------+--------------------------------------------------------------------------+
-   | CLOSE     | white              | | Synonym of OFF state. Can be used when OFF is not adequate for the     |
-   |           |                    | | device e.g case of a valve, a door, a relay, a switch.                 |
-   +-----------+--------------------+--------------------------------------------------------------------------+
-   | OPEN      | green              | | Synonym of ON state. Can be used when ON is not adequate for the device|
-   |           |                    | | e.g case of a valve, a door, a relay, a switch.                        |
-   +-----------+--------------------+--------------------------------------------------------------------------+
-   | INSERT    | white              | | Synonym of OFF state. Can be used when OFF is not adequate for the     |
-   |           |                    | | device. Case of insertable/extractable equipment, absorbers, etc…      |
-   |           |                    | |                                                                        |
-   |           |                    | | This state is here for compatibility reason we recommend to use OFF or |
-   |           |                    | | CLOSE when possible.                                                   |
-   +-----------+--------------------+--------------------------------------------------------------------------+
-   | EXTRACT   | green              | | Synonym of ON state. Can be used when ON is not adequate for the device|
-   |           |                    | | Case of insertable/extractable equipment, absorbers, etc…              |
-   |           |                    | |                                                                        |
-   |           |                    | | This state is here for compatibility reason we recommend to use ON or  |
-   |           |                    | | OPEN when possible.                                                    |
-   +-----------+--------------------+--------------------------------------------------------------------------+
-   | MOVING    | light blue         | | The device is in a transitory state. It is the case of a device moving |
-   |           |                    | | from one state to another.( E.g a motor moving from one position to    |
-   |           |                    | | another, a big instrument is executing a sequence of operation, a      |
-   |           |                    | | macro command is being executed.)                                      |
-   +-----------+--------------------+--------------------------------------------------------------------------+
-   | STANDBY   | yellow             | | The device is not fully active but is ready to operate. This state does|
-   |           |                    | | not exist in many devices but may be useful when the device has an     |
-   |           |                    | | intermediate state between OFF and ON. E.g the main circuit breaker is |
-   |           |                    | | closed but there is no output current. Usually Standby is used when it |
-   |           |                    | | can be immediately switched ON. While OFF is used when a certain time  |
-   |           |                    | | is necessary before switching ON.                                      |
-   +-----------+--------------------+--------------------------------------------------------------------------+
-   | FAULT     | red                | | The device has a major failure that prevents it to work. For instance, |
-   |           |                    | | A powersupply has stopped due to over temperature A motor cannot move  |
-   |           |                    | | because it has fault conditions. Usually we cannot get out from this   |
-   |           |                    | | state without an intervention on the hardware or a reset command.      |
-   +-----------+--------------------+--------------------------------------------------------------------------+
-   | INIT      | beige              | | This state is reserved to the starting phase of the device server.     |
-   |           |                    | | It means that the software is not fully operational and that the user  |
-   |           |                    | | must wait                                                              |
-   +-----------+--------------------+--------------------------------------------------------------------------+
-   | RUNNING   | dark green         | | This state does not exist in many devices but may be useful when the   |
-   |           |                    | | device has a specific state above the ON state. (E.g. the detector     |
-   |           |                    | | system is acquiring data, An automatic job is being executed).         |
-   |           |                    | | Note that this state is different from the MOVING state. It is not a   |
-   |           |                    | | transitory situation and may be a normal operating state above the ON  |
-   |           |                    | | state.                                                                 |
-   +-----------+--------------------+--------------------------------------------------------------------------+
-   | ALARM     | orange             | | The device is operating but one of this attribute is out of range.     |
-   |           |                    | | It can be linked to alarm conditions set by attribute properties or a  |
-   |           |                    | | specific case. (E.g. temperature alarm on a stepper motor, end switch  |
-   |           |                    | | pressed on a steppermotor, up water level in a tank, etc…) In alarm,   |
-   |           |                    | | usually the device does it’s job but the operator has to perform an    |
-   |           |                    | | action to avoid a bigger problem that may switch the state to FAULT.   |
-   +-----------+--------------------+--------------------------------------------------------------------------+
-   | DISABLE   | magenta            | | The device cannot be switched ON for an external reason. e.g. the      |
-   |           |                    | | powersupply has it’s door open, the safety conditions are not          |
-   |           |                    | | satisfactory to allow the device to operate                            |
-   +-----------+--------------------+--------------------------------------------------------------------------+
-   | UNKNOWN   | grey               | | The device cannot retrieve its state. It is the case when there is a   |
-   |           |                    | | communication problem to the hardware (network cut, broken cable etc…).|
-   |           |                    | | It could also represent an incoherent situation                        |
-   +-----------+--------------------+--------------------------------------------------------------------------+
+   +-----------+--------------------+---------------------------------------------------------------------------+
+   | State     | Colour             | Meaning                                                                   |
+   +===========+====================+===========================================================================+
+   | ON        | green              | | This state could have been called OK or OPERATIONAL. It means that the  |
+   |           |                    | | device is in its operational state. (E.g. the power supply is giving its|
+   |           |                    | | nominal current, the motor is ON and ready to move, the instrument is   |
+   |           |                    | | operating). This state is modified by the Attribute alarm checking of   |
+   |           |                    | | the DeviceImpl:dev\_state method. i.e if the state is ON and one        |
+   |           |                    | | attribute has it’s quality factor to ALARM, then the state is modified  |
+   |           |                    | | to ALARM                                                                |
+   +-----------+--------------------+---------------------------------------------------------------------------+
+   | OFF       | white              | | The device is in normal condition but is not active. e.g the            |
+   |           |                    | | power supply main circuit breaker is open; the RF transmitter has no    |
+   |           |                    | | power etc…                                                              |
+   +-----------+--------------------+---------------------------------------------------------------------------+
+   | CLOSE     | white              | | Synonym of OFF state. Can be used when OFF is not adequate for the      |
+   |           |                    | | device e.g case of a valve, a door, a relay, a switch.                  |
+   +-----------+--------------------+---------------------------------------------------------------------------+
+   | OPEN      | green              | | Synonym of ON state. Can be used when ON is not adequate for the device |
+   |           |                    | | e.g case of a valve, a door, a relay, a switch.                         |
+   +-----------+--------------------+---------------------------------------------------------------------------+
+   | INSERT    | white              | | Synonym of OFF state. Can be used when OFF is not adequate for the      |
+   |           |                    | | device. Case of insertable/extractable equipment, absorbers, etc…       |
+   |           |                    | |                                                                         |
+   |           |                    | | This state is here for compatibility reason we recommend to use OFF or  |
+   |           |                    | | CLOSE when possible.                                                    |
+   +-----------+--------------------+---------------------------------------------------------------------------+
+   | EXTRACT   | green              | | Synonym of ON state. Can be used when ON is not adequate for the device |
+   |           |                    | | Case of insertable/extractable equipment, absorbers, etc…               |
+   |           |                    | |                                                                         |
+   |           |                    | | This state is here for compatibility reason we recommend to use ON or   |
+   |           |                    | | OPEN when possible.                                                     |
+   +-----------+--------------------+---------------------------------------------------------------------------+
+   | MOVING    | light blue         | | The device is in a transitory state. It is the case of a device moving  |
+   |           |                    | | from one state to another.( E.g a motor moving from one position to     |
+   |           |                    | | another, a big instrument is executing a sequence of operation, a       |
+   |           |                    | | macro command is being executed.)                                       |
+   +-----------+--------------------+---------------------------------------------------------------------------+
+   | STANDBY   | yellow             | | The device is not fully active but is ready to operate. This state does |
+   |           |                    | | not exist in many devices but may be useful when the device has an      |
+   |           |                    | | intermediate state between OFF and ON. E.g the main circuit breaker is  |
+   |           |                    | | closed but there is no output current. Usually Standby is used when it  |
+   |           |                    | | can be immediately switched ON. While OFF is used when a certain time   |
+   |           |                    | | is necessary before switching ON.                                       |
+   +-----------+--------------------+---------------------------------------------------------------------------+
+   | FAULT     | red                | | The device has a major failure that prevents it to work. For instance,  |
+   |           |                    | | A power supply has stopped due to over temperature A motor cannot move  |
+   |           |                    | | because it has fault conditions. Usually we cannot get out from this    |
+   |           |                    | | state without an intervention on the hardware or a reset command.       |
+   +-----------+--------------------+---------------------------------------------------------------------------+
+   | INIT      | beige              | | This state is reserved to the starting phase of the device server.      |
+   |           |                    | | It means that the software is not fully operational and that the user   |
+   |           |                    | | must wait                                                               |
+   +-----------+--------------------+---------------------------------------------------------------------------+
+   | RUNNING   | dark green         | | This state does not exist in many devices but may be useful when the    |
+   |           |                    | | device has a specific state above the ON state. (E.g. the detector      |
+   |           |                    | | system is acquiring data, An automatic job is being executed).          |
+   |           |                    | | Note that this state is different from the MOVING state. It is not a    |
+   |           |                    | | transitory situation and may be a normal operating state above the ON   |
+   |           |                    | | state.                                                                  |
+   +-----------+--------------------+---------------------------------------------------------------------------+
+   | ALARM     | orange             | | The device is operating but one of this attribute is out of range.      |
+   |           |                    | | It can be linked to alarm conditions set by attribute properties or a   |
+   |           |                    | | specific case. (E.g. temperature alarm on a stepper motor, end switch   |
+   |           |                    | | pressed on a stepper motor, up water level in a tank, etc…) In alarm,   |
+   |           |                    | | usually the device does it’s job but the operator has to perform an     |
+   |           |                    | | action to avoid a bigger problem that may switch the state to FAULT.    |
+   +-----------+--------------------+---------------------------------------------------------------------------+
+   | DISABLE   | magenta            | | The device cannot be switched ON for an external reason. e.g. the       |
+   |           |                    | | power supply has it’s door open, the safety conditions are not          |
+   |           |                    | | satisfactory to allow the device to operate                             |
+   +-----------+--------------------+---------------------------------------------------------------------------+
+   | UNKNOWN   | grey               | | The device cannot retrieve its state. It is the case when there is a    |
+   |           |                    | | communication problem to the hardware (network cut, broken cable etc…). |
+   |           |                    | | It could also represent an incoherent situation                         |
+   +-----------+--------------------+---------------------------------------------------------------------------+
 ```
 
 Unless strictly specified, the developer is free to use the Tango
@@ -1337,6 +729,40 @@ Semantics recommended for {samp}`{FAULT}` and {samp}`{ALARM}` states is as follo
 - {samp}`{UNKNOWN}` (grey): communication problem with the equipment or the “sub”-devices which prevents the device to really know his real state
 - {samp}`{FAULT}` (red): A problem which prevents the normal functioning (including during the initialization). Getting out from a FAULT state is possible only by repairing the cause of the problem and/or executing a Reset command.
 - {samp}`{ALARM}` (orange): the device is functional but one element is out of range (bad parameters but not preventing the functioning, limit switch of a motor). An attribute is out of range.
+
+### Managing state transitions
+
+It is import to consider how state transitions are handled as a mis-managed
+transition can cause misleading information to be transmitted to the client.
+
+For example, consider the case of a motor system. The client can use a 
+*poll* (i.e. periodically read the state attribute of the motor) the motor
+to get the motor state, e.g. `STANDBY, MOVING, FAULT`. This *could* lead 
+to inconsistent behaviour due to inappropriate management of the state.
+
+A typical example is to launch an axis movement through the writing
+of the position attribute. The motor should make the transition from
+`STANDBY` to the `MOVING` state and the client will be expecting it 
+to be in the `MOVING` state. 
+
+However, this will only work if the device state is switched to `MOVING`
+*before* the position write request returns. Otherwise, the client
+could read back that the motor is still in the `STANDBY` state and
+hence interpret that the move has ended even though it has not started.
+
+This behaviour is illustrated in the figure below:
+
+:::{figure} media/image4.jpeg
+Example of State transitions
+:::
+
+:::{note}
+The state transitions and the “associated guarantees” must be
+documented. In the previous example, rereading the STANDBY state after
+performing any movement must ensure that the required movement is
+completed (and not that it has not yet been started!!).
+:::
+
 
 (state-machine-management)=
 ### State machine management
@@ -1425,7 +851,7 @@ bug research and the user understanding of the device operations.
 The device developer must always use the facilities offered by the
 *Tango Logging Service* to produce “Runtime” messages, facilitating the
 understanding of the device operations. Implementations classes can
-inherit `Tango::LogAdaptater` to redirect the logs to the common
+inherit `Tango::LogAdapter` to redirect the logs to the common
 service.
 
 The rules to follow are:
@@ -1589,7 +1015,7 @@ consists of these fields:
 | COMMUNICATION_BROKEN                      |
 | OPERATION_NOT_ALLOWED                     |
 | DRIVER_FAILURE                            |
-| UNKNOW_ERROR                              |
+| UNKNOWN_ERROR                             |
 | CORBA_TIMEOUT                             |
 | Tango_CONNECTION_FAILED                   |
 | Tango_COMMUNICATION_ERROR                 |
@@ -1710,6 +1136,36 @@ Tango database.
 - update the Status indicating the problem origin.
 
 # Appendices
+
+## About this document
+
+The document has been initiated within the collaborative framework
+between SOLEIL and MAX-IV to define common software quality rules for
+shared software between these 2 institutes. It has since been adopted by
+the Tango Controls community and is maintained for and by the community.
+
+The objectives are therefore to enhance the general software quality of
+Device Servers developed by the various sites using Tango. This will
+also facilitate the reusability of developments between sites by allowing
+finding “reliable off-the-shelves” Tango servers in public repositories.
+
+**Last but not least, this document can be freely distributed (under the
+Creative Commons license) to subcontractors, students, etc...**.
+Our hope is (*as all writers*) to have as many readers as possible!!
+
+:::{note}
+Throughout the rest of the document, the issued recommendations are specified as below:
+
+**The recommendation is to …**
+:::
+
+:::{note}
+**Important note:** The content of this document is generally
+independent of the programming language used. However, there are some
+“C++ oriented” recommendations. For Java and Python refer to the relevant
+documentation for language specific issues. In the future we hope to add
+guidelines for Java and Python too.
+:::
 
 ## Appendix 1 – Full code samples
 

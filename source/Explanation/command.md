@@ -4,11 +4,17 @@
 %[glossary_term][command]
 %A command is an operation a user may invoke on a device (eg. `SwitchOn`, `SwitchOff`). It also relates to a specific method in OOP (Object-Oriented Programming). Tango Controls allows a command to get input argument (argin) and to return a value (argout). List of available commands for a certain device is defined by its {term}`device class`. See the [command section](<#tango-command-model>) of this documentation for more details.
 
-An action to the Tango device is the closest concept of a Command in Tango. Commands are well-suited for sending orders to a device, such as switching from one mode of operation to another. For example, switching a power supply on or off is typically done via a command.
+A command is associated with an action. *On, Off, Start, Stop* are commons examples. Commands are well-suited for sending orders to a device, such as switching from one mode of operation to another. For example, switching a power supply on or off is typically done via a command.
 
 ## Description
 
-Each device class implements a list of commands. Commands are essential because they serve as the primary controls for managing a device. Commands have a fixed calling syntax, consisting of one input argument and one output argument. Argument types must be chosen from a set of predefined data types: all simple types (boolean, short, long (32 bits), long (64 bits), float, double, unsigned short, unsigned long (32 bits), unsigned long (64 bits), and string), along with arrays of simple types and arrays of strings and longs or strings and doubles.
+Each device class implements a list of commands. Commands are essential because they serve as the primary controls for managing a device. Commands have a fixed calling syntax, consisting of **one** input argument and **one** output argument. Argument types must be chosen from a set of predefined data types which include:
+- void, boolean, short, long, long64, float, double, string, unsigned short, unsigned long, unsigned long64
+- *1D array of the followings types :* char, short, long, long64, float, double, unsigned short, unsigned long, unsigned long64, string
+- State: enumeration, representing the different states described in the section on [Device State ](#device-state).
+- 2 particular types: longstringarray and doublestringarray. These are structures including one array of long/double and one array of string.
+
+The list of data types is fixed. If you need to add your own data type then use the DevEncoded type and encode your own data type. Or you can use the DevPipe communication channel (available since Tango 9).
 
 Commands can execute any sequence of actions. They can be executed synchronously (the requester is blocked until the command ends) or asynchronously (the requester sends the request and is called back when the command ends).
 
