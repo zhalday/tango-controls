@@ -8,6 +8,10 @@ You could start `TangoTest` because the {term}`device` `sys/tg_test/1` and the `
 If you want to run a new server, you first have to add the device and instance to the database.
 Let's add our MegaCoffee3k server using `tango-admin`.
 
+:::{warning}
+Make sure the `TANGO_HOST` variable is defined in your environment before to run any of the following command.
+:::
+
 
 ```console
 (tango-tut) $ tango_admin --add-server MegaCoffee3k/test MegaCoffee3k sys/coffee/1

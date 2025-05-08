@@ -18,7 +18,7 @@ This implementation is in an experimental state, and has not been extensively te
 Using our existing environment with pytango 10:
 
 ```console
-(tango-tut) $ TANGO_HOST=localhost:10000 python -m tango.databaseds.database 2
+(tango-tut) $ TANGO_HOST=127.0.0.1:10000 python -m tango.databaseds.database 2
 Ready to accept request
 ```
 
@@ -53,19 +53,46 @@ Global environments as specified in '~/.pixi/manifests/pixi-global.toml'
 In a terminal, run:
 
 ```console
-$ TANGO_HOST=localhost:10000 PyDatabaseds 2
+$ TANGO_HOST=127.0.0.1:10000 PyDatabaseds 2
 Ready to accept request
 ```
 ::::
+
+## Setting TANGO_HOST
+
+Any Tango client or server needs to know where the database is running. It won't run otherwise.
+
+This information shall be defined via the {term}`TANGO_HOST` environment variable.
+You can export this variable in your shell or define it in a file (`$HOME/.tangorc` or `/etc/tangorc`).
+See the reference on [environment variables](reference-env-var) for more information.
+
+In this tutorial, we'll export it in our environment using `export TANGO_HOST=127.0.0.1:10000` on macOS and Linux or `set TANGO_HOST=127.0.0.1:10000` on Windows.
+
+You can set it before of after running `pixi shell`. If you start a new terminal, make sure to define it again (if you prefer you can use your `.bashrc` / `.zshrc` or `.tangorc` file).
+
+```console
+(tango-tut) $ export TANGO_HOST=127.0.0.1:10000
+```
+
+You can check at any time that it is properly set by printing it:
+
+```console
+(tango-tut) $ echo $TANGO_HOST
+127.0.0.1:10000
+```
 
 ## Checking the Database Device Server
 
 ### Using pytango from the command line
 
-Start the python interpreter after setting the `TANGO_HOST` variable to point to the running Database server.
+Start the python interpreter under the pixi shell.
+
+:::{warning}
+Make sure the `TANGO_HOST` variable is defined in your environment before to start python.
+:::
 
 ```console
-(tango-tut) $ TANGO_HOST=localhost:10000 python
+(tango-tut) $ python
 ```
 
 To interact with a Tango Database from PyTango, you use the [tango.Database](inv:pytango:py:class#tango.Database) class, which provides methods for all database commands.
@@ -121,7 +148,7 @@ To use `tango.Database()` without arguments, make sure to export the `TANGO_HOST
 You can also pass the hostname and port directly to the `Database()` class.
 
 ```python-console
->>> db = tango.Database("localhost", 10000)
+>>> db = tango.Database("127.0.0.1", 10000)
 ```
 ::::
 
@@ -154,10 +181,10 @@ Global environments as specified in '/Users/username/.pixi/manifests/pixi-global
 That will make the `jive` command available globally, without having to activate any environment.
 ::::
 
-As before with PyTango, you need to set the `TANGO_HOST` variable to tell the application where the Database is running.
+As before with PyTango, to run `jive`, the `TANGO_HOST` variable must already be set in your environment!
 
 ```console
-(tango-tut) $ TANGO_HOST=localhost:10000 jive
+(tango-tut) $ jive
 ```
 
 You should be able to see the predefined servers in the database: `DataBaseds`, `TangoAccessControl` and `TangoTest`.
@@ -188,7 +215,7 @@ Now that we have a Tango Database running, we can start `TangoTest` (the `test` 
 In another terminal, run:
 
 ```console
-(tango-tut) $ TANGO_HOST=localhost:10000 TangoTest test
+(tango-tut) $ TangoTest test
 ```
 
 As you started `TangoTest` after Jive, you have to refresh the tree:

@@ -1886,6 +1886,7 @@ new options. These options are :
 Note that these options must be used after the device server instance
 name.
 
+(reference-env-var)=
 ### Environment variables
 
 A few environment variables can be used to tune a Tango control system.
