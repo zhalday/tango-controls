@@ -19,7 +19,6 @@ How-To/index
 tools/tools
 Reference/index
 authors
-Old-but-precious/index
 ```
 
 This is a collection of documents for our Tango Controls community, users of Tango Controls, developers and interested parties. Among the many items that we cover here are explanations of what Tango Controls is, how to use Tango Controls for your controls system, how to write software using the Tango Controls framework and how to use Tango Controls and its tools.
