@@ -20,6 +20,10 @@ This tutorial shows you how to get started with **Tango**, covering the major fe
 
 The topics will build on the previous ones, but you can jump in at any point to learn about a specific aspect.
 
+:::{note}
+The code in this getting started tutorial is licensed under the [MIT No Attribution License](https://opensource.org/license/mit-0).
+:::
+
 ## Installation
 
 There are many ways to install Tango, but for this tutorial we will use **Pixi**, which provides a similar experience
