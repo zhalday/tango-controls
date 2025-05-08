@@ -5,7 +5,7 @@
 ```{tags} audience:administrators, audience:developers
 ```
 
-There are different tasks that need to be performed in a Tango Cotnrols System. One can categorise the tasks as follows:
+There are different tasks that need to be performed in a Tango Cotnrols system. One can categorise the tasks as follows:
 
 - {term}`Tango Host <tango host>`: Keep the configuration of all components in the Tango Controls system permanently stored and make it available through its [API](#tangodb-explanation).
 - Run Tango Applications: Execute CLI programmes. e.g.{program}`tango_admin` and {program}`iTango`, or GUI programmes, e.g. {program}`Jive` and {program}`Synoptic`.
@@ -42,51 +42,19 @@ Here we give an example for a very small installation:
 - - - Python >= 3.9 in order to run PyTango (clients or `devices` and `device servers`).
 
 :::{note}
-An even smaller Tango Controls installation could even be a single computer. One could run everything on it. `Device servers` with their `devices`, the TangoDB and even JTango GUIs or PyTango clients.
+An even smaller Tango Controls installation could even be a single computer. One could run everything on it. `Device servers` with their `devices`, the `TangoDB` and even JTango GUIs or PyTango clients.
 :::
 
-## Single computer
+## Multiple Tango Controls systems
 
-Installing Tango on a single machine means all roles described above (Tango Host, Tango applications, Tango device servers, Tango development) will be played by the same computer.
-
-The software needed are described in each role.
-
-In this installation type, a `TANGO_HOST` environment variable has to be set to `TANGO_HOST=HOSTNAME:PORT` where HOSTNAME is the name of the computer and PORT is the port on which the server will wait for requests. This will be used to send Tango request.
-This `TANGO_HOST` environment variable should be loaded at each startup.
-
-## Multiple computers
-
-When installing several computers, one should install one Tango host and some clients computers.
-
-Those clients can play different roles (Client computers, Device servers running, and Development).
-
-Moreover, it is possible to start several Tango Host within the same Tango control system in order to keep the control system working if one of them dies.
-This configuration is described in section [Multiple database servers within a Tango control system](#multiple-db-hosts).
-
-## Multiple control systems
-
-Several Tango control systems can be used.
-It means every Tango control systems will have its own Tango Host which will store its own device servers configuration.
-
-In this environment, Tango Host and Tango clients installation is the same as described upside, but `TANGO_HOST` environment variable has to be set on each client according to which server will be used for device servers configuration.
-The hostnames of the Tango Hosts have then to be known from all the computers which will access to them.
-
-For example, if `testserver` and `productionserver` have been installed as Tango Hosts, each one will propose Tango database as a service, and client can be configured as followed:
-
-- testclient1 with `TANGO_HOST=testserver:10000`
-- testclient2 with `TANGO_HOST=testserver:10000`
-- operatorclient with `TANGO_HOST=productionserver:10000`
-- developerclient with `TANGO_HOST=productionserver:10000`
-- dsclient with `TANGO_HOST=productionserver:10000`
-
-In this configuration, one can decide to change `TANGO_HOST` value on a client to use another server. However, this will need to restart every device running on this client.
+Tango makes it easy to bridge the apparent boundary betweeen Tango Controls systems. This boundary exists because every individual Tango Controls system will always have its own `TangoDB` that manages the `device servers` and `devices`. But clients can easily cross this boundary. One just needs to address a `device` or `attribute` by its full {term}`Tango Resource Locator (TRL)<Tango Resource Locator>`.
 
 ## No database
 
-It is possible to run a device server on some computer without a Tango database.
+It is possible to run a `device server` on without a {term}`TangoDB`. This can come handy for very small deployments that do not require the entire set of Tango functionality or when one wants to test something. Running a Tango system without a `TangoDB` is not advised.
 
 :::{warning}
-A configuration without SQL database can be useful for testing purpose. However, it will not benefit the major part of the Tango functionnalities.
+Running a Tango system without a `TangoDB` can be useful for testing purposess. However, the lack of a TangoDB will remove core functionality of Tango.`
 :::
 
-See section [Running a device server without SQL database](#device-server-without-database) to understand how to use this configuration and what are the limitations.
+See section [Running a device server without SQL database](#device-server-without-database) to understand how to use this configuration and what the limitations are.
