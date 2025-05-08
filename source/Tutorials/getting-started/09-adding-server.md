@@ -11,7 +11,7 @@ Let's add our MegaCoffee3k server using `tango-admin`.
 
 ```console
 (tango-tut) $ tango_admin --add-server MegaCoffee3k/test MegaCoffee3k sys/coffee/1
-(tango-tut) ➜  echo $?
+(tango-tut) $ echo $?
 0
 ```
 
@@ -19,8 +19,8 @@ Let's add our MegaCoffee3k server using `tango-admin`.
 The `tango_admin` command isn't very verbose. Even in case of failure, it won't print any error message. You need to print the return code to check if it succeeded (0) or not. If you set an invalid `TANGO_HOST`, the command will fail:
 
 ```console
-(tango-tut) ➜  TANGO_HOST=unknown:10000 tango_admin --add-server MegaCoffee3k/test MegaCoffee3k sys/coffee/1
-(tango-tut) ➜  echo $?
+(tango-tut) $ TANGO_HOST=unknown:10000 tango_admin --add-server MegaCoffee3k/test MegaCoffee3k sys/coffee/1
+(tango-tut) $ echo $?
 255
 ```
 :::
