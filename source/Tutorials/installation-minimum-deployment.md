@@ -28,67 +28,21 @@ Simple Tango Controls systems can consist of just a single computer that acts as
 
 ## Starter
 
-In a larger Tango Controls system starting many `device servers` can turn into a laborious task that takes much longer than one would want it to. Fortunately Tango comes with some batteries included and it provides the [Starter](#Starter) `device server`. One can think of it as a boot-strapping device server that is able to start and stop other device servicers on the same host. Usually one puts `Starter` under control of one of the init systems of the OS.
+Having to start many `device servers` in a larger Tango Controls system can turn into a laborious task that takes much longer than one would want it to. Fortunately Tango comes with some batteries included and it provides the [Starter](#Starter) `device server`. One can think of it as a boot-strapping device server that is able to start and stop other device servicers on the same host. Usually one puts `Starter` under control of one of the init systems of the OS.
+
 ## Example for a very small installation
 
 Here we give an example for a very small installation:
 
 - A `Tango Host`. It will require a port number on that host which will be used by `Databaseds` for Tango requests. The hostname needs to be resolveable by all computers that run Tango software in this Tango Controls system or the host's IP address needs to be known by the same computers. It is mandatory to start the `Databaseds` **before** any other Tango program.
-- A different computer on which a cppTango, jTango or PyTango `device server` will run. On the same computer can also run clients.
+- A different computer on which a cppTango, JTango or PyTango `device server` will run. On the same computer can also run clients.
 - - On that computer:
-- - - cppTango and/or jTango and/or PyTango
-- - - Oracle Java JRE (Java Runtime Environment) >= 1.7 to run Tango's Java tools or jTango code.
+- - - cppTango and/or JTango and/or PyTango
+- - - Oracle Java JRE (Java Runtime Environment) >= 1.7 to run Tango's Java tools or JTango code.
 - - - Python >= 3.9 in order to run PyTango (clients or `devices` and `device servers`).
 
-## Tango development Role
-
-This role is to develop applications and device servers.
-To play this role, you need:
-
-- the libtango headers for development
-- pytango to allow accessing Tango through Python
-- an official Oracle Java JRE (Java Runtime Environment) >= 1.7 for development with Java
-
-## Tango applications Role
-
-This role is to run CLI and GUI applications.
-To play this role, you need:
-
-- an official Oracle Java JRE (Java Runtime Environment) >= 1.7 for Java applications
-- the libtango java tools (astor, atkpanel, jive, pogo, etc.)
-- pytango to allow accessing Tango through Python (if using Python device servers)
-
-## Tango device servers Role
-
-This role is to run device servers (drivers):
-The recommended way of running device servers is to use `Starter` service.
-
-To play this role, you need:
-
-- a Tango Starter service
-- a TangoTest device server to allow testing
-- an official Oracle Java JRE (Java Runtime Environment) >= 1.7 for Java device servers
-
-## Every roles
-
-Whatever the role, every computer needs:
-
-- the libtango offline documentation
-
-- the liblog4j package for logging
-
-- to set an environment variable `TANGO_HOST` to the Tango Host and the port, for example
-
-  ```console
-  TANGO_HOST=mycomputer:10000
-  ```
-
-  `mycomputer` is the hostname on which is installed Tango Host, and `10000`
-  is the port defined during the installation of Tango database.
-
-:::{warning}
-The choosen port should be defined according to network rules and it should
-especially be compatible with authorized ports.
+:::{note}
+An even smaller Tango Controls installation could even be a single computer. One could run everything on it. `Device servers` with their `devices`, the TangoDB and even JTango GUIs or PyTango clients.
 :::
 
 ## Single computer
