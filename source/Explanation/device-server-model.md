@@ -369,33 +369,31 @@ list of devices for each class in a device server process. The database
 ensure the uniqueness of device name and of aliases. It also links device
 name and it list of aliases.
 
-TODO continue here
-
-TANGO uses MySQL ([MySQL home page](https://www.mysql.com)) as its database. MySQL is a
-relational database which implements the SQL language. However, this is
-largely enough to implement all the functionalities needed by the TDSOM.
+TANGO uses [MariaDB](https://mariadb.org) as its SQL-database.
 The database is accessed via a classical TANGO device hosted in a device
 server. Therefore, client access the database via TANGO commands
 requested on the database device.
 
 ## The controlled access
 
-Tango also provides a controlled access system. It’s a simple controlled
-access system. It does not provide encrypted communication or
+:::{warning}
+This prevents accidental changes only and is not secure against malicious actors.
+:::
+
+Tango also provides a controlled access system called {term}`Tango Access Control`.
+It’s a simple controlled access system and does not provide encrypted communication or
 sophisticated authentification. It simply defines which user (based on
 computer loggin authentification) is allowed to do which command (or
 write attribute) on which device and from which host. The information
 used to configure this controlled access feature are stored in the Tango
 database and accessed by a specific Tango device server which is not the
-classsical Tango database device server described in the previous
+classical Tango database device server described in the previous
 section. Two access levels are defined:
 
 - Everything is allowed for this user from this host
 - The write-like calls on the device are forbidden and according to
   configuration, a command subset is also forbidden for this user from
   this host
-
-This feature is precisely described in the chapter Advanced features
 
 ## The Application Programmers Interfaces
 
@@ -407,14 +405,22 @@ the details of retrieving IORs from the TANGO database, additional
 information to send on the wire, TANGO version control etc. These
 details can and should be wrapped in TANGO Application Programmer
 Interface (API). The API is implemented as a library in C++ and as a
-package in Java. The API is what makes TANGO clients easy to write. The
-API’s consists the following basic classes :
+package in Java. In addition with nowadays also have [PyTango](inv:pytango:std#index) being implemented on top
+of the C++ API. The API is what makes TANGO clients easy to write.
+
+The API’s consists the following basic classes:
 
 %[glossary_term][AttributeProxy]
-%The AttributeProxy is a placeholder on the client side with exectly the same interface that a real {term}`Attribute <attribute>` exposes. Only when an operation on a AttributeProxy is performed, a connection to the Attribute of a real Device is attempted and on success the operation performed. In case the Attribute of the real Device cannot be reached, a client-side Tango exception is raised.
+%The AttributeProxy is a placeholder on the client side with exactly the same interface that a real
+%{term}`Attribute <attribute>` exposes. Only when an operation on an AttributeProxy is performed, a connection
+%to the Attribute of a real Device is attempted and on success the operation is performed. In case the Attribute
+%of the real Device cannot be reached, a client-side Tango exception is raised.
 
 %[glossary_term][DeviceProxy]
-%The DeviceProxy is a placeholder on the client side with exectly the same interface that a real {term}`Device <device>` exposes. Only when an operation on a DeviceProxy is performed, a connection to the real Device is attempted and on success the operation performed. In case the real Device cannot be reached, a client-side Tango exception is raised.
+%The DeviceProxy is a placeholder on the client side with exactly the same interface that a real {term}`Device
+%<device>` exposes. Only when an operation on a DeviceProxy is performed, a connection to the real Device is
+%attempted and on success the operation performed. In case the real Device cannot be reached, a client-side
+%Tango exception is raised.
 
 %[glossary_term][client]
 %In Tango a client is either a {term}`DeviceProxy` or an {term}`AttributeProxy` instance created by a program.
@@ -431,13 +437,11 @@ API’s consists the following basic classes :
 In Tango the term client usually refers to either an {term}`AttributeProxy` or to a {term}`DeviceProxy`.
 :::
 
-In addition to these main classes, many other classes allows a full
-interface to TANGO features. The following figure is a drawing of a
+In addition to these main classes, many other classes allow interfacing
+to all TANGO features. The following figure is a drawing of a
 typical client/server application using TANGO.
 
-```{image} device-server-model/archi.gif
-:height: 7.00000cm
-:width: 12.00000cm
+```{image} device-server-model/archi.png
 ```
 
 The database is used during server and client startup phase to establish
@@ -445,13 +449,13 @@ connection between client and server.
 
 ### Communication between client and server using the API
 
-With the API, it is possible to request command to be executed on a
+With the API, it is possible to request commands to be executed on a
 device or to read/write device attribute(s) using one of the two
 communication models implemented. These two models are:
 
-1. The synchronous model where client waits (and is blocked) for the
-   server to send the answer or until the timeout is reached
-2. The asynchronous model. In this model, the clients send the request
+1. The synchronous model where the client waits (and is blocked) for the
+   server to send the answer or until the timeout is reached.
+2. The asynchronous model. In this model, the clients sends the request
    and immediately returns. It is not blocked. It is free to do whatever
    it has to do like updating a graphical user interface. The client has
    the choice to retrieve the server answer by checking if the reply is
@@ -461,9 +465,9 @@ communication models implemented. These two models are:
 
 ### Tango events
 
-On top of the two communication model previously described, TANGO offers
+On top of the two communication models previously described, TANGO offers
 an event system. The standard TANGO communication paradigm is a
-synchronou/asynchronous two-way call. In this paradigm the call is
+synchronous/asynchronous two-way call. In this paradigm the call is
 initiated by the client who contacts the server. The server handles the
 client’s request and sends the answer to the client or throws an
 exception which the client catches. This paradigm involves two calls to
@@ -481,16 +485,12 @@ the event has occurred. This paradigm avoids the client polling, frees
 it for doing other things, is fast and makes efficient use of the
 network.
 
-ZMQ is a library allowing users to create communicating system. It implements
+ZMQ is a library allowing users to create communicating systems. It implements
 several well known communication pattern including the Publish/Subscribe
 pattern which is the basic of the new Tango event system. Using this
-library, a separate notification service is not needed anymore and event
+library, a separate notification service is not needed and event
 communiction is available with only client and server processes which
-simplifies the overall design. The event
-propagation between devices and clients can be done using a
-multicasting protocol. The aim of this is to reduce both the network
-bandwidth use and the CPU consumption on the device server side. See
-chapter on Advanced Features to get all the details on this feature.
+simplifies the overall design.
 
 The following figure is a schematic of the Tango event system:
 
