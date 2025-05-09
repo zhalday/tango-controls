@@ -1910,9 +1910,10 @@ TANGO_HOST=\<host>:\<port>
 
 host is the name of the computer where the database server is running
 and port is the port number on which it is listening. \<host> should be a
-FQDN (Fully Qualified Domain Name). If you want to have a Tango control
-system which has several database servers (but only one database) in
-order to survive a database server crash, use the following syntax
+FQDN (Fully Qualified Domain Name), a hostname or an IP. If you want to 
+have a Tango control system which has several database servers (but only 
+one database) in order to survive a database server crash, use the 
+following syntax
 
 TANGO_HOST=\<host_1>:\<port_1>,\<host_2>:\<port_2>,\<host_3>:\<port_3>
 
