@@ -258,7 +258,7 @@ buffer. The latter is optimal for “slow” devices as getting data from
 the buffer is much faster than accessing the device itself. The
 disadvantage is the time taken between the data returned from
 the polling buffer and the time of the request. Polling a command is
-only possible for commands without input arguments and these commands should also be independent.
+only possible for commands without input arguments and these commands should also be idempotent.
 It is not possible to poll a device pipe.
 
 Two other CORBA operations called `command_inout_history_X` and
