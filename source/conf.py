@@ -181,7 +181,7 @@ html_theme_options = {
     },
     "repository_url": "https://gitlab.com/tango-controls/tango-doc",
     "path_to_docs": "source",
-    "repository_branch": "doc-restructure-template",  # TODO:  remove once changes merged to main
+    "repository_branch": "main",
     "use_source_button": True,
     "use_edit_page_button": True,
 }
