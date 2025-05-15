@@ -2,7 +2,7 @@
 #
 
 # You can set these variables from the command line.
-SPHINXOPTS    =
+SPHINXOPTS    = -n -W -w sphinx-output.log
 SPHINXBUILD   = sphinx-build
 PAPER         =
 BUILDDIR      = build
@@ -50,9 +50,20 @@ clean:
 	rm -rf $(BUILDDIR)/*
 
 html:
+	@echo Generating glossary
+	@python glossary_generator.py
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
+
+livehtml:
+	@echo Generating glossary
+	@python glossary_generator.py
+	sphinx-autobuild --ignore source/_tags source "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
+glossary:
+	@echo Generating glossary
+	@python glossary_generator.py
 
 dirhtml:
 	$(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml

@@ -1,0 +1,116 @@
+% Tango Controls documentation master file, created by
+% sphinx-quickstart on Sat Aug  6 21:40:12 2016.
+% You can adapt this file completely to your liking, but it should at least
+% contain the root `toctree` directive.
+
+# Welcome to the Tango Controls documentation!
+
+```{tags} audience:all
+```
+
+```{toctree}
+:name: maintoc
+:maxdepth: 2
+:hidden: True
+
+Explanation/index
+Tutorials/index
+How-To/index
+tools/tools
+Reference/index
+authors
+```
+
+This is a collection of documents for our Tango Controls community, users of Tango Controls, developers and interested parties. Among the many items that we cover here are explanations of what Tango Controls is, how to use Tango Controls for your controls system, how to write software using the Tango Controls framework and how to use Tango Controls and its tools.
+
+Nothing is perfect and neither is this documentation. In the likely case that you find that information is missing, please get in touch with us. Ideally you would simply [open an issue on GitLab](https://gitlab.com/tango-controls/tango-doc/-/issues/) so that we can address what you have found.
+
+
+## How this documentation is organised
+
+The Tango Controls documentation largely follows the [Grand Unified Theory of Documentation](https://docs.divio.com/documentation-system/) and is organised in the following categories (with some overlap):
+
+::::{grid} 1 2 2 2
+:gutter: 2
+:class-container: sd-text-center
+
+:::{grid-item-card} Explanation
+:link: explanation-index
+:link-type: ref
+
+Overview of what Tango Controls is, its origins and who uses it. **If you are new to Tango Controls, then we recommend that you start reading here.**
+
++++
+[Learn more »](explanation-index)
+:::
+
+:::{grid-item-card} Tutorials
+:link: tutorials-index
+:link-type: ref
+
+We show you how to implement Tango Devices, Tango clients and other Tango-related software.
+
++++
+[Learn more »](tutorials-index)
+:::
+
+:::{grid-item-card} How-to
+:link: how-to-index
+:link-type: ref
+
+Here we provide solutions to specific problems that you might encounter on the road with Tango Controls.
+
++++
+[Learn more »](how-to-index)
+:::
+
+:::{grid-item-card} Reference
+:link: reference-index
+:link-type: ref
+
+Tango Controls' main programming languages are C++, Java and Python. You will find their APIs here. We also support other languages and tools through bindings that we also document here.
+
++++
+[Learn more »](reference-index)
+:::
+
+:::{grid-item-card} Tools
+:link: tools-index
+:link-type: ref
+
+The Tango Controls ecosystem is rich with tools that make eveybody's life easier. Here we show you which tools exist and what one can do with them.
+
++++
+[Learn more »](tools-index)
+:::
+
+::::
+
+To support our readers in their quest to quickly find the information that they are looking for, we have tagged the pages here with one or more labels:
+
+- **Programming language**: Pages that contain information that is relevant to software development are tagged with either one of the three main languages that Tango Controls supports ([lang:c++](#sphx_tag_lang-c), [lang:java](#sphx_tag_lang-java), [lang:python](#sphx_tag_lang-python)). If the information on a page is programming language independent, we have tagged it with [lang:all](#sphx_tag_lang-all).
+- **Target audience**:
+   - [audience:all](#sphx_tag_audience-all): The information on the page might be interesting for general audiences, i.e. everybody.
+   - [audience:developers](#sphx_tag_audience-developers): Developers will likely find the information on this page interesting, i.e. it will help them with their implementation of Tango Devices, clients or Tango Controls software in general.
+   - [audience:administrators](#sphx_tag_audience-administrators): A page with this tag will be useful to the people who have to build, maintain or fix a Tango Controls system.
+
+## Where to go from here?
+
+We understand that it is easy to get lost due to the sheer amount of information, therefore we provide some suggestions below to get you started:
+
+- The {doc}`Overview <Explanation/overview>` will give you a quick overview of what Tango Controls is, its origins and who uses it. If you are new to Tango Controls, then this is where we recommend you start reading.
+- {doc}`First steps <How-To/getting-started/index>` will guide you through the process of getting started with Tango Controls. This category includes an overview of Tango Controls concepts, procedures for installation and starting the system as well as *Getting started* tutorials.
+- {doc}`Tutorials/index` provides information for **Developers** that comes in handy when developing {term}`Device Servers <device server>`, {term}`Devices <device>` and client applications.
+- The {doc}`Services <How-To/deployment/index>` section is important mainly for **System Administrators**. However, it may provide some information for both **End Users** and **Developers** too. It contains useful information on Tango Controls system deployment, startup and maintenance.
+- You will find that Tango comes with a rich set of {doc}`tools <tools/tools>`. They are command line tools, graphical toolkits and programming tools for management, developing graphical applications, connecting with other systems and applications. All, **End Users**, **Developers** and **System Adminstrators**, should take a look at the toolkits' manuals.
+- {doc}`Tutorials <Tutorials/index>` and {doc}`How-Tos <How-To/index>` give step by step guidance and teach you how to work with Tango Controls or get your job done efficiently.
+- If you would like to contribute to the documentation then please read the
+  {doc}`documentation workflow tutorial <How-To/contributing/docs/docs>`.
+
+## Indices and tables
+
+- {ref}`genindex`
+- {ref}`search`
+- {ref}`Glossary <glossary>`
+- {ref}`Site tags <tagoverview>`
+% - {ref}`modindex`

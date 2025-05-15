@@ -4,4 +4,14 @@
 build/
 .vscode/
 sphinx-output.log
+.venv/
 
+# sphinx-tags
+_tags/
+
+# pixi environments
+.pixi
+*.egg-info
+
+# Auto-generated glossary file
+source/Reference/glossary.md

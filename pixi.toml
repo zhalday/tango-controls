@@ -1,0 +1,38 @@
+[project]
+channels = ["conda-forge"]
+name = "tango-doc"
+platforms = ["linux-64", "osx-64", "osx-arm64", "win-64"]
+
+[tasks]
+glossary = "python glossary_generator.py"
+doc = { cmd = "python -m sphinx -b html -n -W -w sphinx-output.log source build/html", depends-on = [
+    "glossary",
+] }
+doc_no_cache = { cmd = "python -m sphinx -b html -n -W -w sphinx-output.log -a -E source build/html", depends-on = [
+    "glossary",
+] }
+doc_live = { cmd = "sphinx-autobuild --ignore source/_tags source build/html -n -W", depends-on = [
+    "glossary",
+] }
+update-requirements = "python -m pip freeze > requirements.txt"
+
+[dependencies]
+python = "3.12.*"
+pip = "*"
+
+[pypi-dependencies]
+sphinx = ">=8"
+sphinx-book-theme = "*"
+sphinx-copybutton = "*"
+sphinx-design = "*"
+sphinx-hoverxref = "*"
+# Install specific commit to mark tagoverview as orphan and avoid warning
+# See MR https://github.com/melissawm/sphinx-tags/pull/110
+# To be updated when new version with the fix released
+sphinx-tags = { git = "https://github.com/melissawm/sphinx-tags.git", rev = "4863328" }
+sphinx-togglebutton = "*"
+sphinxcontrib-mermaid = "*"
+sphinx-reredirects = "*"
+myst-parser = ">=4"
+pillow = "*"
+sphinx-autobuild = "*"

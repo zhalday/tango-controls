@@ -1,0 +1,24 @@
+(developers-overview)=
+
+# Developer's Toolkit
+
+```{tags} audience:developers, lang:all
+```
+
+Tango is a developer's toolkit. There are many libraries and tools available for implementing device clients and servers.
+
+## C++ and Python
+
+This clickable map shows the libraries and tools available for C++ and Python developers.
+
+```{raw} html
+<embed width="200%" height="600px" type="text/html" src="../_static/layer-map-source/tango_control_system_cpp_python_development.html">
+```
+
+## Java
+
+This clickable map shows the libraries and tools available for Java developers.
+
+```{raw} html
+<embed width="200%" height="600px" type="text/html" src="../_static/layer-map-source/tango_control_system_java_development.html">
+```

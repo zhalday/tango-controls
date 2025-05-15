@@ -2,7 +2,7 @@
 
 rm -f sphinx-output.log
 
-sphinx-build -q -w sphinx-output.log ./source build
+make html
 
 if [ -s "sphinx-output.log" ]
 then

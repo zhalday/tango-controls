@@ -28,8 +28,8 @@
     </node>
     <node id="n1">
       <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/development/device-api/index.html]]></data>
-      <data key="d5"><![CDATA[A device is an abstract concept defined by the TDSOM. In reality, it can be a 
-piece of hardware (an interlock bit) a collection of hardware (a screen attached 
+      <data key="d5"><![CDATA[A device is an abstract concept defined by the TDSOM. In reality, it can be a
+piece of hardware (an interlock bit) a collection of hardware (a screen attached
 to a stepper motor) a logical device (a taper) or a combination of all these (an
 accelerator). Each device has a unique name in the control system and eventually
  one alias. Within Tango, a four field name space has been adopted consisting of
@@ -71,7 +71,7 @@ accelerator). Each device has a unique name in the control system and eventually
     </node>
     <node id="n3">
       <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/tools-and-extensions/pogo/index.html]]></data>
-      <data key="d5"><![CDATA[Pogo helps you creating/updating Tango device class in any of the three 
+      <data key="d5"><![CDATA[Pogo helps you creating/updating Tango device class in any of the three
 supported languages (C++, Python or Java)]]></data>
       <data key="d6">
         <y:ShapeNode>
@@ -109,8 +109,8 @@ supported languages (C++, Python or Java)]]></data>
     </node>
     <node id="n5">
       <data key="d4"><![CDATA[https://pypi.python.org/pypi/Vacca]]></data>
-      <data key="d5"><![CDATA[Vacca is a synoptic-oriented Taurus gui. It is highly customizable, using python 
-files to setup the devices/attributes/icons/commands to be displayed in several 
+      <data key="d5"><![CDATA[Vacca is a synoptic-oriented Taurus gui. It is highly customizable, using python
+files to setup the devices/attributes/icons/commands to be displayed in several
 grid/tree/profile/synoptic widgets.]]></data>
       <data key="d6">
         <y:ShapeNode>
@@ -207,11 +207,11 @@ grid/tree/profile/synoptic widgets.]]></data>
     </node>
     <node id="n10">
       <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/development/device-api/python/index.html]]></data>
-      <data key="d5"><![CDATA[TANGO devices and database are implemented using the TANGO device server model. 
-To access them the user has the CORBA interface e.g. command_inout(), 
-write_attributes() etc. defined by the idl file. These methods are very 
-low-level and assume a good working knowledge of CORBA. In order to simplify 
-this access, high-level api in C++, Python and Java have been implemented which 
+      <data key="d5"><![CDATA[TANGO devices and database are implemented using the TANGO device server model.
+To access them the user has the CORBA interface e.g. command_inout(),
+write_attributes() etc. defined by the idl file. These methods are very
+low-level and assume a good working knowledge of CORBA. In order to simplify
+this access, high-level api in C++, Python and Java have been implemented which
 hides all CORBA aspects of TANGO.]]></data>
       <data key="d6">
         <y:ShapeNode>
@@ -231,11 +231,11 @@ hides all CORBA aspects of TANGO.]]></data>
     </node>
     <node id="n11">
       <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/development/client-api/index.html]]></data>
-      <data key="d5"><![CDATA[TANGO devices and database are implemented using the TANGO device server model. 
-To access them the user has the CORBA interface e.g. command_inout(), 
-write_attributes() etc. defined by the idl file. These methods are very 
-low-level and assume a good working knowledge of CORBA. In order to simplify 
-this access, high-level api in C++, Python and Java have been implemented which 
+      <data key="d5"><![CDATA[TANGO devices and database are implemented using the TANGO device server model.
+To access them the user has the CORBA interface e.g. command_inout(),
+write_attributes() etc. defined by the idl file. These methods are very
+low-level and assume a good working knowledge of CORBA. In order to simplify
+this access, high-level api in C++, Python and Java have been implemented which
 hides all CORBA aspects of TANGO.]]></data>
       <data key="d6">
         <y:ShapeNode>
@@ -255,7 +255,7 @@ hides all CORBA aspects of TANGO.]]></data>
     </node>
     <node id="n12">
       <data key="d4"><![CDATA[http://www.tango-controls.org/developers/gui/]]></data>
-      <data key="d5"><![CDATA[It is an online design tool that allows easy development of QTango based 
+      <data key="d5"><![CDATA[It is an online design tool that allows easy development of QTango based
 graphical user interfaces, made up of Qt4 and QTango widgets.]]></data>
       <data key="d6">
         <y:ShapeNode>
@@ -275,8 +275,8 @@ graphical user interfaces, made up of Qt4 and QTango widgets.]]></data>
     </node>
     <node id="n13">
       <data key="d4"><![CDATA[http://www.tango-controls.org/developers/gui/#qtango]]></data>
-      <data key="d5"><![CDATA[QTango is a framework. It consists of classes and widgets that interact with the 
-Tango control system, while providing an easy API to the programmer and full 
+      <data key="d5"><![CDATA[QTango is a framework. It consists of classes and widgets that interact with the
+Tango control system, while providing an easy API to the programmer and full
 integration with the Qt4 designer.]]></data>
       <data key="d6">
         <y:ShapeNode>
