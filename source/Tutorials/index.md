@@ -20,7 +20,7 @@ In this section you will find a set of tutorials to get you started with using T
 :name: Tutorials
 :hidden:
 
-getting-started/tutorial.md
+getting-started/00--tutorial.md
 installation-minimum-deployment.md
 atkpanel/atkpanel
 atk-programmers-guide.md

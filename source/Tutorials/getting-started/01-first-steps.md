@@ -76,7 +76,7 @@ You start with the simplest Tango device to control one of these coffee machines
 
 For the Python example, copy that to a file `main.py`.
 
-Make sure your [Pixi shell](tutorial.md#installation) is active, so the prompt should look something
+Make sure your [Pixi shell](00--tutorial.md#installation) is active, so the prompt should look something
 like this.
 ```console
 (tango-tut) $
@@ -133,7 +133,7 @@ Or
 python3.11: Error while finding module specification for 'tango.test_context' (ModuleNotFoundError: No module named 'tango')
 ```
 
-Then your Pixi shell might not be activated.  Try this, and check the [Pixi installation](tutorial.md#installation) again.
+Then your Pixi shell might not be activated.  Try this, and check the [Pixi installation](00--tutorial.md#installation) again.
 ```console
 $ pixi shell
 ```
