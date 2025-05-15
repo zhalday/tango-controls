@@ -59,7 +59,7 @@ This command generates skeleton project using special Maven artifact that define
 
 Latest version of JTango is
 
-```{image} https://img.shields.io/maven-central/v/org.tango-controls/JTango/9.7.4.svg?label=Maven%20Central
+```{image} https://img.shields.io/maven-central/v/org.tango-controls/JTango
 :alt: JTango latest version
 :target: https://central.sonatype.com/artifact/org.tango-controls/JTango
 ```
