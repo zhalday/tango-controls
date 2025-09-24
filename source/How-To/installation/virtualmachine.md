@@ -20,14 +20,14 @@ These images can also be used on cloud providers by converting them to the appro
 ## TangoBox 10.3
 
 - You may download TangoBox 10.3 from
-  [here](https://s2innovation.sharepoint.com/:u:/s/Developers/EXcBfXqgugRIkqP2GRgOycYB6_2xjxak7ukUrxwofcgo9A?e=wLChvo).
+  [here](https://zenodo.org/records/16964610).
 
 There is currently no up-to-date documentation.
 
 ## TangoBox 9.3
 
 - You may download TangoBox 9.3 from
-  [here](https://s2innovation.sharepoint.com/:f:/s/Developers/EovD2IBwhppAp-ZLXtawQ6gB9F6aXPPs2msr2hgPGTO-FQ?e=Ii3tnr).
+  [here](https://zenodo.org/records/16963958).
 - Please read {doc}`Tango Controls demo VM’s documentation <vm/tangobox>`.
 - See also [a release note](https://gitlab.com/tango-controls/tangobox/-/releases/v9.3.3)
   and [README](https://gitlab.com/tango-controls/tangobox/blob/develop/README.md).
