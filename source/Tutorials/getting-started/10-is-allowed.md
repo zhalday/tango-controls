@@ -48,7 +48,8 @@ In Python high-level devices there are a few ways to link these guard methods to
   the `brewingTemperature` attribute.
   There is no equivalent for commands.
 
-Run this example, and in a second terminal, use the [device proxy client](01-first-steps.md#first-tango-client) to check if it is working  :
+[Run this example](#tut-01-run-server-no-db),
+and in a second terminal, use the [device proxy client](01-first-steps.md#first-tango-client) to check if it is working:
 
 ```python-console
 >>> dp.waterLevel

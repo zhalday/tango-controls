@@ -43,7 +43,8 @@ Some names are bad choice for commands:
 - Anything starting with an underscore, `_`.
 :::
 
-Run this example, and in a second terminal, use the [device proxy client](01-first-steps.md#first-tango-client) to check if it is working:
+[Run this example](#tut-01-run-server-no-db),
+and in a second terminal, use the [device proxy client](01-first-steps.md#first-tango-client) to check if it is working:
 
 ```python-console
 >>> dp.Brew()  # nothing on client, but server will print a message

@@ -82,6 +82,7 @@ like this.
 (tango-tut) $
 ```
 
+(tut-01-run-server-no-db)=
 Now you can run your first Tango device server, using PyTango's `test_context` utility:
 ```console
 (tango-tut) $ python -m tango.test_context main.MegaCoffee3k --host 127.0.0.1
