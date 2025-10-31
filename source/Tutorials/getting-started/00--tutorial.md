@@ -14,6 +14,7 @@
 07-device-properties.md
 08-running-db.md
 09-adding-server.md
+10-is-allowed.md
 ```
 
 This tutorial shows you how to get started with **Tango**, covering the major features, step by step.

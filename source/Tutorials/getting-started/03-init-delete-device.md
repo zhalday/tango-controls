@@ -42,7 +42,7 @@ before `Device.__init__` has completed.  E.g., the logging methods like `info_st
 and things like `push_change_event`, which you'll learn about later.
 ::::
 
-Run this example server, and you'll see the output:
+[Run this example](#tut-01-run-server-no-db) server, and you'll see the output:
 ```{code-block} console
 :emphasize-lines: 1,2,3
 MegaCoffee3k: __init__ start

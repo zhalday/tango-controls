@@ -78,7 +78,8 @@ for your first device.  You want to make this a little better.
 
 Here the `set_state` and `set_status` methods have been used to modify the device's state and status on startup.
 
-If you run this example, and in a second terminal, use the [device proxy client](01-first-steps.md#first-tango-client) to check if it is working  :
+If you [run this example](#tut-01-run-server-no-db),
+and in a second terminal, use the [device proxy client](01-first-steps.md#first-tango-client) to check if it is working:
 
 ```python-console
 >>> dp.State()

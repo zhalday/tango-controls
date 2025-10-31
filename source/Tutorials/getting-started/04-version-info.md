@@ -25,7 +25,8 @@ Sorry, still TODO!
 
 The {py:meth}`~tango.server.Device.add_version_info` method can be called as many times as you like to add key-value pairs of strings.
 
-If you run this example, and in a second terminal, use the [device proxy client](01-first-steps.md#first-tango-client) to read back the information:
+If you [run this example](#tut-01-run-server-no-db),
+and in a second terminal, use the [device proxy client](01-first-steps.md#first-tango-client) to read back the information:
 
 ```python-console
 >>> dp.info()
