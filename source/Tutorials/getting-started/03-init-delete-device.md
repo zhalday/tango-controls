@@ -28,7 +28,10 @@ Sorry, still TODO!
 :::::
 
 Here the `init_device` and `delete_device` methods simply print a message.
-The`__init__` method is included with some print statements to show when it is called in the lifecycle.
+For this tutorial,
+the`__init__` method is included with some print statements to show when it is called in the lifecycle.
+Normally it is not added in PyTango devices, because a device can be re-initialised.
+Then only the code in the `init_device()` method is executed.
 
 :::{tip}
 It is important to still call the super class methods, as shown.  `init_device` at the
