@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tango Controls — Architecture Explained</title>
+  <style>
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 40px;
+      color: #222;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    h1 {
+      font-size: 2em;
+      border-bottom: 3px solid #e07b00;
+      padding-bottom: 12px;
+      color: #1a1a1a;
+    }
+    h2 {
+      font-size: 1.4em;
+      color: #e07b00;
+      margin-top: 2em;
+    }
+    h3 {
+      font-size: 1.1em;
+      color: #444;
+      margin-top: 1.5em;
+    }
+    .subtitle {
+      color: #666;
+      font-style: italic;
+      margin-top: -10px;
+      margin-bottom: 30px;
+    }
+    .highlight-box {
+      background: #fff8f0;
+      border-left: 4px solid #e07b00;
+      padding: 14px 20px;
+      margin: 20px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    .diagram {
+      background: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 20px 30px;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+      line-height: 1.6;
+      margin: 20px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 14px;
+    }
+    th {
+      background: #e07b00;
+      color: white;
+      padding: 10px 14px;
+      text-align: left;
+    }
+    td {
+      padding: 9px 14px;
+      border-bottom: 1px solid #eee;
+    }
+    tr:nth-child(even) td {
+      background: #fafafa;
+    }
+    strong {
+      color: #1a1a1a;
+    }
+    .footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+      font-size: 13px;
+      color: #888;
+      font-style: italic;
+    }
+    @media print {
+      body { margin: 20px auto; }
+      .highlight-box { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Tango Controls</h1>
+  <p class="subtitle">Architecture Explained in Plain English</p>
+
+  <h2>The Big Idea: Everything is a "Device"</h2>
+
+  <p>
+    Tango Controls is a framework for controlling scientific and industrial equipment —
+    motors, valves, power supplies, cameras, detectors — across a network.
+    It's used at particle accelerators, laser facilities, wind tunnels, and even the
+    world's largest radio telescope (the Square Kilometre Array).
+  </p>
+
+  <div class="highlight-box">
+    Think of it like a <strong>universal TV remote</strong>. You press "volume up" and it works
+    regardless of whether the TV is Sony or Samsung. In Tango, every piece of hardware is
+    wrapped in a <strong>Device</strong> that speaks a common language — hiding all the messy
+    low-level protocols underneath.
+  </div>
+
+  <h2>The 4 Key Building Blocks</h2>
+
+  <h3>1. Device</h3>
+  <p>
+    The core unit of Tango. Each Device represents one piece of equipment (or a logical group).
+    Think of it as the software face of a physical thing. Every device has three things you can interact with:
+  </p>
+  <table>
+    <tr><th>Concept</th><th>What it is</th><th>Example</th></tr>
+    <tr><td><strong>Attributes</strong></td><td>Data values you read or write</td><td>Temperature, position, speed, voltage</td></tr>
+    <tr><td><strong>Commands</strong></td><td>Actions you trigger</td><td>Move, Reset, Start scan, Stop</td></tr>
+    <tr><td><strong>State</strong></td><td>Current status of the device</td><td>ON, OFF, MOVING, FAULT, ALARM</td></tr>
+  </table>
+
+  <h3>2. Device Class</h3>
+  <p>
+    The blueprint or template for a type of device. Like a class in object-oriented
+    programming — you define it once, then stamp out as many devices as you need from it.
+    For example, a <code>Motor</code> class can be used to create 50 individual motor devices,
+    each with its own position and speed, but all sharing the same commands and attributes.
+  </p>
+
+  <h3>3. Device Server</h3>
+  <p>
+    The actual running program (process) on a computer that hosts one or more Devices.
+    It starts up, registers itself with the database, creates its devices, and then sits
+    waiting for commands from clients. One Device Server can run multiple devices
+    to share memory and system resources efficiently.
+  </p>
+  <div class="highlight-box">
+    Analogy: If the Device is a "waiter", the Device Server is the "restaurant" —
+    it can employ many waiters (devices) and they all share the same kitchen (resources).
+  </div>
+
+  <h3>4. The Database (Tango Host)</h3>
+  <p>
+    The central registry — the "phonebook" of the entire control system. When a Device Server
+    starts up, it registers itself here. When a client wants to talk to a device, it asks the
+    database "where is device X?" and gets back the network address. This runs on port
+    <strong>10000</strong> and is what you point <code>TANGO_HOST</code> at.
+  </p>
+  <p>
+    Importantly, once a client gets the device's address from the database, all further
+    communication goes <em>directly</em> to the Device Server — the database is not involved
+    in the actual data flow.
+  </p>
+
+  <h2>How It All Fits Together</h2>
+
+  <div class="diagram">[ Physical Hardware ]        e.g. a motor, valve, power supply
+         ↕
+[ Device Server ]           runs on a computer, wraps hardware as Devices
+         ↕
+[ Tango Database ]          central registry — knows where everything is
+         ↕
+[ Client / GUI ]            Jive, Astor, or your own custom application</div>
+
+  <h2>Device States</h2>
+  <p>Every Tango device always has a state. The standard states are:</p>
+  <table>
+    <tr><th>State</th><th>Meaning</th></tr>
+    <tr><td>ON</td><td>Operational and working normally</td></tr>
+    <tr><td>OFF</td><td>Not active, but in normal condition</td></tr>
+    <tr><td>MOVING</td><td>In transition (e.g. a motor travelling to a position)</td></tr>
+    <tr><td>STANDBY</td><td>Ready but not fully active</td></tr>
+    <tr><td>RUNNING</td><td>Actively doing something above normal ON (e.g. acquiring data)</td></tr>
+    <tr><td>ALARM</td><td>Working but something is out of range — operator attention needed</td></tr>
+    <tr><td>FAULT</td><td>Major failure — usually needs hardware intervention or a reset</td></tr>
+    <tr><td>INIT</td><td>Starting up, not yet ready</td></tr>
+    <tr><td>DISABLE</td><td>Cannot be switched ON due to an external safety condition</td></tr>
+    <tr><td>UNKNOWN</td><td>Cannot determine state — usually a communication problem</td></tr>
+  </table>
+
+  <h2>The Management Tools</h2>
+  <table>
+    <tr><th>Tool</th><th>What it does</th></tr>
+    <tr><td><strong>Jive</strong></td><td>GUI browser for all devices — explore attributes, commands, and properties. Like a file explorer for your control system.</td></tr>
+    <tr><td><strong>Astor</strong></td><td>Manages which Device Servers are running on which computers. Start, stop, monitor processes across the whole facility.</td></tr>
+    <tr><td><strong>TangoTest</strong></td><td>A built-in dummy device for testing your setup without real hardware.</td></tr>
+  </table>
+
+  <h2>Communication Under the Hood</h2>
+  <p>
+    Tango uses two protocols internally — you don't need to worry about these, the framework handles it:
+  </p>
+  <ul>
+    <li><strong>CORBA</strong> — for synchronous communication (you ask, you wait for an answer)</li>
+    <li><strong>ZeroMQ</strong> — for asynchronous/event-based communication (subscribe to updates when values change)</li>
+  </ul>
+
+  <h2>Why It Matters</h2>
+  <div class="highlight-box">
+    Tango lets you control <strong>thousands of pieces of hardware across a network</strong>
+    using one consistent API, regardless of what protocols those devices use underneath.
+    A motor controller talking RS-232, a camera using GigE Vision, and a custom VME card
+    all look the same to your client application — they're just Devices with attributes and commands.
+  </div>
+
+  <div class="footer">
+    Generated from the official Tango Controls documentation — tango-controls.org<br>
+    Source: gitlab.com/tango-controls/tango-doc
+  </div>
+
+</body>
+</html>
