@@ -171,7 +171,7 @@ tango._tango.DevState.UNKNOWN
 >>>
 ```
 
-It works!  That was super east, but it isn't super useful yet.  Read on!
+It works! That was super easy, but it isn't very useful yet. Read on!
 
 :::{hint}
 If you're wondering, the value `382` is the ping response time in microseconds.

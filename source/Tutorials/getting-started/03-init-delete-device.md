@@ -12,7 +12,7 @@ As you saw in the [previous lesson](02-state-status.md#state-and-status) there i
 :caption: main.py
 :language: python
 :lines: 4-
-:emphasize-lines: 15,16,17
+:emphasize-lines: 12,13,14,16,17,18
 ```
 ::::
 
@@ -28,7 +28,10 @@ Sorry, still TODO!
 :::::
 
 Here the `init_device` and `delete_device` methods simply print a message.
-The`__init__` method is included with some print statements to show when it is called in the lifecycle.
+For this tutorial,
+the`__init__` method is included with some print statements to show when it is called in the lifecycle.
+Normally it is not added in PyTango devices, because a device can be re-initialised.
+Then only the code in the `init_device()` method is executed.
 
 :::{tip}
 It is important to still call the super class methods, as shown.  `init_device` at the
