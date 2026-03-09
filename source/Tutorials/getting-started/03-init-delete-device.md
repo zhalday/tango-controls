@@ -12,7 +12,7 @@ As you saw in the [previous lesson](02-state-status.md#state-and-status) there i
 :caption: main.py
 :language: python
 :lines: 4-
-:emphasize-lines: 15,16,17
+:emphasize-lines: 12,13,14,16,17,18
 ```
 ::::
 

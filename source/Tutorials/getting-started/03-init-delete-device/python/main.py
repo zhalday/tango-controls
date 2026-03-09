@@ -6,7 +6,7 @@ from tango.server import Device
 
 class MegaCoffee3k(Device):
 
-    # __init__ method is included to show when it is called in the lifecycle
+    # __init__() included to show when it is called in the lifecycle
     def __init__(self, *args, **kwargs):
         print("MegaCoffee3k: __init__ start")
         super().__init__(*args, **kwargs)
