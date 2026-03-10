@@ -209,6 +209,116 @@
     all look the same to your client application — they're just Devices with attributes and commands.
   </div>
 
+  <hr style="margin-top: 60px; border: none; border-top: 3px solid #e07b00;">
+
+  <h1>Session Notes — What We Built Today</h1>
+  <p class="subtitle">A Tango Device on a Raspberry Pi, in Python</p>
+
+  <h2>What We Actually Did</h2>
+  <p>
+    Today the group built a real, working Tango Device from scratch using <strong>PyTango</strong>
+    (the Python library for Tango) running on a <strong>Raspberry Pi</strong>. The device controlled
+    a physical LED wired to the Pi. This is the classic "hello world" of hardware control systems —
+    but done the proper Tango way.
+  </p>
+
+  <h2>Concept 1 — An Attribute That Reflects Hardware State</h2>
+  <div class="highlight-box">
+    An <strong>Attribute</strong> is a live data value on a device that clients can read (and sometimes write).
+    It always reflects the current reality of the device.
+  </div>
+  <p>
+    The device had an attribute that represented the LED's current state — on or off.
+    Whenever the LED changed, the attribute updated to match. This is the Tango way of
+    exposing hardware state: you don't ask the hardware directly, you read the attribute
+    and trust it to reflect what's actually happening.
+  </p>
+  <p>
+    Think of it like a dashboard light in a car. You don't look under the bonnet to check
+    if the engine is running — you look at the indicator on the dash.
+  </p>
+
+  <h2>Concept 2 — A Command That Does Something</h2>
+  <div class="highlight-box">
+    A <strong>Command</strong> is an action you can trigger on a device. Commands can accept
+    input parameters and return results.
+  </div>
+  <p>
+    A command was added to switch the LED on or off. It accepted a <strong>boolean</strong>
+    as its input parameter:
+  </p>
+  <table>
+    <tr><th>Input</th><th>What happens</th></tr>
+    <tr><td><code>True</code></td><td>LED turns ON</td></tr>
+    <tr><td><code>False</code></td><td>LED turns OFF</td></tr>
+  </table>
+  <p>
+    After the command runs, the attribute automatically updates to reflect the new state.
+    The command is the <em>action</em>; the attribute is the <em>result</em>.
+  </p>
+
+  <h2>Concept 3 — A Second Attribute for a Random Number</h2>
+  <p>
+    A second attribute was added that holds a random number. But it doesn't generate the
+    number itself — that's the job of a separate command. Here's the flow:
+  </p>
+  <div class="diagram">Client calls "generate" command
+        ↓
+Device generates a random number, stores it internally
+        ↓
+Client reads the "random_number" attribute
+        ↓
+Attribute returns the stored value</div>
+  <p>
+    This is an important pattern in Tango: <strong>commands do work, attributes expose data</strong>.
+    The attribute is just a window into the device's internal state — it doesn't do the computation,
+    it just reports it.
+  </p>
+
+  <h2>Concept 4 — Change Events</h2>
+  <div class="highlight-box">
+    <strong>Change Events</strong> let a device automatically notify clients when a value changes —
+    instead of clients having to constantly ask "has anything changed yet?"
+  </div>
+  <p>
+    Both attributes were configured to push change events. The random number attribute in particular
+    was set up to fire an event only when the value changes by more than <strong>0.001</strong> in
+    absolute terms. This threshold is called the <strong>absolute change</strong> filter.
+  </p>
+  <p>
+    Why does this matter? Imagine polling a sensor 100 times per second when it barely moves.
+    That's wasteful network traffic. With change events, the device only broadcasts when something
+    meaningfully changes — clients subscribe and get notified automatically.
+  </p>
+  <p>Think of it like push notifications on your phone vs. you manually refreshing an app every few seconds.</p>
+
+  <table>
+    <tr><th>Polling (without events)</th><th>Change Events (with events)</th></tr>
+    <tr><td>Client asks "what's the value?" repeatedly</td><td>Device says "the value just changed" once</td></tr>
+    <tr><td>Wastes network bandwidth</td><td>Efficient — only fires when needed</td></tr>
+    <tr><td>Slight delay between change and detection</td><td>Near-instant notification</td></tr>
+  </table>
+
+  <h2>The Full Picture of Today</h2>
+  <div class="diagram">[ Raspberry Pi ]
+  └── PyTango Device Server
+        ├── Attribute: led_state      → True/False, reflects LED hardware
+        ├── Attribute: random_number  → returns last generated value
+        │                               fires change event if Δ > 0.001
+        ├── Command: set_led(bool)    → turns LED on (True) or off (False)
+        └── Command: generate()      → creates a new random number, stores it</div>
+
+  <h2>Why This Matters</h2>
+  <p>
+    This small example captures the entire essence of Tango Controls:
+  </p>
+  <ul>
+    <li>Hardware is hidden behind a clean interface (attributes + commands)</li>
+    <li>Any client anywhere on the network can control the LED or read its state</li>
+    <li>The device pushes updates automatically — clients don't have to poll</li>
+    <li>The same patterns scale from one LED on a Pi to thousands of devices at a particle accelerator</li>
+  </ul>
+
   <div class="footer">
     Generated from the official Tango Controls documentation — tango-controls.org<br>
     Source: gitlab.com/tango-controls/tango-doc
