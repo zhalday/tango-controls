@@ -122,3 +122,31 @@ You can inspect the event configuration of an attribute at any time:
 '0.001'
 ```
 :::
+
+## Key takeaways
+
+- **Change events replace polling.** Instead of clients repeatedly reading an attribute,
+  the device pushes a notification the moment the value changes.
+
+- **Declare intent in `init_device`.** Call `self.set_change_event(attr, True, detect)`
+  for every attribute that will push events.
+
+- **Push from the command that causes the change.** Call `self.push_change_event(attr, value)`
+  at the point where the value actually changes — usually inside a command.
+
+- **`detect=False` — push unconditionally.** Every `push_change_event` call is forwarded
+  to clients.  Use this for boolean or discrete values (like `ledOn`) where any flip is
+  meaningful.
+
+- **`detect=True` + `abs_change` — let Tango filter.** Tango compares the new value
+  against the last forwarded value and only fires the event if the difference exceeds
+  `abs_change`.  Use this for continuous values (like `randomNumber`) to avoid flooding
+  clients with noise from tiny fluctuations.
+
+- **Keep state and device state in sync.** When a command changes hardware, update both
+  the internal variable (`self._led_on`) and the Tango device state
+  (`self.set_state(DevState.ON/OFF)`) so every client sees a consistent picture.
+
+- **GPIO pin as a device property.** Hard-coding hardware addresses is fragile.
+  Exposing the pin number as a {term}`device property` (with a sensible default) makes
+  the same device class reusable across different wiring configurations.
